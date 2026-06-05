@@ -42,11 +42,11 @@ Mỗi file `storyX.html` thường có cấu trúc chính bao gồm 3 phần:
 
 ## 3. Quy trình Bơm Dữ Liệu (Dành cho AI)
 
-Tiến độ: **Đã bơm xong dữ liệu Đa Nghĩa cho Book 1, Book 2 và Book 3.**
-*Lưu ý riêng từ Book 3 trở đi: Đã nâng cấp AI thành `vocab_enricher_v2` với Prompt ép buộc tự tìm thêm nghĩa thực tế, không bị phụ thuộc vào bản dịch gốc!*
+Tiến độ: **Đã hoàn thành xuất sắc việc bơm dữ liệu Đa Nghĩa (V2) cho TẤT CẢ các Book: Book 1, 2, 3, 4, 5, 6 và TOEIC.**
+*Lưu ý: Hệ thống AI `vocab_enricher_v2` chạy rất tốt, tự tìm nghĩa thực tế và tạo trải nghiệm tra từ đa nghĩa cực đỉnh.*
 
-Khi cần cập nhật thêm dữ liệu từ vựng (ví dụ làm tiếp Book 4):
-1. **Lấy dữ liệu:** Đọc `vocabulary4.csv`.
+Khi cần cập nhật thêm dữ liệu từ vựng cho một Book mới (nếu có):
+1. **Lấy dữ liệu:** Đọc `vocabulary_NEW.csv`.
 2. **Xử lý:** Chia thành các chunk (VD: `chunk1.json` -> `chunk6.json`) vào thư mục `vocab_chunks/`.
 3. **Gọi AI song song:** Chạy 6 subagents để phân tích từng từ vựng và tự động viết `definitions` đa nghĩa (pos, context, example).
 4. **Ghép và Bơm:** Dùng script `apply_fix_book3.py` (tương tự như book 2) để đọc `story3.html`. **TUYỆT ĐỐI** dùng `.find` để thay thế từ khối `const posMap = {` đến `</body>`, có nhét thêm `</script>` ở cuối đoạn tiêm để không làm sập Javascript, và thay thế khối `const allVocab = {...};`. KHÔNG ĐƯỢC ghi đè lố xuống dưới làm mất `showStory` hay `toggleDarkMode`.
