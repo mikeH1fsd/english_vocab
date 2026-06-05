@@ -447,54 +447,7 @@
 
     <script>
         // ===== TRANSLATE SELECTED TEXT =====
-        (function() {
-            var popup = document.createElement('div');
-            popup.className = 'translate-popup';
-            popup.innerHTML = '🌐 Dịch';
-            popup.id = 'translate-popup';
-            document.body.appendChild(popup);
-
-            var selectedText = '';
-
-            document.addEventListener('mouseup', handleSelection);
-            document.addEventListener('touchend', function() {
-                setTimeout(handleSelection, 300);
-            });
-
-            function handleSelection(e) {
-                var sel = window.getSelection();
-                var text = sel.toString().trim();
-                
-                if (text.length > 2 && text.length < 1000) {
-                    selectedText = text;
-                    
-                    var range = sel.getRangeAt(0);
-                    var rect = range.getBoundingClientRect();
-                    
-                    popup.style.left = (rect.left + rect.width / 2 - 40 + window.scrollX) + 'px';
-                    popup.style.top = (rect.top - 45 + window.scrollY) + 'px';
-                    popup.style.display = 'block';
-                } else {
-                    popup.style.display = 'none';
-                }
-            }
-
-            popup.addEventListener('mousedown', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                if (selectedText) {
-                    var url = 'https://translate.google.com/?sl=en&tl=vi&text=' + encodeURIComponent(selectedText);
-                    window.open(url, '_blank');
-                }
-                popup.style.display = 'none';
-            });
-
-            document.addEventListener('mousedown', function(e) {
-                if (e.target !== popup) {
-                    popup.style.display = 'none';
-                }
-            });
-        })();
+        
 
     </script>
 
@@ -579,6 +532,390 @@
         });
 </script>
 
-</body>
+
+        <script>
+        </script>
+    
+        <script>
+        const preTranslatedBookData = [
+            { en: "The philosophy of life is not a simple equation.", vi: "Triết lý nhân sinh không phải là một phương trình đơn giản." },
+            { en: "It is a volatile mix of intrinsic truths and absurd paradoxes.", vi: "Nó là một sự pha trộn đầy biến động giữa những sự thật cốt lõi và những nghịch lý phi lý." },
+            { en: "Elias, once a reputable aristocrat of the local aristocracy, now lived in a sparse attic overlooking a congested city.", vi: "Elias, từng là một nhà quý tộc danh tiếng của giới quý tộc địa phương, giờ đây sống trong một căn gác xép trống trải nhìn xuống một thành phố đông đúc." },
+            { en: "The din of civic life below did not disrupt his peace; rather, it served to soothe his once frantic ego.", vi: "Sự ồn ào của cuộc sống đô thị bên dưới không phá vỡ sự bình yên của ông; trái lại, nó giúp xoa dịu cái tôi từng một thời điên cuồng của ông." },
+            { en: "He had learned that to err is human, and holding onto vanity only serves to deform the soul.", vi: "Ông đã học được rằng phạm sai lầm là bản tính con người, và bám víu vào sự phù phiếm chỉ làm biến dạng tâm hồn." },
+            { en: "In his youth, he would vie for power, wearing exclusive attire adorned with a hallmark of his lineage, a predominant symbol of an era devoid of humility.", vi: "Thuở thiếu thời, ông thường ganh đua quyền lực, mặc những bộ trang phục độc quyền được trang trí bằng dấu ấn của dòng dõi mình, một biểu tượng nổi bật của một thời đại không có sự khiêm tốn." },
+            { en: "He followed every craze, observing a strict, yet dubious etiquette.", vi: "Ông chạy theo mọi mốt thịnh hành, tuân thủ một nghi thức nghiêm ngặt nhưng đáng ngờ." },
+            { en: "His feminine counterpart, a woman who wore too much rouge and an ornate strap on her garment, shared his love for excess.", vi: "Người bạn đời của ông, một người phụ nữ đánh phấn hồng quá đậm và đeo một dải băng trang trí cầu kỳ trên trang phục, cũng có chung sở thích xa hoa thái quá với ông." },
+            { en: "They were the epitome of vulgar wealth, throwing gourmet feasts that would dissatisfy the starving multitude on the periphery.", vi: "Họ là hình mẫu của sự giàu có dung tục, tổ chức những bữa tiệc sành điệu làm bất mãn đám đông đói khát ở vùng ngoại ô." },
+            { en: "To alleviate his guilt, he would publicize his fictitious charities in the local gazette, an outright deception meant to gratify his ego rather than fend off the strife of the poor.", vi: "Để xoa dịu cảm giác tội lỗi của mình, ông thường công khai các hoạt động từ thiện hư cấu của mình trên tờ báo địa phương, một sự lừa dối trắng trợn nhằm thỏa mãn cái tôi của mình hơn là xua tan nỗi thống khổ của người nghèo." },
+            { en: "He was liable for much distress, often using an erroneous persuasion to negotiate his way out of a particular ordeal.", vi: "Ông phải chịu trách nhiệm cho nhiều nỗi đau khổ, thường sử dụng những lời lẽ thuyết phục sai lệch để đàm phán thoát khỏi một thử thách nhất định." },
+            { en: "But life has a way to plunge one into reality.", vi: "Nhưng cuộc đời có cách để đẩy con người ta vào thực tế." },
+            { en: "An unexpected bout of pneumonia, compounded by anemia and arthritis, left him with a jagged, skeletal posture.", vi: "Một cơn viêm phổi bất ngờ, cộng thêm bệnh thiếu máu và viêm khớp, đã để lại cho ông một dáng vẻ gầy guộc, trơ xương." },
+            { en: "He could not conceive how this happened.", vi: "Ông không thể tưởng tượng nổi chuyện này lại xảy ra như thế nào." },
+            { en: "He suffered an inadvertent overdose of a therapeutic mash made from sesame and pungent herbs, intended to cure his insomnia.", vi: "Ông vô tình bị quá liều một loại hỗn hợp trị liệu làm từ vừng và các loại thảo mộc có mùi hăng, vốn được dùng để chữa bệnh mất ngủ của ông." },
+            { en: "As he would gasp for air on the verge of death, an apologetic courier arrived to relay news of his deceased brother's freight business collapsing.", vi: "Ngay khi ông đang thở hổn hển trên bờ vực của cái chết, một người đưa thư đầy vẻ hối lỗi đến để báo tin về việc doanh nghiệp vận tải hàng hóa của người anh trai đã khuất của ông bị phá sản." },
+            { en: "A lot of fuss and chaos would ensue.", vi: "Rất nhiều rắc rối và hỗn loạn đã kéo theo sau đó." },
+            { en: "This sudden loss served to clarify his vision.", vi: "Sự mất mát đột ngột này đã làm sáng tỏ tầm nhìn của ông." },
+            { en: "He realized that wealth could not prolong life, signify true worth, or buy permanence.", vi: "Ông nhận ra rằng của cải không thể kéo dài tuổi thọ, biểu thị giá trị đích thực hay mua được sự vĩnh cửu." },
+            { en: "He left the ministry where he worked, exhausted by overwork, shedding his old life like an embryo breaking from its mold.", vi: "Ông rời khỏi bộ nơi ông làm việc, kiệt sức vì làm việc quá sức, rũ bỏ cuộc sống cũ như một phôi thai phá vỡ lớp vỏ của nó." },
+            { en: "He became a mariner, seeking latitude on the open seas, hoping to attain wisdom.", vi: "Ông trở thành một thủy thủ, tìm kiếm sự tự do trên biển cả, hy vọng đạt được sự khôn ngoan." },
+            { en: "The hull of his ship was his new altar.", vi: "Thân con tàu của ông là bàn thờ mới của ông." },
+            { en: "He faced vicious storms that would obstruct his path, and dogged winds that tested his elastic spirit.", vi: "Ông đối mặt với những cơn bão dữ dội cản đường ông, và những cơn gió dai dẳng thử thách tinh thần dẻo dai của ông." },
+            { en: "Once, his ship washed ashore, and he found himself stranded on a terrestrial island.", vi: "Có một lần, tàu của ông bị dạt vào bờ, và ông thấy mình bị mắc kẹt trên một hòn đảo hoang." },
+            { en: "With no tools, he had to improvise and excavate the earth with a makeshift shovel to find a chunk of edible root.", vi: "Không có công cụ, ông phải ứng biến và đào đất bằng một cái xẻng tạm bợ để tìm một khúc rễ cây ăn được." },
+            { en: "He had to use dung for a fire to char fish, relying on intuitive survival skills he didn't know he possessed.", vi: "Ông phải dùng phân động vật để nhóm lửa nướng cá, dựa vào các kỹ năng sinh tồn trực giác mà ông không hề biết là mình có." },
+            { en: "In this isolated locale, botany became his new passion.", vi: "Tại nơi hẻo lánh này, thực vật học đã trở thành niềm đam mê mới của ông." },
+            { en: "He would theorize about the homogeneous nature of life, trying to decipher the secrets of the plants.", vi: "Ông thường đưa ra giả thuyết về bản chất đồng nhất của sự sống, cố gắng giải mã những bí mật của các loài thực vật." },
+            { en: "It was an arduous endeavor, but it helped him hone his understanding of existence.", vi: "Đó là một nỗ lực gian khổ, nhưng nó giúp ông trau dồi sự hiểu biết của mình về sự tồn tại." },
+            { en: "He realized that life does not revolve around oneself, but is a vast web where we all must coexist.", vi: "Ông nhận ra rằng cuộc sống không xoay quanh bản thân mỗi người, mà là một mạng lưới rộng lớn nơi tất cả chúng ta phải cùng chung sống." },
+            { en: "Returning to civilization years later, he was a changed man.", vi: "Trở về với nền văn minh nhiều năm sau đó, ông là một con người đã thay đổi." },
+            { en: "The outspoken superintendent of his building found him benign, a stark contrast to the psychotic, sinister rumors that had circulated about his descent into madness.", vi: "Người quản lý tòa nhà thẳng thắn của ông thấy ông rất hiền lành, một sự trái ngược hoàn toàn với những tin đồn điên rồ, độc ác đã lan truyền về việc ông rơi vào trạng thái điên loạn." },
+            { en: "Some even claimed he had psychic powers to elude death.", vi: "Vài người thậm chí còn cho rằng ông có siêu năng lực để trốn tránh cái chết." },
+            { en: "Elias was no longer wary of the world; his reluctance to engage had vanished.", vi: "Elias không còn cảnh giác với thế giới nữa; sự miễn cưỡng giao tiếp của ông đã biến mất." },
+            { en: "He would sip tea from an old kettle at dusk, listening to the superintendent snore soundly next door, finding a comforting rhythm in the mundane.", vi: "Ông thường nhâm nhi trà từ một chiếc ấm cũ kỹ lúc chạng vạng, lắng nghe tiếng người quản lý ngáy ngon lành ở phòng bên cạnh, tìm thấy một nhịp điệu an ủi trong những điều bình dị." },
+            { en: "He would often restate his philosophy: \"Life is a multitude of choices.", vi: "Ông thường nhắc lại triết lý của mình: \"Cuộc sống là vô vàn những sự lựa chọn." },
+            { en: "We diverge and alternate between good and bad.", vi: "Chúng ta rẽ hướng và thay phiên nhau giữa cái thiện và cái ác." },
+            { en: "Our actions engrave our legacy on the universe.", vi: "Những hành động của chúng ta khắc ghi di sản của chúng ta vào vũ trụ." },
+            { en: "Do not let excess tangle your mind.", vi: "Đừng để sự dư thừa trói buộc tâm trí của bạn." },
+            { en: "Differentiate between what is credible and what is a deceptive nuisance.\"", vi: "Hãy phân biệt giữa điều gì là đáng tin cậy và điều gì là một sự phiền toái lừa dối.\"" },
+            { en: "He would pad around his room, surrounded by surplus books on astrology and philosophy.", vi: "Anh ấy sẽ đi đi lại lại quanh phòng, bao quanh bởi vô số cuốn sách về chiêm tinh học và triết học." },
+            { en: "He sought to enlarge his scope of understanding.", vi: "Ông tìm cách mở rộng phạm vi hiểu biết của mình." },
+            { en: "Even when his mind would waver, a vigorous sip of tea would ground him.", vi: "Ngay cả khi tâm trí ông xao động, một ngụm trà mạnh sẽ giúp ông lấy lại cân bằng." },
+            { en: "He refused to contradict his core beliefs or let the past dictate his future.", vi: "Ông từ chối việc mâu thuẫn với những niềm tin cốt lõi của mình hoặc để quá khứ định đoạt tương lai của mình." },
+            { en: "Hence, he had found a way to plaster over the cracks of his past, not with vanity, but with genuine remorse.", vi: "Do đó, ông đã tìm ra cách để vá lại những rạn nứt trong quá khứ của mình, không phải bằng sự phù phiếm, mà bằng sự hối hận chân thành." },
+            { en: "He was a mariner of life, navigating the waters with a steady hand, making sure to verify his actions against his conscience.", vi: "Ông là một thủy thủ của cuộc đời, lèo lái trên những vùng nước với một bàn tay vững vàng, đảm bảo xác minh những hành động của mình dựa trên lương tâm." },
+            { en: "The sky was overcast, an ominous omen as Elias took the tram to the gallery.", vi: "Bầu trời u ám, một điềm báo chẳng lành khi Elias bắt tàu điện đến phòng trưng bày." },
+            { en: "Elias, a critic of high privilege and refined upbringing, did not usually socialize in such dilapidated districts.", vi: "Elias, một nhà phê bình có đặc quyền cao và nền tảng giáo dục tinh tế, thường không giao du ở những khu vực tồi tàn như vậy." },
+            { en: "The building, a former timber mill, was now the frontier of modern art.", vi: "Tòa nhà, vốn là một xưởng cưa gỗ cũ, giờ đây là tiền đồn của nghệ thuật hiện đại." },
+            { en: "He was a vocal advocate for the mainstream, but felt it imperative to adhere to his vow to explore new cultural dynamics.", vi: "Anh là người lên tiếng ủng hộ xu hướng chủ đạo, nhưng cảm thấy bắt buộc phải tuân theo lời thề khám phá những động lực văn hóa mới." },
+            { en: "At the onset, he was hesitant.", vi: "Lúc đầu, anh có chút do dự." },
+            { en: "Inside, the gallery was overcrowded.", vi: "Bên trong, phòng trưng bày chật ních người." },
+            { en: "A feeling of unrest seemed to permeate the crowd.", vi: "Một cảm giác bất an dường như bao trùm cả đám đông." },
+            { en: "To evade the crush and keep his sanity intact, Elias had to walk sideways.", vi: "Để tránh bị chen lấn và giữ cho đầu óc tỉnh táo, Elias phải đi ngang." },
+            { en: "The exhibition, organized by a radical federation of progressive artists, aimed to unsettle.", vi: "Cuộc triển lãm, được tổ chức bởi một liên đoàn cấp tiến gồm những nghệ sĩ tiến bộ, nhằm mục đích gây xáo trộn." },
+            { en: "The artists tended to obsess over negligible details, often going overboard with their messages to propel their careers and ensure their views prevail.", vi: "Các nghệ sĩ có xu hướng ám ảnh về những chi tiết không đáng kể, thường làm quá thông điệp của họ để thúc đẩy sự nghiệp và đảm bảo quan điểm của họ chiếm ưu thế." },
+            { en: "They liked to seclude themselves from traditional art, striving instead to warp reality into something unrecognizable.", vi: "Họ thích tách mình khỏi nghệ thuật truyền thống, thay vào đó phấn đấu làm biến dạng thực tại thành một thứ gì đó không thể nhận ra." },
+            { en: "The first piece was a massive apparatus resembling the intestines of some beast, complete with a leaky valve that let gross fluid accumulate on the floor.", vi: "Tác phẩm đầu tiên là một cỗ máy đồ sộ giống như ruột của một con thú nào đó, hoàn chỉnh với một cái van rỉ nước để thứ chất lỏng kinh tởm tích tụ trên sàn nhà." },
+            { en: "A plaque dared to disclose that the artist sought to magnify the deterioration of urban life.", vi: "Một tấm bảng bạo dạn tiết lộ rằng nghệ sĩ đã tìm cách phóng đại sự xuống cấp của cuộc sống đô thị." },
+            { en: "Elias broke out in a rash of annoyance.", vi: "Elias đột nhiên cảm thấy vô cùng bực bội." },
+            { en: "The fluid seemed to contaminate the sterile air, creating a hazard that the poor housekeeping staff had to counteract.", vi: "Thứ chất lỏng dường như làm ô nhiễm bầu không khí vô trùng, tạo ra một mối nguy hiểm mà đội ngũ nhân viên dọn vệ sinh tội nghiệp phải đối phó." },
+            { en: "Not a speck of dust was permitted elsewhere, but this filth was considered a premium masterpiece.", vi: "Không một hạt bụi nào được cho phép ở nơi khác, nhưng thứ rác rưởi này lại được coi là một kiệt tác cao cấp." },
+            { en: "Someone in a bizarre outfit was giving a voluntary performance, pretending to forage for a stray lentil in a mound of rubble.", vi: "Một người trong trang phục kỳ quái đang có một màn trình diễn tự nguyện, giả vờ lục lọi tìm một hạt đậu lăng vương vãi trong đống đổ nát." },
+            { en: "It was supposed to evoke the struggles of the needy, but the display was frankly intolerable.", vi: "Nó được cho là để gợi lên những cuộc đấu tranh của người nghèo, nhưng màn trình diễn nói thẳng ra là không thể chịu đựng nổi." },
+            { en: "Nearby, a civilian in a lush coat tried to suppress a grin.", vi: "Gần đó, một thường dân trong chiếc áo khoác sang trọng cố gắng kìm nén một nụ cười nhếch mép." },
+            { en: "The atmosphere oscillated between a festive, jolly euphoria and a sober mood.", vi: "Bầu không khí dao động giữa sự hưng phấn vui vẻ, mang tính lễ hội và một tâm trạng trầm lắng." },
+            { en: "Viewers were forced to quietly contemplate the art.", vi: "Người xem bị buộc phải lặng lẽ chiêm ngưỡng nghệ thuật." },
+            { en: "In another corner, a video projection showed an aerial view of an avalanche sweeping away a solitary cot.", vi: "Ở một góc khác, một màn chiếu video chiếu cảnh từ trên không của một trận tuyết lở cuốn trôi một chiếc giường xếp đơn độc." },
+            { en: "The piece claimed to manifest the fragile consistency of mortal existence, how easily life’s safety net could rupture.", vi: "Tác phẩm tuyên bố thể hiện sự nhất quán mong manh của sự tồn tại của con người, màng lưới an toàn của cuộc sống có thể dễ dàng bị đứt gãy như thế nào." },
+            { en: "Elias walked past a splendid canvas that used camouflage to hide a smallpox microbe—a poignant reminder of a historical epidemic.", vi: "Elias đi ngang qua một bức tranh tuyệt đẹp sử dụng kỹ thuật ngụy trang để che giấu một vi khuẩn đậu mùa - một lời nhắc nhở xót xa về một trận dịch bệnh trong lịch sử." },
+            { en: "The artist's goal was to render the invisible visible, highlighting how a deficiency in humane provision can transmit disaster and act like a savage pest.", vi: "Mục tiêu của nghệ sĩ là làm cho những thứ vô hình trở nên hữu hình, nhấn mạnh việc thiếu hụt sự cung cấp nhân đạo có thể truyền bá thảm họa và hành động như một loài sâu bọ tàn bạo như thế nào." },
+            { en: "It made Elias's respiration quicken.", vi: "Điều đó làm nhịp thở của Elias nhanh hơn." },
+            { en: "He felt a temporary paralysis, expecting it to stun the audience.", vi: "Anh cảm thấy một sự tê liệt tạm thời, kỳ vọng nó sẽ làm cho khán giả sững sờ." },
+            { en: "It was a testament to the fact that disease and suffering remain inseparable companions to humanity, an elusive enemy that can easily induce panic if we do not curb our hubris.", vi: "Đó là một minh chứng cho thực tế rằng bệnh tật và đau khổ vẫn là những người bạn đồng hành không thể tách rời của nhân loại, một kẻ thù khó nắm bắt có thể dễ dàng gây ra sự hoảng loạn nếu chúng ta không kiềm chế sự kiêu ngạo của mình." },
+            { en: "A practitioner of performance art began to sob loudly nearby, a staged discharge of emotion.", vi: "Một người thực hành nghệ thuật trình diễn bắt đầu nức nở lớn tiếng ở gần đó, một sự giải tỏa cảm xúc được dàn dựng." },
+            { en: "They claimed the modern world was an invalid system that only benefited those who could authorize conquest and turn genuine expression into a mere commodity.", vi: "Họ tuyên bố thế giới hiện đại là một hệ thống không hợp lệ chỉ mang lại lợi ích cho những kẻ có thể ủy quyền chinh phục và biến biểu hiện chân chính thành một món hàng hóa đơn thuần." },
+            { en: "They called upon the senate to enact laws that prohibit such practices.", vi: "Họ kêu gọi thượng viện ban hành luật cấm những hoạt động như vậy." },
+            { en: "It sounded more like a prophecy of doom than art, delivered by a self-appointed sage holding a handbook of revolution.", vi: "Nó nghe giống như một lời tiên tri về ngày tận thế hơn là nghệ thuật, được truyền đạt bởi một nhà hiền triết tự xưng cầm một cuốn cẩm nang cách mạng." },
+            { en: "They seemed envious of true talent, trying to enlist support through guilt.", vi: "Họ dường như ghen tị với tài năng thực sự, cố gắng thu hút sự ủng hộ thông qua cảm giác tội lỗi." },
+            { en: "Elias felt weary, his mind growing numb.", vi: "Elias cảm thấy mệt mỏi, tâm trí anh trở nên tê liệt." },
+            { en: "He sat on a small stool, trying to counteract a muscle cramp.", vi: "Anh ngồi trên một chiếc ghế đẩu nhỏ, cố gắng chống lại một cơn chuột rút." },
+            { en: "The damp cold of the gallery seemed to seep into his very marrow.", vi: "Cái lạnh ẩm ướt của phòng trưng bày dường như ngấm vào tận xương tủy anh." },
+            { en: "He was susceptible to the metabolic strain of trying to compile his thoughts and diagnose the sentiment of this art.", vi: "Anh dễ bị ảnh hưởng bởi sự căng thẳng trao đổi chất khi cố gắng tổng hợp suy nghĩ và chẩn đoán tình cảm của nghệ thuật này." },
+            { en: "He had to marshal his energy to replenish his morale and maintain his vigil over his critical faculties.", vi: "Anh phải tập hợp năng lượng để phục hồi tinh thần và duy trì sự cảnh giác đối với các khả năng phê bình của mình." },
+            { en: "He watched a patron try to enroll in the artist's circle, bringing a substantial donation.", vi: "Anh nhìn một người bảo trợ cố gắng tham gia vào vòng tròn của nghệ sĩ, mang đến một khoản quyên góp đáng kể." },
+            { en: "The artist began to collaborate on a new piece, using a torch to melt a slate of ice, demonstrating convection.", vi: "Nghệ sĩ bắt đầu hợp tác thực hiện một tác phẩm mới, sử dụng một ngọn đuốc để làm tan chảy một tảng băng, thể hiện sự đối lưu." },
+            { en: "Water dripped from a broken faucet, threatening to impede the flow of an artificial artery on the floor, while someone acting like a dutiful butler tried to administer clean-up efforts.", vi: "Nước nhỏ giọt từ một vòi nước bị hỏng, đe dọa cản trở dòng chảy của một động mạch nhân tạo trên sàn, trong khi một người hành động như một quản gia mẫn cán cố gắng quản lý các nỗ lực dọn dẹp." },
+            { en: "Elias couldn't contend with the sheer volume of metaphors created to adorn the space.", vi: "Elias không thể đối phó với số lượng lớn các ẩn dụ được tạo ra để tô điểm cho không gian." },
+            { en: "Was this art viable?", vi: "Nghệ thuật này có khả thi không?" },
+            { en: "It felt like a reckless plunge into a vast tract of nonsense, a substantial flaw in the paramount purpose of art.", vi: "Nó có cảm giác như một sự lao dốc liều lĩnh vào một vùng toàn những điều vô nghĩa, một lỗ hổng đáng kể trong mục đích tối cao của nghệ thuật." },
+            { en: "Deciding to bid farewell, he refused to certify this madness.", vi: "Quyết định nói lời tạm biệt, anh từ chối chứng nhận sự điên rồ này." },
+            { en: "Outside, he saw a park ranger gently petting a stray dog's paw, a deeply compassionate scene.", vi: "Bên ngoài, anh nhìn thấy một người kiểm lâm nhẹ nhàng vuốt ve chân một con chó hoang, một khung cảnh vô cùng giàu lòng trắc ẩn." },
+            { en: "Elias felt a quiver of true bliss.", vi: "Elias cảm thấy một sự rung động của niềm hạnh phúc thực sự." },
+            { en: "This was life.", vi: "Đây mới là cuộc sống." },
+            { en: "He made a pledge to upgrade the standards of his critique.", vi: "Anh đã thực hiện một lời thề sẽ nâng cấp các tiêu chuẩn phê bình của mình." },
+            { en: "Once there was a vivacious billionaire who wanted to amend the global economy.", vi: "Từng có một vị tỷ phú sôi nổi muốn cải thiện nền kinh tế toàn cầu." },
+            { en: "Amid a frigid blizzard that brought temperatures below zero centigrade, he decided to launch an ambitious, ingenious plan at his grand manor.", vi: "Giữa một trận bão tuyết giá lạnh làm nhiệt độ xuống dưới không độ C, ông quyết định khởi động một kế hoạch đầy tham vọng và tài tình tại dinh thự tráng lệ của mình." },
+            { en: "The exterior of the manor, looking like an outmoded monastery with a winding driveway, was actually a hub of innovative technology, an absolute novelty.", vi: "Bên ngoài dinh thự, trông giống như một tu viện lỗi thời với con đường lái xe quanh co, thực chất lại là một trung tâm công nghệ đổi mới, một sự mới lạ tuyệt đối." },
+            { en: "He called his plan the \"Phoenix Charter,\" hoping it would spur an almighty economic rebirth.", vi: "Ông gọi kế hoạch của mình là \"Hiến chương Phượng hoàng\", với hy vọng nó sẽ thúc đẩy một sự tái sinh kinh tế toàn năng." },
+            { en: "Beforehand, backstage before the grand session, the billionaire met with his mentor, an infamous economist.", vi: "Trước đó, ở hậu trường trước phiên họp hoành tráng, vị tỷ phú đã gặp gỡ người cố vấn của mình, một nhà kinh tế học khét tiếng." },
+            { en: "\"We must not underestimate the adverse dependency on fossil fuels,\" the mentor said with earnest tact.", vi: "\"Chúng ta không được đánh giá thấp sự phụ thuộc bất lợi vào nhiên liệu hóa thạch\", người cố vấn nói một cách nghiêm túc và khéo léo." },
+            { en: "\"To stimulate the market, we must disseminate definitive solutions and abolish our outmoded constitution and any laws that pertain to it.\"", vi: "\"Để kích thích thị trường, chúng ta phải phổ biến các giải pháp dứt khoát và bãi bỏ hiến pháp lỗi thời của mình cùng bất kỳ đạo luật nào liên quan đến nó.\"" },
+            { en: "They wanted to tackle the dreary problem of the eternal boom and bust cycles that fluctuate to and fro.", vi: "Họ muốn giải quyết vấn đề tồi tệ của những chu kỳ bùng nổ và suy thoái liên tục biến động qua lại." },
+            { en: "To reverse the trends that continue to deteriorate, they proposed an inclusive, cosmopolitan system.", vi: "Để đảo ngược những xu hướng đang tiếp tục tồi tệ đi, họ đề xuất một hệ thống hòa nhập, mang tính toàn cầu." },
+            { en: "However, the advent of this plan was met with an uproar.", vi: "Tuy nhiên, sự xuất hiện của kế hoạch này đã vấp phải một làn sóng phản đối dữ dội." },
+            { en: "The legislature of a monolingual, imperial nation feared it would undermine their nationality.", vi: "Cơ quan lập pháp của một quốc gia đế quốc đơn ngữ lo sợ nó sẽ làm suy yếu bản sắc quốc gia của họ." },
+            { en: "A patriot group, acting like a brute mob, threatened to prosecute the billionaire, claiming the plan was a clumsy excuse to segregate resources.", vi: "Một nhóm người yêu nước, hành động như một đám đông tàn bạo, đe dọa sẽ khởi tố vị tỷ phú, cho rằng kế hoạch này chỉ là một cái cớ vụng về để phân biệt các nguồn tài nguyên." },
+            { en: "\"They want to delete our sovereignty!\" they began to chatter.", vi: "\"Họ muốn xóa bỏ chủ quyền của chúng ta!\" họ bắt đầu lải nhải." },
+            { en: "The chatter filled the air.", vi: "Tiếng xôn xao bàn tán tràn ngập khắp nơi." },
+            { en: "Some believed it was a pathological attempt to exclude certain ethnic and racial groups.", vi: "Một số người tin rằng đó là một nỗ lực bệnh hoạn nhằm loại trừ một số nhóm sắc tộc và chủng tộc nhất định." },
+            { en: "\"We must not censor their primal outburst,\" the billionaire told his staff, extending an outstretched hand in a gesture of solidarity.", vi: "\"Chúng ta không được kiểm duyệt sự bùng phát bản năng của họ,\" vị tỷ phú nói với nhân viên của mình, dang rộng một bàn tay như một cử chỉ đoàn kết." },
+            { en: "\"We must show them firsthand the inclusion and courtesy our system offers, a true concentric model where benefits radiate clockwise.\"", vi: "\"Chúng ta phải cho họ thấy tận mắt sự bao hàm và lịch sự mà hệ thống của chúng ta mang lại, một mô hình đồng tâm thực sự nơi các lợi ích lan tỏa theo chiều kim đồng hồ.\"" },
+            { en: "Meanwhile, a team of scientists in an underground cavity worked to simulate a new propulsion system based on electromagnetic electron transfer.", vi: "Trong khi đó, một nhóm các nhà khoa học trong một hang động ngầm đã làm việc để mô phỏng một hệ thống động cơ đẩy mới dựa trên sự truyền điện tử điện từ." },
+            { en: "This innovation would accelerate trade.", vi: "Sự đổi mới này sẽ tăng tốc thương mại." },
+            { en: "They used a definitive lunar model to equate the forces, hoping the propulsion could glide goods across the airway at phenomenal speeds.", vi: "Họ đã sử dụng một mô hình mặt trăng chính xác để cân bằng các lực, hy vọng hệ thống động cơ đẩy có thể lướt hàng hóa qua đường hàng không ở tốc độ phi thường." },
+            { en: "They believed the goods could zip across the globe faster than any freeway.", vi: "Họ tin rằng hàng hóa có thể vút qua toàn cầu nhanh hơn bất kỳ đường cao tốc nào." },
+            { en: "Meteorological experts, versed in meteorology, studied the crisp skies to predict if adverse weather would impede the launch anew.", vi: "Các chuyên gia khí tượng, am hiểu về khí tượng học, đã nghiên cứu bầu trời trong trẻo để dự đoán liệu thời tiết bất lợi có cản trở cuộc ra mắt lần nữa hay không." },
+            { en: "A sudden defect in the adhesive used on a shipping parcel proved to be a flammable culprit, threatening to halt progress.", vi: "Một khiếm khuyết bất ngờ ở chất kết dính được sử dụng trên bưu kiện vận chuyển lại là thủ phạm dễ cháy, đe dọa làm đình trệ tiến độ." },
+            { en: "The crew had to evacuate the lab to avoid a premature disaster, escaping the tumult.", vi: "Đội ngũ đã phải sơ tán khỏi phòng thí nghiệm để tránh một thảm họa tàn khốc sớm xảy ra, thoát khỏi sự hỗn loạn." },
+            { en: "The billionaire had to testify before a solemn committee under intense scrutiny.", vi: "Vị tỷ phú đã phải làm chứng trước một ủy ban trang nghiêm dưới sự giám sát chặt chẽ." },
+            { en: "\"It is not a satire,\" he declared in fluent French, keeping a dignified profile.", vi: "\"Đó không phải là một trò trào phúng,\" ông tuyên bố bằng tiếng Pháp trôi chảy, giữ vẻ ngoài đầy phẩm giá." },
+            { en: "\"We aspire to allocate resources fairly, like an appetizing feast.", vi: "\"Chúng tôi khao khát phân bổ tài nguyên một cách công bằng, như một bữa tiệc ngon miệng." },
+            { en: "We will not flatter the rich nor limp away like a coward or a lame dog.", vi: "Chúng ta sẽ không tâng bốc người giàu cũng như không khập khiễng bước đi như một kẻ hèn nhát hay một con chó què." },
+            { en: "We will not let our ideals collide with greed.\"", vi: "Chúng ta sẽ không để lý tưởng của mình va chạm với lòng tham.\"" },
+            { en: "His tenacious speech tried to invoke a sense of shared purpose, a constellation of hope.", vi: "Bài phát biểu kiên cường của anh cố gắng khơi gợi ý thức về mục đích chung, một chòm sao của hy vọng." },
+            { en: "He explained that just as photosynthesis needs sunlight and pollen needs bees, a vibrant economy requires the free flow of ideas to grow, much like a sapling in a nursery.", vi: "Ông giải thích rằng cũng như quá trình quang hợp cần ánh sáng mặt trời và phấn hoa cần ong, một nền kinh tế sôi động đòi hỏi dòng chảy tự do của các ý tưởng để phát triển, rất giống một cây non trong vườn ươm." },
+            { en: "\"We must condense our efforts to regain trust,\" he urged, showing no remorse for his ambitious vision.", vi: "\"Chúng ta phải cô đọng những nỗ lực của mình để lấy lại niềm tin,\" ông thúc giục, không hề tỏ ra hối hận vì tầm nhìn tham vọng của mình." },
+            { en: "He refused to personalize the attacks or yield to the discord.", vi: "Ông từ chối cá nhân hóa các cuộc tấn công hay nhượng bộ trước sự bất hòa." },
+            { en: "Many began to resent his wealth, but he stood firm.", vi: "Nhiều người bắt đầu phẫn nộ với sự giàu có của ông, nhưng ông vẫn đứng vững." },
+            { en: "But a sudden intermittent seizure of the market caused a sharp plunge.", vi: "Nhưng một cơn co giật gián đoạn bất ngờ của thị trường đã gây ra một cú lao dốc mạnh." },
+            { en: "Experts in psychiatry conducted a psychiatric evaluation of the market's irrational behavior, suggesting a deep-seated dependency on old ways, a reflex to panic.", vi: "Các chuyên gia tâm thần học đã tiến hành đánh giá tâm thần đối với hành vi phi lý của thị trường, cho thấy sự phụ thuộc sâu sắc vào những lối mòn cũ, một phản xạ dẫn đến hoảng loạn." },
+            { en: "A swarm of reporters gathered.", vi: "Một đám đông phóng viên đã tụ tập lại." },
+            { en: "The billionaire watched the ticker dump stocks, feeling a tickle of anxiety.", vi: "Vị tỷ phú nhìn bảng giá chứng khoán xả hàng, cảm thấy một chút lo lắng." },
+            { en: "The texture of the economy was changing, shifting from intermediate stability to outright chaos.", vi: "Kết cấu của nền kinh tế đang thay đổi, chuyển từ sự ổn định trung gian sang sự hỗn loạn hoàn toàn." },
+            { en: "To calm the panic, he hosted a hearty reception in a hospitable cove near the manor.", vi: "Để xoa dịu sự hoảng loạn, ông đã tổ chức một buổi tiệc chiêu đãi thịnh soạn tại một vịnh nhỏ hiếu khách gần dinh thự." },
+            { en: "He played a soothing concerto on the piano, trying to induce a trance among the investors.", vi: "Ông đã chơi một bản concerto êm dịu trên cây đàn piano, cố gắng đưa các nhà đầu tư vào trạng thái xuất thần." },
+            { en: "\"We must not let secrecy or linguistic barriers divide us,\" he said, handing out delicious food with a silver utensil.", vi: "\"Chúng ta không được để sự bí mật hay rào cản ngôn ngữ chia rẽ chúng ta,\" ông nói, đồng thời phân phát những món ăn ngon lành bằng một dụng cụ bạc." },
+            { en: "He asked them to inhale deeply, to find their center.", vi: "Ông yêu cầu họ hít thở sâu, để tìm lại sự cân bằng." },
+            { en: "Eventually, the poll numbers began to rise anew.", vi: "Cuối cùng, các con số thăm dò bắt đầu tăng trở lại." },
+            { en: "The innovative electromagnetic system managed to penetrate the market, and duplicate early successes.", vi: "Hệ thống điện từ đổi mới đã thâm nhập thành công vào thị trường và nhân bản những thành công ban đầu." },
+            { en: "The global economy, once a subject of dreary despair, began to soar again like a phoenix, proving that with ingenious innovation and inclusive solidarity, even the most deeply rooted problems could be tackled.", vi: "Nền kinh tế toàn cầu, từng là chủ đề của sự tuyệt vọng ảm đạm, đã bắt đầu bay vút lên một lần nữa như một con phượng hoàng, chứng minh rằng với sự đổi mới tài tình và sự đoàn kết hòa nhập, ngay cả những vấn đề bám rễ sâu nhất cũng có thể được giải quyết." },
+            { en: "The Festival of the Globe  It was the grandest multicultural festival of the decade, known to synthesize traditions from every sector of the world into a massive, fluid interchange of art and humanity.", vi: "Lễ hội Toàn cầu. Đó là lễ hội đa văn hóa hoành tráng nhất trong thập kỷ, được biết đến với việc tổng hợp các truyền thống từ mọi khu vực trên thế giới thành một sự giao thoa khổng lồ, linh hoạt của nghệ thuật và nhân loại." },
+            { en: "It was meant to be an immersive sensory experience, an event to generate goodwill and justify unity amidst concerns of overpopulation and tyranny.", vi: "Nó được dự định là một trải nghiệm giác quan đắm chìm, một sự kiện để tạo ra thiện chí và minh chứng cho sự đoàn kết giữa những lo ngại về bùng nổ dân số và sự bạo chúa." },
+            { en: "Organized by an industrious columnist and a veteran advocacy group, the festival aimed to replicate the hospitality of diverse nations.", vi: "Được tổ chức bởi một người phụ trách chuyên mục cần mẫn và một nhóm vận động kỳ cựu, lễ hội nhằm mục đích tái hiện lòng hiếu khách của các quốc gia đa dạng." },
+            { en: "They managed to assemble the event on a massive hectare of adjoining pasture and turf near a metropolitan reservoir, complete with a terrace overlooking the delta.", vi: "Họ đã xoay sở để tổ chức sự kiện trên một khu vực rộng lớn hàng hecta gồm đồng cỏ và bãi cỏ liền kề gần một hồ chứa nước của đô thị, hoàn chỉnh với một sân hiên nhìn ra đồng bằng." },
+            { en: "A grand arch made of granite and moss was built to stand erect as the main entrance, and volunteers took time to renovate an old gazebo on the grounds.", vi: "Một mái vòm lớn làm bằng đá granite và rêu được xây dựng thẳng đứng làm lối vào chính, và các tình nguyện viên đã dành thời gian để cải tạo một vọng lâu cũ trên khuôn viên." },
+            { en: "To fulfill the event's goals, the committee had to revise many plans.", vi: "Để hoàn thành các mục tiêu của sự kiện, ủy ban đã phải sửa đổi nhiều kế hoạch." },
+            { en: "The sheer bulk of the exhibits threatened to overwhelm the space.", vi: "Số lượng khổng lồ của các vật trưng bày có nguy cơ áp đảo không gian." },
+            { en: "They had to cram everything into the venue, utilizing a shortcut analogous to an intricate maze.", vi: "Họ đã phải nhồi nhét mọi thứ vào địa điểm, sử dụng một lối tắt tương tự như một mê cung phức tạp." },
+            { en: "They hired a courteous janitor crew, who used liberal amounts of detergent to ensure no foul odors or omission of cleanliness would penalize the experience.", vi: "Họ đã thuê một đội ngũ lao công lịch sự, những người đã sử dụng nhiều chất tẩy rửa để đảm bảo không có mùi hôi hoặc sự thiếu sót trong việc giữ gìn sạch sẽ nào làm hỏng trải nghiệm." },
+            { en: "Even the locker depot, built on a gravel slab near a replica of an ancient mansion, was kept immaculate.", vi: "Ngay cả khu vực tủ đựng đồ, được xây dựng trên một phiến sỏi gần bản sao của một dinh thự cổ, cũng được giữ sạch sẽ không tì vết." },
+            { en: "In the culinary sector, chefs worked with fragrant seasoning, vinegar, sodium, and charcoal to create dishes that would outnumber any casual feast.", vi: "Trong khu vực ẩm thực, các đầu bếp đã làm việc với các loại gia vị thơm, giấm, natri và than củi để tạo ra những món ăn với số lượng vượt xa bất kỳ bữa tiệc thông thường nào." },
+            { en: "One staple dish was an export from the outback, cooked over amber coals that gave off a pleasant fume rather than the harsh smoke of petroleum.", vi: "Một món ăn chính là đặc sản xuất khẩu từ vùng hẻo lánh, được nấu trên than hồng hổ phách tỏa ra mùi hương dễ chịu chứ không phải khói gay gắt của dầu mỏ." },
+            { en: "Another stall featured a synthesis of mandarin and regional cuisines, where a prototype device shaped like a funnel was used to invert and mix ingredients.", vi: "Một gian hàng khác giới thiệu sự tổng hợp giữa ẩm thực phương Đông và các vùng miền, nơi một thiết bị nguyên mẫu có hình giống cái phễu được sử dụng để đảo ngược và trộn lẫn các nguyên liệu." },
+            { en: "The output was a savory paste, a conversion of raw goods into a masterpiece.", vi: "Thành phẩm là một hỗn hợp sệt thơm ngon, một sự biến đổi từ hàng hóa thô thành một kiệt tác." },
+            { en: "Even the bitter vine leaves and seasoned ore-like chunks of dried meat were a hit.", vi: "Ngay cả những chiếc lá nho đắng và những miếng thịt khô có tẩm gia vị trông giống như quặng cũng là một món ăn thu hút." },
+            { en: "Patrons would subsist on these delicacies, proving the inherent value of culinary art.", vi: "Thực khách sẽ sống nhờ vào những món ngon này, chứng minh giá trị vốn có của nghệ thuật ẩm thực." },
+            { en: "A misguided attempt to emulate a vampire-themed dish with red syrup that looked like moist saliva or spit drew sarcastic scorn from a food critic, but the overjoyed crowds didn't seem to mind.", vi: "Một nỗ lực sai lầm nhằm bắt chước một món ăn theo chủ đề ma cà rồng với xi-rô đỏ trông giống như nước bọt ẩm ướt hoặc bãi nhổ đã thu hút sự chế nhạo mỉa mai từ một nhà phê bình ẩm thực, nhưng đám đông vui mừng quá đỗi dường như không bận tâm." },
+            { en: "\"Nope,\" said a tolerant local, wiping a streak of sauce from his chin, \"it takes guts to try it.\"", vi: "\"Không,\" một người dân địa phương khoan dung nói, lau đi một vệt nước sốt trên cằm, \"phải có can đảm mới dám thử.\"" },
+            { en: "The entertainment was equally inventive.", vi: "Hoạt động giải trí cũng sáng tạo không kém." },
+            { en: "A habitual acrobat would rehearse her wavy movements, her stunt work so graceful she seemed to defy the statute of gravity.", vi: "Một diễn viên nhào lộn điêu luyện tập dượt các chuyển động lượn sóng của mình, công việc đóng thế của cô uyển chuyển đến mức cô dường như thách thức cả định luật trọng lực." },
+            { en: "A hereditary earl from Europe and a local deputy presented an analogy about ancestry, their voices rising to harmonize in a traditional hymn.", vi: "Một bá tước cha truyền con nối từ Châu Âu và một cấp phó địa phương đã trình bày một sự suy diễn về tổ tiên, giọng nói của họ vút cao để hòa quyện trong một bài thánh ca truyền thống." },
+            { en: "An archer showcased her skills, aiming to pierce a tiny target resembling a cricket on a distant pebble.", vi: "Một cung thủ phô diễn kỹ năng của mình, nhắm đến việc xuyên thủng một mục tiêu nhỏ xíu giống như một con dế trên một viên sỏi ở phía xa." },
+            { en: "The procession included actors who would depict a historical tyrant demanding a ransom from his prey, a story where the villain was eventually defeated.", vi: "Đoàn diễu hành bao gồm các diễn viên khắc họa một bạo chúa trong lịch sử đang đòi tiền chuộc từ con mồi của mình, một câu chuyện mà kẻ phản diện cuối cùng bị đánh bại." },
+            { en: "A prophet character stood by a pier, declaring that the warmth of the day—measured on a thermometer in fahrenheit—was a sign of good fortune.", vi: "Một nhân vật tiên tri đứng bên bến tàu, tuyên bố rằng sự ấm áp của ngày hôm đó — được đo trên nhiệt kế bằng độ F — là một dấu hiệu của sự may mắn." },
+            { en: "Though the weather had been glacial just weeks prior, the sudden shift was a paradox that seemed to heighten the festival's magic.", vi: "Mặc dù thời tiết đã từng lạnh như băng chỉ vài tuần trước đó, sự chuyển biến đột ngột này là một nghịch lý dường như làm tăng thêm sự kỳ diệu của lễ hội." },
+            { en: "The sun's rays would tilt through a grove of trees, casting shadows over a replica tent.", vi: "Những tia nắng mặt trời chiếu nghiêng qua một lùm cây, đổ bóng lên một chiếc lều mô phỏng." },
+            { en: "However, behind the scenes, some allege that a conspiracy threatened to constrain the festival.", vi: "Tuy nhiên, đằng sau hậu trường, một số người cáo buộc rằng một âm mưu đã đe dọa hạn chế lễ hội." },
+            { en: "Rumors surfaced of a plot to suspend the event, citing an obscure tariff on imported goods and a judicial petition to scrap the whole thing due to a perceived casualty risk from a tall structure.", vi: "Nhiều tin đồn nổi lên về một âm mưu nhằm đình chỉ sự kiện, với lý do là một mức thuế mập mờ đối với hàng hóa nhập khẩu và một bản kiến nghị tư pháp nhằm hủy bỏ toàn bộ sự kiện do nhận thấy rủi ro thương vong từ một cấu trúc cao." },
+            { en: "The organizers refused to defer.", vi: "Các nhà tổ chức đã từ chối trì hoãn." },
+            { en: "They knew their credentials would outweigh any false claims.", vi: "Họ biết rằng uy tín của họ sẽ có sức nặng hơn bất kỳ tuyên bố sai lệch nào." },
+            { en: "They had to prod local officials, who tried to intimidate them.", vi: "Họ đã phải thúc giục các quan chức địa phương, những người đã cố gắng đe dọa họ." },
+            { en: "\"We abide by the rules,\" the columnist declared, pointing a forefinger.", vi: "\"Chúng tôi tuân thủ các quy định,\" nhà báo phụ trách chuyên mục tuyên bố, chỉ ngón trỏ của mình." },
+            { en: "\"Do not try to restrain us.\"", vi: "\"Đừng cố gắng kìm hãm chúng tôi.\"" },
+            { en: "They refused to subscribe to the idea that their multicultural dream would expire.", vi: "Họ từ chối chấp nhận ý kiến rằng giấc mơ đa văn hóa của họ sẽ hết hạn." },
+            { en: "They proved their safety measures were sound, ensuring not a single casualty.", vi: "Họ đã chứng minh các biện pháp an toàn của họ là vững chắc, đảm bảo không có một thương vong nào." },
+            { en: "They held the patent on perseverance.", vi: "Họ nắm giữ sự độc quyền về lòng kiên trì." },
+            { en: "At dusk, the festival's dual nature became apparent.", vi: "Vào lúc chạng vạng, bản chất kép của lễ hội trở nên rõ ràng." },
+            { en: "What started as an energetic sprint of daytime activities transitioned into a communal evening of reflection.", vi: "Những gì bắt đầu như một cuộc chạy nước rút tràn đầy năng lượng của các hoạt động ban ngày đã chuyển thành một buổi tối sinh hoạt cộng đồng để suy ngẫm." },
+            { en: "People who had seemed to comprise different worlds now found common ground.", vi: "Những người dường như thuộc về những thế giới khác nhau giờ đây đã tìm thấy tiếng nói chung." },
+            { en: "A man with binoculars scanned the whereabouts of his family, only to find them laughing with foreign visitors.", vi: "Một người đàn ông với chiếc ống nhòm quét tìm tung tích của gia đình mình, chỉ để thấy họ đang cười đùa với những du khách nước ngoài." },
+            { en: "A child tried to mimic the call of an exotic bird, giving it a playful peck on a wooden statue.", vi: "Một đứa trẻ cố gắng bắt chước tiếng kêu của một loài chim kỳ lạ, đồng thời gõ nhẹ một cách tinh nghịch lên một bức tượng gỗ." },
+            { en: "To avoid any euphemism, the organizers stated plainly: this festival was a beacon of hope.", vi: "Để tránh bất kỳ sự nói giảm nói tránh nào, các nhà tổ chức đã nói thẳng: lễ hội này là một ngọn hải đăng của niềm hy vọng." },
+            { en: "They had an oversight group oversee the final cleanup.", vi: "Họ đã có một nhóm giám sát chỉ đạo việc dọn dẹp cuối cùng." },
+            { en: "It proved that despite our differences, and vice versa, humanity could unite.", vi: "Nó chứng minh rằng bất chấp những sự khác biệt của chúng ta, và ngược lại, nhân loại có thể đoàn kết." },
+            { en: "As the final notes of a concert rang out, not a single yawn was seen.", vi: "Khi những nốt nhạc cuối cùng của buổi hòa nhạc vang lên, không hề thấy một cái ngáp nào." },
+            { en: "The festival would haunt the memories of all who attended, a beautiful reminder of our shared world.", vi: "Lễ hội sẽ lưu lại mãi trong ký ức của tất cả những ai đã tham dự, một lời nhắc nhở tuyệt đẹp về thế giới chung của chúng ta." }
+        ];
+        (function() {
+            var popup = document.createElement('div');
+            popup.className = 'translate-popup';
+            popup.id = 'translate-popup';
+            
+            popup.style.cssText = 'position: absolute; background: #2d3436; color: white; padding: 15px 30px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 2000; display: none; flex-direction: column; gap: 10px; max-width: 350px; text-align: left; white-space: normal; word-wrap: break-word; word-break: normal;';
+            
+            var btnGoogle = document.createElement('button');
+            btnGoogle.innerHTML = '🌐 Google Dịch';
+            btnGoogle.style.cssText = 'background: #34495e; color: white; border: 1px solid #7f8c8d; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; width: 100%; margin-top: 5px; font-family: inherit; font-size: inherit;';
+            btnGoogle.onmouseover = () => btnGoogle.style.background = '#2c3e50';
+            btnGoogle.onmouseout = () => btnGoogle.style.background = '#34495e';
+            
+            var btnContext = document.createElement('button');
+            btnContext.innerHTML = '📖 Dịch Sát Nghĩa';
+            btnContext.style.cssText = 'background: #3498db; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; width: 100%; font-family: inherit; font-size: inherit;';
+            btnContext.onmouseover = () => btnContext.style.background = '#2980b9';
+            btnContext.onmouseout = () => btnContext.style.background = '#3498db';
+
+            var transResult = document.createElement('div');
+            transResult.style.cssText = 'display: none; flex-direction: column; width: 100%; white-space: normal; word-wrap: break-word;';
+
+            var closeBtn = document.createElement('span');
+            closeBtn.innerHTML = '✖';
+            closeBtn.style.cssText = 'position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 14px; color: #bdc3c7; display: none; transition: 0.3s;';
+            closeBtn.onmouseover = () => closeBtn.style.color = 'white';
+            closeBtn.onmouseout = () => closeBtn.style.color = '#bdc3c7';
+            closeBtn.onclick = function(e) {
+                e.stopPropagation();
+                popup.style.display = 'none';
+            };
+
+            popup.appendChild(closeBtn);
+            popup.appendChild(btnGoogle);
+            popup.appendChild(btnContext);
+            popup.appendChild(transResult);
+            document.body.appendChild(popup);
+
+            var selectedText = '';
+            var currentFontSize = '16px';
+
+            document.addEventListener('mouseup', handleSelection);
+            document.addEventListener('touchend', function() { setTimeout(handleSelection, 300); });
+
+            function normalizeStr(str) {
+                return str.replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+            }
+
+            function handleSelection(e) {
+                if (popup.contains(e.target)) return;
+                var sel = window.getSelection();
+                var text = sel.toString().trim();
+                
+                if (text.length > 2 && text.length < 1000) {
+                    selectedText = text;
+                    var range = sel.getRangeAt(0);
+                    var rects = range.getClientRects();
+                    if(rects.length === 0) return;
+                    var lastRect = rects[rects.length - 1];
+                    
+                    var parentNode = range.commonAncestorContainer;
+                    if (parentNode.nodeType === 3) parentNode = parentNode.parentNode;
+                    currentFontSize = window.getComputedStyle(parentNode).fontSize;
+                    
+                    // Set popup font size equal to selected text font size
+                    popup.style.fontSize = currentFontSize;
+                    transResult.style.fontSize = '1em'; // relative to popup
+                    
+                    transResult.style.display = 'none';
+                    transResult.innerHTML = '';
+                    btnGoogle.style.display = 'block';
+                    btnContext.style.display = 'block';
+                    closeBtn.style.display = 'none';
+
+                    popup.style.padding = '15px';
+                    popup.style.display = 'flex';
+                    
+                    var popupRect = popup.getBoundingClientRect();
+                    
+                    // Align left with the last word's left edge
+                    var leftPos = rects[0].left + window.scrollX;
+                    if (leftPos + popupRect.width > window.innerWidth + window.scrollX - 10) {
+                        leftPos = window.innerWidth + window.scrollX - popupRect.width - 10;
+                    }
+                    if (leftPos < window.scrollX + 10) leftPos = window.scrollX + 10;
+                    
+                    // Position below the last word
+                    var topPos = lastRect.bottom + window.scrollY + 10;
+
+                    popup.style.left = leftPos + 'px';
+                    popup.style.top = topPos + 'px';
+                } else {
+                    popup.style.display = 'none';
+                }
+            }
+
+            btnGoogle.addEventListener('mousedown', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                if (selectedText) {
+                    var url = 'https://translate.google.com/?sl=en&tl=vi&text=' + encodeURIComponent(selectedText);
+                    window.open(url, '_blank');
+                }
+                popup.style.display = 'none';
+            });
+
+            btnContext.addEventListener('mousedown', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                if (!selectedText) return;
+                
+                let normSel = normalizeStr(selectedText);
+                let bestMatch = null;
+                let minLength = Infinity;
+                
+                for (let i = 0; i < preTranslatedBookData.length; i++) {
+                    let combinedEnRaw = '';
+                    let tempVi = [];
+                    let tempEn = [];
+                    for (let j = i; j < preTranslatedBookData.length; j++) {
+                        combinedEnRaw += preTranslatedBookData[j].en + ' ';
+                        tempVi.push(preTranslatedBookData[j].vi);
+                        tempEn.push(preTranslatedBookData[j].en);
+                        
+                        let combinedNorm = normalizeStr(combinedEnRaw);
+                        
+                        if (combinedNorm === normSel) {
+                            bestMatch = { vi: tempVi.join(' '), en: tempEn.join(' ') };
+                            minLength = 0;
+                            break;
+                        }
+                                                
+                        if (combinedNorm.length > normSel.length + 500) {
+                            break;
+                        }
+                    }
+                    if (minLength === 0) break;
+                }
+                
+                let matchedVi = bestMatch ? bestMatch.vi : '';
+                let matchedEn = bestMatch ? bestMatch.en : '';
+                
+                if (matchedVi) {
+                    btnGoogle.style.display = 'none';
+                    btnContext.style.display = 'none';
+                    closeBtn.style.display = 'block';
+                    
+                    popup.style.padding = '15px 30px';
+                    transResult.style.display = 'flex';
+                    
+                    transResult.innerHTML = `
+                        <div style="margin-bottom: 5px;">
+                            <span style="display: block; font-size: 1.3em; font-weight: bold; color: #fdcb6e; text-transform: capitalize; text-align: left; padding-right: 15px; white-space: normal;">Dịch Văn Cảnh</span>
+                        </div>
+                        <div style="font-weight: bold; margin-bottom: 10px; white-space: normal; line-height: 1.5; font-size: 1em;">Nghĩa: ${matchedVi}</div>
+                        <div style="margin-top: 10px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 8px;">
+                            <span style="margin-bottom:5px; display:inline-block; font-size: 0.9em; color: #aaa;">Bản gốc:</span>
+                            <div style="font-style: italic; color: #ddd; font-size: 0.95em; white-space: normal; line-height: 1.5;">"${matchedEn}"</div>
+                        </div>
+                    `;
+                    
+                    var sel = window.getSelection();
+                    if(sel.rangeCount > 0) {
+                        var range = sel.getRangeAt(0);
+                        var rects = range.getClientRects();
+                        var lastRect = rects[rects.length - 1];
+                        
+                        var newLeftPos = rects[0].left + window.scrollX;
+                        if (newLeftPos + popup.offsetWidth > window.innerWidth + window.scrollX - 10) {
+                            newLeftPos = window.innerWidth + window.scrollX - popup.offsetWidth - 10;
+                        }
+                        if (newLeftPos < window.scrollX + 10) newLeftPos = window.scrollX + 10;
+                        
+                        popup.style.left = newLeftPos + 'px';
+                        popup.style.top = (lastRect.bottom + window.scrollY + 10) + 'px';
+                    }
+                    
+                } else {
+                    alert('Vui lòng bôi đen ĐÚNG VÀ TRỌN VẸN MỘT HOẶC NHIỀU CÂU (không được lở dở giữa chừng) để sử dụng tính năng Dịch Sát Nghĩa!');
+                    popup.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('mousedown', function(e) {
+                if (!popup.contains(e.target)) {
+                    popup.style.display = 'none';
+                }
+            });
+        })();
+        </script>
+    </body>
+    
+    
 
 </html>

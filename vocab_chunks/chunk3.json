@@ -1,0 +1,414 @@
+[
+  {
+    "word": "maintain",
+    "meaning": "bảo quản, giữ gìn, duy trì"
+  },
+  {
+    "word": "prerequisite",
+    "meaning": "điều tiên quyết, điều kiện tiên quyết, cần trước hết, đòi hỏitrước hết;"
+  },
+  {
+    "word": "quality",
+    "meaning": "chất lượng, phẩm chất; đặc tính, năng lực, tài năng, đức tính;"
+  },
+  {
+    "word": "obtain",
+    "meaning": "đạt được, thu được, giành được (bằng nỗ lực được lập kế hoạc từ trước)"
+  },
+  {
+    "word": "smooth",
+    "meaning": "nhẵn, trơn, mượt, phẳng lặng; trôi chảy, êm thấm; hòa nhã, lễđộ;"
+  },
+  {
+    "word": "source",
+    "meaning": "nguồn, nguồn gốc"
+  },
+  {
+    "word": "stationery",
+    "meaning": "đồ dùng văn phòng, văn phòng phẩm(giấy để viết và bao thư)"
+  },
+  {
+    "word": "accurately",
+    "meaning": "(một cách) chính xác, đúng đắn, xác đáng"
+  },
+  {
+    "word": "carrier",
+    "meaning": "người hoặc một hãng vận chuyển"
+  },
+  {
+    "word": "catalogue",
+    "meaning": "ca ta lô; lập danh mục"
+  },
+  {
+    "word": "fulfill",
+    "meaning": "thực hiện, hoàn thành, làm trọn (nhiệm vụ);đáp ứng (mong muốn, mục đích)"
+  },
+  {
+    "word": "integral",
+    "meaning": "tích phân;tích hợp, cần thiết cho trọn vẹn, trọn vẹn, nguyên khối, quan trọng;"
+  },
+  {
+    "word": "inventory",
+    "meaning": "(n): (sự/bản) kiểm kê, tóm tắt; hàng hóa tồn kho, hàng trongkho;(v): kiểm kê, tóm tắt, lập danh mục hàng hóa"
+  },
+  {
+    "word": "minimize",
+    "meaning": "giảm tới mức tối thiểu; làm giảm tầm quan trọng, làm nhỏ lại"
+  },
+  {
+    "word": "on-hand",
+    "meaning": "có thể dùng được, có sẵn (available);"
+  },
+  {
+    "word": "remember",
+    "meaning": "nhớ, nhớ lại, ghi nhớ"
+  },
+  {
+    "word": "ship",
+    "meaning": "vận chuyển"
+  },
+  {
+    "word": "shipper",
+    "meaning": "người chở hàng, công ty vận chuyển hàng; người gửi hàng"
+  },
+  {
+    "word": "sufficient",
+    "meaning": "đủ, có đủ (enough);"
+  },
+  {
+    "word": "supply",
+    "meaning": "cung cấp, tiếp tế, đáp ứng (nhu cầu); đồ dự trữ, sự cung cấp"
+  },
+  {
+    "word": "charge",
+    "meaning": "(n): tiền phải trả, tiền công, thù lao;(v): tính tiền, đòi trả, bắt chịu chiphí;"
+  },
+  {
+    "word": "compile",
+    "meaning": "thu thập, biên soạn, soạn thảo"
+  },
+  {
+    "word": "customer",
+    "meaning": "khách hàng"
+  },
+  {
+    "word": "discount",
+    "meaning": "giảm giá, chiết khấu"
+  },
+  {
+    "word": "efficient",
+    "meaning": "hiệu quả, có năng suất cao"
+  },
+  {
+    "word": "estimate",
+    "meaning": "ước lượng, đánh giá; sự ước lượng, sự đánh giá"
+  },
+  {
+    "word": "impose",
+    "meaning": "áp đặt, ép buộc, bắt ai phải làm gì đó; đánh (thuế...), bắt chịu;thường đi với on, upon;"
+  },
+  {
+    "word": "mistake",
+    "meaning": "(n): lỗi, sai, nhầm; (v): phạm lỗi, phạm sai lầm; hiểu nhầm, nhầmlẫn;"
+  },
+  {
+    "word": "order",
+    "meaning": "(n): thứ tự, trật tự, thứ, bậc, loại; mệnh lệnh, nội quy, thủ tục; sự đặt hàng, đơnđặt hàng;(v): ra lệnh, chỉ dẫn; đặt hàng, gọi món ăn;"
+  },
+  {
+    "word": "promptly",
+    "meaning": "mau lẹ, nhanh chóng, ngay lập tức, tức thời;"
+  },
+  {
+    "word": "rectify",
+    "meaning": "chỉnh lưu; sửa lại cho đúng,sửa cho đúng, sửa cho ngay;"
+  },
+  {
+    "word": "terms",
+    "meaning": "điều kiện, điều khoản; thời hạn, kỳ hạn, học kỳ, khóa học, phiên tòa"
+  },
+  {
+    "word": "adjustment",
+    "meaning": "(n): điều chỉnh, chỉnh lý, sự sửa lại cho đúng"
+  },
+  {
+    "word": "automatically",
+    "meaning": "(một cách) tự động"
+  },
+  {
+    "word": "crucial",
+    "meaning": "cốt yếu, chủ yếu, có tính quyết định;"
+  },
+  {
+    "word": "discrepancy",
+    "meaning": "sự khác nhau, trái ngược nhau; không nhấtquán/thống nhất;"
+  },
+  {
+    "word": "disturb",
+    "meaning": "quấy rầy, quấy rối, làm náo động, gây náo loạn, làm ồn, làmphiền;"
+  },
+  {
+    "word": "liability",
+    "meaning": "trách nhiệm, nghĩa vụ pháp lý; nguy cơ, điều gây khó khăntrở ngại;"
+  },
+  {
+    "word": "reflection",
+    "meaning": "(sự) phản chiếu, phản xạ, phản ánh, hình ảnh; phê phán,nhận xét;"
+  },
+  {
+    "word": "run",
+    "meaning": "chạy, vận hành, hoạt động, thực hiện;"
+  },
+  {
+    "word": "scan",
+    "meaning": "nhìn lướt, đọc lướt; quét (ra đa, đèn, hình ảnh...);"
+  },
+  {
+    "word": "subtract",
+    "meaning": "trừ đi, khấu trừ"
+  },
+  {
+    "word": "tedious",
+    "meaning": "chán ngắt, tẻ nhạt, nhạt nhẽo, buồn tẻ"
+  },
+  {
+    "word": "verify",
+    "meaning": "kiểm tra, thẩm tra, xác minh;"
+  },
+  {
+    "word": "accept",
+    "meaning": "đồng ý, chấp thuận; đảm nhận (công việc)"
+  },
+  {
+    "word": "balance",
+    "meaning": "Số dư tài khoản; cân bằng/quyết toán tài khoản"
+  },
+  {
+    "word": "borrow",
+    "meaning": "vay, mượn"
+  },
+  {
+    "word": "cautiously",
+    "meaning": "thận trọng, cẩn thận"
+  },
+  {
+    "word": "deduct",
+    "meaning": "khấu trừ"
+  },
+  {
+    "word": "dividend",
+    "meaning": "Tiền lãi cổ phần, cổ tức;"
+  },
+  {
+    "word": "down payment",
+    "meaning": "tiền đặt cọc; tiền trả trước một phần, sự trả trước một phần;"
+  },
+  {
+    "word": "mortgage",
+    "meaning": "cầm cố, thế chấp; tiền thế chấp, khoản thế chấp"
+  },
+  {
+    "word": "restricted",
+    "meaning": "bị hạn chế, bị giới hạn"
+  },
+  {
+    "word": "signature",
+    "meaning": "chữ ký"
+  },
+  {
+    "word": "take out",
+    "meaning": "rút ra, lấy ra"
+  },
+  {
+    "word": "transaction",
+    "meaning": "sự giao dịch; hành động giao dịch;"
+  },
+  {
+    "word": "accounting",
+    "meaning": "kế toán"
+  },
+  {
+    "word": "accumulate",
+    "meaning": "tích lũy, chất đống, chồng chất; làm giàu, tích của;"
+  },
+  {
+    "word": "asset",
+    "meaning": "tài sản, vốn quý;"
+  },
+  {
+    "word": "audit",
+    "meaning": "kiểm toán, báo cáo kiểm toán"
+  },
+  {
+    "word": "budget",
+    "meaning": "ngân quỹ, ngân sách; dự toán, tiêu tốn, dự thảo ngân sách;"
+  },
+  {
+    "word": "build up",
+    "meaning": "Sự tăng cường, xây dựng dần lên; tăng lên, nâng cao"
+  },
+  {
+    "word": "client",
+    "meaning": "khách hàng"
+  },
+  {
+    "word": "debt",
+    "meaning": "khoản nợ"
+  },
+  {
+    "word": "outstanding",
+    "meaning": "còn tồn tại, chưa giải quyết xong, chưa trả nợ"
+  },
+  {
+    "word": "profitably",
+    "meaning": "có lợi, có ích; thuận lợi;sinh lãi, mang lại lợi nhuận;"
+  },
+  {
+    "word": "reconcile",
+    "meaning": "giải hoà, giảng hoà, làm cho hoà thuận;điều hoà, làm hoà hợp, cân bằng sổ sách kế toán, cân bằng tài khoản"
+  },
+  {
+    "word": "turnover",
+    "meaning": "doanh số, doanh thu;tỷ lệ luân chuyển hàng hóa;tỷ lệ thay thế nhân công;"
+  },
+  {
+    "word": "aggressive",
+    "meaning": "xông xáo, tháo vát, năng nổ, linh hoạt; hung hăng, gây hấn, bạo lực;"
+  },
+  {
+    "word": "attitude",
+    "meaning": "thái độ, quan điểm"
+  },
+  {
+    "word": "commit",
+    "meaning": "cam kết, ủy thác"
+  },
+  {
+    "word": "conservative",
+    "meaning": "bảo thủ, thận trọng, dè dặt;"
+  },
+  {
+    "word": "fund",
+    "meaning": "(n) nguồn tiền, quỹ dự trữ; kho; (v) tài trợ, cấp tiền cho;"
+  },
+  {
+    "word": "invest",
+    "meaning": "đầu tư"
+  },
+  {
+    "word": "long term",
+    "meaning": "dài hạn"
+  },
+  {
+    "word": "portfolio",
+    "meaning": "danh mục vốn đầu tư, danh mục đầu tư;"
+  },
+  {
+    "word": "pull out",
+    "meaning": "(v) rút ra, rút khỏi, thôi không tham gia; (n) sự rút lui"
+  },
+  {
+    "word": "resource",
+    "meaning": "tài nguyên, tài sản"
+  },
+  {
+    "word": "return",
+    "meaning": "tiền thu về, tiền lãi, trả lại"
+  },
+  {
+    "word": "wise",
+    "meaning": "khôn ngoan, từng trải, thông thái, uyên bác;"
+  },
+  {
+    "word": "calculation",
+    "meaning": "(sự/kết quả) tính, tính toán; ‹sự› dự tính, trù liệu, sự suy xét, sự cân nhắc;"
+  },
+  {
+    "word": "deadline",
+    "meaning": "hạn cuối, thời hạn chót"
+  },
+  {
+    "word": "file",
+    "meaning": "kê khai, nộp, gửi (đơn từ, giấy tờ, tài liệu cho cơ quan nhà nước), khởi kiện;"
+  },
+  {
+    "word": "fill out",
+    "meaning": "điền vào (cho đầy đủ);"
+  },
+  {
+    "word": "give up",
+    "meaning": "ngừng, từ bỏ, bỏ cuộc;"
+  },
+  {
+    "word": "joint",
+    "meaning": "chung, cùng nhau;"
+  },
+  {
+    "word": "owe",
+    "meaning": "nợ, mắc nợ; mang ơn, hàm ơn, chịu ơn;"
+  },
+  {
+    "word": "penalty",
+    "meaning": "khoản tiền phạt, hình phạt;"
+  },
+  {
+    "word": "preparation",
+    "meaning": "(sự) chuẩn bị, sửa soạn;"
+  },
+  {
+    "word": "refund",
+    "meaning": "(n, v): (n) sự trả lại tiền; (v) trả lại, hoàn lại tiền"
+  },
+  {
+    "word": "spouse",
+    "meaning": "vợ hoặc chồng"
+  },
+  {
+    "word": "withhold",
+    "meaning": "cố nín, cố nhịn, kìm lại, giữ lại (to refrain from, to keepfrom);từ chối không làm, từ chối không cho (to refuse to do sth);giấu, giấu diếm (toconceal)Lưu ý sự khác nhau:- To withhold sth: từ chối không cho cái gì- To refuse sth: từ chối không nhận (không chấp nhận) cái gì"
+  },
+  {
+    "word": "desire",
+    "meaning": "thèm muốn, khao khát, ao ước;"
+  },
+  {
+    "word": "detail",
+    "meaning": "kể chi tiết, trình bày tỉ mỉ;"
+  },
+  {
+    "word": "forecast",
+    "meaning": "dự đoán, dự báo trước"
+  },
+  {
+    "word": "level",
+    "meaning": "mức, cấp, cấp bậc, trình độ"
+  },
+  {
+    "word": "overall",
+    "meaning": "toàn bộ, toàn thể, tất cả; nói chung"
+  },
+  {
+    "word": "perspective",
+    "meaning": "luật xa gần, luật phối cảnh; cảnh trông xa, viễn cảnh,triển vọng"
+  },
+  {
+    "word": "project",
+    "meaning": "ước lượng, dự kiến (về mặt doanh thu)"
+  },
+  {
+    "word": "realistic",
+    "meaning": "hiện thực, thực tế"
+  },
+  {
+    "word": "target",
+    "meaning": "(v) đặt mục tiêu, nhắm vào, hướng vào; (n) mục tiêu, mục đích (goal)"
+  },
+  {
+    "word": "translation",
+    "meaning": "(n): bản dịch, bài dịch, sự chuyển đổi."
+  },
+  {
+    "word": "typical",
+    "meaning": "tiêu biểu, điển hình; đặc thù, đặc trưng, đặc tính;"
+  }
+]

@@ -447,54 +447,7 @@
 
     <script>
         // ===== TRANSLATE SELECTED TEXT =====
-        (function() {
-            var popup = document.createElement('div');
-            popup.className = 'translate-popup';
-            popup.innerHTML = '🌐 Dịch';
-            popup.id = 'translate-popup';
-            document.body.appendChild(popup);
-
-            var selectedText = '';
-
-            document.addEventListener('mouseup', handleSelection);
-            document.addEventListener('touchend', function() {
-                setTimeout(handleSelection, 300);
-            });
-
-            function handleSelection(e) {
-                var sel = window.getSelection();
-                var text = sel.toString().trim();
-                
-                if (text.length > 2 && text.length < 1000) {
-                    selectedText = text;
-                    
-                    var range = sel.getRangeAt(0);
-                    var rect = range.getBoundingClientRect();
-                    
-                    popup.style.left = (rect.left + rect.width / 2 - 40 + window.scrollX) + 'px';
-                    popup.style.top = (rect.top - 45 + window.scrollY) + 'px';
-                    popup.style.display = 'block';
-                } else {
-                    popup.style.display = 'none';
-                }
-            }
-
-            popup.addEventListener('mousedown', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                if (selectedText) {
-                    var url = 'https://translate.google.com/?sl=en&tl=vi&text=' + encodeURIComponent(selectedText);
-                    window.open(url, '_blank');
-                }
-                popup.style.display = 'none';
-            });
-
-            document.addEventListener('mousedown', function(e) {
-                if (e.target !== popup) {
-                    popup.style.display = 'none';
-                }
-            });
-        })();
+        
 
     </script>
 
@@ -579,6 +532,420 @@
         });
 </script>
 
-</body>
+
+        <script>
+        </script>
+    
+        <script>
+        const preTranslatedBookData = [
+            { en: "The shifting coastline was a distant memory.", vi: "Bờ biển đầy biến động kia giờ chỉ còn là một ký ức xa xôi." },
+            { en: "Here in the inland prairie, everything was an arid, barren wasteland.", vi: "Nơi thảo nguyên nội địa này, mọi thứ đều là một vùng đất hoang cằn cỗi và khô hạn." },
+            { en: "The drought was ongoing, turning once dense forests into hostile plains.", vi: "Trận hạn hán vẫn đang tiếp diễn, biến những khu rừng từng rậm rạp thành những vùng đồng bằng khắc nghiệt." },
+            { en: "The temperature regularly soared past forty degrees celsius.", vi: "Nhiệt độ thường xuyên tăng vọt qua ngưỡng bốn mươi độ C." },
+            { en: "It felt like an infinite furnace.", vi: "Cảm giác giống như một lò lửa vô tận." },
+            { en: "Aris, a competent bachelor holding a diploma in sociology and geology, wiped moisture from his brow.", vi: "Aris, một cử nhân tài ba có bằng về xã hội học và địa chất, lau đi những giọt mồ hôi trên trán." },
+            { en: "His intellect was keen, his analytic mind shaped by the grueling realities of the climate collapse.", vi: "Trí tuệ của anh rất nhạy bén, đầu óc phân tích của anh được nhào nặn bởi những thực tế tàn khốc của sự sụp đổ khí hậu." },
+            { en: "He lived in a rugged camp built to adjoin the ruins of an ancient abbey, whose crumbling arches looked like a bizarre cathedral under the celestial night sky.", vi: "Anh sống trong một khu trại lởm chởm được dựng sát cạnh tàn tích của một tu viện cổ, những mái vòm đổ nát của nó trông giống như một thánh đường kỳ quái dưới bầu trời đêm đầy sao." },
+            { en: "Once, this place enjoyed a temperate ecology, brimming with abundant aquatic life.", vi: "Trước kia, nơi này từng có một hệ sinh thái ôn đới, tràn ngập đời sống thủy sinh phong phú." },
+            { en: "Now, the dearth of water made the entire biosphere vulnerable.", vi: "Giờ đây, sự thiếu hụt nguồn nước đã khiến toàn bộ sinh quyển trở nên mỏng manh." },
+            { en: "His only companion was a wild dog.", vi: "Người bạn đồng hành duy nhất của anh là một con chó hoang." },
+            { en: "Finding sustenance was a mundane and tedious chore.", vi: "Tìm kiếm thức ăn là một công việc nhàm chán và tẻ nhạt." },
+            { en: "The scarce supply of edible roots required him to allot hours of repetitive digging.", vi: "Nguồn cung cấp rễ cây ăn được khan hiếm đòi hỏi anh phải dành hàng giờ đồng hồ để đào bới lặp đi lặp lại." },
+            { en: "He would extract the coarse tubers, careful not to fracture a limb on the hard rocks or trigger a blinding migraine from the sun's glare.", vi: "Anh nhổ những củ sần sùi lên, cẩn thận để không làm gãy xương tay chân do đá cứng hay gây ra một cơn đau nửa đầu dữ dội vì ánh nắng chói chang." },
+            { en: "His daily intake was a paltry meal cooked in a cracked ceramic pot, a meager culinary feat that helped him tolerate the hunger.", vi: "Khẩu phần ăn hàng ngày của anh là một bữa ăn ít ỏi được nấu trong một chiếc nồi gốm nứt nẻ, một thành quả ẩm thực đạm bạc giúp anh chống chọi lại cơn đói." },
+            { en: "He would often have to fast, building a tolerance to starvation.", vi: "Anh thường xuyên phải nhịn ăn, rèn luyện sức chịu đựng với sự chết đói." },
+            { en: "Yet, he was adept and highly resourceful, managing to secure a hidden cache of seeds.", vi: "Tuy nhiên, anh lại rất khéo léo và vô cùng tháo vát, đã xoay sở để bảo vệ được một kho hạt giống cất giấu bí mật." },
+            { en: "Far to the north, the affluent elites lived in a prominent headquarters, trying to dominate what was left.", vi: "Ở tít tận phía bắc, tầng lớp tinh hoa giàu có sống trong một trụ sở bề thế, cố gắng thống trị những gì còn sót lại." },
+            { en: "Every administrator there was corrupt.", vi: "Bất kỳ quản trị viên nào ở đó cũng đều thối nát." },
+            { en: "They would manipulate the infrastructure and retail merchandise to generate immense revenue.", vi: "Họ thao túng cơ sở hạ tầng và việc bán lẻ hàng hóa để tạo ra nguồn doanh thu khổng lồ." },
+            { en: "They'd offer a fake subsidy or a direct bribe to legislate total control, only to dispose of their toxic rubbish in the dying rivers.", vi: "Họ sẽ đưa ra một khoản trợ cấp giả mạo hoặc hối lộ trực tiếp để lập pháp nhằm kiểm soát toàn diện, chỉ để vứt rác thải độc hại của họ xuống những dòng sông đang chết dần." },
+            { en: "It was an outrage to see them violate every legitimate environmental protocol.", vi: "Thật phẫn nộ khi thấy họ vi phạm mọi quy định môi trường hợp pháp." },
+            { en: "Such deliberate cruelty would appall anyone with a shred of empathy.", vi: "Sự tàn nhẫn cố ý như vậy sẽ làm kinh hãi bất cứ ai có một chút lòng thấu cảm." },
+            { en: "Their only incentive was greed, reducing human dignity to a mere transaction.", vi: "Động lực duy nhất của họ là lòng tham, làm suy giảm nhân phẩm con người xuống chỉ còn là một cuộc giao dịch thuần túy." },
+            { en: "Aris refused to just gripe or grumble about the dire situation.", vi: "Aris từ chối việc chỉ biết càu nhàu hay than vãn về tình cảnh khốc liệt này." },
+            { en: "He wouldn't opt for convenience.", vi: "Anh sẽ không chọn sự an phận." },
+            { en: "He took a silent oath to rectify this injustice.", vi: "Anh thầm thề sẽ khắc phục sự bất công này." },
+            { en: "He felt a sudden impulse to commence a quest of immense significance.", vi: "Anh cảm thấy một sự thôi thúc bất chợt để bắt đầu một hành trình có ý nghĩa vô cùng to lớn." },
+            { en: "He needed to assess the damage and devise a remedy.", vi: "Anh cần đánh giá thiệt hại và nghĩ ra một phương thuốc cứu chữa." },
+            { en: "Using his expertise in physiology and high-level calculus, Aris began to speculate on a solution.", vi: "Bằng cách sử dụng chuyên môn của mình về sinh lý học và vi tích phân bậc cao, Aris bắt đầu suy đoán về một giải pháp." },
+            { en: "He studied theoretical texts, combining the precise laws of relativity with ancient mythology—fanciful, fabulous tales of rain gods—to gain a peculiar insight.", vi: "Anh nghiên cứu các văn bản lý thuyết, kết hợp các định luật vật lý chính xác với thần thoại cổ đại—những câu chuyện tưởng tượng, hoang đường về các vị thần mưa—để có được một cái nhìn thấu đáo và độc đáo." },
+            { en: "His goal was to harness a synthetic molecule, modifying the nucleus of a mutated indigenous plant so it could efficiently digest toxins and release pure water vapor.", vi: "Mục tiêu của anh là khai thác một phân tử tổng hợp, sửa đổi hạt nhân của một loài thực vật bản địa đột biến để nó có thể tiêu hóa chất độc một cách hiệu quả và giải phóng hơi nước tinh khiết." },
+            { en: "He had to be a proficient scientist; any mistake could impair his cognitive function or ruin the reproductive cycle of the flora, potentially attracting a deadly parasite that had already killed his spouse years prior.", vi: "Anh phải là một nhà khoa học tài ba; bất kỳ sai sót nào cũng có thể làm suy giảm chức năng nhận thức của anh hoặc phá hủy chu kỳ sinh sản của hệ thực vật, có khả năng thu hút một loại ký sinh trùng chết người đã từng giết chết người bạn đời của anh nhiều năm trước." },
+            { en: "In a makeshift pharmaceutical lab he assembled near a jagged ridge, Aris worked with haste.", vi: "Trong một phòng thí nghiệm dược phẩm dã chiến mà anh lắp ráp gần một sườn núi lởm chởm, Aris làm việc một cách vội vã." },
+            { en: "The altitude made it hard to breathe, but he would not let the thin air deter him.", vi: "Độ cao khiến anh khó thở, nhưng anh không để không khí loãng làm mình chùn bước." },
+            { en: "An audit of his supplies showed he had ample materials, though he lacked a crucial radioactive isotope.", vi: "Một cuộc kiểm tra nguồn dự trữ cho thấy anh có dồi dào vật liệu, mặc dù anh lại thiếu một đồng vị phóng xạ quan trọng." },
+            { en: "Nonetheless, he pushed forward.", vi: "Mặc dù vậy, anh vẫn tiến bước." },
+            { en: "He managed to automate the system, preparing to implement the final sequence.", vi: "Anh đã xoay sở để tự động hóa hệ thống, chuẩn bị thực hiện chuỗi trình tự cuối cùng." },
+            { en: "He watched a collision of storm clouds gather in close proximity.", vi: "Anh quan sát sự va chạm của những đám mây bão tụ tập ở một khoảng cách gần kề." },
+            { en: "He had to assert his dominance over the elements and excel.", vi: "Anh phải khẳng định sự làm chủ của mình trước các yếu tố thiên nhiên và xuất sắc vượt qua." },
+            { en: "As the machine powered up with a powerful thrust, the essence of the clouds began to change.", vi: "Khi cỗ máy khởi động với một lực đẩy mạnh mẽ, bản chất của những đám mây bắt đầu thay đổi." },
+            { en: "He didn't do this for publicity or reward.", vi: "Anh không làm điều này vì sự chú ý của công chúng hay phần thưởng." },
+            { en: "He did it because he could not let another year elapse while the earth suffered a terminal fate.", vi: "Anh làm vậy vì anh không thể để một năm nữa trôi qua trong khi trái đất phải gánh chịu số phận diệt vong." },
+            { en: "He would not deprive the latter generations of a future.", vi: "Anh sẽ không tước đi tương lai của các thế hệ sau này." },
+            { en: "Anyone eligible to help had long given up, leaving Aris in his ragged clothes to undergo this trial alone.", vi: "Bất cứ ai đủ khả năng giúp đỡ đều đã từ bỏ từ lâu, bỏ lại Aris trong bộ quần áo rách rưới phải một mình trải qua thử thách này." },
+            { en: "As the first drops of rain fell, a profound optimism washed over him.", vi: "Khi những giọt mưa đầu tiên rơi xuống, một sự lạc quan sâu sắc tràn ngập trong anh." },
+            { en: "The subsequent hours proved his machine worked, ready to astonish the world.", vi: "Những giờ sau đó chứng minh cỗ máy của anh đã hoạt động, sẵn sàng làm thế giới kinh ngạc." },
+            { en: "The long duration of the dry age was finally breaking.", vi: "Khoảng thời gian dài đằng đẵng của kỷ nguyên khô hạn cuối cùng cũng đang bị phá vỡ." },
+            { en: "The city of Oakhaven, located on a sprawling peninsula, was undergoing a spectacular yet brutal renaissance of rapid urbanization.", vi: "Thành phố Oakhaven, nằm trên một bán đảo rộng lớn, đang trải qua một thời kỳ phục hưng ngoạn mục nhưng tàn bạo của quá trình đô thị hóa nhanh chóng." },
+            { en: "What was once a quiet town defined by archaic architecture and a benevolent, slow-paced culture had morphed into a gorgeous but crude machine of modern capitalism.", vi: "Nơi từng là một thị trấn yên tĩnh được xác định bởi kiến trúc cổ kính và một nền văn hóa nhân từ, nhịp độ chậm rãi đã biến thành một cỗ máy tuyệt đẹp nhưng thô thiển của chủ nghĩa tư bản hiện đại." },
+            { en: "The new skyline, a dense grid of glass and steel, sought to impose its dominance over the natural hemisphere.", vi: "Đường chân trời mới, một mạng lưới dày đặc của kính và thép, đã tìm cách áp đặt sự thống trị của nó lên bán cầu tự nhiên." },
+            { en: "To the indifferent capitalist, this expansion was an inevitable asset, a surefire way to maximize monetary gain.", vi: "Đối với nhà tư bản thờ ơ, sự mở rộng này là một tài sản tất yếu, một cách chắc chắn để tối đa hóa lợi ích tiền bạc." },
+            { en: "However, the overall aspect of the city began to degrade as the sheer proportion of new buildings threatened to saturate the landscape, leaving only an obscure imprint of its medieval past.", vi: "Tuy nhiên, diện mạo tổng thể của thành phố bắt đầu xuống cấp khi tỷ lệ tuyệt đối của các tòa nhà mới đe dọa làm bão hòa cảnh quan, chỉ để lại một dấu ấn mờ nhạt về quá khứ thời trung cổ của nó." },
+            { en: "Down by the old docks, where a fleet of obsolete fishing boats with a rotting naval mast still sat, an old man named Elias watched the rise of a new corporate facility.", vi: "Xuống bến tàu cũ, nơi một đội thuyền đánh cá lỗi thời với cột buồm mục nát vẫn nằm đó, một ông lão tên Elias theo dõi sự trỗi dậy của một cơ sở doanh nghiệp mới." },
+            { en: "Elias, a former accountant who chose to dedicate his time to anthropology as a late-in-life undergraduate, felt deep contempt for the changes.", vi: "Elias, một cựu kế toán viên đã chọn dành thời gian của mình cho nhân chủng học với tư cách là một sinh viên đại học muộn màng, cảm thấy khinh miệt sâu sắc những thay đổi này." },
+            { en: "The managerial elite had decided to situate their newest enterprise right over the historic district, destroying the town's precious legacy.", vi: "Giới tinh hoa quản lý đã quyết định đặt doanh nghiệp mới nhất của họ ngay trên khu di tích lịch sử, phá hủy di sản quý giá của thị trấn." },
+            { en: "They managed to finance the acquisition of the land through aggressive means, aiming to coordinate multiple crews in a consecutive rush to build.", vi: "Họ đã xoay sở để tài trợ cho việc mua lại vùng đất thông qua các biện pháp hung hăng, nhằm mục đích điều phối nhiều đội ngũ trong một cuộc đua liên tục để xây dựng." },
+            { en: "A muscular foreman named Kael, adorned with a fading anchor tattoo, stood in a masculine posture, trying to supervise the simultaneous demolition and construction.", vi: "Một quản đốc cơ bắp tên Kael, được tô điểm bởi một hình xăm mỏ neo mờ nhạt, đứng trong một tư thế nam tính, cố gắng giám sát việc phá dỡ và xây dựng đồng thời." },
+            { en: "Kael had to ditch his moral reservations to do the job.", vi: "Kael đã phải vứt bỏ những dè dặt đạo đức của mình để làm công việc này." },
+            { en: "The builders were rarely considerate of the local residents.", vi: "Những người xây dựng hiếm khi chu đáo với cư dân địa phương." },
+            { en: "They tore down every historical ornament and threw them onto a heap of rubble.", vi: "Họ xé bỏ mọi đồ trang trí lịch sử và ném chúng vào một đống đổ nát." },
+            { en: "A rack of blueprints outlined the upcoming destruction, leaving no spatial room for the old community.", vi: "Một giá bản thiết kế vạch ra sự tàn phá sắp tới, không để lại không gian nào cho cộng đồng cũ." },
+            { en: "The drawback to this growth was immense.", vi: "Hạn chế của sự tăng trưởng này là vô cùng to lớn." },
+            { en: "The influx of hopeful workers led to acute overcrowding.", vi: "Dòng người lao động đầy hy vọng đã dẫn đến tình trạng quá tải nghiêm trọng." },
+            { en: "In the shadow of a new marble monument dedicated to commercial prestige, squatter camps made of corrugated iron and cardboard sprang up.", vi: "Dưới bóng của một tượng đài bằng đá cẩm thạch mới dành riêng cho uy tín thương mại, những khu trại tạm bợ làm bằng tôn và bìa cứng đã mọc lên." },
+            { en: "Malnutrition became rampant as the consumption of fresh food gave way to cheap, imported soy products and heavily saturated fats.", vi: "Tình trạng suy dinh dưỡng trở nên tràn lan khi việc tiêu thụ thực phẩm tươi sống nhường chỗ cho các sản phẩm đậu nành nhập khẩu, giá rẻ và chất béo bão hòa nặng." },
+            { en: "Aris, a dedicated humanitarian, set up a makeshift clinic.", vi: "Aris, một nhà nhân đạo tận tụy, đã thiết lập một phòng khám tạm thời." },
+            { en: "She worked tirelessly to diminish the suffering, handing out adequate medication and writing a prescription for every ailing pedestrian who walked in.", vi: "Cô làm việc không mệt mỏi để giảm bớt đau khổ, phân phát thuốc men đầy đủ và viết đơn thuốc cho từng người đi bộ ốm yếu bước vào." },
+            { en: "Often, she had to rely on a donated respirator to treat the severe respiratory illnesses caused by the external dust from the sites.", vi: "Thường thì cô phải dựa vào một máy thở được hiến tặng để điều trị các bệnh hô hấp nghiêm trọng do bụi bẩn từ các công trường gây ra." },
+            { en: "The city's dependence on outside help grew daily.", vi: "Sự phụ thuộc của thành phố vào sự giúp đỡ từ bên ngoài tăng lên mỗi ngày." },
+            { en: "Before the boom, locals used to sow seeds in fertile fields, taking the precaution to irrigate the land with the waters of a clear brook.", vi: "Trước thời kỳ bùng nổ, người dân địa phương thường gieo hạt trên những cánh đồng màu mỡ, cẩn thận tưới tiêu cho đất bằng nước của một con suối trong vắt." },
+            { en: "Now, they had to trade the spade for factory tools.", vi: "Giờ đây, họ phải đánh đổi cái thuổng để lấy các dụng cụ nhà máy." },
+            { en: "The old ways of farming were seen as a mere fad, an outdated misconception that couldn't feed a metropolis.", vi: "Những phương thức canh tác cũ được coi là một mốt nhất thời, một quan niệm sai lầm lỗi thời không thể nuôi sống một đô thị." },
+            { en: "The simplicity of peeling a fresh fruit—to just peel an apple from a local blooming bud—was lost.", vi: "Sự đơn giản của việc gọt vỏ một trái cây tươi—chỉ việc gọt vỏ một quả táo từ một chồi non đang nở ở địa phương—đã bị mất đi." },
+            { en: "Instead, they had to import synthetic goods.", vi: "Thay vào đó, họ phải nhập khẩu hàng hóa tổng hợp." },
+            { en: "The earth was covered with a hard crust of asphalt, and the sweet smell of nature was replaced by the stench of industrial wax and exhaust.", vi: "Trái đất bị bao phủ bởi một lớp vỏ nhựa đường cứng cáp, và mùi thơm ngọt ngào của thiên nhiên bị thay thế bởi mùi hôi thối của sáp công nghiệp và khí thải." },
+            { en: "Meanwhile, the executives held an elaborate banquet to celebrate.", vi: "Trong khi đó, các giám đốc điều hành tổ chức một bữa tiệc công phu để ăn mừng." },
+            { en: "They sat in an exquisite hall, eating fine foods that would cater to their lavish tastes, demonstrating a clear partiality for luxury over charity.", vi: "Họ ngồi trong một đại sảnh tinh tế, ăn những món ăn ngon lành nhằm phục vụ cho sở thích xa hoa của họ, thể hiện một sự thiên vị rõ ràng đối với sự sang trọng hơn là lòng bác ái." },
+            { en: "A glowing biography of the CEO, a man notorious for his ruthless aggression, was handed out as a complimentary accessory to the guests.", vi: "Một cuốn tiểu sử sáng ngời về vị CEO, một người đàn ông khét tiếng với sự hung hăng tàn nhẫn của mình, được phân phát như một món quà tặng kèm cho các khách mời." },
+            { en: "During the speeches, they would applaud and clap at the informative presentation.", vi: "Trong các bài phát biểu, họ sẽ tán thưởng và vỗ tay trước bài thuyết trình đầy thông tin." },
+            { en: "The impersonal nature of the event highlighted a deep ignorance of the dilemma outside.", vi: "Tính chất thiếu tình người của sự kiện đã làm nổi bật một sự thiếu hiểu biết sâu sắc về tình thế tiến thoái lưỡng nan bên ngoài." },
+            { en: "They assumed their innate competence would confer prosperity on all, a premise many a skeptic sought to refute.", vi: "Họ cho rằng năng lực bẩm sinh của họ sẽ ban cho sự thịnh vượng cho tất cả mọi người, một tiền đề mà nhiều người hoài nghi đã tìm cách bác bỏ." },
+            { en: "They wanted to inflate their egos, ignoring the preliminary warnings of environmental collapse.", vi: "Họ muốn thổi phồng cái tôi của mình, phớt lờ những cảnh báo sơ bộ về sự sụp đổ của môi trường." },
+            { en: "Elias refused to be a mere spectator.", vi: "Elias từ chối việc chỉ là một khán giả đơn thuần." },
+            { en: "He decided to narrate the true story of Oakhaven.", vi: "Ông quyết định thuật lại câu chuyện có thật về Oakhaven." },
+            { en: "He gathered his notes to disprove the hypothesis that urbanization was entirely beneficial.", vi: "Ông đã thu thập các ghi chép của mình để bác bỏ giả thuyết rằng quá trình đô thị hóa hoàn toàn có lợi." },
+            { en: "He noticed the stark symmetry between the wealthy and those they chose to oppress.", vi: "Ông nhận thấy sự đối xứng rõ rệt giữa những người giàu có và những người mà họ đã chọn để áp bức." },
+            { en: "He sought to weave these facts into a masterpiece of journalism.", vi: "Ông tìm cách đan xen những sự kiện này vào một kiệt tác báo chí." },
+            { en: "He observed a blind woman reading braille on a brass plaque, her fingers tracing the words.", vi: "Ông quan sát một người phụ nữ mù đọc chữ nổi trên một tấm bảng đồng, những ngón tay của cô lần theo các từ." },
+            { en: "Her optic nerves might be damaged, but one could infer she saw the truth better than the sighted.", vi: "Các dây thần kinh thị giác của cô ấy có thể bị hỏng, nhưng người ta có thể suy luận rằng cô ấy đã nhìn thấy sự thật rõ hơn những người sáng mắt." },
+            { en: "She carried a small leather pouch containing seeds, a silent rebellion to strive against the concrete.", vi: "Cô mang theo một túi da nhỏ chứa những hạt giống, một cuộc nổi loạn thầm lặng để đấu tranh chống lại bê tông." },
+            { en: "She was a vital component of the resistance.", vi: "Cô ấy là một thành phần quan trọng của lực lượng kháng chiến." },
+            { en: "Suddenly, a spontaneous protest erupted.", vi: "Đột nhiên, một cuộc biểu tình tự phát nổ ra." },
+            { en: "The workers, feeling the nausea of exhaustion, refused to work.", vi: "Các công nhân, cảm thấy buồn nôn vì kiệt sức, đã từ chối làm việc." },
+            { en: "They demanded better criteria for their living conditions.", vi: "Họ yêu cầu các tiêu chí tốt hơn cho điều kiện sống của họ." },
+            { en: "The developers tried to facilitate a meager boost in wages, but the crowd's demands were not compatible with corporate greed.", vi: "Các nhà phát triển đã cố gắng tạo điều kiện cho một mức tăng lương ít ỏi, nhưng yêu cầu của đám đông không tương thích với lòng tham của doanh nghiệp." },
+            { en: "The corporation didn't revere their hard work or entitle them to a fair share.", vi: "Tập đoàn đã không tôn trọng sự chăm chỉ của họ hay trao cho họ một phần công bằng." },
+            { en: "An old hound barked as the crowd surged forward.", vi: "Một chú chó săn già sủa lên khi đám đông dâng lên phía trước." },
+            { en: "Panicking, the developers tried to escort their executives away.", vi: "Hoảng loạn, các nhà phát triển cố gắng hộ tống các giám đốc điều hành của họ rời đi." },
+            { en: "Elias watched, knowing he had to update his manuscript immediately.", vi: "Elias theo dõi, biết rằng mình phải cập nhật bản thảo ngay lập tức." },
+            { en: "The mayor was forced to appoint a new committee from the university faculty to address the crisis.", vi: "Thị trưởng đã buộc phải bổ nhiệm một ủy ban mới từ đội ngũ giảng viên trường đại học để giải quyết cuộc khủng hoảng." },
+            { en: "The city, now a massive cube of glass, was no longer a sanctuary.", vi: "Thành phố, giờ đây là một khối kính khổng lồ, không còn là một nơi tôn nghiêm." },
+            { en: "It was a radical shift in human history.", vi: "Đó là một sự chuyển dịch căn bản trong lịch sử nhân loại." },
+            { en: "Likewise, Dr.", vi: "Tương tự như vậy, Tiến sĩ" },
+            { en: "Aris continued her medical work, driven by unyielding virtue.", vi: "Aris tiếp tục công việc y tế của mình, được thúc đẩy bởi đức hạnh không nao núng." },
+            { en: "The feedback from the streets was undeniable: the people would compel the system to change, or else the city would collapse under its own weight.", vi: "Phản hồi từ đường phố là không thể phủ nhận: người dân sẽ ép buộc hệ thống phải thay đổi, nếu không thành phố sẽ sụp đổ dưới sức nặng của chính nó." },
+            { en: "To specify the exact moment the tide turned was difficult, but the revolution had undeniably begun.", vi: "Rất khó để chỉ định thời điểm chính xác cục diện thay đổi, nhưng cuộc cách mạng không thể phủ nhận là đã bắt đầu." },
+            { en: "In the modern realm, it was a commonplace occurrence for a mere notion to go viral.", vi: "Trong thế giới hiện đại, việc một ý tưởng đơn thuần trở nên lan truyền mạnh mẽ là một chuyện rất đỗi bình thường." },
+            { en: "Julian, a skinny graduate student in the humanities department, was an undeniable social media addict.", vi: "Julian, một nghiên cứu sinh gầy gò ở khoa khoa học nhân văn, đích thị là một kẻ nghiện mạng xã hội không thể chối cãi." },
+            { en: "His life was a chaotic aggregate of digital input, frequent notifications, and deceptive profiles.", vi: "Cuộc sống của cậu là một tập hợp hỗn loạn của những thông tin kỹ thuật số, những thông báo thường xuyên và những hồ sơ giả tạo." },
+            { en: "He felt captive to the glowing screen, allowing the constant stimulus to distract him from his genuine reality.", vi: "Cậu cảm thấy mình bị giam cầm bởi màn hình phát sáng, để cho những kích thích liên tục làm cậu xao nhãng khỏi thực tại chân thực của mình." },
+            { en: "It was a prevalent and chronic problem that threatened his academic discipline, his ethics, and his overall outlook on life.", vi: "Đó là một căn bệnh trầm kha và phổ biến đe dọa đến kỷ luật học tập, đạo đức và thế giới quan tổng thể của cậu." },
+            { en: "Julian’s sibling, a bilingual linguist and a strong proponent of mental health, tried to intervene.", vi: "Chị gái của Julian, một nhà ngôn ngữ học song ngữ và là người nhiệt thành ủng hộ sức khỏe tinh thần, đã cố gắng can thiệp." },
+            { en: "\"You need to sever this connection, Julian.", vi: "\"Em cần phải cắt đứt sự kết nối này, Julian." },
+            { en: "It’s causing an erosion of your integrity.\"", vi: "Nó đang gây ra sự xói mòn tính liêm chính của cậu.\"" },
+            { en: "She urged him to meditate, to disconnect, and to enjoy a straightforward life.", vi: "Cô thúc giục anh thiền, ngắt kết nối và tận hưởng một cuộc sống giản dị." },
+            { en: "But the pull was like a magnet.", vi: "Nhưng sức hút ấy giống như một thỏi nam châm vậy." },
+            { en: "The digital world was his anchor, though it often felt more like a weight trying to submerge him than a buoy keeping him afloat.", vi: "Thế giới kỹ thuật số là mỏ neo của cậu, mặc dù nó thường có cảm giác giống như một quả tạ đang cố dìm cậu xuống hơn là một chiếc phao giữ cậu nổi lên." },
+            { en: "One evening, Julian decided to brainstorm a new tactic to gain followers.", vi: "Một buổi tối, Julian quyết định nghĩ ra một chiến thuật mới để tăng lượng người theo dõi." },
+            { en: "He wanted to manufacture a controversy to provoke the masses.", vi: "Cậu muốn tạo ra một cuộc tranh cãi để kích động đám đông." },
+            { en: "He decided to hack into a university database and compress some intricate administrative files.", vi: "Cậu quyết định xâm nhập vào cơ sở dữ liệu của trường đại học và nén một số tệp hành chính phức tạp." },
+            { en: "His goal was to find a vague scandal, something plausible but scandalous enough to distort the truth and compound his fame.", vi: "Mục tiêu của cậu là tìm kiếm một vụ bê bối mập mờ nào đó, một điều gì đó có vẻ hợp lý nhưng đủ gây sốc để bóp méo sự thật và làm tăng thêm danh tiếng của cậu." },
+            { en: "He found a file about the university administration and their budget for the new biotechnology and archeology departments.", vi: "Cậu tìm thấy một tệp tin về ban giám hiệu trường đại học và ngân sách của họ dành cho các khoa công nghệ sinh học và khảo cổ học mới." },
+            { en: "He noticed an overlap in the funds, a ratio that didn’t quite correspond to the explicit framework set by the principal donor.", vi: "Cậu nhận thấy có sự chồng chéo trong các khoản quỹ, một tỷ lệ không hoàn toàn tương ứng với khuôn khổ rõ ràng do nhà tài trợ chính đặt ra." },
+            { en: "A suspicion of fraud began to form in his mind.", vi: "Một sự nghi ngờ về việc gian lận bắt đầu hình thành trong tâm trí cậu." },
+            { en: "He decided to post about it.", vi: "Cậu quyết định đăng bài về chuyện này." },
+            { en: "He didn't cite any real sources; he just used colloquial language and secondhand gossip to implicate the university president.", vi: "Cậu không trích dẫn bất kỳ nguồn tin xác thực nào; cậu chỉ sử dụng ngôn ngữ thông tục và những lời đồn thổi truyền miệng để ám chỉ vị hiệu trưởng trường đại học có liên quan." },
+            { en: "He claimed the funds meant for prehistoric research and an archeological dig were being used to manufacture fluorescent cosmetics and fund a weird quantum microchip project, treating the whole thing like a massive conspiracy.", vi: "Cậu tuyên bố rằng các khoản quỹ dành cho nghiên cứu thời tiền sử và một cuộc khai quật khảo cổ đang bị sử dụng để sản xuất mỹ phẩm huỳnh quang và tài trợ cho một dự án vi mạch lượng tử kỳ quái, coi toàn bộ sự việc như một âm mưu khổng lồ." },
+            { en: "He suggested they were trying to clone humans, use acid to dissolve evidence, and build a hydrogen bomb.", vi: "Cậu ám chỉ rằng họ đang cố gắng nhân bản con người, sử dụng axit để tiêu hủy bằng chứng và chế tạo bom khinh khí." },
+            { en: "He added an aggressive caption, ready to combat any foe who disagreed.", vi: "Cậu viết thêm một dòng chú thích đầy hiếu chiến, sẵn sàng đối đầu với bất kỳ đối thủ nào không đồng tình." },
+            { en: "The post was a comet of chaos, leaving a crater of debris in its wake.", vi: "Bài đăng ấy giống như một sao chổi của sự hỗn loạn, để lại một hố sâu đổ nát phía sau nó." },
+            { en: "It had the power to precipitate a catastrophe.", vi: "Nó có sức mạnh châm ngòi cho một thảm họa." },
+            { en: "Within a phase of a few hours, the post began to spiral out of control.", vi: "Chỉ trong vài giờ đồng hồ, bài đăng bắt đầu vượt khỏi tầm kiểm soát." },
+            { en: "The university auditorium was soon filled with a furious corps of fellow students, demanding amnesty for whistleblowers.", vi: "Khán phòng của trường đại học chẳng mấy chốc đã chật kín một đoàn sinh viên phẫn nộ, đòi hỏi quyền ân xá cho những người tố giác." },
+            { en: "The courtyard became an arena of protest, complete with angry graffiti on the sacred walls of the old estate.", vi: "Khoảng sân trường trở thành một đấu trường biểu tình, đầy rẫy những bức vẽ bậy giận dữ trên những bức tường linh thiêng của khu nhà cổ." },
+            { en: "Julian felt his brief reign as a hero ending abruptly.", vi: "Julian cảm thấy khoảng thời gian ngắn ngủi làm anh hùng của mình đã kết thúc đột ngột." },
+            { en: "Julian was astounded.", vi: "Julian vô cùng kinh ngạc." },
+            { en: "He had expected a few likes, maybe a nick to his ego if it failed, but not this astronomical reaction.", vi: "Cậu đã mong đợi một vài lượt thích, có thể sẽ là một vết xước vào cái tôi của mình nếu nó thất bại, chứ không phải là một phản ứng khổng lồ đến nhường này." },
+            { en: "The gulf between his dumb prank and the reality of the situation was terrifying.", vi: "Hố sâu ngăn cách giữa trò đùa ngu ngốc của cậu và thực tế của tình hình thật đáng sợ." },
+            { en: "A stab of guilt hit him.", vi: "Một cảm giác tội lỗi đâm nhói vào cậu." },
+            { en: "He felt himself falling down a dark shaft of despair.", vi: "Cậu cảm thấy mình đang rơi xuống một hầm lò tăm tối của sự tuyệt vọng." },
+            { en: "His guardian, a strict attorney, had to step in.", vi: "Người giám hộ của cậu, một luật sư nghiêm khắc, đã phải can thiệp." },
+            { en: "\"This is not a game, Julian.", vi: "\"Đây không phải là một trò chơi đâu, Julian." },
+            { en: "You could face a lawsuit.", vi: "Cháu có thể phải đối mặt với một vụ kiện đấy." },
+            { en: "The university can terminate your enrollment and demand you pay back your tuition.\"", vi: "Trường đại học có thể chấm dứt việc nhập học của cậu và yêu cầu cậu trả lại học phí.\"" },
+            { en: "The administration brought in a neutral referee to investigate the claims and acted accordingly.", vi: "Ban giám hiệu đã đưa một trọng tài trung lập đến để điều tra các cáo buộc và hành động phù hợp." },
+            { en: "They decided to designate an expert to evaluate the aggregate data.", vi: "Họ quyết định chỉ định một chuyên gia để đánh giá các dữ liệu tổng hợp." },
+            { en: "The investigation revealed no fraud; the funds were just allocated in a complex circuit to offset costs, a legal mechanism to minimize taxes.", vi: "Cuộc điều tra cho thấy không hề có sự gian lận nào; các khoản quỹ chỉ được phân bổ theo một chu trình phức tạp để bù đắp chi phí, một cơ chế hợp pháp nhằm giảm thiểu thuế." },
+            { en: "There was no secret clone project, no weird hydrogen or acid experiments, no biotechnology meant to manipulate metabolism, cure diabetes, and lower cholesterol using nectar from a rare plant.", vi: "Chẳng có dự án nhân bản bí mật nào, không có các thí nghiệm kỳ quái về khinh khí hay axit, cũng chẳng có công nghệ sinh học nào nhằm mục đích điều khiển quá trình trao đổi chất, chữa bệnh tiểu đường và hạ cholesterol bằng mật hoa của một loài cây quý hiếm." },
+            { en: "It was all a deceptive illusion born of social media, and people reacted with disgust.", vi: "Tất cả chỉ là một ảo tưởng dối trá sinh ra từ mạng xã hội, và mọi người đã phản ứng bằng sự ghê tởm." },
+            { en: "Julian felt a deep despair.", vi: "Julian cảm thấy một sự tuyệt vọng sâu sắc." },
+            { en: "He had acted out of a distorted desire for attention, treating his followers like intimate kin.", vi: "Cậu đã hành động xuất phát từ một khao khát thu hút sự chú ý méo mó, coi những người theo dõi mình như những người thân thiết." },
+            { en: "His actions had a severe context.", vi: "Hành động của cậu mang một hệ quả nghiêm trọng." },
+            { en: "He tried to dash out an apology where the main theme was taking responsibility, but the internet was immune to his excuses, like an antibiotic failing to clear an infection.", vi: "Cậu đã cố gắng viết vội một lời xin lỗi mà chủ đề chính là nhận trách nhiệm, nhưng cõi mạng đã miễn nhiễm với những lời ngụy biện của cậu, giống như một loại thuốc kháng sinh không thể chữa khỏi bệnh nhiễm trùng." },
+            { en: "People were quick to attribute malice to his actions, and he felt a sharp pinch of regret.", vi: "Mọi người nhanh chóng quy chụp ác ý cho những hành động của cậu, và cậu cảm nhận được một nỗi ân hận nhói lòng." },
+            { en: "To avoid a lawsuit, Julian's attorney negotiated a coalition with the administration.", vi: "Để tránh một vụ kiện, luật sư của Julian đã đàm phán một thỏa thuận hợp tác với ban giám hiệu." },
+            { en: "Julian would have to do community service at the local dock, helping to grease the gears of old ships and clear away rust.", vi: "Julian sẽ phải làm công việc phục vụ cộng đồng tại bến tàu địa phương, giúp bôi trơn bánh răng của những con tàu cũ và dọn sạch rỉ sét." },
+            { en: "He also had to participate as a participant in an explicit program to eliminate his social media dependency.", vi: "Cậu cũng phải tham gia với tư cách là một học viên trong một chương trình đặc biệt nhằm loại bỏ chứng nghiện mạng xã hội của mình." },
+            { en: "He was stripped of his smartphone and given an equivalent device with no apps, just a slot for a basic SIM card.", vi: "Cậu bị tịch thu điện thoại thông minh và được cấp một thiết bị tương đương nhưng không có ứng dụng nào, chỉ có một khe cắm cho thẻ SIM cơ bản." },
+            { en: "During his service, he worked under the fore of an old sailor who taught him about the breadth and circumference of the real world.", vi: "Trong quá trình phục vụ, cậu làm việc dưới sự dẫn dắt của một thủy thủ già, người đã dạy cậu về sự rộng lớn và bao la của thế giới thực." },
+            { en: "He learned to tie a proper knot and knit a warm scarf, a calming ritual that grounded him.", vi: "Cậu học cách thắt một nút dây đúng cách và đan một chiếc khăn quàng cổ ấm áp, một nghi thức tĩnh tâm giúp cậu giữ được đôi chân trên mặt đất." },
+            { en: "He realized that a simple atom of truth was worth more than an astronomical amount of likes.", vi: "Cậu nhận ra rằng một phần nhỏ của sự thật còn đáng giá hơn một lượng lớn lượt thích khổng lồ." },
+            { en: "He learned to appreciate the complement of a quiet evening, the beauty of a crescent moon, and the importance of genuine connection.", vi: "Cậu học cách trân trọng sự hoàn mỹ của một buổi tối yên tĩnh, vẻ đẹp của vầng trăng khuyết và tầm quan trọng của sự kết nối chân thành." },
+            { en: "Social media had been a parachute that failed to open, sending him plunging into a world of trouble.", vi: "Mạng xã hội từng là một chiếc dù không mở ra được, đẩy cậu lao thẳng xuống một thế giới đầy rắc rối." },
+            { en: "Now, he was slowly rebuilding.", vi: "Giờ đây, cậu đang dần dần xây dựng lại mọi thứ." },
+            { en: "He had to refine his character, restrict his impulses, and embrace a life free of the constant need to embed himself in the digital sphere, no longer prone to such mistakes.", vi: "Cậu phải gọt giũa tính cách của mình, kiềm chế những bốc đồng và đón nhận một cuộc sống thoát khỏi nhu cầu liên tục đắm mình vào không gian kỹ thuật số, không còn dễ mắc phải những sai lầm như vậy nữa." },
+            { en: "Once upon a time in a school district on the brink of becoming completely bankrupt, an arrogant executive named Mr.", vi: "Ngày xửa ngày xưa ở một học khu trên bờ vực phá sản hoàn toàn, một vị giám đốc kiêu ngạo tên là ông" },
+            { en: "Vance ruled with an iron fist.", vi: "Vance đã cai trị bằng bàn tay sắt." },
+            { en: "The status of education was in a state of gloom.", vi: "Tình trạng giáo dục khi đó chìm trong sự u ám." },
+            { en: "The curriculum was a rigid artifact, a primitive fossil from a previous era.", vi: "Chương trình giảng dạy là một tạo tác cứng nhắc, một hóa thạch nguyên thủy từ thời đại trước." },
+            { en: "The classrooms were solitary confinement cells, gigantic rooms lacking any aesthetic appeal, where students were forced to conform to arbitrary rules or face being an outcast they would expel.", vi: "Các lớp học giống như những phòng biệt giam, những căn phòng khổng lồ thiếu đi bất kỳ sức hấp dẫn thẩm mỹ nào, nơi học sinh bị buộc phải tuân theo những quy tắc độc đoán hoặc đối mặt với việc bị đuổi học như những kẻ bị ruồng bỏ." },
+            { en: "Aris, a sociable and talkative pioneer of dynamic teaching, sought to revive the system.", vi: "Aris, một người tiên phong hòa đồng và hoạt ngôn trong phương pháp giảng dạy năng động, đã tìm cách hồi sinh hệ thống này." },
+            { en: "He proposed an epic transition, breaking away from the typical educational convention to merge different subjects.", vi: "Anh đề xuất một cuộc chuyển đổi mang tính sử thi, phá vỡ các quy chuẩn giáo dục điển hình để hợp nhất các môn học khác nhau." },
+            { en: "He presented a preview of his forthcoming autobiography, which contained an excerpt detailing his vision for Education Reforms.", vi: "Anh đã trình bày một bản xem trước của cuốn tự truyện sắp xuất bản của mình, trong đó có một đoạn trích trình bày chi tiết tầm nhìn của anh về Cải cách Giáo dục." },
+            { en: "\"The ultimate goal,\" Aris said, addressing the school board on behalf of the personnel and students, \"is to adapt and improve.", vi: "\"Mục tiêu tối thượng,\" Aris nói khi thay mặt nhân viên và học sinh phát biểu trước hội đồng nhà trường, \"là thích ứng và cải thiện." },
+            { en: "We need a compromise between old and new, an authentic hybrid model whereby students can thrive.\"", vi: "Chúng ta cần một sự dung hòa giữa cái cũ và cái mới, một mô hình lai đích thực để qua đó học sinh có thể phát triển.\"" },
+            { en: "The school building itself needed an overhaul too.", vi: "Bản thân tòa nhà trường học cũng cần được đại tu." },
+            { en: "The landlord, a nasty crook who held the lease and a massive mortgage, had neglected the plumbing and utility bills.", vi: "Chủ nhà, một kẻ lừa đảo tồi tệ đang giữ hợp đồng thuê và một khoản thế chấp khổng lồ, đã chểnh mảng đường ống nước và các hóa đơn tiện ích." },
+            { en: "The hygiene standards were so poor they couldn't be considered hygienic; a sticky residue covered the floors, and a termite infestation was eating every twig of the wooden structures.", vi: "Các tiêu chuẩn vệ sinh quá kém đến mức không thể coi là hợp vệ sinh; một lớp cặn dính bao phủ sàn nhà, và sự phá hoại của mối mọt đang ăn mòn mọi nhánh của các cấu trúc bằng gỗ." },
+            { en: "A fragile antique desk was all that remained of the original furniture.", vi: "Một chiếc bàn cổ mong manh là tất cả những gì còn sót lại của đồ nội thất ban đầu." },
+            { en: "Aris planned to mend the facility, furnish it with trendy desks, and insulate the walls against the winter shiver caused by a nearby glacier.", vi: "Aris dự định tu sửa cơ sở vật chất, trang bị những chiếc bàn hợp thời trang và cách nhiệt cho các bức tường để chống lại cái lạnh mùa đông do một sông băng gần đó gây ra." },
+            { en: "He also aimed to secure philanthropy to pay off the building's debt, ensuring the school wasn't treated like a mere tenant.", vi: "Anh cũng nhắm đến việc thu hút các hoạt động từ thiện để trả nợ cho tòa nhà, đảm bảo rằng trường học không bị đối xử như một người thuê nhà đơn thuần." },
+            { en: "Aris proposed replacing mandatory standardized tests—a burden that would often overwhelm students with an overload of internal stress—with relevant, real-world projects.", vi: "Aris đề xuất thay thế các bài kiểm tra tiêu chuẩn hóa bắt buộc—một gánh nặng thường làm học sinh quá tải bởi sự căng thẳng nội tại—bằng các dự án thực tế, có liên quan." },
+            { en: "He wanted to employ new teachers, treating every applicant with gracious respect, to recruit those who understood the spectrum of student needs.", vi: "Anh muốn tuyển dụng những giáo viên mới, đối xử với mọi ứng viên bằng sự tôn trọng nhã nhặn, để tuyển được những người thấu hiểu phổ nhu cầu của học sinh." },
+            { en: "He would register them for a chronology of training sessions to help them perceive the enigma of adolescent biological and cellular development.", vi: "Anh sẽ đăng ký cho họ tham gia một chuỗi các khóa đào tạo để giúp họ nhận thức được bí ẩn về sự phát triển sinh học và tế bào của thanh thiếu niên." },
+            { en: "One of his ideas was a hands-on science class where students could study heredity using a real orangutan or observe a reptile in a giant aquarium.", vi: "Một trong những ý tưởng của anh là một lớp khoa học thực hành, nơi học sinh có thể nghiên cứu tính di truyền bằng cách sử dụng một con đười ươi thực sự hoặc quan sát một loài bò sát trong một bể cá khổng lồ." },
+            { en: "They would learn about the primate lineage without relying on a stereotype or bias.", vi: "Các em sẽ học về dòng dõi linh trưởng mà không dựa vào định kiến hay thành kiến." },
+            { en: "He envisioned an outdoor trail leading to a canyon and a creek, where students could study nature.", vi: "Anh hình dung ra một con đường mòn ngoài trời dẫn đến hẻm núi và con suối nhỏ, nơi học sinh có thể nghiên cứu thiên nhiên." },
+            { en: "There, they wouldn't just read about a tusk or a wild animal; they would roam the environment, experiencing the globe firsthand.", vi: "Ở đó, họ sẽ không chỉ đọc về một chiếc ngà hay một loài động vật hoang dã; họ sẽ dạo chơi trong môi trường, trực tiếp trải nghiệm thế giới." },
+            { en: "However, Vance considered these reforms a fantasy.", vi: "Tuy nhiên, Vance coi những cải cách này là một điều viển vông." },
+            { en: "\"This isn't a welfare program,\" Vance would humiliate Aris during meetings.", vi: "\"Đây không phải là một chương trình phúc lợi,\" Vance thường làm bẽ mặt Aris trong các cuộc họp." },
+            { en: "\"We can't substitute hard work with a walk on a trail or a loaf of bread.", vi: "\"Chúng ta không thể thay thế sự làm việc chăm chỉ bằng một buổi đi dạo trên đường mòn hay một ổ bánh mì." },
+            { en: "The norm must precede your radical ideas.\"", vi: "Chuẩn mực phải đi trước những ý tưởng cấp tiến của anh.\"" },
+            { en: "But Aris didn't let Vance's incline toward negativity stall his efforts.", vi: "Nhưng Aris đã không để khuynh hướng tiêu cực của Vance cản trở những nỗ lực của mình." },
+            { en: "Aris's perception was that Vance was just a tramp of the old guard, a lonely monarch clinging to his majesty.", vi: "Theo nhận thức của Aris, Vance chỉ là một kẻ lang thang của thế hệ cũ, một vị vua cô đơn đang bám lấy uy quyền của mình." },
+            { en: "Aris, acting as a diplomat, brought in a respected surgeon to speak about therapy and the longevity of the human brain under proper educational stimulation.", vi: "Đóng vai trò như một nhà ngoại giao, Aris đã mời một bác sĩ phẫu thuật đáng kính đến nói chuyện về liệu pháp và tuổi thọ của bộ não con người dưới sự kích thích giáo dục phù hợp." },
+            { en: "The surgeon explained how the sequence of learning could transplant old habits with new, healthy ones, just as one might transfer a healthy organ to a recipient.", vi: "Bác sĩ phẫu thuật giải thích cách mà trình tự học tập có thể cấy ghép những thói quen cũ bằng những thói quen mới, lành mạnh, giống như cách người ta có thể cấy ghép một cơ quan khỏe mạnh cho người nhận." },
+            { en: "Aris also brought in an oracle of educational renown, a woman who seemed to have supernatural wisdom.", vi: "Aris cũng mời đến một nhà hiền triết nổi tiếng về giáo dục, một người phụ nữ dường như có trí tuệ siêu phàm." },
+            { en: "She spoke of how students should not be forced into an orbit around a strict curriculum, like planets in a galaxy bound by gravity, but should be allowed to explore the full sphere of human knowledge.", vi: "Bà nói về việc học sinh không nên bị gò ép vào quỹ đạo xung quanh một chương trình giảng dạy nghiêm ngặt, giống như các hành tinh trong thiên hà bị ràng buộc bởi trọng lực, mà nên được phép khám phá toàn bộ quả cầu tri thức của nhân loại." },
+            { en: "She emphasized that every fragment of information could radiate meaning if taught with innocence and curiosity.", vi: "Bà nhấn mạnh rằng mọi mảnh thông tin đều có thể tỏa ra ý nghĩa nếu được giảng dạy với sự hồn nhiên và tò mò." },
+            { en: "To fund his reforms, Aris had to secure new currency.", vi: "Để tài trợ cho những cải cách của mình, Aris phải đảm bảo một nguồn tiền mới." },
+            { en: "He organized a reunion of successful alumni.", vi: "Anh đã tổ chức một buổi họp mặt của các cựu học sinh thành đạt." },
+            { en: "The event featured a lyric performance and a showcase of student craft.", vi: "Sự kiện có màn biểu diễn trữ tình và phần trưng bày các tác phẩm thủ công của học sinh." },
+            { en: "Aris offered a refund to any donor who felt their money wasn't making at least a minimal impact.", vi: "Aris đề nghị hoàn tiền cho bất kỳ nhà tài trợ nào cảm thấy tiền của họ không tạo ra ít nhất một tác động tối thiểu." },
+            { en: "He managed to tow the community along, building a horizontal power structure rather than a top-down one.", vi: "Anh đã cố gắng kéo cộng đồng đi cùng, xây dựng một cấu trúc quyền lực theo chiều ngang thay vì từ trên xuống." },
+            { en: "In the end, Vance tried to delay the vote, but his attempts were a mere flap of a bird's wings against a storm.", vi: "Cuối cùng, Vance đã cố gắng trì hoãn cuộc bỏ phiếu, nhưng những nỗ lực của ông ta chỉ là cái vỗ cánh của một con chim trước cơn bão." },
+            { en: "Aris's comprehensive overview of the reforms proved undeniable.", vi: "Cái nhìn tổng quan toàn diện của Aris về các cải cách tỏ ra không thể phủ nhận." },
+            { en: "The school board approved the plan.", vi: "Hội đồng nhà trường đã phê duyệt kế hoạch." },
+            { en: "Aris was able to rig a new system of moderate assessments.", vi: "Aris đã có thể thiết lập một hệ thống mới với các bài đánh giá ở mức độ vừa phải." },
+            { en: "The issues of fatigue and boredom that used to recur were effectively solved.", vi: "Những vấn đề mệt mỏi và nhàm chán từng tái diễn đã được giải quyết một cách hiệu quả." },
+            { en: "Aris wanted to provide an environment where learning was a joyful rite of passage, not a chore.", vi: "Aris muốn cung cấp một môi trường nơi học tập là một nghi thức chuyển giao đầy niềm vui, chứ không phải là một công việc vặt vãnh." },
+            { en: "He instructed teachers to take inventory of their students' passions, thereby ensuring that no student felt compelled to retreat inward.", vi: "Anh chỉ đạo các giáo viên kiểm kê niềm đam mê của học sinh, qua đó đảm bảo không học sinh nào cảm thấy bị buộc phải thu mình lại." },
+            { en: "A quiet hum of focused energy replaced the previous chaos.", vi: "Tiếng rì rầm tĩnh lặng của năng lượng tập trung đã thay thế cho sự hỗn loạn trước đó." },
+            { en: "Instead of having doctors prescribe medication for restless students, teachers would guide them to their respective areas of intrigue, encouraging them to probe deep into their interests.", vi: "Thay vì để các bác sĩ kê đơn thuốc cho những học sinh bồn chồn, các giáo viên sẽ hướng dẫn các em đến các lĩnh vực hấp dẫn tương ứng, khuyến khích các em thăm dò sâu vào sở thích của mình." },
+            { en: "Even if a naughty student were to misplace their assignment, the system was designed to help them recover, so long as they remained punctual in their commitment to learning.", vi: "Ngay cả khi một học sinh nghịch ngợm làm mất bài tập của mình, hệ thống cũng được thiết kế để giúp các em khắc phục, miễn là các em vẫn đúng giờ trong cam kết học tập của mình." },
+            { en: "The school became a beacon, a place of learning where students didn't just drill facts but truly grew.", vi: "Ngôi trường trở thành một ngọn hải đăng, một nơi học tập mà học sinh không chỉ rèn luyện các dữ kiện mà thực sự trưởng thành." },
+            { en: "It was the ultimate victory for an extension of educational reforms, proving that even the most broken system could be mended.", vi: "Đó là chiến thắng tối thượng cho sự mở rộng của các cải cách giáo dục, chứng minh rằng ngay cả một hệ thống tồi tệ nhất cũng có thể được sửa chữa." }
+        ];
+        (function() {
+            var popup = document.createElement('div');
+            popup.className = 'translate-popup';
+            popup.id = 'translate-popup';
+            
+            popup.style.cssText = 'position: absolute; background: #2d3436; color: white; padding: 15px 30px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 2000; display: none; flex-direction: column; gap: 10px; max-width: 350px; text-align: left; white-space: normal; word-wrap: break-word; word-break: normal;';
+            
+            var btnGoogle = document.createElement('button');
+            btnGoogle.innerHTML = '🌐 Google Dịch';
+            btnGoogle.style.cssText = 'background: #34495e; color: white; border: 1px solid #7f8c8d; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; width: 100%; margin-top: 5px; font-family: inherit; font-size: inherit;';
+            btnGoogle.onmouseover = () => btnGoogle.style.background = '#2c3e50';
+            btnGoogle.onmouseout = () => btnGoogle.style.background = '#34495e';
+            
+            var btnContext = document.createElement('button');
+            btnContext.innerHTML = '📖 Dịch Sát Nghĩa';
+            btnContext.style.cssText = 'background: #3498db; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; width: 100%; font-family: inherit; font-size: inherit;';
+            btnContext.onmouseover = () => btnContext.style.background = '#2980b9';
+            btnContext.onmouseout = () => btnContext.style.background = '#3498db';
+
+            var transResult = document.createElement('div');
+            transResult.style.cssText = 'display: none; flex-direction: column; width: 100%; white-space: normal; word-wrap: break-word;';
+
+            var closeBtn = document.createElement('span');
+            closeBtn.innerHTML = '✖';
+            closeBtn.style.cssText = 'position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 14px; color: #bdc3c7; display: none; transition: 0.3s;';
+            closeBtn.onmouseover = () => closeBtn.style.color = 'white';
+            closeBtn.onmouseout = () => closeBtn.style.color = '#bdc3c7';
+            closeBtn.onclick = function(e) {
+                e.stopPropagation();
+                popup.style.display = 'none';
+            };
+
+            popup.appendChild(closeBtn);
+            popup.appendChild(btnGoogle);
+            popup.appendChild(btnContext);
+            popup.appendChild(transResult);
+            document.body.appendChild(popup);
+
+            var selectedText = '';
+            var currentFontSize = '16px';
+
+            document.addEventListener('mouseup', handleSelection);
+            document.addEventListener('touchend', function() { setTimeout(handleSelection, 300); });
+
+            function normalizeStr(str) {
+                return str.replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+            }
+
+            function handleSelection(e) {
+                if (popup.contains(e.target)) return;
+                var sel = window.getSelection();
+                var text = sel.toString().trim();
+                
+                if (text.length > 2 && text.length < 1000) {
+                    selectedText = text;
+                    var range = sel.getRangeAt(0);
+                    var rects = range.getClientRects();
+                    if(rects.length === 0) return;
+                    var lastRect = rects[rects.length - 1];
+                    
+                    var parentNode = range.commonAncestorContainer;
+                    if (parentNode.nodeType === 3) parentNode = parentNode.parentNode;
+                    currentFontSize = window.getComputedStyle(parentNode).fontSize;
+                    
+                    // Set popup font size equal to selected text font size
+                    popup.style.fontSize = currentFontSize;
+                    transResult.style.fontSize = '1em'; // relative to popup
+                    
+                    transResult.style.display = 'none';
+                    transResult.innerHTML = '';
+                    btnGoogle.style.display = 'block';
+                    btnContext.style.display = 'block';
+                    closeBtn.style.display = 'none';
+
+                    popup.style.padding = '15px';
+                    popup.style.display = 'flex';
+                    
+                    var popupRect = popup.getBoundingClientRect();
+                    
+                    // Align left with the last word's left edge
+                    var leftPos = rects[0].left + window.scrollX;
+                    if (leftPos + popupRect.width > window.innerWidth + window.scrollX - 10) {
+                        leftPos = window.innerWidth + window.scrollX - popupRect.width - 10;
+                    }
+                    if (leftPos < window.scrollX + 10) leftPos = window.scrollX + 10;
+                    
+                    // Position below the last word
+                    var topPos = lastRect.bottom + window.scrollY + 10;
+
+                    popup.style.left = leftPos + 'px';
+                    popup.style.top = topPos + 'px';
+                } else {
+                    popup.style.display = 'none';
+                }
+            }
+
+            btnGoogle.addEventListener('mousedown', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                if (selectedText) {
+                    var url = 'https://translate.google.com/?sl=en&tl=vi&text=' + encodeURIComponent(selectedText);
+                    window.open(url, '_blank');
+                }
+                popup.style.display = 'none';
+            });
+
+            btnContext.addEventListener('mousedown', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                if (!selectedText) return;
+                
+                let normSel = normalizeStr(selectedText);
+                let bestMatch = null;
+                let minLength = Infinity;
+                
+                for (let i = 0; i < preTranslatedBookData.length; i++) {
+                    let combinedEnRaw = '';
+                    let tempVi = [];
+                    let tempEn = [];
+                    for (let j = i; j < preTranslatedBookData.length; j++) {
+                        combinedEnRaw += preTranslatedBookData[j].en + ' ';
+                        tempVi.push(preTranslatedBookData[j].vi);
+                        tempEn.push(preTranslatedBookData[j].en);
+                        
+                        let combinedNorm = normalizeStr(combinedEnRaw);
+                        
+                        if (combinedNorm === normSel) {
+                            bestMatch = { vi: tempVi.join(' '), en: tempEn.join(' ') };
+                            minLength = 0;
+                            break;
+                        }
+                                                
+                        if (combinedNorm.length > normSel.length + 500) {
+                            break;
+                        }
+                    }
+                    if (minLength === 0) break;
+                }
+                
+                let matchedVi = bestMatch ? bestMatch.vi : '';
+                let matchedEn = bestMatch ? bestMatch.en : '';
+                
+                if (matchedVi) {
+                    btnGoogle.style.display = 'none';
+                    btnContext.style.display = 'none';
+                    closeBtn.style.display = 'block';
+                    
+                    popup.style.padding = '15px 30px';
+                    transResult.style.display = 'flex';
+                    
+                    transResult.innerHTML = `
+                        <div style="margin-bottom: 5px;">
+                            <span style="display: block; font-size: 1.3em; font-weight: bold; color: #fdcb6e; text-transform: capitalize; text-align: left; padding-right: 15px; white-space: normal;">Dịch Văn Cảnh</span>
+                        </div>
+                        <div style="font-weight: bold; margin-bottom: 10px; white-space: normal; line-height: 1.5; font-size: 1em;">Nghĩa: ${matchedVi}</div>
+                        <div style="margin-top: 10px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 8px;">
+                            <span style="margin-bottom:5px; display:inline-block; font-size: 0.9em; color: #aaa;">Bản gốc:</span>
+                            <div style="font-style: italic; color: #ddd; font-size: 0.95em; white-space: normal; line-height: 1.5;">"${matchedEn}"</div>
+                        </div>
+                    `;
+                    
+                    var sel = window.getSelection();
+                    if(sel.rangeCount > 0) {
+                        var range = sel.getRangeAt(0);
+                        var rects = range.getClientRects();
+                        var lastRect = rects[rects.length - 1];
+                        
+                        var newLeftPos = rects[0].left + window.scrollX;
+                        if (newLeftPos + popup.offsetWidth > window.innerWidth + window.scrollX - 10) {
+                            newLeftPos = window.innerWidth + window.scrollX - popup.offsetWidth - 10;
+                        }
+                        if (newLeftPos < window.scrollX + 10) newLeftPos = window.scrollX + 10;
+                        
+                        popup.style.left = newLeftPos + 'px';
+                        popup.style.top = (lastRect.bottom + window.scrollY + 10) + 'px';
+                    }
+                    
+                } else {
+                    alert('Vui lòng bôi đen ĐÚNG VÀ TRỌN VẸN MỘT HOẶC NHIỀU CÂU (không được lở dở giữa chừng) để sử dụng tính năng Dịch Sát Nghĩa!');
+                    popup.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('mousedown', function(e) {
+                if (!popup.contains(e.target)) {
+                    popup.style.display = 'none';
+                }
+            });
+        })();
+        </script>
+    </body>
+    
+    
 
 </html>

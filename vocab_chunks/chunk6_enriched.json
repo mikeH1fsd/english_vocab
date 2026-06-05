@@ -1,0 +1,1119 @@
+{
+  "rehearse": [
+    {
+      "pos": "Động từ",
+      "context": "Diễn tập kịch, múa, văn nghệ trước khi biểu diễn chính thức.",
+      "example": "They will rehearse the play tomorrow."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Nhắc lại, kể lại chi tiết một câu chuyện hoặc sự kiện.",
+      "example": "He rehearsed the events of the previous night."
+    }
+  ],
+  "review": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Xem lại, duyệt lại một vấn đề, báo cáo hoặc quyết định.",
+      "example": "We need to review the policy before implementation."
+    },
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Phê bình, đánh giá (sách, phim, sản phẩm).",
+      "example": "The new movie received mixed reviews from critics."
+    }
+  ],
+  "sell out": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Bán hết sạch hàng hóa, vé múa.",
+      "example": "The concert tickets sold out within an hour."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Phản bội, bán rẻ nguyên tắc hoặc bạn bè vì lợi ích.",
+      "example": "He was accused of selling out to the corporate interests."
+    }
+  ],
+  "available": [
+    {
+      "pos": "Tính từ",
+      "context": "Có sẵn để mua, sử dụng hoặc lấy.",
+      "example": "Fresh fruit is available in the market."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ người rảnh rỗi, có thể gặp mặt hoặc hẹn hò.",
+      "example": "Are you available for a meeting tomorrow?"
+    }
+  ],
+  "broaden": [
+    {
+      "pos": "Động từ",
+      "context": "Mở rộng, nới rộng về mặt vật lý (con đường, kích thước).",
+      "example": "They are going to broaden the highway."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Mở mang, làm phong phú thêm kiến thức, quan điểm hoặc kinh nghiệm.",
+      "example": "Traveling helps to broaden your horizons."
+    }
+  ],
+  "category": [
+    {
+      "pos": "Danh từ",
+      "context": "Phân loại, hạng mục để sắp xếp sự vật theo nhóm.",
+      "example": "The books are divided into different categories."
+    }
+  ],
+  "disparate": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ các sự vật, khái niệm khác biệt hoàn toàn, không thể so sánh.",
+      "example": "The organization is made up of disparate groups."
+    }
+  ],
+  "divide": [
+    {
+      "pos": "Động từ / Danh từ",
+      "context": "Chia nhỏ, phân chia thành nhiều phần.",
+      "example": "The teacher divided the class into groups."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Gây chia rẽ, làm mất đoàn kết.",
+      "example": "The issue of taxes divided the voters."
+    }
+  ],
+  "favor": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự giúp đỡ, ân huệ.",
+      "example": "Can you do me a favor?"
+    },
+    {
+      "pos": "Động từ / Danh từ",
+      "context": "Thiên vị, chiếu cố, ưu ái hơn.",
+      "example": "The new tax laws favor the wealthy."
+    }
+  ],
+  "instinct": [
+    {
+      "pos": "Danh từ",
+      "context": "Bản năng sinh tồn hoặc phản xạ tự nhiên của động vật, con người.",
+      "example": "Birds build nests by instinct."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Linh cảm, trực giác hoặc năng khiếu bẩm sinh.",
+      "example": "Her instinct told her that something was wrong."
+    }
+  ],
+  "prefer": [
+    {
+      "pos": "Động từ",
+      "context": "Thích cái này hơn cái kia.",
+      "example": "I prefer tea to coffee."
+    }
+  ],
+  "reason": [
+    {
+      "pos": "Danh từ",
+      "context": "Lý do, nguyên nhân của một sự việc.",
+      "example": "What is the reason for your absence?"
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Lý trí, khả năng suy nghĩ logic.",
+      "example": "He lost his reason and started shouting."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Suy luận, thuyết phục bằng lý lẽ.",
+      "example": "I tried to reason with her, but she wouldn't listen."
+    }
+  ],
+  "relaxation": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự nghỉ ngơi, thư giãn sau thời gian làm việc mệt mỏi.",
+      "example": "Yoga is a great form of relaxation."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Việc nới lỏng các quy định, luật lệ.",
+      "example": "The relaxation of import restrictions boosted trade."
+    }
+  ],
+  "taste": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Vị giác, hương vị của thức ăn.",
+      "example": "This soup tastes delicious."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Thị hiếu, sở thích cá nhân (âm nhạc, thời trang).",
+      "example": "He has good taste in music."
+    }
+  ],
+  "urge": [
+    {
+      "pos": "Động từ",
+      "context": "Thúc giục, nài nỉ, cố gắng thuyết phục ai làm gì.",
+      "example": "The government urged people to stay home."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự thôi thúc mãnh liệt, khao khát tự nhiên.",
+      "example": "I felt a sudden urge to laugh."
+    }
+  ],
+  "acquire": [
+    {
+      "pos": "Động từ",
+      "context": "Mua, đạt được, thu được (tài sản, công ty).",
+      "example": "The company acquired a new subsidiary."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tiếp thu, học hỏi được (kỹ năng, kiến thức).",
+      "example": "He acquired a good knowledge of English."
+    }
+  ],
+  "admire": [
+    {
+      "pos": "Động từ",
+      "context": "Khâm phục, ngưỡng mộ ai đó vì tài năng hoặc phẩm chất.",
+      "example": "I really admire her dedication to the project."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Ngắm nhìn, chiêm ngưỡng với sự thích thú.",
+      "example": "We stood for a few minutes, admiring the view."
+    }
+  ],
+  "collection": [
+    {
+      "pos": "Danh từ",
+      "context": "Bộ sưu tập các đồ vật, tác phẩm nghệ thuật.",
+      "example": "He has a large collection of stamps."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự thu thập, gom tiền quyên góp hoặc nợ.",
+      "example": "The collection of taxes was delayed."
+    }
+  ],
+  "criticism": [
+    {
+      "pos": "Danh từ",
+      "context": "Lời chỉ trích, phê phán nhắm vào khuyết điểm.",
+      "example": "He cannot take criticism."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự phê bình văn học, nghệ thuật.",
+      "example": "She wrote a piece of literary criticism."
+    }
+  ],
+  "fashion": [
+    {
+      "pos": "Danh từ",
+      "context": "Thời trang, mốt quần áo thịnh hành.",
+      "example": "She is always dressed in the latest fashion."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Cách thức, kiểu cách làm một việc gì đó.",
+      "example": "He behaved in a peculiar fashion."
+    }
+  ],
+  "leisure": [
+    {
+      "pos": "Danh từ",
+      "context": "Thời gian nhàn rỗi, không phải làm việc.",
+      "example": "In his leisure time, he enjoys reading."
+    }
+  ],
+  "respond": [
+    {
+      "pos": "Động từ",
+      "context": "Trả lời, hồi đáp một câu hỏi hoặc bức thư.",
+      "example": "She responded to my email immediately."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Phản ứng lại, đáp ứng với thuốc hoặc điều trị.",
+      "example": "The patient is responding well to the treatment."
+    }
+  ],
+  "schedule": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Thời gian biểu, lịch trình làm việc.",
+      "example": "I have a very busy schedule today."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Lên lịch, sắp xếp thời gian cho một sự kiện.",
+      "example": "The meeting is scheduled for Monday."
+    }
+  ],
+  "significant": [
+    {
+      "pos": "Tính từ",
+      "context": "Quan trọng, đáng kể, có ảnh hưởng lớn.",
+      "example": "There has been a significant increase in sales."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Đầy ý nghĩa, mang thông điệp ngầm.",
+      "example": "He gave me a significant look."
+    }
+  ],
+  "specialize": [
+    {
+      "pos": "Động từ",
+      "context": "Chuyên môn hóa, tập trung nghiên cứu hoặc hoạt động trong một lĩnh vực hẹp.",
+      "example": "He decided to specialize in family law."
+    }
+  ],
+  "spectrum": [
+    {
+      "pos": "Danh từ",
+      "context": "Dải quang phổ (ánh sáng, âm thanh).",
+      "example": "The colors of the spectrum are red, orange, yellow, green, blue, indigo, and violet."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Phạm vi rộng lớn của ý tưởng, quan điểm, hay các sự vật.",
+      "example": "We have people from across the political spectrum."
+    }
+  ],
+  "assignment": [
+    {
+      "pos": "Danh từ",
+      "context": "Nhiệm vụ, công việc được giao.",
+      "example": "The teacher gave us a difficult assignment."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự chuyển nhượng tài sản hoặc quyền lợi (pháp lý).",
+      "example": "The assignment of the lease was completed."
+    }
+  ],
+  "choose": [
+    {
+      "pos": "Động từ",
+      "context": "Lựa chọn, quyết định lấy cái nào trong số nhiều cái.",
+      "example": "You can choose between tea and coffee."
+    }
+  ],
+  "constitute": [
+    {
+      "pos": "Động từ",
+      "context": "Cấu thành, tạo thành (là một phần của tổng thể).",
+      "example": "Women constitute 70% of the workforce."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Thành lập, thiết lập (chính phủ, ủy ban).",
+      "example": "A committee was constituted to investigate the matter."
+    }
+  ],
+  "decision": [
+    {
+      "pos": "Danh từ",
+      "context": "Quyết định đưa ra sau khi suy nghĩ.",
+      "example": "We must make a decision by tomorrow."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự kiên quyết, tính quả quyết trong hành động.",
+      "example": "She acted with decision."
+    }
+  ],
+  "disseminate": [
+    {
+      "pos": "Động từ",
+      "context": "Truyền bá, phổ biến thông tin, kiến thức một cách rộng rãi.",
+      "example": "The internet is a tool to disseminate information."
+    }
+  ],
+  "impact": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Sự va chạm mạnh về vật lý.",
+      "example": "The impact of the crash destroyed the car."
+    },
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Tác động, ảnh hưởng mạnh mẽ lên ai hoặc cái gì.",
+      "example": "Climate change has a major impact on agriculture."
+    }
+  ],
+  "in depth": [
+    {
+      "pos": "Trạng từ / Tính từ",
+      "context": "Kỹ lưỡng, chi tiết, chuyên sâu.",
+      "example": "We will discuss the topic in depth later."
+    }
+  ],
+  "investigate": [
+    {
+      "pos": "Động từ",
+      "context": "Điều tra tội phạm, nguyên nhân tai nạn hoặc làm rõ sự thật.",
+      "example": "Police are investigating the murder."
+    }
+  ],
+  "link": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Sự liên kết, mối quan hệ kết nối giữa các sự vật.",
+      "example": "There is a strong link between smoking and cancer."
+    },
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Đường dẫn (URL) trên internet hoặc vòng xích.",
+      "example": "Click the link to verify your email."
+    }
+  ],
+  "subscribe": [
+    {
+      "pos": "Động từ",
+      "context": "Đăng ký, đặt mua dài hạn (báo, dịch vụ trực tuyến).",
+      "example": "I subscribe to a magazine about gardening."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tán thành, đồng ý với một quan điểm (subscribe to).",
+      "example": "I do not subscribe to that theory."
+    }
+  ],
+  "thorough": [
+    {
+      "pos": "Tính từ",
+      "context": "Kỹ lưỡng, cẩn thận, làm việc đến nơi đến chốn.",
+      "example": "The doctor gave him a thorough check-up."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Triệt để, hoàn toàn.",
+      "example": "It was a thorough waste of time."
+    }
+  ],
+  "annually": [
+    {
+      "pos": "Trạng từ",
+      "context": "Hàng năm, diễn ra mỗi năm một lần.",
+      "example": "The festival is held annually in July."
+    }
+  ],
+  "appointment": [
+    {
+      "pos": "Danh từ",
+      "context": "Cuộc hẹn gặp mặt có sắp xếp trước.",
+      "example": "I have a doctor's appointment at 3 PM."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự bổ nhiệm vào một vị trí, chức vụ.",
+      "example": "His appointment as manager was unexpected."
+    }
+  ],
+  "assess": [
+    {
+      "pos": "Động từ",
+      "context": "Đánh giá năng lực, chất lượng, hiệu quả.",
+      "example": "They will assess your performance after three months."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Định giá tài sản để tính thuế.",
+      "example": "The value of the house was assessed at $200,000."
+    }
+  ],
+  "diagnose": [
+    {
+      "pos": "Động từ",
+      "context": "Chẩn đoán bệnh lý hoặc nguyên nhân của một vấn đề.",
+      "example": "He was diagnosed with diabetes."
+    }
+  ],
+  "diagnosis": [
+    {
+      "pos": "Danh từ",
+      "context": "Lời chẩn đoán của bác sĩ hoặc kết quả phân tích nguyên nhân.",
+      "example": "The doctor's diagnosis was a mild infection."
+    }
+  ],
+  "effective": [
+    {
+      "pos": "Tính từ",
+      "context": "Có hiệu quả, đạt kết quả mong muốn.",
+      "example": "The medicine is highly effective."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Bắt đầu có hiệu lực (đối với luật, quy định).",
+      "example": "The new law becomes effective next month."
+    }
+  ],
+  "instrument": [
+    {
+      "pos": "Danh từ",
+      "context": "Nhạc cụ.",
+      "example": "She plays three musical instruments."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Dụng cụ y tế, thiết bị khoa học.",
+      "example": "Surgical instruments must be sterilized."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Công cụ, phương tiện tài chính hoặc văn bản pháp lý.",
+      "example": "Bonds are financial instruments."
+    }
+  ],
+  "manage": [
+    {
+      "pos": "Động từ",
+      "context": "Quản lý, điều hành doanh nghiệp hoặc nhân sự.",
+      "example": "She manages a large team of developers."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Xoay xở, giải quyết thành công một khó khăn.",
+      "example": "How did you manage to fix the car?"
+    }
+  ],
+  "prevent": [
+    {
+      "pos": "Động từ",
+      "context": "Ngăn chặn, phòng ngừa điều tồi tệ xảy ra.",
+      "example": "Vaccines help to prevent diseases."
+    }
+  ],
+  "recommendation": [
+    {
+      "pos": "Danh từ",
+      "context": "Lời đề xuất, khuyên nhủ nên làm gì.",
+      "example": "I bought this book on your recommendation."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Thư giới thiệu, sự tiến cử nhân sự.",
+      "example": "He asked his boss for a letter of recommendation."
+    }
+  ],
+  "record": [
+    {
+      "pos": "Danh từ",
+      "context": "Hồ sơ, ghi chép lưu trữ.",
+      "example": "Medical records are strictly confidential."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Kỷ lục đạt được trong thể thao hoặc lĩnh vực nào đó.",
+      "example": "He broke the world record."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Ghi lại, thu âm, thu hình.",
+      "example": "I recorded the TV show to watch later."
+    }
+  ],
+  "refer": [
+    {
+      "pos": "Động từ",
+      "context": "Tham khảo, tra cứu tài liệu.",
+      "example": "Please refer to page 50 for more details."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Ám chỉ, nhắc đến, đề cập tới ai/cái gì.",
+      "example": "He referred to his past experiences."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chuyển tuyến bệnh nhân hoặc giới thiệu cho chuyên gia.",
+      "example": "My doctor referred me to a specialist."
+    }
+  ],
+  "serious": [
+    {
+      "pos": "Tính từ",
+      "context": "Nghiêm trọng, trầm trọng (bệnh tật, tai nạn).",
+      "example": "He suffered serious injuries in the crash."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Nghiêm túc, không đùa giỡn.",
+      "example": "Are you serious about quitting your job?"
+    }
+  ],
+  "catch up": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Đuổi kịp, theo kịp ai đó về tiến độ.",
+      "example": "You walk on ahead, I'll catch up."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Cập nhật tin tức, hàn huyên sau thời gian không gặp.",
+      "example": "Let's meet for a coffee and catch up."
+    }
+  ],
+  "distraction": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự làm sao nhãng, mất tập trung.",
+      "example": "I can't study with all these distractions."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Trò tiêu khiển, giải trí nhẹ nhàng.",
+      "example": "He plays video games as a distraction from work."
+    }
+  ],
+  "encouragement": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự động viên, khích lệ, cổ vũ tinh thần.",
+      "example": "Children need praise and encouragement."
+    }
+  ],
+  "evident": [
+    {
+      "pos": "Tính từ",
+      "context": "Rõ ràng, hiển nhiên, dễ nhận thấy.",
+      "example": "It is evident that she is very talented."
+    }
+  ],
+  "habit": [
+    {
+      "pos": "Danh từ",
+      "context": "Thói quen lặp lại nhiều lần.",
+      "example": "Biting your nails is a bad habit."
+    }
+  ],
+  "illuminate": [
+    {
+      "pos": "Động từ",
+      "context": "Chiếu sáng, thắp sáng.",
+      "example": "The streets were illuminated with colored lights."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Làm sáng tỏ, giải thích rõ ràng một vấn đề phức tạp.",
+      "example": "This article illuminates the causes of the conflict."
+    }
+  ],
+  "irritate": [
+    {
+      "pos": "Động từ",
+      "context": "Chọc tức, làm phát cáu.",
+      "example": "His constant complaining irritates me."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Làm tấy đỏ, gây ngứa rát (da, mắt).",
+      "example": "The smoke irritated my eyes."
+    }
+  ],
+  "overview": [
+    {
+      "pos": "Danh từ",
+      "context": "Cái nhìn tổng quan, tóm tắt khái quát về một vấn đề.",
+      "example": "The document provides a general overview of the project."
+    }
+  ],
+  "position": [
+    {
+      "pos": "Danh từ",
+      "context": "Vị trí địa lý, tư thế cơ thể.",
+      "example": "Make sure you are sitting in a comfortable position."
+    },
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Chức vụ, địa vị công việc.",
+      "example": "She holds a senior position in the company."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Lập trường, quan điểm.",
+      "example": "What is your position on this issue?"
+    }
+  ],
+  "regularly": [
+    {
+      "pos": "Trạng từ",
+      "context": "Thường xuyên, đều đặn, theo một chu kỳ nhất định.",
+      "example": "You should brush your teeth regularly."
+    }
+  ],
+  "restore": [
+    {
+      "pos": "Động từ",
+      "context": "Phục hồi, khôi phục lại tình trạng tốt như ban đầu.",
+      "example": "The old building was carefully restored."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Phục chức, trao lại quyền lợi, mang lại sự tự tin.",
+      "example": "The victory helped restore his confidence."
+    }
+  ],
+  "alternative": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự lựa chọn thay thế khác.",
+      "example": "We have no alternative but to leave."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Thay thế, khác biệt với cách thông thường.",
+      "example": "They are looking for alternative energy sources."
+    }
+  ],
+  "aspect": [
+    {
+      "pos": "Danh từ",
+      "context": "Khía cạnh, một phần của vấn đề.",
+      "example": "We must consider every aspect of the problem."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Diện mạo, vẻ bề ngoài.",
+      "example": "His face took on a grim aspect."
+    }
+  ],
+  "concern": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Mối lo ngại, sự quan tâm.",
+      "example": "There is growing concern about climate change."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Liên quan, dính líu đến.",
+      "example": "This matter does not concern you."
+    }
+  ],
+  "emphasize": [
+    {
+      "pos": "Động từ",
+      "context": "Nhấn mạnh, làm nổi bật tầm quan trọng của điều gì.",
+      "example": "The teacher emphasized the importance of hard work."
+    }
+  ],
+  "incur": [
+    {
+      "pos": "Động từ",
+      "context": "Gánh chịu rủi ro, chịu khoản phí, chi phí phát sinh.",
+      "example": "Any expenses incurred will be refunded."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chuốc lấy hậu quả, sự tức giận.",
+      "example": "He incurred the wrath of his boss."
+    }
+  ],
+  "personnel": [
+    {
+      "pos": "Danh từ",
+      "context": "Toàn thể nhân viên, nhân sự trong công ty.",
+      "example": "The company has hired new personnel."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Phòng nhân sự.",
+      "example": "Please report to the personnel department."
+    }
+  ],
+  "policy": [
+    {
+      "pos": "Danh từ",
+      "context": "Chính sách, nguyên tắc hoạt động của tổ chức.",
+      "example": "It is against company policy to use personal email for work."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Hợp đồng bảo hiểm.",
+      "example": "She took out a life insurance policy."
+    }
+  ],
+  "portion": [
+    {
+      "pos": "Danh từ",
+      "context": "Một phần của tổng thể.",
+      "example": "A large portion of the budget goes to education."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Khẩu phần ăn.",
+      "example": "He served himself a generous portion of meat."
+    }
+  ],
+  "reimburse": [
+    {
+      "pos": "Động từ",
+      "context": "Hoàn trả lại số tiền đã tiêu tốn cho công việc.",
+      "example": "The company will reimburse you for travel expenses."
+    }
+  ],
+  "regardless": [
+    {
+      "pos": "Trạng từ",
+      "context": "Bất chấp, không màng đến khó khăn hay hậu quả.",
+      "example": "He carried on working regardless of the pain."
+    }
+  ],
+  "treatment": [
+    {
+      "pos": "Danh từ",
+      "context": "Quá trình điều trị bệnh.",
+      "example": "The new treatment is very effective."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Cách đối xử, cư xử với người khác hoặc vật.",
+      "example": "They complained about their harsh treatment by the police."
+    }
+  ],
+  "suit": [
+    {
+      "pos": "Danh từ",
+      "context": "Bộ com-lê, âu phục.",
+      "example": "He wore a dark suit to the interview."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Phù hợp với nhu cầu, sở thích hoặc vóc dáng.",
+      "example": "That dress really suits you."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Vụ kiện (lawsuit).",
+      "example": "He filed a suit against his employer."
+    }
+  ],
+  "allow": [
+    {
+      "pos": "Động từ",
+      "context": "Cho phép, để cho ai đó làm gì.",
+      "example": "Smoking is not allowed in this building."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Trích ra, cấp cho (tiền bạc, thời gian).",
+      "example": "You need to allow 30 minutes for the journey."
+    }
+  ],
+  "salary": [
+    {
+      "pos": "Danh từ",
+      "context": "Tiền lương trả cố định hàng tháng.",
+      "example": "She earns a high salary as a lawyer."
+    }
+  ],
+  "accompany": [
+    {
+      "pos": "Động từ",
+      "context": "Đi cùng, tháp tùng ai đó.",
+      "example": "Children under 12 must be accompanied by an adult."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đệm đàn (âm nhạc).",
+      "example": "He accompanied her on the piano."
+    }
+  ],
+  "admit": [
+    {
+      "pos": "Động từ",
+      "context": "Thừa nhận, thú nhận một sự thật (thường là lỗi lầm).",
+      "example": "He finally admitted his mistake."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Cho phép ai đó vào một địa điểm (bệnh viện, rạp hát).",
+      "example": "Two tickets admit four people."
+    }
+  ],
+  "authorize": [
+    {
+      "pos": "Động từ",
+      "context": "Cho phép chính thức, ủy quyền làm gì.",
+      "example": "Only authorized personnel can enter this area."
+    }
+  ],
+  "designate": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ định, bổ nhiệm ai vào một vị trí.",
+      "example": "He was designated as the leader of the group."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Gắn mác, đặt tên, định rõ ranh giới.",
+      "example": "This area has been designated as a national park."
+    }
+  ],
+  "escort": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Người bảo vệ, tháp tùng để đảm bảo an toàn hoặc chỉ đường.",
+      "example": "The president arrived with a police escort."
+    }
+  ],
+  "identify": [
+    {
+      "pos": "Động từ",
+      "context": "Nhận diện, xác định danh tính hoặc đặc điểm.",
+      "example": "Can you identify the man in this photo?"
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đồng cảm, thấu hiểu (identify with).",
+      "example": "Many readers can identify with the main character."
+    }
+  ],
+  "mission": [
+    {
+      "pos": "Danh từ",
+      "context": "Sứ mệnh, nhiệm vụ đặc biệt quan trọng.",
+      "example": "His mission is to rescue the hostages."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Đoàn ngoại giao, cơ quan đại diện ở nước ngoài.",
+      "example": "He works at the diplomatic mission in Geneva."
+    }
+  ],
+  "permit": [
+    {
+      "pos": "Động từ",
+      "context": "Cho phép, chấp thuận.",
+      "example": "Photography is not permitted inside the museum."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Giấy phép.",
+      "example": "You need a work permit to work here."
+    }
+  ],
+  "pertinent": [
+    {
+      "pos": "Tính từ",
+      "context": "Liên quan trực tiếp, thích hợp, đúng trọng tâm.",
+      "example": "Please keep your comments pertinent to the topic."
+    }
+  ],
+  "procedure": [
+    {
+      "pos": "Danh từ",
+      "context": "Quy trình, thủ tục các bước tiến hành.",
+      "example": "The company has a strict procedure for hiring new staff."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Ca phẫu thuật (y tế).",
+      "example": "The surgical procedure was successful."
+    }
+  ],
+  "result": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Kết quả, hậu quả của một sự việc.",
+      "example": "The accident was the result of speeding."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Dẫn đến (result in).",
+      "example": "His actions resulted in a heavy fine."
+    }
+  ],
+  "statement": [
+    {
+      "pos": "Danh từ",
+      "context": "Lời tuyên bố, phát biểu chính thức.",
+      "example": "The prime minister made a public statement."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Bảng sao kê tài khoản ngân hàng.",
+      "example": "I check my bank statement every month."
+    }
+  ],
+  "surgery": [
+    {
+      "pos": "Danh từ",
+      "context": "Ca phẫu thuật y tế.",
+      "example": "He is recovering from major heart surgery."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Phòng khám bệnh (Anh).",
+      "example": "The doctor is in his surgery."
+    }
+  ],
+  "usually": [
+    {
+      "pos": "Trạng từ",
+      "context": "Thường xuyên, thông thường.",
+      "example": "I usually get up at 7 AM."
+    }
+  ],
+  "consult": [
+    {
+      "pos": "Động từ",
+      "context": "Tham khảo ý kiến bác sĩ, luật sư hoặc chuyên gia.",
+      "example": "If symptoms persist, consult a doctor."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tra cứu tài liệu, sách báo.",
+      "example": "I need to consult a dictionary."
+    }
+  ],
+  "control": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Kiểm soát, điều khiển máy móc hoặc tình hình.",
+      "example": "He lost control of the car."
+    },
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Quyền lực, sự chi phối lên người khác.",
+      "example": "The government took control of the industry."
+    }
+  ],
+  "convenient": [
+    {
+      "pos": "Tính từ",
+      "context": "Thuận lợi, tiện dụng về mặt thời gian, phương pháp.",
+      "example": "Is 3 PM a convenient time for you?"
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Gần, tiện đường.",
+      "example": "The hotel is convenient for the station."
+    }
+  ],
+  "detect": [
+    {
+      "pos": "Động từ",
+      "context": "Dò ra, phát hiện ra (nguy hiểm, bệnh tật, vật lạ).",
+      "example": "The machine can detect small amounts of radiation."
+    }
+  ],
+  "factor": [
+    {
+      "pos": "Danh từ",
+      "context": "Nhân tố, yếu tố góp phần tạo nên kết quả.",
+      "example": "Price was a major factor in our decision."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Hệ số (toán học), chỉ số chống nắng.",
+      "example": "Use a sun cream with a high protection factor."
+    }
+  ],
+  "interaction": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự tương tác, giao tiếp giữa người với người.",
+      "example": "There is not enough interaction between management and staff."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Phản ứng, tác động qua lại giữa các hóa chất/thuốc.",
+      "example": "Be careful of the interaction between the two drugs."
+    }
+  ],
+  "limit": [
+    {
+      "pos": "Danh từ",
+      "context": "Giới hạn tối đa (tốc độ, độ tuổi, sức chịu đựng).",
+      "example": "The speed limit is 50 mph."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Hạn chế, giảm bớt số lượng.",
+      "example": "Try to limit your intake of sugar."
+    }
+  ],
+  "monitor": [
+    {
+      "pos": "Động từ",
+      "context": "Giám sát, theo dõi quá trình, tình trạng.",
+      "example": "The patient's heart rate is constantly monitored."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Màn hình máy tính hoặc lớp trưởng.",
+      "example": "He stared at the computer monitor."
+    }
+  ],
+  "potential": [
+    {
+      "pos": "Tính từ",
+      "context": "Có khả năng xảy ra, tiềm năng trong tương lai.",
+      "example": "We have identified a potential problem."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Tiềm năng, khả năng phát triển.",
+      "example": "She has great potential as an artist."
+    }
+  ],
+  "sample": [
+    {
+      "pos": "Danh từ",
+      "context": "Hàng mẫu, mẫu thử vật lý để kiểm tra.",
+      "example": "They handed out free samples of the new perfume."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Mẫu vật y tế, mẫu thử ADN.",
+      "example": "The nurse took a blood sample."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Nếm thử, thử nghiệm.",
+      "example": "We sampled the local cuisine."
+    }
+  ],
+  "sense": [
+    {
+      "pos": "Danh từ",
+      "context": "Giác quan (thị giác, thính giác...).",
+      "example": "Dogs have a keen sense of smell."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Cảm giác, nhận thức về sự vật, thời gian.",
+      "example": "He has no sense of time."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Ý nghĩa thực tế, lý trí.",
+      "example": "There is no sense in waiting any longer."
+    }
+  ],
+  "volunteer": [
+    {
+      "pos": "Danh từ",
+      "context": "Người tình nguyện làm việc không lương.",
+      "example": "The charity relies heavily on volunteers."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tình nguyện, xung phong nhận việc.",
+      "example": "She volunteered to bake a cake for the party."
+    }
+  ]
+}

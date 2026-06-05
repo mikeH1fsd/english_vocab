@@ -1,0 +1,1173 @@
+{
+  "abide by": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Tuân thủ, làm theo một quy định, luật lệ, hoặc quyết định.",
+      "example": "All employees must abide by the company's code of conduct."
+    }
+  ],
+  "agree": [
+    {
+      "pos": "Động từ",
+      "context": "Đồng ý, có cùng ý kiến với ai đó về một vấn đề.",
+      "example": "I completely agree with your assessment of the situation."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Thỏa thuận, đi đến một sự nhất trí chung.",
+      "example": "They agreed to meet at the cafe at 3 PM."
+    }
+  ],
+  "agreement": [
+    {
+      "pos": "Danh từ",
+      "context": "Hợp đồng, giao kèo mang tính pháp lý giữa các bên.",
+      "example": "Please sign the agreement before starting your work."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự đồng thuận, sự nhất trí chung.",
+      "example": "We finally reached an agreement on the project's budget."
+    }
+  ],
+  "assurance": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự cam đoan, lời hứa hẹn nhằm tạo niềm tin.",
+      "example": "He gave me his assurance that the work would be finished on time."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự tự tin, quả quyết vào bản thân.",
+      "example": "She answered the interview questions with great assurance."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Bảo hiểm nhân thọ (chủ yếu trong tiếng Anh-Anh).",
+      "example": "He bought a life assurance policy for his family's future."
+    }
+  ],
+  "cancellation": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự hủy bỏ một sự kiện, thỏa thuận hoặc dịch vụ.",
+      "example": "The sudden cancellation of the flight left many passengers stranded."
+    }
+  ],
+  "determine": [
+    {
+      "pos": "Động từ",
+      "context": "Xác định, tìm ra chính xác nguyên nhân hoặc sự thật.",
+      "example": "The investigation aims to determine the cause of the accident."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Quyết định, định đoạt điều gì sẽ xảy ra.",
+      "example": "Your attitude will determine your success in this role."
+    }
+  ],
+  "engage": [
+    {
+      "pos": "Động từ",
+      "context": "Tuyển dụng, thuê mướn một người làm việc hoặc cung cấp dịch vụ.",
+      "example": "We decided to engage a consultant to improve our strategy."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Thu hút sự chú ý, làm ai đó quan tâm hoặc tham gia vào.",
+      "example": "The teacher tried to engage the students in the discussion."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đính hôn (thường dùng ở dạng bị động: be engaged).",
+      "example": "They got engaged after dating for three years."
+    }
+  ],
+  "establish": [
+    {
+      "pos": "Động từ",
+      "context": "Thành lập, thiết lập một tổ chức, công ty hoặc hệ thống.",
+      "example": "The company was established in 1990."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Củng cố, xác minh, làm cho mọi người công nhận (danh tiếng, sự thật).",
+      "example": "She quickly established herself as an expert in the field."
+    }
+  ],
+  "obligate": [
+    {
+      "pos": "Động từ",
+      "context": "Bắt buộc ai đó phải làm gì (về mặt luật pháp hoặc đạo đức).",
+      "example": "The contract obligates the tenant to pay for any damages."
+    }
+  ],
+  "obligation": [
+    {
+      "pos": "Danh từ",
+      "context": "Nghĩa vụ, bổn phận phải thực hiện.",
+      "example": "You have a legal obligation to report the incident."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự mang ơn, cảm giác mắc nợ ai đó.",
+      "example": "I felt a sense of obligation towards him for his help."
+    }
+  ],
+  "party": [
+    {
+      "pos": "Danh từ",
+      "context": "Bữa tiệc, buổi liên hoan.",
+      "example": "Are you going to the birthday party tonight?"
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Bên tham gia (trong một hợp đồng, tranh chấp, hoặc thỏa thuận).",
+      "example": "Both parties must sign the contract."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Đảng phái chính trị.",
+      "example": "He is a member of the ruling political party."
+    }
+  ],
+  "provision": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự cung cấp, dự phòng những thứ cần thiết.",
+      "example": "The government is responsible for the provision of healthcare."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Điều khoản trong hợp đồng hoặc luật lệ.",
+      "example": "Under the provisions of the agreement, you must give a 30-day notice."
+    }
+  ],
+  "resolve": [
+    {
+      "pos": "Động từ",
+      "context": "Giải quyết một vấn đề, khó khăn hoặc tranh chấp.",
+      "example": "The manager intervened to resolve the conflict between the team members."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Kiên quyết, quyết tâm thực hiện một việc gì đó.",
+      "example": "She resolved to study harder for the next exam."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự kiên quyết, lòng quyết tâm.",
+      "example": "His resolve was tested during the difficult times."
+    }
+  ],
+  "specific": [
+    {
+      "pos": "Tính từ",
+      "context": "Cụ thể, rành mạch, chi tiết.",
+      "example": "Could you be more specific about what you need?"
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Đặc trưng, riêng biệt cho một cái gì đó.",
+      "example": "This disease is specific to tropical regions."
+    }
+  ],
+  "engagement": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự đính hôn, lời hứa hôn.",
+      "example": "Their engagement was announced in the local newspaper."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự tham gia, sự gắn kết (với công việc, cộng đồng, khách hàng).",
+      "example": "Employee engagement is crucial for a productive workplace."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự sắp xếp, cuộc hẹn hoặc thỏa thuận làm việc.",
+      "example": "I cannot attend the meeting due to a prior engagement."
+    }
+  ],
+  "attract": [
+    {
+      "pos": "Động từ",
+      "context": "Thu hút, lôi cuốn sự chú ý hoặc quan tâm của ai đó.",
+      "example": "The museum attracts thousands of visitors every year."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Hút (về mặt vật lý, ví dụ: nam châm hút kim loại).",
+      "example": "Magnets attract iron objects."
+    }
+  ],
+  "compare": [
+    {
+      "pos": "Động từ",
+      "context": "So sánh, đối chiếu để tìm ra sự giống và khác nhau.",
+      "example": "We need to compare the prices before making a purchase."
+    }
+  ],
+  "competition": [
+    {
+      "pos": "Danh từ",
+      "context": "Cuộc thi, giải đấu.",
+      "example": "She won first place in the singing competition."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự cạnh tranh (trong kinh doanh, thể thao, v.v.).",
+      "example": "There is fierce competition among smartphone manufacturers."
+    }
+  ],
+  "consume": [
+    {
+      "pos": "Động từ",
+      "context": "Tiêu thụ, sử dụng (thực phẩm, năng lượng, tài nguyên).",
+      "example": "This car consumes a lot of fuel."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Choán ngợp, ám ảnh (về mặt cảm xúc).",
+      "example": "He was consumed by guilt after the accident."
+    }
+  ],
+  "consumer": [
+    {
+      "pos": "Danh từ",
+      "context": "Người tiêu dùng, người mua hàng hóa hoặc dịch vụ.",
+      "example": "Companies must listen to consumer feedback to improve their products."
+    }
+  ],
+  "productive": [
+    {
+      "pos": "Tính từ",
+      "context": "Năng suất cao, làm việc hiệu quả, tạo ra nhiều kết quả.",
+      "example": "We had a very productive meeting this morning."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Sinh sản nhiều, màu mỡ (dùng cho đất đai, sinh học).",
+      "example": "The region is known for its highly productive agricultural land."
+    }
+  ],
+  "convince": [
+    {
+      "pos": "Động từ",
+      "context": "Thuyết phục, làm cho ai đó tin vào điều gì.",
+      "example": "I managed to convince him that the plan would work."
+    }
+  ],
+  "currently": [
+    {
+      "pos": "Trạng từ",
+      "context": "Hiện tại, ngay lúc này.",
+      "example": "She is currently working on a new marketing campaign."
+    }
+  ],
+  "fad": [
+    {
+      "pos": "Danh từ",
+      "context": "Mốt nhất thời, trào lưu ngắn hạn.",
+      "example": "The diet was just a fad and quickly lost popularity."
+    }
+  ],
+  "inspiration": [
+    {
+      "pos": "Danh từ",
+      "context": "Nguồn cảm hứng, ý tưởng đột phá.",
+      "example": "Nature is a great source of inspiration for her paintings."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Người truyền cảm hứng.",
+      "example": "His success story has been an inspiration to many young people."
+    }
+  ],
+  "market": [
+    {
+      "pos": "Danh từ",
+      "context": "Chợ, nơi mua bán hàng hóa.",
+      "example": "She went to the local market to buy fresh vegetables."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Thị trường (về mặt kinh tế, thương mại).",
+      "example": "The housing market has been growing steadily."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tiếp thị, quảng cáo và bán một sản phẩm.",
+      "example": "The company plans to market the new software worldwide."
+    }
+  ],
+  "persuasion": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự thuyết phục.",
+      "example": "It took a lot of persuasion to get him to join the team."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Niềm tin tôn giáo hoặc chính trị.",
+      "example": "People of all political persuasions attended the rally."
+    }
+  ],
+  "satisfaction": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự hài lòng, thỏa mãn khi đạt được điều mong muốn.",
+      "example": "Customer satisfaction is our top priority."
+    }
+  ],
+  "characteristic": [
+    {
+      "pos": "Danh từ",
+      "context": "Đặc điểm, nét đặc trưng của một người hay vật.",
+      "example": "Patience is a key characteristic of a good teacher."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Điển hình, mang tính đặc trưng.",
+      "example": "He answered with his characteristic humor."
+    }
+  ],
+  "consequence": [
+    {
+      "pos": "Danh từ",
+      "context": "Hậu quả, hệ quả của một hành động hay sự việc.",
+      "example": "If you break the rules, you must face the consequences."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Tầm quan trọng (thường dùng trong cấu trúc 'of little/no consequence').",
+      "example": "The delay was of little consequence to the overall project."
+    }
+  ],
+  "consider": [
+    {
+      "pos": "Động từ",
+      "context": "Cân nhắc, xem xét cẩn thận trước khi quyết định.",
+      "example": "We are considering moving to a new city."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Coi như, xem như là.",
+      "example": "I consider him to be my best friend."
+    }
+  ],
+  "cover": [
+    {
+      "pos": "Động từ",
+      "context": "Che phủ, bao bọc bề mặt.",
+      "example": "Snow covered the entire field."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Bao gồm, đề cập đến một phạm vi thông tin.",
+      "example": "The lecture will cover the basics of macroeconomics."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đài thọ, chi trả phí tổn (như bảo hiểm).",
+      "example": "Does your insurance cover dental treatment?"
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đưa tin, tường thuật sự kiện (báo chí).",
+      "example": "The journalist was sent to cover the election."
+    }
+  ],
+  "expiration": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự hết hạn (của một hợp đồng, giấy tờ, thực phẩm).",
+      "example": "Check the expiration date on the milk before drinking it."
+    }
+  ],
+  "frequently": [
+    {
+      "pos": "Trạng từ",
+      "context": "Thường xuyên, xảy ra nhiều lần.",
+      "example": "Buses run frequently between the airport and the city center."
+    }
+  ],
+  "imply": [
+    {
+      "pos": "Động từ",
+      "context": "Ngụ ý, ám chỉ, nói bóng gió mà không nói thẳng.",
+      "example": "Are you implying that I am lying?"
+    },
+    {
+      "pos": "Động từ",
+      "context": "Bao hàm, đòi hỏi tất yếu (một kết quả hay hệ quả).",
+      "example": "Freedom implies responsibility."
+    }
+  ],
+  "promise": [
+    {
+      "pos": "Động từ / Danh từ",
+      "context": "Hứa hẹn, cam kết làm điều gì đó.",
+      "example": "He made a promise to return the money soon."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Tiềm năng, triển vọng thành công.",
+      "example": "The young athlete shows great promise."
+    }
+  ],
+  "protect": [
+    {
+      "pos": "Động từ",
+      "context": "Bảo vệ, che chở khỏi nguy hiểm hoặc tổn hại.",
+      "example": "Wear sunglasses to protect your eyes from the sun."
+    }
+  ],
+  "reputation": [
+    {
+      "pos": "Danh từ",
+      "context": "Danh tiếng, tiếng tăm của một người hoặc tổ chức.",
+      "example": "The restaurant has a good reputation for its seafood."
+    }
+  ],
+  "require": [
+    {
+      "pos": "Động từ",
+      "context": "Yêu cầu, đòi hỏi điều gì đó là cần thiết.",
+      "example": "This job requires a high level of concentration."
+    }
+  ],
+  "variety": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự đa dạng, nhiều loại khác nhau.",
+      "example": "The shop offers a wide variety of local products."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Một giống, loại hình cụ thể (cây trồng, động vật).",
+      "example": "This is a rare variety of orchid."
+    }
+  ],
+  "coverage": [
+    {
+      "pos": "Danh từ",
+      "context": "Phạm vi bảo hiểm, mức độ bảo hiểm.",
+      "example": "The policy provides coverage for accidental damage."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Mức độ đưa tin, độ phủ sóng trên các phương tiện truyền thông.",
+      "example": "The scandal received widespread media coverage."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Độ phủ sóng (mạng di động, internet).",
+      "example": "The mobile network coverage is very poor in this remote area."
+    }
+  ],
+  "warranty": [
+    {
+      "pos": "Danh từ",
+      "context": "Giấy bảo hành, chế độ bảo hành sản phẩm.",
+      "example": "The laptop comes with a two-year warranty."
+    }
+  ],
+  "address": [
+    {
+      "pos": "Danh từ",
+      "context": "Địa chỉ nhà, nơi làm việc.",
+      "example": "Please write your full address on the form."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Bài diễn văn, bài phát biểu trang trọng.",
+      "example": "The president delivered a televised address to the nation."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Giải quyết, tập trung xử lý một vấn đề.",
+      "example": "We need to address the issue of climate change immediately."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Nói chuyện trực tiếp với ai, hoặc xưng hô.",
+      "example": "How should I address the judge?"
+    }
+  ],
+  "avoid": [
+    {
+      "pos": "Động từ",
+      "context": "Tránh, ngăn chặn không cho xảy ra, hoặc tránh xa ai/cái gì.",
+      "example": "We left early to avoid the traffic jam."
+    }
+  ],
+  "demonstrate": [
+    {
+      "pos": "Động từ",
+      "context": "Chứng minh, làm rõ bằng bằng chứng hoặc ví dụ.",
+      "example": "The study demonstrates the link between diet and health."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Biểu diễn, làm mẫu cách hoạt động của một sản phẩm.",
+      "example": "The salesperson will demonstrate how to use the vacuum cleaner."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tham gia biểu tình.",
+      "example": "Thousands of people demonstrated against the new tax law."
+    }
+  ],
+  "develop": [
+    {
+      "pos": "Động từ",
+      "context": "Phát triển, mở rộng, lớn mạnh hơn.",
+      "example": "We want to develop a new marketing strategy."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Mắc phải (một căn bệnh) hoặc hình thành (một thói quen).",
+      "example": "He developed asthma when he was a child."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tráng, rửa ảnh (nhiếp ảnh).",
+      "example": "I need to get these photos developed."
+    }
+  ],
+  "evaluate": [
+    {
+      "pos": "Động từ",
+      "context": "Đánh giá, ước lượng chất lượng hoặc giá trị của cái gì.",
+      "example": "The teacher will evaluate your performance based on the test."
+    }
+  ],
+  "gather": [
+    {
+      "pos": "Động từ",
+      "context": "Tụ tập, tập hợp lại (người hoặc vật).",
+      "example": "A crowd gathered to watch the street performance."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Thu thập (thông tin, dữ liệu).",
+      "example": "We need to gather more data before making a decision."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Suy ra, hiểu được từ những gì đã nghe/thấy.",
+      "example": "I gather from your expression that you are not happy with the plan."
+    }
+  ],
+  "offer": [
+    {
+      "pos": "Động từ / Danh từ",
+      "context": "Cung cấp, mời mọc hoặc đưa ra một đề nghị.",
+      "example": "They offered him a job in New York."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự giảm giá, khuyến mãi.",
+      "example": "This special offer is only valid for a week."
+    }
+  ],
+  "primarily": [
+    {
+      "pos": "Trạng từ",
+      "context": "Chủ yếu, phần lớn, quan trọng nhất.",
+      "example": "The advertisement is aimed primarily at teenagers."
+    }
+  ],
+  "risk": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Rủi ro, nguy cơ; liều lĩnh làm gì đó.",
+      "example": "If you don't wear a helmet, you risk injuring your head."
+    }
+  ],
+  "strategy": [
+    {
+      "pos": "Danh từ",
+      "context": "Chiến lược, kế hoạch tổng thể để đạt mục tiêu.",
+      "example": "The company's strategy is to expand into Asian markets."
+    }
+  ],
+  "strong": [
+    {
+      "pos": "Tính từ",
+      "context": "Mạnh mẽ về thể chất hoặc tinh thần.",
+      "example": "He is strong enough to lift that heavy box."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Chắc chắn, vững vàng, không dễ bị ảnh hưởng (kinh tế, lý lẽ).",
+      "example": "The economy shows strong signs of recovery."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Đậm, nồng (hương vị, mùi, ánh sáng).",
+      "example": "I like drinking strong coffee in the morning."
+    }
+  ],
+  "substitution": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự thay thế, sự hoán đổi.",
+      "example": "The substitution of machines for human labor has increased productivity."
+    }
+  ],
+  "conference": [
+    {
+      "pos": "Danh từ",
+      "context": "Hội nghị, buổi họp lớn để thảo luận chuyên đề.",
+      "example": "She presented her research at an international medical conference."
+    }
+  ],
+  "accommodate": [
+    {
+      "pos": "Động từ",
+      "context": "Cung cấp chỗ ở, sức chứa cho ai/cái gì.",
+      "example": "The hotel can accommodate up to 500 guests."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đáp ứng nhu cầu, giúp đỡ, làm cho phù hợp.",
+      "example": "We will do our best to accommodate your special requests."
+    }
+  ],
+  "arrangement": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự sắp xếp, sự chuẩn bị cho một sự kiện.",
+      "example": "They have made all the arrangements for the wedding."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự bài trí, cách bố trí.",
+      "example": "The flower arrangement on the table looks beautiful."
+    }
+  ],
+  "association": [
+    {
+      "pos": "Danh từ",
+      "context": "Hiệp hội, tổ chức liên kết những người có cùng mục đích.",
+      "example": "He is the president of the local teachers' association."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự liên tưởng, mối liên hệ giữa các ý tưởng hoặc sự kiện.",
+      "example": "There is a strong association between smoking and lung cancer."
+    }
+  ],
+  "attend": [
+    {
+      "pos": "Động từ",
+      "context": "Tham dự, có mặt (tại một sự kiện, trường học).",
+      "example": "Only a few people attended the meeting."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chăm lo, phục vụ hoặc chú ý giải quyết (attend to).",
+      "example": "The doctor had to attend to an emergency patient."
+    }
+  ],
+  "get in touch": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Liên lạc, kết nối với ai đó.",
+      "example": "I will get in touch with you as soon as I have the results."
+    }
+  ],
+  "hold": [
+    {
+      "pos": "Động từ",
+      "context": "Tổ chức, tiến hành một sự kiện, cuộc họp.",
+      "example": "The next Olympic Games will be held in Paris."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Cầm, nắm, giữ trong tay.",
+      "example": "She was holding a cup of coffee."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Có sức chứa, chứa được.",
+      "example": "This room can hold 50 people."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Nắm giữ (quyền lực, quan điểm, thông tin).",
+      "example": "He holds a firm belief in justice."
+    }
+  ],
+  "location": [
+    {
+      "pos": "Danh từ",
+      "context": "Vị trí, địa điểm của một tòa nhà, doanh nghiệp.",
+      "example": "The new restaurant is in a great location."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Địa điểm quay phim (ngoại cảnh).",
+      "example": "The movie was shot entirely on location in Italy."
+    }
+  ],
+  "overcrowded": [
+    {
+      "pos": "Tính từ",
+      "context": "Quá đông đúc, chật ních (người hoặc vật).",
+      "example": "The train was so overcrowded that I couldn't find a seat."
+    }
+  ],
+  "register": [
+    {
+      "pos": "Động từ",
+      "context": "Đăng ký ghi danh (vào khóa học, sự kiện).",
+      "example": "You need to register online before attending the workshop."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Biểu lộ cảm xúc (trên khuôn mặt).",
+      "example": "No emotion registered on his face when he heard the news."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sổ đăng ký, máy tính tiền (cash register).",
+      "example": "The cashier put the money in the register."
+    }
+  ],
+  "select": [
+    {
+      "pos": "Động từ",
+      "context": "Lựa chọn, tuyển chọn.",
+      "example": "Please select the best answer from the given options."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Tuyển chọn khắt khe, có chọn lọc, cao cấp.",
+      "example": "They only invite a select group of journalists to the event."
+    }
+  ],
+  "session": [
+    {
+      "pos": "Danh từ",
+      "context": "Phiên họp, kỳ họp, khoảng thời gian diễn ra một hoạt động.",
+      "example": "The afternoon session will start at 2 PM."
+    }
+  ],
+  "take part in": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Tham gia vào một hoạt động, phong trào.",
+      "example": "Many students took part in the volunteer program."
+    }
+  ],
+  "access": [
+    {
+      "pos": "Danh từ",
+      "context": "Quyền truy cập, cơ hội hoặc đường vào một nơi, dữ liệu.",
+      "example": "Only authorized personnel have access to this room."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Truy cập thông tin, tiếp cận máy tính/dữ liệu.",
+      "example": "You need a password to access the computer system."
+    }
+  ],
+  "allocate": [
+    {
+      "pos": "Động từ",
+      "context": "Phân bổ, cấp phát (tài nguyên, ngân sách, thời gian).",
+      "example": "The government will allocate more funds for education."
+    }
+  ],
+  "compatible": [
+    {
+      "pos": "Tính từ",
+      "context": "Tương thích, phù hợp để sử dụng cùng nhau (máy móc, phần mềm).",
+      "example": "This software is not compatible with older operating systems."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Hợp nhau, hòa hợp (về tính cách, con người).",
+      "example": "They broke up because they were not compatible."
+    }
+  ],
+  "delete": [
+    {
+      "pos": "Động từ",
+      "context": "Xóa (dữ liệu, văn bản).",
+      "example": "I accidentally deleted all the files on my hard drive."
+    }
+  ],
+  "display": [
+    {
+      "pos": "Động từ / Danh từ",
+      "context": "Trưng bày, hiển thị cho mọi người thấy.",
+      "example": "The museum will display the new artifacts next month."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Biểu lộ (tình cảm, kỹ năng).",
+      "example": "He displayed a lot of courage during the crisis."
+    }
+  ],
+  "duplicate": [
+    {
+      "pos": "Động từ",
+      "context": "Sao chép, nhân bản, làm ra bản sao.",
+      "example": "Can you duplicate this key for me?"
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Bản sao.",
+      "example": "Keep the duplicate in a safe place."
+    }
+  ],
+  "figure out": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Hiểu ra, tìm ra cách giải quyết vấn đề sau khi suy nghĩ.",
+      "example": "It took me a long time to figure out how to operate the machine."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Tính toán ra.",
+      "example": "We need to figure out the total cost of the trip."
+    }
+  ],
+  "ignore": [
+    {
+      "pos": "Động từ",
+      "context": "Phớt lờ, làm lơ, cố tình không chú ý đến.",
+      "example": "She completely ignored my warnings."
+    }
+  ],
+  "search": [
+    {
+      "pos": "Động từ / Danh từ",
+      "context": "Tìm kiếm, lục soát để tìm ai/cái gì.",
+      "example": "I searched everywhere for my keys."
+    }
+  ],
+  "shut down": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Đóng cửa, ngừng hoạt động (nhà máy, doanh nghiệp).",
+      "example": "The factory was shut down due to a lack of orders."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Tắt nguồn (máy tính, thiết bị điện tử).",
+      "example": "Please shut down your computers before leaving the office."
+    }
+  ],
+  "warning": [
+    {
+      "pos": "Danh từ",
+      "context": "Lời cảnh báo về một sự nguy hiểm hoặc rắc rối sắp xảy ra.",
+      "example": "The weather forecaster issued a severe storm warning."
+    }
+  ],
+  "failure": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự thất bại, bất thành trong việc gì.",
+      "example": "The business ended in failure after just one year."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự hỏng hóc, ngừng hoạt động (máy móc, hệ thống).",
+      "example": "The flight was delayed due to engine failure."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự không thực hiện được điều bắt buộc (failure to do something).",
+      "example": "Failure to pay the fine will result in imprisonment."
+    }
+  ],
+  "affordable": [
+    {
+      "pos": "Tính từ",
+      "context": "Có giá cả phải chăng, hợp túi tiền, có thể chi trả được.",
+      "example": "They are looking for an affordable apartment in the city."
+    }
+  ],
+  "as needed": [
+    {
+      "pos": "Trạng ngữ",
+      "context": "Khi cần thiết, tùy theo nhu cầu.",
+      "example": "You can take the painkiller as needed."
+    }
+  ],
+  "be in charge of": [
+    {
+      "pos": "Cụm từ",
+      "context": "Có trách nhiệm quản lý, phụ trách việc gì hoặc ai đó.",
+      "example": "She is in charge of the entire marketing department."
+    }
+  ],
+  "capacity": [
+    {
+      "pos": "Danh từ",
+      "context": "Sức chứa, dung tích tối đa.",
+      "example": "The stadium has a seating capacity of 50,000."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Khả năng, năng lực tiếp thu hoặc thực hiện việc gì.",
+      "example": "He has a great capacity for learning languages."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Vai trò, tư cách.",
+      "example": "She was acting in her capacity as the company's CEO."
+    }
+  ],
+  "durable": [
+    {
+      "pos": "Tính từ",
+      "context": "Bền bỉ, lâu bền, có khả năng chống chịu sự mài mòn.",
+      "example": "This pair of shoes is very durable and will last for years."
+    }
+  ],
+  "initiative": [
+    {
+      "pos": "Danh từ",
+      "context": "Sáng kiến, chương trình hoặc chiến lược mới để giải quyết vấn đề.",
+      "example": "The government has introduced a new initiative to reduce pollution."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Thế chủ động, sự chủ động làm việc mà không cần ai nhắc nhở.",
+      "example": "An employee who takes the initiative is highly valued."
+    }
+  ],
+  "initiate": [
+    {
+      "pos": "Động từ",
+      "context": "Khởi xướng, bắt đầu một quá trình hoặc hành động.",
+      "example": "The company will initiate a new project next month."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Kết nạp (ai đó vào một hội kín, tổ chức).",
+      "example": "He was initiated into the secret society."
+    }
+  ],
+  "physically": [
+    {
+      "pos": "Trạng từ",
+      "context": "Về mặt thể chất, cơ thể.",
+      "example": "The job is physically demanding."
+    },
+    {
+      "pos": "Trạng từ",
+      "context": "Bằng những quy luật vật lý tự nhiên.",
+      "example": "It is physically impossible to be in two places at once."
+    }
+  ],
+  "provider": [
+    {
+      "pos": "Danh từ",
+      "context": "Nhà cung cấp (dịch vụ, hàng hóa).",
+      "example": "They are a leading provider of internet services."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Trụ cột gia đình (người chu cấp tài chính).",
+      "example": "He has always been the main provider for his family."
+    }
+  ],
+  "recur": [
+    {
+      "pos": "Động từ",
+      "context": "Tái diễn, lặp lại, xuất hiện lại (sự kiện, vấn đề, bệnh tật).",
+      "example": "If the problem recurs, please contact customer support."
+    }
+  ],
+  "reduction": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự cắt giảm, sự thu nhỏ về quy mô, số lượng hoặc giá cả.",
+      "example": "There has been a significant reduction in crime rates this year."
+    }
+  ],
+  "stay on top of": [
+    {
+      "pos": "Cụm từ",
+      "context": "Nắm bắt kịp thời, kiểm soát tình hình và hiểu rõ những gì đang diễn ra.",
+      "example": "You need to read the news daily to stay on top of the market trends."
+    }
+  ],
+  "stock": [
+    {
+      "pos": "Danh từ",
+      "context": "Cổ phiếu, cổ phần trong công ty.",
+      "example": "He invested a lot of money in the stock market."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Hàng lưu kho, lượng hàng dự trữ.",
+      "example": "We are currently out of stock for this item."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Nước hầm xương (dùng trong nấu ăn).",
+      "example": "Use chicken stock to make the soup tastier."
+    }
+  ],
+  "appreciate": [
+    {
+      "pos": "Động từ",
+      "context": "Cảm kích, biết ơn về điều gì.",
+      "example": "I really appreciate all the help you've given me."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đánh giá cao, hiểu rõ giá trị của cái gì.",
+      "example": "You can't fully appreciate this painting without knowing its history."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tăng giá trị (tài sản, tiền tệ).",
+      "example": "The value of the house has appreciated significantly."
+    }
+  ],
+  "expose": [
+    {
+      "pos": "Động từ",
+      "context": "Phơi bày, vạch trần (sự thật, tội ác).",
+      "example": "The documentary exposed the corruption within the police force."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đặt vào tình thế nguy hiểm, phơi nhiễm.",
+      "example": "Do not expose the chemicals to direct sunlight."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Cho ai đó tiếp xúc, trải nghiệm điều mới.",
+      "example": "Parents should expose their children to different cultures."
+    }
+  ],
+  "bring in": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Tuyển dụng, thuê chuyên gia hoặc nhân sự mới.",
+      "example": "We need to bring in an expert to solve this technical issue."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Mang lại lợi nhuận, thu nhập.",
+      "example": "The new product line brought in a lot of money."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Đưa ai đó đến đồn cảnh sát để thẩm vấn.",
+      "example": "The police brought him in for questioning."
+    }
+  ],
+  "casual": [
+    {
+      "pos": "Tính từ",
+      "context": "Không trịnh trọng, bình thường, thoải mái (quần áo, thái độ).",
+      "example": "You can wear casual clothes to the office on Fridays."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Tình cờ, ngẫu nhiên, không có kế hoạch trước.",
+      "example": "We had a casual meeting in the hallway."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Làm việc theo thời vụ (casual labor).",
+      "example": "The farm hires casual workers during the harvest season."
+    }
+  ],
+  "code": [
+    {
+      "pos": "Danh từ",
+      "context": "Bộ luật, quy tắc ứng xử (code of conduct).",
+      "example": "The dress code for the event is formal."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Mã số, mật mã, mã lập trình.",
+      "example": "Please enter the security code to unlock the door."
+    }
+  ],
+  "glimpse": [
+    {
+      "pos": "Danh từ",
+      "context": "Cái nhìn thoáng qua, lướt qua.",
+      "example": "I caught a glimpse of the celebrity as she got into her car."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Nhìn thoáng qua, thoáng thấy.",
+      "example": "He glimpsed a figure hiding in the shadows."
+    }
+  ],
+  "made of": [
+    {
+      "pos": "Cụm từ",
+      "context": "Được tạo nên, làm từ chất liệu gì (vẫn giữ nguyên bản chất liệu).",
+      "example": "This table is made of solid oak wood."
+    }
+  ],
+  "out of": [
+    {
+      "pos": "Giới từ",
+      "context": "Hết, cạn kiệt (một thứ gì đó).",
+      "example": "We are out of milk; I need to go to the store."
+    },
+    {
+      "pos": "Giới từ",
+      "context": "Từ trong ra ngoài, thoát ra khỏi.",
+      "example": "He walked out of the room angrily."
+    },
+    {
+      "pos": "Giới từ",
+      "context": "Vì một lý do gì đó (out of curiosity, out of pity).",
+      "example": "I asked the question just out of curiosity."
+    }
+  ],
+  "outdated": [
+    {
+      "pos": "Tính từ",
+      "context": "Lỗi thời, cổ hủ, không còn phù hợp với hiện tại.",
+      "example": "The company is using outdated technology."
+    }
+  ],
+  "practice": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Thực hành, luyện tập thường xuyên để nâng cao kỹ năng.",
+      "example": "You need more practice if you want to win the match."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Thông lệ, tập quán quen thuộc.",
+      "example": "It is common practice to shake hands when meeting someone."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Hành nghề (bác sĩ, luật sư).",
+      "example": "She has a private dental practice."
+    }
+  ],
+  "reinforce": [
+    {
+      "pos": "Động từ",
+      "context": "Củng cố, làm cho mạnh thêm (quan điểm, niềm tin, cấu trúc).",
+      "example": "The new evidence reinforces my belief that he is innocent."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Gia cố, tăng cường sức mạnh bằng vật liệu (cho tòa nhà, quân đội).",
+      "example": "The walls were reinforced with steel to withstand earthquakes."
+    }
+  ]
+}

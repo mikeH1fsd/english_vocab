@@ -1,0 +1,1108 @@
+{
+  "maintain": [
+    {
+      "pos": "Động từ",
+      "context": "Dùng để chỉ việc duy trì, giữ gìn một trạng thái hoặc tình trạng.",
+      "example": "We need to maintain a high standard of quality."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Dùng để chỉ việc bảo trì, bảo dưỡng máy móc, thiết bị.",
+      "example": "The car needs to be maintained regularly."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Khẳng định một quan điểm hoặc sự thật (thường trong tranh luận).",
+      "example": "He maintained his innocence throughout the trial."
+    }
+  ],
+  "prerequisite": [
+    {
+      "pos": "Danh từ",
+      "context": "Điều kiện tiên quyết, bắt buộc phải có trước khi làm việc khác.",
+      "example": "A degree is a prerequisite for this position."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Được yêu cầu trước, có tính chất tiên quyết.",
+      "example": "She lacked the prerequisite skills for the job."
+    }
+  ],
+  "quality": [
+    {
+      "pos": "Danh từ",
+      "context": "Chất lượng của một sản phẩm hoặc dịch vụ.",
+      "example": "We ensure the highest quality of our products."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Phẩm chất, đức tính của một con người.",
+      "example": "Leadership is a rare quality."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Có chất lượng cao (thường dùng không chính thức).",
+      "example": "Spend some quality time with your family."
+    }
+  ],
+  "obtain": [
+    {
+      "pos": "Động từ",
+      "context": "Dùng để miêu tả việc đạt được, thu được, giành được thứ gì đó bằng nỗ lực.",
+      "example": "You must obtain permission before leaving."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Hiện hành, đang tồn tại (dùng cho quy tắc, tập quán).",
+      "example": "These conditions no longer obtain in today's society."
+    }
+  ],
+  "smooth": [
+    {
+      "pos": "Tính từ",
+      "context": "Nhẵn, trơn, không gồ ghề (bề mặt).",
+      "example": "The table has a very smooth surface."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Trôi chảy, suôn sẻ (sự việc).",
+      "example": "The transition to the new system was smooth."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Làm cho phẳng, nhẵn hoặc dàn xếp ổn thỏa.",
+      "example": "He tried to smooth things over after the argument."
+    }
+  ],
+  "source": [
+    {
+      "pos": "Danh từ",
+      "context": "Nguồn, nơi xuất phát (nguồn nước, nguồn tin, nguồn gốc).",
+      "example": "Renewable energy sources are essential."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tìm nguồn cung cấp (hàng hóa, nguyên liệu).",
+      "example": "We source our coffee from local farmers."
+    }
+  ],
+  "stationery": [
+    {
+      "pos": "Danh từ",
+      "context": "Đồ dùng văn phòng phẩm (giấy, bút, phong bì...).",
+      "example": "We need to order more stationery for the office."
+    }
+  ],
+  "accurately": [
+    {
+      "pos": "Trạng từ",
+      "context": "Một cách chính xác, không có sai sót.",
+      "example": "The machine can accurately measure the temperature."
+    }
+  ],
+  "carrier": [
+    {
+      "pos": "Danh từ",
+      "context": "Người hoặc công ty vận chuyển hàng hóa, hành khách.",
+      "example": "Which airline is your preferred carrier?"
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Vật chứa, giá đèo hàng hoặc người/vật mang mầm bệnh.",
+      "example": "Mosquitoes are the carriers of malaria."
+    }
+  ],
+  "catalogue": [
+    {
+      "pos": "Danh từ",
+      "context": "Danh mục hàng hóa, sách, tài liệu.",
+      "example": "Please check our online catalogue for more products."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Ghi vào danh mục, phân loại.",
+      "example": "The library is currently cataloguing its new books."
+    }
+  ],
+  "fulfill": [
+    {
+      "pos": "Động từ",
+      "context": "Hoàn thành, làm trọn (nhiệm vụ, cam kết, lời hứa).",
+      "example": "He failed to fulfill his promises."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đáp ứng (yêu cầu, điều kiện, ước mơ).",
+      "example": "This product fulfills all my needs."
+    }
+  ],
+  "integral": [
+    {
+      "pos": "Tính từ",
+      "context": "Cần thiết, không thể thiếu để tạo thành một thể thống nhất.",
+      "example": "Vegetables are an integral part of a healthy diet."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Tích phân (trong toán học).",
+      "example": "He is studying integrals in his calculus class."
+    }
+  ],
+  "inventory": [
+    {
+      "pos": "Danh từ",
+      "context": "Hàng hóa tồn kho, danh mục kiểm kê.",
+      "example": "We need to check our inventory before ordering more."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Lập danh mục, kiểm kê.",
+      "example": "They are inventorying the supplies in the warehouse."
+    }
+  ],
+  "minimize": [
+    {
+      "pos": "Động từ",
+      "context": "Giảm đến mức tối thiểu (rủi ro, chi phí, tác động).",
+      "example": "We must minimize the risk of infection."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Làm giảm giá trị, coi nhẹ tầm quan trọng.",
+      "example": "Do not minimize the impact of climate change."
+    }
+  ],
+  "on-hand": [
+    {
+      "pos": "Tính từ",
+      "context": "Có sẵn để sử dụng ngay lập tức.",
+      "example": "We have enough materials on-hand for the project."
+    }
+  ],
+  "remember": [
+    {
+      "pos": "Động từ",
+      "context": "Nhớ, ghi nhớ thông tin hoặc sự kiện.",
+      "example": "I cannot remember his name."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Gửi lời hỏi thăm (remember someone to someone).",
+      "example": "Please remember me to your parents."
+    }
+  ],
+  "ship": [
+    {
+      "pos": "Danh từ",
+      "context": "Tàu thủy, tàu biển.",
+      "example": "The ship set sail at dawn."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Vận chuyển hàng hóa.",
+      "example": "Your order will be shipped tomorrow."
+    }
+  ],
+  "shipper": [
+    {
+      "pos": "Danh từ",
+      "context": "Người hoặc công ty gửi hàng, chở hàng.",
+      "example": "The shipper is responsible for packaging the goods."
+    }
+  ],
+  "sufficient": [
+    {
+      "pos": "Tính từ",
+      "context": "Đủ, có đủ lượng cần thiết.",
+      "example": "Is there sufficient food for everyone?"
+    }
+  ],
+  "supply": [
+    {
+      "pos": "Động từ",
+      "context": "Cung cấp, tiếp tế (hàng hóa, dịch vụ).",
+      "example": "They supply us with fresh vegetables."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự cung cấp, nguồn dự trữ.",
+      "example": "The water supply was cut off."
+    }
+  ],
+  "charge": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Tính phí, giá tiền phải trả.",
+      "example": "They charge $10 for delivery."
+    },
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Sạc pin (điện thoại, thiết bị).",
+      "example": "I need to charge my phone."
+    },
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Buộc tội, cáo buộc (trong pháp luật).",
+      "example": "He was charged with theft."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Trách nhiệm, quản lý (in charge of).",
+      "example": "She is in charge of the marketing department."
+    }
+  ],
+  "compile": [
+    {
+      "pos": "Động từ",
+      "context": "Thu thập và biên soạn (tài liệu, thông tin).",
+      "example": "We compiled a list of potential clients."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Biên dịch mã (trong lập trình máy tính).",
+      "example": "The code takes a few minutes to compile."
+    }
+  ],
+  "customer": [
+    {
+      "pos": "Danh từ",
+      "context": "Khách hàng mua sản phẩm, dịch vụ.",
+      "example": "We value our loyal customers."
+    }
+  ],
+  "discount": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Giảm giá, chiết khấu.",
+      "example": "They offer a 10% discount for students."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Bỏ qua, không coi trọng, coi là không đúng.",
+      "example": "You shouldn't discount his ideas immediately."
+    }
+  ],
+  "efficient": [
+    {
+      "pos": "Tính từ",
+      "context": "Làm việc hiệu quả, năng suất cao, không lãng phí.",
+      "example": "This engine is very fuel efficient."
+    }
+  ],
+  "estimate": [
+    {
+      "pos": "Động từ",
+      "context": "Ước lượng, đoán chừng.",
+      "example": "We estimate the cost to be around $500."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Bảng dự toán chi phí, sự ước tính.",
+      "example": "Can you give me an estimate for the repairs?"
+    }
+  ],
+  "impose": [
+    {
+      "pos": "Động từ",
+      "context": "Áp đặt (luật, thuế, hình phạt).",
+      "example": "The government imposed a new tax on fuel."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Lợi dụng, làm phiền người khác (impose on).",
+      "example": "I don't want to impose on your hospitality."
+    }
+  ],
+  "mistake": [
+    {
+      "pos": "Danh từ",
+      "context": "Lỗi lầm, sai sót.",
+      "example": "I made a huge mistake."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Nhầm lẫn ai/cái gì với ai/cái gì.",
+      "example": "She mistook him for her brother."
+    }
+  ],
+  "order": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Mệnh lệnh, ra lệnh.",
+      "example": "The commander gave the order to attack."
+    },
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Đặt hàng, gọi món.",
+      "example": "Are you ready to order?"
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Thứ tự, trật tự.",
+      "example": "Please put these files in alphabetical order."
+    }
+  ],
+  "promptly": [
+    {
+      "pos": "Trạng từ",
+      "context": "Một cách nhanh chóng, ngay lập tức.",
+      "example": "She replied to the email promptly."
+    },
+    {
+      "pos": "Trạng từ",
+      "context": "Đúng giờ (dùng cho thời gian).",
+      "example": "The meeting will start promptly at 9 AM."
+    }
+  ],
+  "rectify": [
+    {
+      "pos": "Động từ",
+      "context": "Sửa lại cho đúng, khắc phục lỗi lầm.",
+      "example": "We must rectify the situation immediately."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉnh lưu (dòng điện, hóa học).",
+      "example": "The device rectifies alternating current to direct current."
+    }
+  ],
+  "terms": [
+    {
+      "pos": "Danh từ",
+      "context": "Điều khoản, điều kiện (trong hợp đồng).",
+      "example": "Please read the terms and conditions carefully."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Kỳ hạn, học kỳ.",
+      "example": "The spring term ends in June."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Mối quan hệ (on good/bad terms).",
+      "example": "We are on good terms with our neighbors."
+    }
+  ],
+  "adjustment": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự điều chỉnh, sửa đổi để phù hợp.",
+      "example": "We need to make some adjustments to the plan."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự thích nghi với hoàn cảnh mới.",
+      "example": "Moving to a new country requires a lot of adjustment."
+    }
+  ],
+  "automatically": [
+    {
+      "pos": "Trạng từ",
+      "context": "Một cách tự động (máy móc).",
+      "example": "The doors open automatically."
+    },
+    {
+      "pos": "Trạng từ",
+      "context": "Chắc chắn, hiển nhiên xảy ra mà không cần suy nghĩ.",
+      "example": "If you miss the exam, you automatically fail."
+    }
+  ],
+  "crucial": [
+    {
+      "pos": "Tính từ",
+      "context": "Cực kỳ quan trọng, mang tính quyết định.",
+      "example": "It is crucial that you follow these instructions."
+    }
+  ],
+  "discrepancy": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự khác biệt, không nhất quán giữa những thứ đáng lẽ phải giống nhau.",
+      "example": "There is a discrepancy between the two reports."
+    }
+  ],
+  "disturb": [
+    {
+      "pos": "Động từ",
+      "context": "Làm phiền, quấy rầy.",
+      "example": "Please do not disturb me while I am working."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Làm xáo trộn, làm mất yên tĩnh.",
+      "example": "The news deeply disturbed him."
+    }
+  ],
+  "liability": [
+    {
+      "pos": "Danh từ",
+      "context": "Trách nhiệm pháp lý (đền bù tiền).",
+      "example": "The company denied any liability for the accident."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Khoản nợ (thường dùng số nhiều: liabilities).",
+      "example": "He listed his assets and liabilities."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Người hoặc vật gây trở ngại, gánh nặng.",
+      "example": "His bad attitude makes him a liability to the team."
+    }
+  ],
+  "reflection": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự phản chiếu (hình ảnh trong gương, mặt nước).",
+      "example": "He looked at his reflection in the mirror."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự suy nghĩ, ngẫm nghĩ kỹ lưỡng.",
+      "example": "After much reflection, I decided to accept the offer."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự phản ánh tình trạng, bản chất của điều gì.",
+      "example": "His behavior is a reflection of his upbringing."
+    }
+  ],
+  "run": [
+    {
+      "pos": "Động từ",
+      "context": "Chạy, di chuyển nhanh bằng chân.",
+      "example": "I run 5 miles every morning."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Điều hành, quản lý (doanh nghiệp).",
+      "example": "She runs a successful business."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Vận hành, hoạt động (máy móc, thiết bị, phần mềm).",
+      "example": "Leave the engine running."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tổ chức, thực hiện (chương trình, chiến dịch).",
+      "example": "We will run a new marketing campaign next month."
+    }
+  ],
+  "scan": [
+    {
+      "pos": "Động từ / Danh từ",
+      "context": "Đọc lướt qua để tìm thông tin nhanh.",
+      "example": "I scanned the document for my name."
+    },
+    {
+      "pos": "Động từ / Danh từ",
+      "context": "Quét bằng thiết bị điện tử (ảnh, mã vạch, cơ thể y tế).",
+      "example": "They scanned my luggage at the airport."
+    }
+  ],
+  "subtract": [
+    {
+      "pos": "Động từ",
+      "context": "Trừ đi (toán học), khấu trừ.",
+      "example": "If you subtract 5 from 10, you get 5."
+    }
+  ],
+  "tedious": [
+    {
+      "pos": "Tính từ",
+      "context": "Buồn tẻ, chán ngắt (vì kéo dài hoặc lặp đi lặp lại).",
+      "example": "Data entry can be a very tedious task."
+    }
+  ],
+  "verify": [
+    {
+      "pos": "Động từ",
+      "context": "Xác minh, kiểm tra tính xác thực.",
+      "example": "We need to verify your identity before proceeding."
+    }
+  ],
+  "accept": [
+    {
+      "pos": "Động từ",
+      "context": "Đồng ý, chấp nhận.",
+      "example": "I accept your apology."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Nhận lấy (một thứ được đưa cho).",
+      "example": "Do you accept credit cards?"
+    }
+  ],
+  "balance": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Sự cân bằng, giữ thăng bằng.",
+      "example": "It is hard to keep a balance between work and life."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Số dư tài khoản ngân hàng.",
+      "example": "I need to check my account balance."
+    }
+  ],
+  "borrow": [
+    {
+      "pos": "Động từ",
+      "context": "Vay, mượn (sẽ trả lại).",
+      "example": "Can I borrow your pen?"
+    }
+  ],
+  "cautiously": [
+    {
+      "pos": "Trạng từ",
+      "context": "Một cách cẩn thận, dè dặt.",
+      "example": "He cautiously opened the door."
+    }
+  ],
+  "deduct": [
+    {
+      "pos": "Động từ",
+      "context": "Khấu trừ, trừ đi (thường là tiền bạc, điểm số).",
+      "example": "The cost will be deducted from your salary."
+    }
+  ],
+  "dividend": [
+    {
+      "pos": "Danh từ",
+      "context": "Cổ tức, tiền lãi chia cho cổ đông.",
+      "example": "The company pays an annual dividend."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Lợi ích nhận được từ một hành động (pay dividends).",
+      "example": "Your hard work will pay dividends in the future."
+    }
+  ],
+  "down payment": [
+    {
+      "pos": "Danh từ",
+      "context": "Tiền đặt cọc, số tiền trả trước một phần.",
+      "example": "We made a $10,000 down payment on the house."
+    }
+  ],
+  "mortgage": [
+    {
+      "pos": "Danh từ",
+      "context": "Khoản vay thế chấp (thường để mua nhà).",
+      "example": "They took out a mortgage to buy their dream home."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Thế chấp tài sản.",
+      "example": "He mortgaged his house to start a business."
+    }
+  ],
+  "restricted": [
+    {
+      "pos": "Tính từ",
+      "context": "Bị hạn chế, giới hạn (không gian, quyền lợi).",
+      "example": "Access to this area is restricted."
+    }
+  ],
+  "signature": [
+    {
+      "pos": "Danh từ",
+      "context": "Chữ ký.",
+      "example": "Please put your signature at the bottom."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Đặc trưng, mang dấu ấn riêng.",
+      "example": "This is the chef's signature dish."
+    }
+  ],
+  "take out": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Rút ra (tiền, bảo hiểm, khoản vay).",
+      "example": "I took out a loan to buy a car."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Mua đồ ăn mang về (takeout).",
+      "example": "Let's get Chinese take out for dinner."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Đưa ai đó đi chơi, đi ăn.",
+      "example": "He took her out for dinner."
+    }
+  ],
+  "transaction": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự giao dịch (thương mại, tài chính).",
+      "example": "The bank charges a fee for each transaction."
+    }
+  ],
+  "accounting": [
+    {
+      "pos": "Danh từ",
+      "context": "Ngành kế toán, công việc kế toán.",
+      "example": "She has a degree in accounting."
+    }
+  ],
+  "accumulate": [
+    {
+      "pos": "Động từ",
+      "context": "Tích lũy, gom góp dần dần.",
+      "example": "Dust tends to accumulate over time."
+    }
+  ],
+  "asset": [
+    {
+      "pos": "Danh từ",
+      "context": "Tài sản, vốn quý.",
+      "example": "The company's assets are worth millions."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Người có giá trị, nhân tố hữu ích.",
+      "example": "She is a great asset to the team."
+    }
+  ],
+  "audit": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Kiểm toán, sự kiểm tra tài chính.",
+      "example": "The company is undergoing an annual tax audit."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Dự thính (một lớp học).",
+      "example": "He is auditing the history class this semester."
+    }
+  ],
+  "budget": [
+    {
+      "pos": "Danh từ",
+      "context": "Ngân sách, ngân quỹ.",
+      "example": "We have to stay within our budget."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Dự thảo ngân sách, lập kế hoạch chi tiêu.",
+      "example": "You need to budget your money better."
+    }
+  ],
+  "build up": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Tích lũy, tăng cường, xây dựng dần dần.",
+      "example": "Traffic is building up on the highway."
+    }
+  ],
+  "client": [
+    {
+      "pos": "Danh từ",
+      "context": "Khách hàng (thường sử dụng dịch vụ chuyên nghiệp như luật sư, kế toán).",
+      "example": "The lawyer has a meeting with a new client."
+    }
+  ],
+  "debt": [
+    {
+      "pos": "Danh từ",
+      "context": "Khoản nợ, tình trạng mắc nợ.",
+      "example": "He is trying to pay off his debts."
+    }
+  ],
+  "outstanding": [
+    {
+      "pos": "Tính từ",
+      "context": "Xuất sắc, nổi bật.",
+      "example": "She did an outstanding job on the project."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Còn tồn tại, chưa giải quyết xong, chưa trả nợ.",
+      "example": "You have an outstanding balance of $50."
+    }
+  ],
+  "profitably": [
+    {
+      "pos": "Trạng từ",
+      "context": "Một cách có lợi, sinh lời.",
+      "example": "The business is running profitably."
+    }
+  ],
+  "reconcile": [
+    {
+      "pos": "Động từ",
+      "context": "Giải hòa, giảng hòa.",
+      "example": "They finally reconciled after years of fighting."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Cân đối, đối chiếu (sổ sách, tài khoản).",
+      "example": "We need to reconcile the bank statements."
+    }
+  ],
+  "turnover": [
+    {
+      "pos": "Danh từ",
+      "context": "Doanh số, doanh thu trong một khoảng thời gian.",
+      "example": "The company has an annual turnover of $2 million."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Tỷ lệ luân chuyển, biến động nhân sự.",
+      "example": "The factory has a high staff turnover."
+    }
+  ],
+  "aggressive": [
+    {
+      "pos": "Tính từ",
+      "context": "Xông xáo, năng nổ, quyết liệt (trong kinh doanh, thể thao).",
+      "example": "We need an aggressive marketing strategy."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Hung hăng, hay gây hấn.",
+      "example": "He became aggressive when he was drunk."
+    }
+  ],
+  "attitude": [
+    {
+      "pos": "Danh từ",
+      "context": "Thái độ, quan điểm.",
+      "example": "She has a positive attitude towards her work."
+    }
+  ],
+  "commit": [
+    {
+      "pos": "Động từ",
+      "context": "Cam kết, tận tâm (với công việc, mối quan hệ).",
+      "example": "He is committed to improving his skills."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Phạm (tội, lỗi).",
+      "example": "He committed a crime."
+    }
+  ],
+  "conservative": [
+    {
+      "pos": "Tính từ",
+      "context": "Bảo thủ, truyền thống, không thích thay đổi.",
+      "example": "Older people tend to be more conservative."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Thận trọng, dè dặt (trong ước tính).",
+      "example": "That is a conservative estimate."
+    }
+  ],
+  "fund": [
+    {
+      "pos": "Danh từ",
+      "context": "Quỹ tiền, nguồn tài chính.",
+      "example": "We are raising funds for charity."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tài trợ, cấp vốn.",
+      "example": "The project is funded by the government."
+    }
+  ],
+  "invest": [
+    {
+      "pos": "Động từ",
+      "context": "Đầu tư (tiền bạc, thời gian, công sức).",
+      "example": "He invested heavily in real estate."
+    }
+  ],
+  "long term": [
+    {
+      "pos": "Tính từ",
+      "context": "Dài hạn, lâu dài.",
+      "example": "We need a long-term solution to this problem."
+    }
+  ],
+  "portfolio": [
+    {
+      "pos": "Danh từ",
+      "context": "Danh mục vốn đầu tư (tài chính).",
+      "example": "You should diversify your investment portfolio."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Bộ sưu tập các tác phẩm, hồ sơ năng lực.",
+      "example": "The artist presented her portfolio to the gallery."
+    }
+  ],
+  "pull out": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Rút lui, thôi tham gia.",
+      "example": "The company pulled out of the deal at the last minute."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Nhổ ra, lấy ra.",
+      "example": "The dentist had to pull out my tooth."
+    }
+  ],
+  "resource": [
+    {
+      "pos": "Danh từ",
+      "context": "Tài nguyên, nguồn lực.",
+      "example": "Water is a vital natural resource."
+    }
+  ],
+  "return": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Tiền thu về, lợi nhuận (tài chính).",
+      "example": "The investment offers a high return."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Trở về, trả lại.",
+      "example": "He returned home after a long trip."
+    }
+  ],
+  "wise": [
+    {
+      "pos": "Tính từ",
+      "context": "Khôn ngoan, sáng suốt, có hiểu biết.",
+      "example": "It was a wise decision to save money."
+    }
+  ],
+  "calculation": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự tính toán, kết quả tính toán.",
+      "example": "By my calculations, we should arrive at noon."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Sự trù tính, suy tính (có tính toán).",
+      "example": "He acted out of cold calculation."
+    }
+  ],
+  "deadline": [
+    {
+      "pos": "Danh từ",
+      "context": "Hạn chót, thời hạn cuối.",
+      "example": "We must meet the deadline."
+    }
+  ],
+  "file": [
+    {
+      "pos": "Động từ",
+      "context": "Nộp, đệ trình (tài liệu, đơn từ pháp lý).",
+      "example": "You need to file your taxes by April."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Hồ sơ, tập tin.",
+      "example": "Please save the file on your desktop."
+    }
+  ],
+  "fill out": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Điền vào (mẫu đơn, giấy tờ).",
+      "example": "Please fill out this application form."
+    }
+  ],
+  "give up": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Từ bỏ, bỏ cuộc.",
+      "example": "Don't give up on your dreams."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Bỏ (một thói quen).",
+      "example": "He gave up smoking last year."
+    }
+  ],
+  "joint": [
+    {
+      "pos": "Tính từ",
+      "context": "Chung, cùng nhau (joint account, joint effort).",
+      "example": "My husband and I have a joint bank account."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Khớp xương.",
+      "example": "My joints ache when it rains."
+    }
+  ],
+  "owe": [
+    {
+      "pos": "Động từ",
+      "context": "Nợ (tiền).",
+      "example": "I owe him $50."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Hàm ơn, chịu ơn.",
+      "example": "I owe you a favor."
+    }
+  ],
+  "penalty": [
+    {
+      "pos": "Danh từ",
+      "context": "Hình phạt, khoản tiền phạt.",
+      "example": "There is a penalty for late payment."
+    }
+  ],
+  "preparation": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự chuẩn bị, sửa soạn.",
+      "example": "Thorough preparation is the key to success."
+    }
+  ],
+  "refund": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự hoàn tiền, số tiền được trả lại.",
+      "example": "I would like to request a refund."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Hoàn lại tiền.",
+      "example": "We will refund your money if you are not satisfied."
+    }
+  ],
+  "spouse": [
+    {
+      "pos": "Danh từ",
+      "context": "Vợ hoặc chồng.",
+      "example": "Employees can bring their spouses to the party."
+    }
+  ],
+  "withhold": [
+    {
+      "pos": "Động từ",
+      "context": "Giữ lại, không đưa cho (thông tin, tiền lương).",
+      "example": "The company withheld his final paycheck."
+    }
+  ],
+  "desire": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Khát khao, mong muốn, ước ao.",
+      "example": "She has a strong desire to travel the world."
+    }
+  ],
+  "detail": [
+    {
+      "pos": "Danh từ",
+      "context": "Chi tiết, phần nhỏ.",
+      "example": "Please pay attention to the details."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Trình bày tỉ mỉ, kể chi tiết.",
+      "example": "The report details the causes of the accident."
+    }
+  ],
+  "forecast": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Dự báo, dự đoán trước (thời tiết, kinh tế).",
+      "example": "The economic forecast for next year is positive."
+    }
+  ],
+  "level": [
+    {
+      "pos": "Danh từ",
+      "context": "Mức độ, cấp bậc, trình độ.",
+      "example": "His English is at an advanced level."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Bằng phẳng.",
+      "example": "Find a level surface to put the table on."
+    }
+  ],
+  "overall": [
+    {
+      "pos": "Tính từ / Trạng từ",
+      "context": "Tổng thể, toàn bộ, nói chung.",
+      "example": "The overall cost of the project is too high."
+    }
+  ],
+  "perspective": [
+    {
+      "pos": "Danh từ",
+      "context": "Góc nhìn, quan điểm.",
+      "example": "You need to look at the problem from a different perspective."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Luật phối cảnh (trong nghệ thuật).",
+      "example": "The drawing shows a good understanding of perspective."
+    }
+  ],
+  "project": [
+    {
+      "pos": "Danh từ",
+      "context": "Dự án, kế hoạch.",
+      "example": "We are working on a new research project."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Dự đoán, dự kiến (doanh thu, sự phát triển).",
+      "example": "Sales are projected to rise by 5%."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Phóng, chiếu (hình ảnh, ánh sáng).",
+      "example": "The image was projected onto the screen."
+    }
+  ],
+  "realistic": [
+    {
+      "pos": "Tính từ",
+      "context": "Thực tế, có thể thực hiện được.",
+      "example": "We need to set realistic goals."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Chân thực (giống như thật).",
+      "example": "The special effects in the movie were very realistic."
+    }
+  ],
+  "target": [
+    {
+      "pos": "Danh từ",
+      "context": "Mục tiêu, đích nhắm.",
+      "example": "Our target is to increase sales by 10%."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Nhắm vào, hướng đến.",
+      "example": "The advertising campaign targets young people."
+    }
+  ],
+  "translation": [
+    {
+      "pos": "Danh từ",
+      "context": "Bản dịch, sự chuyển ngữ.",
+      "example": "The translation of this book took two years."
+    }
+  ],
+  "typical": [
+    {
+      "pos": "Tính từ",
+      "context": "Điển hình, tiêu biểu.",
+      "example": "This is a typical example of Roman architecture."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Đặc trưng, quen thuộc (đôi khi mang ý nghĩa tiêu cực).",
+      "example": "It's typical of him to be late."
+    }
+  ]
+}

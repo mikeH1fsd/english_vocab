@@ -447,54 +447,7 @@
 
     <script>
         // ===== TRANSLATE SELECTED TEXT =====
-        (function() {
-            var popup = document.createElement('div');
-            popup.className = 'translate-popup';
-            popup.innerHTML = '🌐 Dịch';
-            popup.id = 'translate-popup';
-            document.body.appendChild(popup);
-
-            var selectedText = '';
-
-            document.addEventListener('mouseup', handleSelection);
-            document.addEventListener('touchend', function() {
-                setTimeout(handleSelection, 300);
-            });
-
-            function handleSelection(e) {
-                var sel = window.getSelection();
-                var text = sel.toString().trim();
-                
-                if (text.length > 2 && text.length < 1000) {
-                    selectedText = text;
-                    
-                    var range = sel.getRangeAt(0);
-                    var rect = range.getBoundingClientRect();
-                    
-                    popup.style.left = (rect.left + rect.width / 2 - 40 + window.scrollX) + 'px';
-                    popup.style.top = (rect.top - 45 + window.scrollY) + 'px';
-                    popup.style.display = 'block';
-                } else {
-                    popup.style.display = 'none';
-                }
-            }
-
-            popup.addEventListener('mousedown', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                if (selectedText) {
-                    var url = 'https://translate.google.com/?sl=en&tl=vi&text=' + encodeURIComponent(selectedText);
-                    window.open(url, '_blank');
-                }
-                popup.style.display = 'none';
-            });
-
-            document.addEventListener('mousedown', function(e) {
-                if (e.target !== popup) {
-                    popup.style.display = 'none';
-                }
-            });
-        })();
+        
 
     </script>
 
@@ -579,6 +532,475 @@
         });
 </script>
 
-</body>
+
+        <script>
+        </script>
+    
+        <script>
+        const preTranslatedBookData = [
+            { en: "The corporate headquarters of Apex Solutions was a battlefield disguised as an open-plan office.", vi: "Trụ sở công ty của Apex Solutions là một bãi chiến trường được ngụy trang dưới dạng một văn phòng không gian mở." },
+            { en: "Here, you didn't just work; you had to compare your department's budget against others and evaluate the competition, both external and internal.", vi: "Ở đây, bạn không chỉ làm việc; bạn phải so sánh ngân sách của bộ phận mình với những người khác và đánh giá sự cạnh tranh, cả bên ngoài và bên trong." },
+            { en: "Eleanor, the VP of Marketing, was determined to stay on top of the shifting power dynamics.", vi: "Eleanor, Phó Giám đốc Tiếp thị, quyết tâm đi đầu trong các động lực quyền lực đang thay đổi." },
+            { en: "She had to address the growing influence of Julian, the new Director of Operations, before his initiative to restructure the departments ruined her strategy.", vi: "Cô phải giải quyết ảnh hưởng ngày càng tăng của Julian, Giám đốc Điều hành mới, trước khi sáng kiến tái cấu trúc các phòng ban của anh ta phá hoại chiến lược của cô." },
+            { en: "Eleanor walked into the overcrowded breakroom, catching a glimpse of Julian as he poured his coffee.", vi: "Eleanor bước vào phòng nghỉ quá đông đúc, thoáng thấy Julian khi anh ta rót cà phê." },
+            { en: "They exchanged tight smiles.", vi: "Họ trao nhau những nụ cười gượng gạo." },
+            { en: "Their mutual engagement in this turf war was a poorly kept secret.", vi: "Sự tham gia lẫn nhau của họ vào cuộc chiến tranh giành lãnh thổ này là một bí mật được giữ kín." },
+            { en: "\"I hope you're productive today, Julian,\" Eleanor said verbally, her tone laced with a casual superiority.", vi: "\"Tôi hy vọng anh làm việc hiệu quả ngày hôm nay, Julian,\" Eleanor nói bằng lời, giọng điệu pha chút trịch thượng một cách thản nhiên." },
+            { en: "She knew she had to bring in a strong win at the upcoming industry conference to secure her budget.", vi: "Cô biết mình phải mang lại một chiến thắng vang dội tại hội nghị ngành sắp tới để đảm bảo ngân sách của mình." },
+            { en: "\"Always,\" Julian replied.", vi: "\"Luôn luôn,\" Julian trả lời." },
+            { en: "\"I constantly strive to facilitate our growth.", vi: "\"Tôi không ngừng phấn đấu để tạo điều kiện cho sự phát triển của chúng ta." },
+            { en: "In fact, I'm reviewing our provider contracts to avoid any duplicate fees and ensure unnecessary expenses do not recur.\"", vi: "Trên thực tế, tôi đang xem xét các hợp đồng với nhà cung cấp của chúng ta để tránh mọi khoản phí trùng lặp và đảm bảo những chi phí không cần thiết sẽ không tái diễn.\"" },
+            { en: "Eleanor needed to launch a new software suite.", vi: "Eleanor cần tung ra một bộ phần mềm mới." },
+            { en: "It wasn't just a passing fad; it was an inspiration that could spark a revolution in the market.", vi: "Đó không chỉ là một mốt nhất thời; đó là một nguồn cảm hứng có thể châm ngòi cho một cuộc cách mạng trên thị trường." },
+            { en: "But Marcus, the Head of IT, was notoriously difficult to work with.", vi: "Nhưng Marcus, Trưởng phòng CNTT, nổi tiếng là người khó làm việc cùng." },
+            { en: "He had the technical skill but lacked political savvy.", vi: "Anh ta có kỹ năng kỹ thuật nhưng lại thiếu sự nhạy bén chính trị." },
+            { en: "Eleanor needed to convince him to prioritize her project.", vi: "Eleanor cần thuyết phục anh ta ưu tiên dự án của cô." },
+            { en: "She arranged to get in touch with Marcus, making sure to hold the session in a neutral location—the small, affordable cafe across the street, far from the prying eyes of the company network.", vi: "Cô sắp xếp liên lạc với Marcus, đảm bảo tổ chức cuộc họp ở một địa điểm trung lập—một quán cà phê nhỏ, giá cả phải chăng bên kia đường, cách xa những ánh mắt tò mò của mạng lưới công ty." },
+            { en: "\"Marcus,\" Eleanor began, offering a sharp smile.", vi: "\"Marcus,\" Eleanor bắt đầu, nở một nụ cười sắc sảo." },
+            { en: "\"We need to come up with a plan.", vi: "\"Chúng ta cần đưa ra một kế hoạch." },
+            { en: "We have an abundant variety of features, but we need to develop and assemble a working prototype beforehand.\"", vi: "Chúng ta có vô số các tính năng đa dạng, nhưng chúng ta cần phát triển và lắp ráp một nguyên mẫu hoạt động từ trước.\"" },
+            { en: "Marcus sighed, his confidence wavering.", vi: "Marcus thở dài, sự tự tin của anh ta dao động." },
+            { en: "\"The process is complicated.", vi: "\"Quá trình này rất phức tạp." },
+            { en: "We lack the server capacity to store that much data.", vi: "Chúng ta thiếu dung lượng máy chủ để lưu trữ khối lượng dữ liệu khổng lồ đó." },
+            { en: "If I allocate more resources to you, I'll have to shut down other projects.", vi: "Nếu tôi phân bổ thêm tài nguyên cho cô, tôi sẽ phải đóng cửa các dự án khác." },
+            { en: "The system will throw a warning about a potential failure.\"", vi: "Hệ thống sẽ đưa ra cảnh báo về một lỗi tiềm ẩn.\"" },
+            { en: "\"You need to figure out a way,\" Eleanor insisted.", vi: "\"Anh cần tìm ra cách,\" Eleanor nài nỉ." },
+            { en: "\"If we don't present this when the executives attend the expo, the consequence is a massive reduction in our market share.", vi: "\"Nếu chúng ta không trình bày điều này khi các giám đốc điều hành tham dự triển lãm, hậu quả là thị phần của chúng ta sẽ sụt giảm nghiêm trọng." },
+            { en: "We must attract the modern consumer, who wants durable, compatible solutions, not outdated legacy systems.\"", vi: "Chúng ta phải thu hút người tiêu dùng hiện đại, những người muốn có các giải pháp bền bỉ, tương thích, chứ không phải các hệ thống lỗi thời.\"" },
+            { en: "\"But my team is out of bandwidth,\" Marcus argued.", vi: "\"Nhưng đội của tôi đã hết băng thông,\" Marcus lập luận." },
+            { en: "\"We primarily handle maintenance.", vi: "\"Chúng tôi chủ yếu xử lý việc bảo trì." },
+            { en: "You're asking us to take on a massive risk.", vi: "Cô đang yêu cầu chúng tôi gánh chịu một rủi ro khổng lồ." },
+            { en: "To accommodate this, I’d have to recruit an outside expert.\"", vi: "Để đáp ứng điều này, tôi sẽ phải tuyển một chuyên gia bên ngoài.\"" },
+            { en: "\"Then do it.", vi: "\"Vậy thì hãy làm đi." },
+            { en: "I can offer you extra headcount,\" Eleanor said.", vi: "Tôi có thể cung cấp thêm nhân sự cho anh,\" Eleanor nói." },
+            { en: "\"We can't let a minor weakness make us fold under pressure.", vi: "\"Chúng ta không thể để một điểm yếu nhỏ nhặt khiến chúng ta gục ngã dưới áp lực." },
+            { en: "I will promise you full credit during the presentation.\"", vi: "Tôi hứa sẽ ghi nhận toàn bộ công lao cho anh trong buổi thuyết trình.\"" },
+            { en: "Meanwhile, Julian was executing his own plans.", vi: "Trong khi đó, Julian đang thực hiện các kế hoạch của riêng mình." },
+            { en: "He decided to conduct a full audit.", vi: "Anh quyết định tiến hành một cuộc kiểm toán toàn diện." },
+            { en: "He wanted to be in charge of operations completely and establish strict new policies that everyone had to abide by.", vi: "Anh ta muốn hoàn toàn phụ trách các hoạt động và thiết lập các chính sách mới nghiêm ngặt mà mọi người phải tuân thủ." },
+            { en: "He intended to enforce a strict dress code and a new practice for expense approvals.", vi: "Anh ta dự định thực thi quy định nghiêm ngặt về trang phục và cách thức thực hành mới cho các phê duyệt chi phí." },
+            { en: "He drafted a massive document, a time-consuming endeavor, and sent it via express courier to the executive board as proof of his diligence.", vi: "Anh ta soạn thảo một tài liệu khổng lồ, một nỗ lực tốn thời gian, và gửi qua chuyển phát nhanh đến ban điều hành như một bằng chứng về sự siêng năng của mình." },
+            { en: "It was a thinly veiled attempt to expose Eleanor's departmental spending and initiate an inquiry.", vi: "Đó là một nỗ lực ngụy trang mỏng manh để phơi bày chi tiêu phòng ban của Eleanor và tiến hành một cuộc điều tra." },
+            { en: "Eleanor received a copy.", vi: "Eleanor đã nhận được một bản sao." },
+            { en: "She didn't hesitate to act.", vi: "Cô không ngần ngại hành động." },
+            { en: "She knew Julian’s reputation for being overly bureaucratic.", vi: "Cô biết danh tiếng của Julian là người quá quan liêu." },
+            { en: "She had to demonstrate that his policies would stifle the ability of the company to innovate.", vi: "Cô phải chứng minh rằng các chính sách của anh ta sẽ kìm hãm khả năng đổi mới của công ty." },
+            { en: "To combat Julian, Eleanor needed an agreement from Marcus.", vi: "Để chống lại Julian, Eleanor cần có sự đồng ý của Marcus." },
+            { en: "She sent him a formal provision outlining their alliance.", vi: "Cô đã gửi cho anh ta một bản điều khoản chính thức phác thảo liên minh của họ." },
+            { en: "\"I will provide an assurance of additional funding for your department next quarter,\" she wrote.", vi: "\"Tôi sẽ cung cấp sự đảm bảo về việc bổ sung thêm quỹ cho bộ phận của anh vào quý tới,\" cô viết." },
+            { en: "\"You just have to agree to expedite the layout of the new app interface.", vi: "\"Anh chỉ cần đồng ý xúc tiến việc thiết kế giao diện ứng dụng mới." },
+            { en: "It must beready for the beta testers.\"", vi: "Nó phải sẵn sàng cho những người thử nghiệm bản beta.\"" },
+            { en: "Marcus agreed, signing the internal petition she drafted.", vi: "Marcus đồng ý, ký vào bản kiến nghị nội bộ mà cô soạn thảo." },
+            { en: "However, the software was made of complex code, and an early version had a glitch where it would duplicate user files, restrict access, and delete random data off the hard disk.", vi: "Tuy nhiên, phần mềm được tạo thành từ mã phức tạp, và một phiên bản ban đầu có lỗi khiến nó sẽ sao chép tệp của người dùng, hạn chế quyền truy cập và xóa dữ liệu ngẫu nhiên khỏi ổ cứng." },
+            { en: "This would certainly require more debugging.", vi: "Điều này chắc chắn sẽ cần nhiều thời gian sửa lỗi hơn." },
+            { en: "\"We can ignore the minor bugs for now,\" Eleanor said when Marcus showed her the display.", vi: "\"Chúng ta có thể bỏ qua các lỗi nhỏ trong lúc này,\" Eleanor nói khi Marcus chỉ cho cô màn hình hiển thị." },
+            { en: "\"Just ensure the core characteristic works.", vi: "\"Chỉ cần đảm bảo đặc điểm cốt lõi hoạt động." },
+            { en: "We need the satisfaction of the board.\"", vi: "Chúng ta cần sự hài lòng của ban giám đốc.\"" },
+            { en: "As the conference approached, the tension grew.", vi: "Khi hội nghị đến gần, sự căng thẳng ngày càng lớn." },
+            { en: "Employees began to take part in the hushed gossip.", vi: "Nhân viên bắt đầu tham gia vào những lời xì xầm bàn tán." },
+            { en: "Eleanor arranged to register a prime booth.", vi: "Eleanor đã thu xếp đăng ký một gian hàng lớn ở vị trí đắc địa." },
+            { en: "She had to select the right promotional materials from stock.", vi: "Cô phải chọn đúng các tài liệu quảng cáo từ trong kho." },
+            { en: "She needed to gather enough leads to justify the expense.", vi: "Cô cần thu thập đủ lượng khách hàng tiềm năng để biện minh cho chi phí." },
+            { en: "Julian, who frequently looked for loopholes, attempted to trigger a cancellation of her booth space, citing an expiration in the vendor arrangement.", vi: "Julian, người thường xuyên tìm kiếm các kẽ hở, đã cố gắng châm ngòi cho việc hủy bỏ không gian gian hàng của cô, với lý do sự sắp xếp nhà cung cấp đã hết hạn." },
+            { en: "He claimed there was no obligation for the company to cover the late fees.", vi: "Anh ta tuyên bố công ty không có nghĩa vụ phải trả các khoản phí nộp muộn." },
+            { en: "\"We cannot obligate the company to fund this,\" Julian argued to the board, hoping to determine her fate.", vi: "\"Chúng ta không thể bắt buộc công ty tài trợ cho việc này,\" Julian lập luận trước ban giám hiệu, hy vọng sẽ định đoạt số phận của cô." },
+            { en: "\"I urge you to consider the financial drain.\"", vi: "\"Tôi đề nghị các vị cân nhắc việc cạn kiệt tài chính.\"" },
+            { en: "Eleanor fought back fiercely.", vi: "Eleanor chống trả quyết liệt." },
+            { en: "\"We have a contractual engagement with the event association,\" she countered.", vi: "\"Chúng ta có hợp đồng giao ước với hiệp hội sự kiện,\" cô phản pháo." },
+            { en: "\"To back out now would imply instability.", vi: "\"Việc rút lui bây giờ sẽ ngụ ý về sự bất ổn định." },
+            { en: "We must protect our brand.", vi: "Chúng ta phải bảo vệ thương hiệu của mình." },
+            { en: "A substitution of a lesser marketing event won't work.", vi: "Việc thay thế bằng một sự kiện tiếp thị kém hơn sẽ không có tác dụng." },
+            { en: "We need the popularity this venue brings.\"", vi: "Chúng ta cần sự phổ biến mà địa điểm này mang lại.\"" },
+            { en: "The board sided with Eleanor, appreciating her initiative.", vi: "Ban giám đốc đã đứng về phía Eleanor, đánh giá cao sáng kiến của cô." },
+            { en: "They decided to resolve the issue by approving the funds, provided she could guarantee a high return on investment.", vi: "Họ quyết định giải quyết vấn đề bằng cách phê duyệt ngân sách, với điều kiện cô có thể đảm bảo lợi tức đầu tư cao." },
+            { en: "At the event, Eleanor worked the floor.", vi: "Tại sự kiện, Eleanor đã dốc sức làm việc." },
+            { en: "She used her skills of persuasion to pitch the new software, offering a comprehensive warranty and extended coverage to entice buyers.", vi: "Cô sử dụng các kỹ năng thuyết phục của mình để giới thiệu phần mềm mới, cung cấp bảo hành toàn diện và phạm vi bảo hành mở rộng để lôi kéo người mua." },
+            { en: "She promised to replace any defective licenses as needed.", vi: "Cô hứa sẽ thay thế bất kỳ giấy phép nào bị lỗi nếu cần." },
+            { en: "It was a bold move, but it worked.", vi: "Đó là một động thái táo bạo, nhưng nó đã mang lại hiệu quả." },
+            { en: "The attendees were impressed by the product's profile.", vi: "Những người tham dự đã bị ấn tượng bởi hồ sơ của sản phẩm." },
+            { en: "Back at the office, Julian tried another angle.", vi: "Quay lại văn phòng, Julian thử một góc nhìn khác." },
+            { en: "He decided to bring together a hiring committee to call in a new senior manager to oversee both marketing and IT, effectively diluting Eleanor and Marcus's power.", vi: "Anh ta quyết định tập hợp một ủy ban tuyển dụng để mời một nhà quản lý cấp cao mới về giám sát cả bộ phận tiếp thị và CNTT, nhằm làm suy yếu quyền lực của Eleanor và Marcus một cách hiệu quả." },
+            { en: "He reviewed a candidate whose background and accomplishment list seemed commensurate with the role.", vi: "Anh ta đã đánh giá một ứng viên có lý lịch và danh sách thành tích có vẻ tương xứng với vai trò này." },
+            { en: "He wanted someone who would apply rigid structures.", vi: "Anh ta muốn một người sẽ áp dụng những cấu trúc cứng nhắc." },
+            { en: "The primary qualification he sought was compliance.", vi: "Bằng cấp chính mà anh ta tìm kiếm là sự tuân thủ." },
+            { en: "Eleanor caught wind of this and decided to evaluate the candidate herself.", vi: "Eleanor nghe phong phanh được chuyện này và quyết định tự mình đánh giá ứng viên đó." },
+            { en: "She ran a search on his past employment and found a critical flaw—a history of failed projects.", vi: "Cô đã tìm kiếm công việc trong quá khứ của anh ta và phát hiện ra một lỗ hổng nghiêm trọng—một lịch sử những dự án thất bại." },
+            { en: "She chose to mention this casually to the CEO, framing it as a risk to their currently productive workflow.", vi: "Cô chọn cách tình cờ đề cập chuyện này với CEO, coi nó như một rủi ro đối với quy trình làm việc hiện đang năng suất của họ." },
+            { en: "In the final showdown, a quarterly review meeting, everyone was present.", vi: "Trong cuộc đối đầu cuối cùng, một cuộc họp đánh giá hàng quý, mọi người đều có mặt." },
+            { en: "Eleanor presented her abundant leads from the conference.", vi: "Eleanor trình bày dồi dào khách hàng tiềm năng của mình có được từ hội nghị." },
+            { en: "\"Our competition cannot match our current capacity,\" she declared.", vi: "\"Đối thủ cạnh tranh không thể theo kịp năng lực hiện tại của chúng ta,\" cô tuyên bố." },
+            { en: "\"We are poised to consume a larger share of the market.\"", vi: "\"Chúng ta đã sẵn sàng chiếm lĩnh một phần lớn hơn của thị trường.\"" },
+            { en: "Julian tried to pivot the discussion to his cost-reduction strategies, but Eleanor had already won the room.", vi: "Julian cố xoay chuyển cuộc thảo luận sang các chiến lược giảm chi phí của mình, nhưng Eleanor đã chiếm trọn căn phòng." },
+            { en: "She had managed to reinforce her position.", vi: "Cô đã xoay xở để củng cố vị trí của mình." },
+            { en: "Marcus, seeing which way the wind blew, fully supported her, verifying the system's stability.", vi: "Marcus, thấy chiều gió thổi, đã hoàn toàn ủng hộ cô, xác nhận sự ổn định của hệ thống." },
+            { en: "In the end, Julian was forced to revise his strict policies, realizing he couldn't physically shut down the momentum Eleanor had built.", vi: "Cuối cùng, Julian buộc phải sửa đổi các chính sách nghiêm ngặt của mình, nhận ra rằng anh ta không thể kìm hãm đà tiến mà Eleanor đã xây dựng." },
+            { en: "He had to accommodate her vision.", vi: "Anh ta phải đáp ứng tầm nhìn của cô." },
+            { en: "\"I appreciate your efforts,\" Eleanor told Julian later, a hint of mockery in her voice.", vi: "\"Tôi đánh giá cao những nỗ lực của anh,\" Eleanor nói với Julian sau đó, pha chút mỉa mai trong giọng nói." },
+            { en: "\"But next time you want to engage a party in a war, make sure you have the right strategy.\"", vi: "\"Nhưng lần tới khi anh muốn lôi kéo một bên vào cuộc chiến, hãy đảm bảo rằng anh có một chiến lược đúng đắn.\"" },
+            { en: "\"I will follow up on that,\" Julian replied coldly, turning away.", vi: "\"Tôi sẽ theo dõi việc đó,\" Julian lạnh lùng trả lời rồi quay đi." },
+            { en: "Eleanor smiled.", vi: "Eleanor mỉm cười." },
+            { en: "The practice of office politics was an art, and she had just painted a masterpiece.", vi: "Thực tiễn chính trị chốn văn phòng là một nghệ thuật, và cô vừa vẽ xong một kiệt tác." },
+            { en: "She had successfully managed to submit her finalized plans without interference.", vi: "Cô đã thành công trong việc đệ trình các kế hoạch đã hoàn thiện của mình mà không bị can thiệp." },
+            { en: "She knew she had to constantly be on her guard, but for now, she could enjoy her victory.", vi: "Cô biết mình phải liên tục cảnh giác, nhưng hiện tại, cô có thể tận hưởng chiến thắng của mình." },
+            { en: "She had made sure they would abide by her rules.", vi: "Cô đã đảm bảo họ sẽ tuân theo các quy tắc của cô." },
+            { en: "She had navigated every specific trap Julian had set.", vi: "Cô đã điều hướng qua từng cái bẫy cụ thể mà Julian đã giăng ra." },
+            { en: "Every registered asset was secure.", vi: "Mọi tài sản đã đăng ký đều được an toàn." },
+            { en: "She was the master of her domain.", vi: "Cô là người làm chủ khu vực của mình." },
+            { en: "Elena sat in the glass-walled boardroom of her thriving enterprise.", vi: "Elena ngồi trong phòng họp lắp kính của doanh nghiệp đang phát triển mạnh mẽ của mình." },
+            { en: "Over the years, she had worked tirelessly to generate unparalleled success.", vi: "Trong nhiều năm qua, cô đã làm việc không mệt mỏi để tạo ra thành công vô song." },
+            { en: "To keep up with the demands of the market, she made it a priority to hire top talent and set up rigorous training programs.", vi: "Để bắt kịp với nhu cầu của thị trường, cô ưu tiên tuyển dụng những nhân tài hàng đầu và thiết lập các chương trình đào tạo nghiêm ngặt." },
+            { en: "She would often update her team on a daily basis, encouraging them to stay on track.", vi: "Cô thường xuyên cập nhật thông tin cho nhóm của mình hàng ngày, khuyến khích họ luôn đi đúng hướng." },
+            { en: "Her old mentor, who was soon to retire, had taught her to always beaware of the delicate nature of business relationships, and she was acutely aware of every risk.  “You must always negotiate from a position of strength,” he used to say. “Ensure you compensate your team fairly, offer a competitive wage, and provide a strong benefit package.", vi: "Người cố vấn cũ của cô, người sắp nghỉ hưu, đã dạy cô luôn phải ý thức được bản chất nhạy cảm của các mối quan hệ kinh doanh, và cô nhận thức sâu sắc về mọi rủi ro. “Cháu phải luôn đàm phán từ một vị thế sức mạnh,” ông từng nói. “Hãy đảm bảo cháu trả công cho đội ngũ của mình một cách công bằng, đưa ra mức lương cạnh tranh và cung cấp một gói phúc lợi hấp dẫn.”" },
+            { en: "Make sure they are eligible for a raise and a vested pension so they can work flexibly without worry.", vi: "Hãy đảm bảo rằng họ đủ điều kiện để được tăng lương và hưởng một khoản lương hưu được đảm bảo để họ có thể làm việc linh hoạt mà không phải lo lắng." },
+            { en: "Never hesitate to reject a bad deal.”  Elena was a leader her team could look up to.", vi: "Đừng bao giờ do dự từ chối một thỏa thuận tồi tệ.” Elena là một nhà lãnh đạo mà đội ngũ của cô có thể kính trọng." },
+            { en: "Because of her loyal staff’s dedication and merit, it was obvious they would contribute massive value.", vi: "Nhờ sự cống hiến và năng lực của đội ngũ nhân viên trung thành, rõ ràng là họ sẽ đóng góp một giá trị to lớn." },
+            { en: "She made sure to promote them and give them the recognition they deserved, allowing them to achieve their goals.", vi: "Cô luôn đảm bảo thăng chức và dành cho họ sự công nhận mà họ xứng đáng có được, cho phép họ đạt được những mục tiêu của mình." },
+            { en: "They would constantly look to her for guidance, and she would look forward to their shared victories.", vi: "Họ không ngừng tìm đến cô để được hướng dẫn, và cô luôn mong đợi những chiến thắng chung của họ." },
+            { en: "As her company began to expand and explore a new trend in luxury merchandise, Elena knew she couldn't bear any poor behaviour from her staff, especially at the checkout.", vi: "Khi công ty của cô bắt đầu mở rộng và khám phá một xu hướng mới về hàng hóa xa xỉ, Elena biết rằng cô không thể chấp nhận bất kỳ hành vi kém cỏi nào từ nhân viên của mình, đặc biệt là ở khâu thanh toán." },
+            { en: "Every single item had to undergo a strict and mandatory review to guarantee customer comfort.", vi: "Mỗi một mặt hàng đều phải trải qua một cuộc đánh giá nghiêm ngặt và bắt buộc để đảm bảo sự thoải mái cho khách hàng." },
+            { en: "She wasn't just looking for a bargain; she wanted excellence.", vi: "Cô không chỉ tìm kiếm một món hời; cô muốn sự xuất sắc." },
+            { en: "To diversify her offerings, the everyday function of the business had to maintain flawless quality, which was essentially a prerequisite for growth.", vi: "Để đa dạng hóa các sản phẩm cung cấp của mình, hoạt động hàng ngày của doanh nghiệp phải duy trì chất lượng hoàn hảo, điều mà về cơ bản là một điều kiện tiên quyết cho sự phát triển." },
+            { en: "She worked hard to obtain a smooth source of supply, right down to the office stationery.", vi: "Cô đã làm việc chăm chỉ để có được một nguồn cung cấp suôn sẻ, cho đến cả văn phòng phẩm." },
+            { en: "It was integral that they accurately compile their catalogue to fulfill every order.", vi: "Một phần không thể thiếu là họ phải biên soạn chính xác danh mục sản phẩm của mình để đáp ứng mọi đơn hàng." },
+            { en: "By choosing the right carrier and shipper, she could minimize delays, ensure sufficient on-hand inventory, and ship goods seamlessly.", vi: "Bằng cách chọn đúng nhà vận chuyển và đơn vị giao hàng, cô có thể giảm thiểu sự chậm trễ, đảm bảo đủ lượng hàng tồn kho có sẵn và vận chuyển hàng hóa một cách liền mạch." },
+            { en: "She had to remember all these logistical layers during today’s big meeting.", vi: "Cô phải ghi nhớ tất cả các lớp hậu cần này trong cuộc họp lớn ngày hôm nay." },
+            { en: "Today, she was signing the most important contract of her career—a massive joint venture.", vi: "Hôm nay, cô sẽ ký kết bản hợp đồng quan trọng nhất trong sự nghiệp của mình—một dự án liên doanh quy mô lớn." },
+            { en: "The customer had initially tried to impose an unfair charge and demanded a steep discount, hoping for overly efficient payment terms.", vi: "Khách hàng ban đầu đã cố gắng áp đặt một khoản phí không công bằng và yêu cầu một khoản chiết khấu sâu, hy vọng vào các điều khoản thanh toán có lợi quá mức." },
+            { en: "But Elena provided a firm estimate and promised that if they ever made a mistake, her team would promptly rectify it.", vi: "Nhưng Elena đã đưa ra một bản ước tính cứng rắn và hứa rằng nếu họ từng mắc sai lầm, đội ngũ của cô sẽ nhanh chóng khắc phục." },
+            { en: "It was crucial to scan the tedious paperwork to verify every adjustment.", vi: "Việc rà soát mớ giấy tờ tẻ nhạt để xác minh mọi sự điều chỉnh là vô cùng quan trọng." },
+            { en: "She set her system to automatically subtract any liability so a random discrepancy wouldn't disturb the steady run of operations.", vi: "Cô thiết lập hệ thống của mình để tự động trừ đi bất kỳ khoản nợ nào để một sự sai lệch ngẫu nhiên sẽ không làm xáo trộn hoạt động ổn định của công ty." },
+            { en: "This level of diligence was a true reflection of her professionalism.", vi: "Mức độ siêng năng này là sự phản ánh chân thực về tính chuyên nghiệp của cô." },
+            { en: "Now, sitting across from the client, Elena had to decide whether to accept the restricted clauses or pull out entirely.", vi: "Giờ đây, ngồi đối diện với khách hàng, Elena phải quyết định xem nên chấp nhận các điều khoản hạn chế hay rút lui hoàn toàn." },
+            { en: "She had spent weeks reviewing the accounting and going through a grueling audit to ensure they could profitably accumulate a new asset and build up their market share.", vi: "Cô đã dành nhiều tuần để xem xét sổ sách kế toán và trải qua một cuộc kiểm toán khắc nghiệt để đảm bảo họ có thể tích lũy tài sản mới một cách có lãi và xây dựng thị phần của mình." },
+            { en: "She had to reconcile her outstanding debt and carefully monitor the turnover.", vi: "Cô phải đối chiếu khoản nợ chưa thanh toán của mình và theo dõi cẩn thận doanh thu." },
+            { en: "To fund this transaction, she decided to cautiously borrow capital and take out a commercial mortgage with a substantial down payment.", vi: "Để tài trợ cho giao dịch này, cô quyết định thận trọng vay vốn và vay thế chấp thương mại với một khoản trả trước đáng kể." },
+            { en: "The financial models showed they could safely deduct operating costs, pay an annual dividend, and maintain a healthy balance in the budget.", vi: "Các mô hình tài chính cho thấy họ có thể khấu trừ chi phí hoạt động một cách an toàn, trả cổ tức hàng năm và duy trì một số dư lành mạnh trong ngân sách." },
+            { en: "The client's lead negotiator had an aggressive attitude, but Elena remained calm and conservative.", vi: "Người đàm phán chính của khách hàng có thái độ hung hăng, nhưng Elena vẫn giữ bình tĩnh và thận trọng." },
+            { en: "She was ready to commit and invest her resource fund into a long term portfolio that promised a wise return.", vi: "Cô đã sẵn sàng cam kết và đầu tư quỹ tài nguyên của mình vào một danh mục đầu tư dài hạn hứa hẹn một khoản lợi nhuận khôn ngoan." },
+            { en: "The calculation was precise.", vi: "Sự tính toán vô cùng chuẩn xác." },
+            { en: "With the deadline approaching to file the final documents, she had to carefully fill out the remaining pages, refusing to give up any hard-won concessions.", vi: "Với hạn chót nộp các tài liệu cuối cùng đang đến gần, cô phải cẩn thận điền vào các trang còn lại, từ chối từ bỏ bất kỳ nhượng bộ nào đã khó khăn mới giành được." },
+            { en: "Her spouse had acted as an unofficial sounding board the night before, helping her ensure she wouldn't owe an unexpected penalty or allow the partner to withhold a potential refund under obscure clauses.", vi: "Chồng cô đã đóng vai trò là một người lắng nghe không chính thức vào đêm hôm trước, giúp cô đảm bảo cô sẽ không phải chịu một khoản phạt bất ngờ hay cho phép đối tác giữ lại một khoản hoàn tiền tiềm năng theo các điều khoản mập mờ." },
+            { en: "Her ultimate desire was to project a realistic target level for the overall forecast, putting every single detail into proper perspective.", vi: "Mong muốn cuối cùng của cô là dự phóng một mức mục tiêu thực tế cho dự báo tổng thể, đặt từng chi tiết vào một góc nhìn đúng đắn." },
+            { en: "The preparation was complete.", vi: "Sự chuẩn bị đã hoàn tất." },
+            { en: "Even the translation of the international annex was flawless.", vi: "Ngay cả bản dịch của phụ lục quốc tế cũng hoàn hảo." },
+            { en: "Elena picked up her pen, gave a confident smile, and placed her signature on the dotted line.", vi: "Elena cầm bút lên, nở một nụ cười tự tin, và đặt bút ký vào dòng kẻ chấm." },
+            { en: "The contract was signed.", vi: "Bản hợp đồng đã được ký." },
+            { en: "It was a typical morning for James, a senior supervisor whose responsibility it was to deal with international business expansion.", vi: "Đó là một buổi sáng điển hình của James, một giám sát viên cấp cao có trách nhiệm xử lý việc mở rộng kinh doanh quốc tế." },
+            { en: "It was time to arrive at the airport for embarkation protocols that he was familiar with.", vi: "Đã đến lúc đến sân bay để làm các thủ tục lên máy bay mà anh ấy đã quen thuộc." },
+            { en: "Checking his comprehensive directory of contacts and his itinerary, he waited for the agent to verify that his passport was valid.", vi: "Kiểm tra danh bạ liên lạc toàn diện và lịch trình của mình, anh ấy chờ nhân viên xác minh rằng hộ chiếu của mình hợp lệ." },
+            { en: "An overhead announcement warned of a delay due to an influx of passengers and a system outage.", vi: "Một thông báo trên loa cảnh báo về sự chậm trễ do lượng hành khách đổ về đông đúc và sự cố hệ thống." },
+            { en: "This kind of disruption could easily hamper a traveler, but James tried not to let it waste his time.", vi: "Loại gián đoạn này có thể dễ dàng cản trở một du khách, nhưng James cố gắng không để nó làm lãng phí thời gian của mình." },
+            { en: "To economize on the expense, his company would usually prohibit luxury travel, but today he had an equivalent option to fly deluxe, which would entitle him to a larger seat for the duration of the flight.", vi: "Để tiết kiệm chi phí, công ty của anh ấy thường cấm đi lại xa xỉ, nhưng hôm nay anh ấy có một lựa chọn tương đương để bay hạng sang, điều này sẽ cho phép anh ấy có một chỗ ngồi rộng hơn trong suốt chuyến bay." },
+            { en: "As he waited to board, he decided to pick up a beverage from the adjacent lounge to assist in calming his anxiety.", vi: "Trong khi chờ lên máy bay, anh quyết định lấy một loại đồ uống từ phòng chờ kề bên để giúp xoa dịu sự lo lắng của mình." },
+            { en: "He felt anxious about the upcoming collaboration in Paris, knowing that any small circumstance could substantially alter his plans.", vi: "Anh cảm thấy lo lắng về sự hợp tác sắp tới ở Paris, biết rằng bất kỳ tình huống nhỏ nào cũng có thể làm thay đổi đáng kể kế hoạch của mình." },
+            { en: "Once on the plane, the flight attendant offered him a blanket.", vi: "Khi đã lên máy bay, tiếp viên hàng không đưa cho anh một chiếc chăn." },
+            { en: "The quiet cabin was conducive for him to concentrate and examine his agenda.", vi: "Khoang hành khách yên tĩnh rất thuận lợi để anh tập trung và kiểm tra lại lịch trình làm việc của mình." },
+            { en: "He needed to systematically plan the completion of the project and complete his preliminary tasks.", vi: "Anh cần lên kế hoạch một cách có hệ thống cho việc hoàn thành dự án và hoàn tất các nhiệm vụ sơ bộ của mình." },
+            { en: "His primary goal was to ascertain whether the prospective site in the city center was right for a new outlet.", vi: "Mục tiêu chính của anh là xác định xem địa điểm tiềm năng ở trung tâm thành phố có phù hợp cho một cửa hàng mới hay không." },
+            { en: "He had to rely on a local guide to coordinate the visit.", vi: "Anh phải dựa vào một hướng dẫn viên địa phương để điều phối chuyến tham quan." },
+            { en: "Ideally, the general consensus was that they had to move up the meeting to avoid a lengthy period of waiting.", vi: "Về mặt lý tưởng, sự đồng thuận chung là họ phải đẩy cuộc họp lên sớm hơn để tránh thời gian chờ đợi kéo dài." },
+            { en: "To predict the yield of the investment, James needed to assume control and incorporate a method to regulate the fluctuation in the market.", vi: "Để dự đoán lợi nhuận của khoản đầu tư, James cần phải nắm quyền kiểm soát và kết hợp một phương pháp để điều chỉnh sự biến động của thị trường." },
+            { en: "The exchange rates would fluctuate daily, serving as an indicator of the economic condition.", vi: "Tỷ giá hối đoái sẽ biến động hàng ngày, đóng vai trò như một chỉ số của tình hình kinh tế." },
+            { en: "He didn't want to lock into a lease if the situation was poor.", vi: "Anh không muốn bị ràng buộc vào một hợp đồng thuê nếu tình hình tồi tệ." },
+            { en: "He could easily get out of it, but it would be best to distinguish between good and bad investments.", vi: "Anh có thể dễ dàng thoát khỏi nó, nhưng tốt nhất là nên phân biệt rõ giữa đầu tư tốt và xấu." },
+            { en: "Upon reaching his destination, James proceeded to the baggage claim and then went straight to the hotel lobby.", vi: "Khi đến đích, James tiến đến khu vực nhận hành lý và sau đó đi thẳng đến sảnh khách sạn." },
+            { en: "Someone had inconsiderately left their luggage blocking the entrance.", vi: "Ai đó đã thiếu ý tứ để hành lý của họ cản trở lối vào." },
+            { en: "He was open to any suggestion that would enhance their business brand.", vi: "Anh luôn cởi mở với bất kỳ đề xuất nào có thể nâng tầm thương hiệu kinh doanh của họ." },
+            { en: "They had to adhere to strict quality standards.", vi: "Họ phải tuân thủ các tiêu chuẩn chất lượng nghiêm ngặt." },
+            { en: "His first priority was to inspect a new line of garment samples.", vi: "Ưu tiên hàng đầu của anh là kiểm tra một dòng sản phẩm mẫu may mặc mới." },
+            { en: "He had to be perceptive and check every dimension and exact detail to ensure there was no defect.", vi: "Anh phải thật tinh ý và kiểm tra mọi kích thước cũng như chi tiết chính xác để đảm bảo không có bất kỳ khuyết điểm nào." },
+            { en: "The fabric was designed to repel water and resist any wrinkle, looking uniformly perfect.", vi: "Loại vải này được thiết kế để chống thấm nước và chống nhăn, trông hoàn hảo một cách đồng đều." },
+            { en: "If he found flaws, he would throw out the bad ones and take back the rest to the factory.", vi: "Nếu anh tìm thấy lỗi, anh sẽ vứt bỏ những sản phẩm kém và mang phần còn lại trở lại nhà máy." },
+            { en: "To conclude this stage, they needed to conform to the high standards the majority of their customers expect.", vi: "Để kết thúc giai đoạn này, họ cần phải tuân thủ các tiêu chuẩn cao mà đa số khách hàng của họ mong đợi." },
+            { en: "Later, they decided to bring up the matter of a new restaurant venture.", vi: "Sau đó, họ quyết định đề cập đến vấn đề của một dự án kinh doanh nhà hàng mới." },
+            { en: "This was not a random experiment but a carefully designed theme.", vi: "Đây không phải là một thử nghiệm ngẫu nhiên mà là một chủ đề được thiết kế cẩn thận." },
+            { en: "The culinary profession was highly subjective, yet there was a clear demand for fine dining in the proximity of their offices.", vi: "Nghề ẩm thực mang tính chủ quan cao, nhưng rõ ràng có nhu cầu về ẩm thực cao cấp ở khu vực lân cận văn phòng của họ." },
+            { en: "James met with an apprentice chef who wanted to impress him with a mix of ingredient choices to create a new flavor.", vi: "James đã gặp một đầu bếp tập sự, người muốn gây ấn tượng với anh bằng cách kết hợp các lựa chọn nguyên liệu để tạo ra một hương vị mới." },
+            { en: "The chef daringly chose to mix up traditional recipes to excite the appetite of any patron.", vi: "Vị đầu bếp táo bạo chọn cách pha trộn các công thức nấu ăn truyền thống để kích thích sự thèm ăn của bất kỳ thực khách nào." },
+            { en: "James tried to judge the dishes without letting his own bias draw him away from the basic appeal.", vi: "James cố gắng đánh giá các món ăn mà không để thành kiến cá nhân làm anh rời xa khỏi sức hấp dẫn cơ bản của chúng." },
+            { en: "He had to remind himself not to forget that delivery and elegance were commonly expected.", vi: "Anh phải nhắc nhở bản thân không được quên rằng sự trình bày và nét thanh lịch là những điều thường được mong đợi." },
+            { en: "It was a burden that would ultimately fall to him to settle on a list that would satisfy multiple tastes.", vi: "Đó là một gánh nặng mà cuối cùng sẽ rơi vào tay anh khi phải chốt lại một danh sách có thể làm hài lòng nhiều khẩu vị." },
+            { en: "He had to narrow down the choices.", vi: "Anh phải thu hẹp các lựa chọn." },
+            { en: "As the decade of his career taught him, every business deal is subject to scrutiny.", vi: "Như một thập kỷ sự nghiệp đã dạy anh, mọi thỏa thuận kinh doanh đều phải chịu sự giám sát kỹ lưỡng." },
+            { en: "He felt apprehensive about a compromise that might force him to relinquish control.", vi: "Anh cảm thấy e ngại về một sự thỏa hiệp có thể buộc anh phải từ bỏ quyền kiểm soát." },
+            { en: "He wanted to secure a contract that allowed them to extend their reach without taking risks.", vi: "Anh muốn đảm bảo một hợp đồng cho phép họ mở rộng phạm vi hoạt động mà không phải chịu rủi ro." },
+            { en: "They had a short lead time, so they needed to go ahead and make progress.", vi: "Họ có thời gian chuẩn bị ngắn, vì vậy họ cần phải tiếp tục và đạt được tiến độ." },
+            { en: "The individual who would occupy the leased space needed to accustom to the exact terms.", vi: "Cá nhân người sẽ sử dụng không gian thuê cần phải làm quen với các điều khoản chính xác." },
+            { en: "To solve any logical issues, they decided to periodically research market trends and not opt for any excursion.", vi: "Để giải quyết bất kỳ vấn đề logic nào, họ quyết định định kỳ nghiên cứu xu hướng thị trường và không chọn bất kỳ chuyến dã ngoại nào." },
+            { en: "It was the time of year to assess the personnel annually.", vi: "Đã đến thời điểm trong năm để đánh giá nhân sự hàng năm." },
+            { en: "Eleanor, the HR Director for the Oasis Wellness chain, had a full schedule.", vi: "Eleanor, Giám đốc Nhân sự cho chuỗi chăm sóc sức khỏe Oasis, có một lịch trình kín mít." },
+            { en: "Her mission was to conduct an in depth review of employee performance, a procedure she took very seriously.", vi: "Nhiệm vụ của cô là tiến hành đánh giá chuyên sâu về hiệu suất của nhân viên, một quy trình mà cô thực hiện rất nghiêm túc." },
+            { en: "Her approach was thorough and effective, designed to illuminate strengths and diagnose any potential issues.", vi: "Cách tiếp cận của cô rất kỹ lưỡng và hiệu quả, được thiết kế để làm sáng tỏ các điểm mạnh và chẩn đoán bất kỳ vấn đề tiềm ẩn nào." },
+            { en: "She wanted to broaden her understanding of the disparate departments, which ranged from medical care to hospitality.", vi: "Cô muốn mở rộng sự hiểu biết của mình về các phòng ban khác biệt, từ chăm sóc y tế đến nhà hàng khách sạn." },
+            { en: "To quote the company founder, \"Performance is the pulse of our organization.\"", vi: "Trích lời nhà sáng lập công ty, \"Hiệu suất là nhịp đập của tổ chức chúng ta.\"" },
+            { en: "She began her day in a remote office to preclude any distraction.", vi: "Cô bắt đầu ngày làm việc tại một văn phòng hẻo lánh để loại trừ mọi sự phân tâm." },
+            { en: "It was a busy morning that would coincide with the launch of their new advanced employee portal.", vi: "Đó là một buổi sáng bận rộn trùng với dịp ra mắt cổng thông tin nhân viên tiên tiến mới của họ." },
+            { en: "Eleanor was punctual, a habit that helped her manage her time perfectly.", vi: "Eleanor rất đúng giờ, một thói quen đã giúp cô quản lý thời gian của mình một cách hoàn hảo." },
+            { en: "She would usually check in with her assistant to confirm the agenda, ensuring no confusion would occur.", vi: "Cô thường xuyên kiểm tra với trợ lý để xác nhận chương trình làm việc, đảm bảo sẽ không có sự nhầm lẫn nào xảy ra." },
+            { en: "\"Please notify the staff to wait in the relaxation lounge,\" she instructed, taking a sample of her morning tea.", vi: "\"Làm ơn thông báo cho các nhân viên đợi ở phòng chờ thư giãn,\" cô hướng dẫn, thưởng thức một ngụm trà sáng của mình." },
+            { en: "Her first appointment was with Elena, a dedicated housekeeper.", vi: "Cuộc hẹn đầu tiên của cô là với Elena, một quản gia tận tụy." },
+            { en: "Elena was nervous, her hands fidgeting over her crisp uniform.", vi: "Elena lo lắng, tay cô bồn chồn mân mê bộ đồng phục tinh tươm của mình." },
+            { en: "Eleanor offered a warm smile.", vi: "Eleanor nở một nụ cười ấm áp." },
+            { en: "\"I admire your collection of glowing feedback from guests,\" Eleanor began.", vi: "\"Tôi rất ngưỡng mộ bộ sưu tập các phản hồi tích cực từ khách hàng của cô,\" Eleanor bắt đầu." },
+            { en: "\"Your service is significant.", vi: "\"Dịch vụ của cô rất quan trọng." },
+            { en: "You consistently maintain a high rate of cleanliness.\"", vi: "Cô luôn duy trì tỷ lệ vệ sinh ở mức cao.\"" },
+            { en: "\"Thank you,\" Elena said.", vi: "\"Cảm ơn cô,\" Elena nói." },
+            { en: "\"I try to anticipate what guests expect when they make a reservation.\"", vi: "\"Tôi cố gắng dự đoán những gì khách mong đợi khi họ đặt phòng trước.\"" },
+            { en: "\"Your action to restore order in the VIP suites was evident to everyone.", vi: "\"Hành động của cô để khôi phục trật tự trong các phòng VIP là điều hiển nhiên với mọi người." },
+            { en: "It's an aspect of your work we highly value.", vi: "Đó là một khía cạnh trong công việc của cô mà chúng tôi đánh giá rất cao." },
+            { en: "However, we must emphasize that taking on successive shifts can incur fatigue.", vi: "Tuy nhiên, chúng tôi phải nhấn mạnh rằng việc làm liên tiếp các ca có thể gây ra mệt mỏi." },
+            { en: "I strongly urge you to limit your overtime to prevent burnout.", vi: "Tôi hết sức kêu gọi cô hãy giới hạn số giờ làm thêm để ngăn ngừa tình trạng kiệt sức." },
+            { en: "As a recommendation, we'd like to authorize you to take an alternative weekend off.", vi: "Như một lời đề nghị, chúng tôi muốn cho phép cô nghỉ vào một ngày cuối tuần thay thế." },
+            { en: "The company will reimburse your travel fare if you choose to take a trip.", vi: "Công ty sẽ hoàn lại tiền vé đi lại cho cô nếu cô chọn đi du lịch." },
+            { en: "We want to offset your hard work with proper rest.", vi: "Chúng tôi muốn bù đắp cho sự chăm chỉ của cô bằng việc nghỉ ngơi hợp lý." },
+            { en: "We allow this because we deeply value you.\"", vi: "Chúng tôi cho phép điều này vì chúng tôi vô cùng coi trọng cô.\"" },
+            { en: "\"That is a wonderful encouragement,\" Elena smiled.", vi: "\"Đó là một sự khích lệ tuyệt vời,\" Elena mỉm cười." },
+            { en: "\"I intend to use my leisure time well to recharge.\"", vi: "\"Tôi dự định sẽ sử dụng thời gian nhàn rỗi của mình thật tốt để nạp lại năng lượng.\"" },
+            { en: "Next up was Julian, who helped organize entertainment for the resort.", vi: "Người tiếp theo là Julian, người giúp tổ chức giải trí cho khu nghỉ mát." },
+            { en: "He wore a sharp, colorful suit, reflecting his vibrant role where he had to oversee a wide spectrum of activities.", vi: "Anh mặc một bộ đồ sắc nét, đầy màu sắc, phản ánh vai trò sôi động của mình, nơi anh phải giám sát một chuỗi các hoạt động rộng lớn." },
+            { en: "\"Julian, your creative instinct is unmatched,\" Eleanor said, glancing at his personnel record.", vi: "\"Julian, bản năng sáng tạo của anh không ai sánh kịp,\" Eleanor nói, liếc nhìn vào hồ sơ nhân sự của anh." },
+            { en: "\"Your plays often sell out, and the audience loves the dialogue you write.", vi: "\"Các vở kịch của anh thường bán cháy vé, và khán giả yêu thích những câu thoại anh viết." },
+            { en: "You rehearse the actors masterfully.\"", vi: "Anh diễn tập cho các diễn viên thật điêu luyện.\"" },
+            { en: "\"I try to perform at my best,\" Julian replied.", vi: "\"Tôi cố gắng thể hiện tốt nhất,\" Julian trả lời." },
+            { en: "\"I want to expand our category of shows to appeal to a wider taste.", vi: "\"Tôi muốn mở rộng hạng mục biểu diễn của chúng ta để thu hút nhiều sở thích phong phú hơn." },
+            { en: "Some guests prefer comedy, others drama.\"", vi: "Một số vị khách thích hài kịch, một số khác lại thích kịch nghệ.\"" },
+            { en: "\"That's a good decision.", vi: "\"Đó là một quyết định tốt." },
+            { en: "But I must raise a minor criticism.", vi: "Nhưng tôi phải đưa ra một lời chỉ trích nhỏ." },
+            { en: "We need to control the interaction with outside talent agencies.", vi: "Chúng ta cần kiểm soát sự tương tác với các công ty tài năng bên ngoài." },
+            { en: "Some of the disparate acts you choose to combine can irritate certain guests.", vi: "Một số tiết mục khác biệt mà anh chọn kết hợp có thể gây khó chịu cho một vài vị khách." },
+            { en: "We should divide the performances into a tier system, perhaps grouping them separately by age group.", vi: "Chúng ta nên chia các màn biểu diễn vào một hệ thống phân cấp, có thể là nhóm chúng riêng biệt theo từng nhóm tuổi." },
+            { en: "We will acquire a new scheduling software to help with this.\"", vi: "Chúng ta sẽ mua lại một phần mềm lập lịch mới để giúp đỡ việc này.\"" },
+            { en: "\"I understand the reason.", vi: "\"Tôi hiểu lý do." },
+            { en: "I will disseminate a new calendar to link specific acts with the right demographic,\" Julian promised.", vi: "Tôi sẽ phổ biến một lịch trình mới để liên kết các tiết mục cụ thể với nhân khẩu học phù hợp,\" Julian hứa." },
+            { en: "\"I subscribe to that approach.\"", vi: "\"Tôi đồng ý với cách tiếp cận đó.\"" },
+            { en: "\"Also, your representation of the brand is excellent.", vi: "\"Hơn nữa, sự đại diện cho thương hiệu của anh là rất xuất sắc." },
+            { en: "Your fashion sense always makes you approachable.\"", vi: "Phong cách thời trang của anh luôn khiến anh dễ gần.\"" },
+            { en: "Eleanor handed him his performance statement.", vi: "Eleanor giao cho anh bản báo cáo hiệu suất của mình." },
+            { en: "\"We will continue to favor your vision.", vi: "\"Chúng tôi sẽ tiếp tục ủng hộ tầm nhìn của anh." },
+            { en: "I will contact the finance department to approve your new budget.\"", vi: "Tôi sẽ liên hệ với bộ phận tài chính để phê duyệt ngân sách mới của anh.\"" },
+            { en: "After a brief break to catch up on emails, Eleanor prepared for Dr.", vi: "Sau một khoảng thời gian nghỉ ngơi ngắn để kiểm tra email, Eleanor đã chuẩn bị cho Tiến sĩ" },
+            { en: "Vance, who ran the wellness clinic.", vi: "Vance, người điều hành phòng khám sức khỏe." },
+            { en: "To operate such a facility required a specialized license and absolute focus.", vi: "Để điều hành một cơ sở như vậy đòi hỏi một giấy phép chuyên môn và sự tập trung tuyệt đối." },
+            { en: "Vance was a serious man.", vi: "Vance là một người đàn ông nghiêm túc." },
+            { en: "His assignment was to oversee everything from a minor skin treatment to a major outpatient surgery.", vi: "Nhiệm vụ của ông là giám sát mọi thứ từ phương pháp điều trị da nhỏ đến một ca phẫu thuật ngoại trú lớn." },
+            { en: "\"Doctor, your diagnosis accuracy is highly praised,\" Eleanor said.", vi: "\"Bác sĩ, sự chính xác trong chẩn đoán của ông được đánh giá rất cao,\" Eleanor nói." },
+            { en: "\"You utilize every instrument available to detect early health signs.\"", vi: "\"Ông tận dụng mọi công cụ có sẵn để phát hiện các dấu hiệu sức khỏe ban đầu.\"" },
+            { en: "\"Thank you.", vi: "\"Cảm ơn cô." },
+            { en: "We use an advanced diagnostic tool to properly evaluate the patient.", vi: "Chúng tôi sử dụng một công cụ chẩn đoán tiên tiến để đánh giá chính xác bệnh nhân." },
+            { en: "We never permit guesswork in our medical category.\"", vi: "Chúng tôi không bao giờ cho phép sự phỏng đoán trong danh mục y tế của mình.\"" },
+            { en: "\"Your recent attainment of the new medical certification is pertinent to your upcoming salary increase,\" she noted.", vi: "\"Việc đạt được giấy chứng nhận y tế mới đây của ông rất thích hợp với đợt tăng lương sắp tới của ông,\" cô ghi nhận." },
+            { en: "\"However, I must investigate a recent concern.", vi: "\"Tuy nhiên, tôi phải điều tra một mối quan ngại gần đây." },
+            { en: "A portion of the staff feels the new shift policy is too rigid.", vi: "Một bộ phận nhân viên cảm thấy chính sách phân ca mới là quá cứng nhắc." },
+            { en: "They say you rarely consult them on the roster, which goes against the team-building element in your job description.\"", vi: "Họ nói ông hiếm khi tham khảo ý kiến của họ về danh sách trực, điều này đi ngược lại với yếu tố xây dựng đội ngũ trong bản mô tả công việc của ông.\"" },
+            { en: "\"I admit, my focus can be intense.", vi: "\"Tôi thừa nhận, sự tập trung của tôi có thể rất dữ dội." },
+            { en: "But regardless of any external factor, patient safety comes first.\"", vi: "Nhưng bất kể bất kỳ yếu tố bên ngoài nào, sự an toàn của bệnh nhân vẫn luôn được đặt lên hàng đầu.\"" },
+            { en: "\"Agreed.", vi: "\"Đồng ý." },
+            { en: "But we must foster a collaborative environment.", vi: "Nhưng chúng ta phải nuôi dưỡng một môi trường hợp tác." },
+            { en: "I'd like to designate a volunteer from your staff to act as a liaison.", vi: "Tôi muốn chỉ định một tình nguyện viên từ các nhân viên của ông làm người liên lạc." },
+            { en: "It would be a convenient way to monitor morale.\"", vi: "Nó sẽ là một cách thuận tiện để theo dõi tinh thần.\"" },
+            { en: "\"I will respond to this positively.", vi: "\"Tôi sẽ phản hồi điều này một cách tích cực." },
+            { en: "I will accompany the liaison in weekly meetings to evaluate the impact.\"", vi: "Tôi sẽ đồng hành cùng người liên lạc trong các cuộc họp hàng tuần để đánh giá tác động.\"" },
+            { en: "\"Excellent.", vi: "\"Tuyệt vời." },
+            { en: "If any issues persist, I will refer you to a leadership coach, and we will meet regularly,\" Eleanor said, standing to escort him out.", vi: "Nếu mọi vấn đề tiếp diễn, tôi sẽ giới thiệu ông cho một huấn luyện viên lãnh đạo, và chúng ta sẽ gặp gỡ thường xuyên,\" Eleanor nói, đứng lên để tiễn ông ra ngoài." },
+            { en: "The remainder of the day saw Eleanor evaluating the rest of the team.", vi: "Phần còn lại của ngày, Eleanor tiến hành đánh giá những nhân viên còn lại trong đội." },
+            { en: "As the employees began to disperse, she tried to identify any lingering issues that could improve their overall experience.", vi: "Khi nhân viên bắt đầu giải tán, cô đã cố gắng xác định bất kỳ vấn đề nào còn kéo dài có thể cải thiện trải nghiệm tổng thể của họ." },
+            { en: "She did not want to disappoint anyone, but rather tempt them with new opportunities and a thrill for their career growth.", vi: "Cô không muốn làm ai phải thất vọng, mà đúng hơn là hấp dẫn họ với những cơ hội mới và sự háo hức cho sự phát triển nghề nghiệp của mình." },
+            { en: "Some training modules were optional, but most were necessary to constitute a unified workforce.", vi: "Một số học phần đào tạo là tùy chọn, nhưng hầu hết đều cần thiết để cấu thành nên một lực lượng lao động thống nhất." },
+            { en: "As she packed up, she reflected on the overview of the day.", vi: "Khi thu dọn đồ đạc, cô ngẫm nghĩ về bức tranh tổng quan của cả ngày." },
+            { en: "We will release the final report tomorrow, she thought.", vi: "Chúng ta sẽ phát hành báo cáo cuối cùng vào ngày mai, cô nghĩ." },
+            { en: "The result was clear: the employees had a strong range of skills, and they were ready to specialize further.", vi: "Kết quả đã rõ ràng: nhân viên có nhiều kỹ năng vững chắc, và họ đã sẵn sàng để chuyên môn hóa sâu hơn." },
+            { en: "It was a relatively successful review period, and Eleanor left her position at the desk feeling that the influence of proper feedback could truly illuminate a brighter future for everyone.", vi: "Đó là một kỳ đánh giá tương đối thành công, và Eleanor rời vị trí tại bàn làm việc với cảm giác rằng sự ảnh hưởng của những phản hồi phù hợp có thể thực sự thắp sáng một tương lai tươi sáng hơn cho mọi người." }
+        ];
+        (function() {
+            var popup = document.createElement('div');
+            popup.className = 'translate-popup';
+            popup.id = 'translate-popup';
+            
+            popup.style.cssText = 'position: absolute; background: #2d3436; color: white; padding: 15px 30px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 2000; display: none; flex-direction: column; gap: 10px; max-width: 350px; text-align: left; white-space: normal; word-wrap: break-word; word-break: normal;';
+            
+            var btnGoogle = document.createElement('button');
+            btnGoogle.innerHTML = '🌐 Google Dịch';
+            btnGoogle.style.cssText = 'background: #34495e; color: white; border: 1px solid #7f8c8d; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; width: 100%; margin-top: 5px; font-family: inherit; font-size: inherit;';
+            btnGoogle.onmouseover = () => btnGoogle.style.background = '#2c3e50';
+            btnGoogle.onmouseout = () => btnGoogle.style.background = '#34495e';
+            
+            var btnContext = document.createElement('button');
+            btnContext.innerHTML = '📖 Dịch Sát Nghĩa';
+            btnContext.style.cssText = 'background: #3498db; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; width: 100%; font-family: inherit; font-size: inherit;';
+            btnContext.onmouseover = () => btnContext.style.background = '#2980b9';
+            btnContext.onmouseout = () => btnContext.style.background = '#3498db';
+
+            var transResult = document.createElement('div');
+            transResult.style.cssText = 'display: none; flex-direction: column; width: 100%; white-space: normal; word-wrap: break-word;';
+
+            var closeBtn = document.createElement('span');
+            closeBtn.innerHTML = '✖';
+            closeBtn.style.cssText = 'position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 14px; color: #bdc3c7; display: none; transition: 0.3s;';
+            closeBtn.onmouseover = () => closeBtn.style.color = 'white';
+            closeBtn.onmouseout = () => closeBtn.style.color = '#bdc3c7';
+            closeBtn.onclick = function(e) {
+                e.stopPropagation();
+                popup.style.display = 'none';
+            };
+
+            popup.appendChild(closeBtn);
+            popup.appendChild(btnGoogle);
+            popup.appendChild(btnContext);
+            popup.appendChild(transResult);
+            document.body.appendChild(popup);
+
+            var selectedText = '';
+            var currentFontSize = '16px';
+
+            document.addEventListener('mouseup', handleSelection);
+            document.addEventListener('touchend', function() { setTimeout(handleSelection, 300); });
+
+            function normalizeStr(str) {
+                return str.replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+            }
+
+            function handleSelection(e) {
+                if (popup.contains(e.target)) return;
+                var sel = window.getSelection();
+                var text = sel.toString().trim();
+                
+                if (text.length > 2 && text.length < 1000) {
+                    selectedText = text;
+                    var range = sel.getRangeAt(0);
+                    var rects = range.getClientRects();
+                    if(rects.length === 0) return;
+                    var lastRect = rects[rects.length - 1];
+                    
+                    var parentNode = range.commonAncestorContainer;
+                    if (parentNode.nodeType === 3) parentNode = parentNode.parentNode;
+                    currentFontSize = window.getComputedStyle(parentNode).fontSize;
+                    
+                    // Set popup font size equal to selected text font size
+                    popup.style.fontSize = currentFontSize;
+                    transResult.style.fontSize = '1em'; // relative to popup
+                    
+                    transResult.style.display = 'none';
+                    transResult.innerHTML = '';
+                    btnGoogle.style.display = 'block';
+                    btnContext.style.display = 'block';
+                    closeBtn.style.display = 'none';
+
+                    popup.style.padding = '15px';
+                    popup.style.display = 'flex';
+                    
+                    var popupRect = popup.getBoundingClientRect();
+                    
+                    // Align left with the last word's left edge
+                    var leftPos = rects[0].left + window.scrollX;
+                    if (leftPos + popupRect.width > window.innerWidth + window.scrollX - 10) {
+                        leftPos = window.innerWidth + window.scrollX - popupRect.width - 10;
+                    }
+                    if (leftPos < window.scrollX + 10) leftPos = window.scrollX + 10;
+                    
+                    // Position below the last word
+                    var topPos = lastRect.bottom + window.scrollY + 10;
+
+                    popup.style.left = leftPos + 'px';
+                    popup.style.top = topPos + 'px';
+                } else {
+                    popup.style.display = 'none';
+                }
+            }
+
+            btnGoogle.addEventListener('mousedown', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                if (selectedText) {
+                    var url = 'https://translate.google.com/?sl=en&tl=vi&text=' + encodeURIComponent(selectedText);
+                    window.open(url, '_blank');
+                }
+                popup.style.display = 'none';
+            });
+
+            btnContext.addEventListener('mousedown', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                if (!selectedText) return;
+                
+                let normSel = normalizeStr(selectedText);
+                let bestMatch = null;
+                let minLength = Infinity;
+                
+                for (let i = 0; i < preTranslatedBookData.length; i++) {
+                    let combinedEnRaw = '';
+                    let tempVi = [];
+                    let tempEn = [];
+                    for (let j = i; j < preTranslatedBookData.length; j++) {
+                        combinedEnRaw += preTranslatedBookData[j].en + ' ';
+                        tempVi.push(preTranslatedBookData[j].vi);
+                        tempEn.push(preTranslatedBookData[j].en);
+                        
+                        let combinedNorm = normalizeStr(combinedEnRaw);
+                        
+                        if (combinedNorm === normSel) {
+                            bestMatch = { vi: tempVi.join(' '), en: tempEn.join(' ') };
+                            minLength = 0;
+                            break;
+                        }
+                                                
+                        if (combinedNorm.length > normSel.length + 500) {
+                            break;
+                        }
+                    }
+                    if (minLength === 0) break;
+                }
+                
+                let matchedVi = bestMatch ? bestMatch.vi : '';
+                let matchedEn = bestMatch ? bestMatch.en : '';
+                
+                if (matchedVi) {
+                    btnGoogle.style.display = 'none';
+                    btnContext.style.display = 'none';
+                    closeBtn.style.display = 'block';
+                    
+                    popup.style.padding = '15px 30px';
+                    transResult.style.display = 'flex';
+                    
+                    transResult.innerHTML = `
+                        <div style="margin-bottom: 5px;">
+                            <span style="display: block; font-size: 1.3em; font-weight: bold; color: #fdcb6e; text-transform: capitalize; text-align: left; padding-right: 15px; white-space: normal;">Dịch Văn Cảnh</span>
+                        </div>
+                        <div style="font-weight: bold; margin-bottom: 10px; white-space: normal; line-height: 1.5; font-size: 1em;">Nghĩa: ${matchedVi}</div>
+                        <div style="margin-top: 10px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 8px;">
+                            <span style="margin-bottom:5px; display:inline-block; font-size: 0.9em; color: #aaa;">Bản gốc:</span>
+                            <div style="font-style: italic; color: #ddd; font-size: 0.95em; white-space: normal; line-height: 1.5;">"${matchedEn}"</div>
+                        </div>
+                    `;
+                    
+                    var sel = window.getSelection();
+                    if(sel.rangeCount > 0) {
+                        var range = sel.getRangeAt(0);
+                        var rects = range.getClientRects();
+                        var lastRect = rects[rects.length - 1];
+                        
+                        var newLeftPos = rects[0].left + window.scrollX;
+                        if (newLeftPos + popup.offsetWidth > window.innerWidth + window.scrollX - 10) {
+                            newLeftPos = window.innerWidth + window.scrollX - popup.offsetWidth - 10;
+                        }
+                        if (newLeftPos < window.scrollX + 10) newLeftPos = window.scrollX + 10;
+                        
+                        popup.style.left = newLeftPos + 'px';
+                        popup.style.top = (lastRect.bottom + window.scrollY + 10) + 'px';
+                    }
+                    
+                } else {
+                    alert('Vui lòng bôi đen ĐÚNG VÀ TRỌN VẸN MỘT HOẶC NHIỀU CÂU (không được lở dở giữa chừng) để sử dụng tính năng Dịch Sát Nghĩa!');
+                    popup.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('mousedown', function(e) {
+                if (!popup.contains(e.target)) {
+                    popup.style.display = 'none';
+                }
+            });
+        })();
+        </script>
+    </body>
+    
+    
 
 </html>

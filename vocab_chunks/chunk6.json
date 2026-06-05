@@ -1,0 +1,406 @@
+[
+  {
+    "word": "rehearse",
+    "meaning": "nhắc lại, kể lại; diễn tập (kịch, múa...);"
+  },
+  {
+    "word": "review",
+    "meaning": "Sự phê bình, lời phê bình, duyệt, xem lại;"
+  },
+  {
+    "word": "sell out",
+    "meaning": "bán hết, bán sạch (vé);bán rẻ hết, bán tống bán tháo;"
+  },
+  {
+    "word": "available",
+    "meaning": "sẵn có, sẵn sàng (để dùng, để phục vụ);"
+  },
+  {
+    "word": "broaden",
+    "meaning": "mở rộng, nới rộng;"
+  },
+  {
+    "word": "category",
+    "meaning": "hạng, loại"
+  },
+  {
+    "word": "disparate",
+    "meaning": "khác biệt, khác loại, khác hẳn nhau;"
+  },
+  {
+    "word": "divide",
+    "meaning": "chia ra, phân chia; chia rẽ, ly gián;"
+  },
+  {
+    "word": "favor",
+    "meaning": "chiếu cố, thiên vị; thích, thiện cảm;"
+  },
+  {
+    "word": "instinct",
+    "meaning": "bản năng; năng khiếu, thiên hướng;"
+  },
+  {
+    "word": "prefer",
+    "meaning": "ưa thích hơn, thích cái gì hơn"
+  },
+  {
+    "word": "reason",
+    "meaning": "(n): lý do, lý lẽ; lý trí, lẽ phải; (v): suy luận, lý luận; tranh luận, cãi lý;"
+  },
+  {
+    "word": "relaxation",
+    "meaning": "thư giãn, sự nghỉ ngơi, sự giải trí"
+  },
+  {
+    "word": "taste",
+    "meaning": "sở thích,thị hiếu, vị giác;"
+  },
+  {
+    "word": "urge",
+    "meaning": "thúc giục, thúc đẩy, thôi thúc; cố nài, cố thuyết phục;"
+  },
+  {
+    "word": "acquire",
+    "meaning": "đạt được, thu được, giành được, kiếm được (obtain);"
+  },
+  {
+    "word": "admire",
+    "meaning": "khâm phục, thán phục; hâm mộ, ngưỡng mộ;"
+  },
+  {
+    "word": "collection",
+    "meaning": "(sự) sưu tầm, thu thập; (sự/tiền) quyên góp; nhóm người/đồvật"
+  },
+  {
+    "word": "criticism",
+    "meaning": "(sự/lời) phê bình, chỉ trích, phê phán, bình phẩm"
+  },
+  {
+    "word": "fashion",
+    "meaning": "thời trang, mốt; hình dáng, kiểu cách;"
+  },
+  {
+    "word": "leisure",
+    "meaning": "(lúc/thời gian) nhàn rỗi, nhàn hạ"
+  },
+  {
+    "word": "respond",
+    "meaning": "phản ứng lại (react); đáp lại, đáp ứng, hưởng ứng (reply);"
+  },
+  {
+    "word": "schedule",
+    "meaning": "(n): thời gian biểu; (v): ghi vào thời gian biểu, dự định thời gianbiểu;"
+  },
+  {
+    "word": "significant",
+    "meaning": "quan trọng, trọng đại, hệ trọng, đầy ý nghĩa;"
+  },
+  {
+    "word": "specialize",
+    "meaning": "chuyên môn hóa, chuyên về, đặc trưng về;"
+  },
+  {
+    "word": "spectrum",
+    "meaning": "phổ, quang phổ; một dải rộng (về hoạt động, ý tưởng, chấtlượng...);"
+  },
+  {
+    "word": "assignment",
+    "meaning": "(sự) giao việc, phân công; quy là, cho là; nhiệm vụ, công việc;"
+  },
+  {
+    "word": "choose",
+    "meaning": "lựa chọn"
+  },
+  {
+    "word": "constitute",
+    "meaning": "cấu tạo, tạo thành (to form); thiết lập, thành lập (toestablish)"
+  },
+  {
+    "word": "decision",
+    "meaning": "sự quyết định; ‹sự› giải quyết, phân xử, phán quyết;"
+  },
+  {
+    "word": "disseminate",
+    "meaning": "truyền bá, phổ biến, reo rắc;"
+  },
+  {
+    "word": "impact",
+    "meaning": "(sự/sức) va mạnh, va chạm mạnh, tác động mạnh, ảnh hưởngmạnh;"
+  },
+  {
+    "word": "in depth",
+    "meaning": "tỷ mỉ, cẩn thận, chu đáo, chi tiết;"
+  },
+  {
+    "word": "investigate",
+    "meaning": "điều tra, nghiên cứu"
+  },
+  {
+    "word": "link",
+    "meaning": "liên kết, kết hợp"
+  },
+  {
+    "word": "subscribe",
+    "meaning": "quyên, góp; đặt (báo), đặt mua dài hạn, theo dõi lâu dài;"
+  },
+  {
+    "word": "thorough",
+    "meaning": "thấu đáo, triệt để, hoàn toàn, trọn vẹn; tỉ mỉ, kỹ lưỡng;"
+  },
+  {
+    "word": "annually",
+    "meaning": "hàng năm, từng nằm, thường niên (yearly);"
+  },
+  {
+    "word": "appointment",
+    "meaning": "sự hẹn gặp, giấy mời; chức vụ được bổ nhiệm, sắclệnh;"
+  },
+  {
+    "word": "assess",
+    "meaning": "ước định, định lượng, đánh giá"
+  },
+  {
+    "word": "diagnose",
+    "meaning": "chẩn đoán"
+  },
+  {
+    "word": "diagnosis",
+    "meaning": "lời chuẩn đoán"
+  },
+  {
+    "word": "effective",
+    "meaning": "(có) kết quả, tác dụng; (có) hiệu quả, hiệu lực"
+  },
+  {
+    "word": "instrument",
+    "meaning": "dụng cụ, công cụ, thiết bị đo đạc; trái phiếu, nhạc cụ;"
+  },
+  {
+    "word": "manage",
+    "meaning": "quản lý, trông nom, điều khiển, sai khiến (handle);giải quyết, xử lý, xoay xở được (deal with); chỉ đạo, chỉ dẫn, dạy bảo (guide);"
+  },
+  {
+    "word": "prevent",
+    "meaning": "ngăn ngừa, ngăn chặn; phòng ngừa, phòng tránh;"
+  },
+  {
+    "word": "recommendation",
+    "meaning": "(sự) giới thiệu, tiến cử;(sự) gửi gắm, phóthác, dặn dò, khuyên bảo;"
+  },
+  {
+    "word": "record",
+    "meaning": "(n): hồ sơ, sổ sách, biên bản, văn thư; kỷ lục; đĩa hát;(v): ghi, ghi chép, ghi âm;"
+  },
+  {
+    "word": "refer",
+    "meaning": "quy vào, quy cho, viện vào, ám chỉ, nói đến;tham khảo, hỏi ý kiến;"
+  },
+  {
+    "word": "serious",
+    "meaning": "nghiêm trọng, trầm trọng; nghiêm trang, nghiêm túc, đứng đắn;"
+  },
+  {
+    "word": "catch up",
+    "meaning": "đuổi kịp, theo kịp,làm kịp, kịp thời gian;"
+  },
+  {
+    "word": "distraction",
+    "meaning": "(sự) sao nhãng, lãng trí, rối trí; sự giải trí, trò tiêu khiển;"
+  },
+  {
+    "word": "encouragement",
+    "meaning": "khuyến khích, khích lệ, cổ vũ, động viên;"
+  },
+  {
+    "word": "evident",
+    "meaning": "hiển nhiên, rành rành, rõ rệt;"
+  },
+  {
+    "word": "habit",
+    "meaning": "thói quen, tập quán"
+  },
+  {
+    "word": "illuminate",
+    "meaning": "chiếu sáng, rọi sáng, soi sáng, làm sáng tỏ;"
+  },
+  {
+    "word": "irritate",
+    "meaning": "chọc tức; làm tấy lên, làm rát"
+  },
+  {
+    "word": "overview",
+    "meaning": "sự miêu tả chung nhưng ngắn gọn; cái nhìn khái quát; tổng quan"
+  },
+  {
+    "word": "position",
+    "meaning": "vị trí, chỗ, thế, tư thế; địa vị, chức vụ;"
+  },
+  {
+    "word": "regularly",
+    "meaning": "đều đặn, thường xuyên; theo quy tắc, có quy củ;"
+  },
+  {
+    "word": "restore",
+    "meaning": "Khôi phục lại, phục hồi"
+  },
+  {
+    "word": "alternative",
+    "meaning": "sự lựa chọnn một trong hai;thay thế khác, xen kẽ, thay phiên, luân phiên;"
+  },
+  {
+    "word": "aspect",
+    "meaning": "bề ngoài, diện mạo (appearance); khía cạnh, mặt (side);"
+  },
+  {
+    "word": "concern",
+    "meaning": "liên quan, dính líu; lo lắng, lo ngại, quan tâm;"
+  },
+  {
+    "word": "emphasize",
+    "meaning": "nhấn mạnh, làm nổi bật;"
+  },
+  {
+    "word": "incur",
+    "meaning": "gánh chịu, chịu lấy,chịu, gánh, mắc, bị;"
+  },
+  {
+    "word": "personnel",
+    "meaning": "toàn thể CBCNV, tập thể nhân viên, nhân sự;"
+  },
+  {
+    "word": "policy",
+    "meaning": "chính sách, đường lối;"
+  },
+  {
+    "word": "portion",
+    "meaning": "phần, phần chia; (v): chia phần, chia thành từng phần;phần thức ăn (đựng ở đĩa đem lên cho khách, ở quán ăn);"
+  },
+  {
+    "word": "reimburse",
+    "meaning": "hoàn lại, trả lại (số tiền đã tiêu)"
+  },
+  {
+    "word": "regardless",
+    "meaning": "không quan tâm, không chú ý tới, không đếm xỉa tới, bấtchấp;"
+  },
+  {
+    "word": "treatment",
+    "meaning": "sự điều trị; phép trị bệnh"
+  },
+  {
+    "word": "suit",
+    "meaning": "làm cho phù hợp, thích hợp; làm cho thỏa mãn, đáp ứng; tiện, hợp với;"
+  },
+  {
+    "word": "allow",
+    "meaning": "cho phép; để cho;"
+  },
+  {
+    "word": "salary",
+    "meaning": "(n): tiền lương; (v): trả lương"
+  },
+  {
+    "word": "accompany",
+    "meaning": "đi theo,dẫn đường;"
+  },
+  {
+    "word": "admit",
+    "meaning": "thú nhận, thừa nhận; cho vào, nhận vào, kết nạp;"
+  },
+  {
+    "word": "authorize",
+    "meaning": "cho phép, ủy quyền;"
+  },
+  {
+    "word": "designate",
+    "meaning": "chỉ định, bổ nhiệm, chọn lựa (appoint); chỉ rõ, định rõ(specify);"
+  },
+  {
+    "word": "escort",
+    "meaning": "(n) : đội hộ tống; người dẫn đường, vệ sĩ; (v): đi hộ tống, đitheo;"
+  },
+  {
+    "word": "identify",
+    "meaning": "nhận ra, nhận biết, nhận diện; đồng nhất, đồng cảm, đồng nhấthóa;"
+  },
+  {
+    "word": "mission",
+    "meaning": "sứ mệnh, nhiệm vụ;"
+  },
+  {
+    "word": "permit",
+    "meaning": "(n): giấy phép, sự cho phép; /pə'mit/ (v): cho phép, chấp nhận;"
+  },
+  {
+    "word": "pertinent",
+    "meaning": "liên quan trực tiếp, thích hợp;"
+  },
+  {
+    "word": "procedure",
+    "meaning": "thủ tục, các bước tiến hành (cho đến khi hoàn thành côngviệc);"
+  },
+  {
+    "word": "result",
+    "meaning": "kết quả, đáp số;"
+  },
+  {
+    "word": "statement",
+    "meaning": "(sự/bài/lời) phát biểu, tuyên bố; bản báo cáo (chi tiêu, tàikhoản NH);"
+  },
+  {
+    "word": "surgery",
+    "meaning": "ca mổ, phẫu thuật."
+  },
+  {
+    "word": "usually",
+    "meaning": "thông thường, thường lệ"
+  },
+  {
+    "word": "consult",
+    "meaning": "tham khảo, hỏi ý kiến; (+with) hội ý với ai, bàn bạc với ai;"
+  },
+  {
+    "word": "control",
+    "meaning": "kiểm tra, kiểm soát; điều khiển, chỉ huy;"
+  },
+  {
+    "word": "convenient",
+    "meaning": "thuận lợi, thuận tiện; ở gần, dễ đi đến;"
+  },
+  {
+    "word": "detect",
+    "meaning": "dò ra, tìm ra, phát hiện ra (discover); nhận ra, nhận thấy (identify);"
+  },
+  {
+    "word": "factor",
+    "meaning": "nhân tố, yếu tố;"
+  },
+  {
+    "word": "interaction",
+    "meaning": "(sự) tương tác, ảnh hưởng lẫn nhau, tác động qua lại;"
+  },
+  {
+    "word": "limit",
+    "meaning": "(n): giới hạn, hạn định, ranh giới; (v): giới hạn, hạn chế;"
+  },
+  {
+    "word": "monitor",
+    "meaning": "giám sát, theo dõi; (n): màn hình vi tính, lớp trưởng;"
+  },
+  {
+    "word": "potential",
+    "meaning": "tiềm tàng, tiềm lực, khả năng;"
+  },
+  {
+    "word": "sample",
+    "meaning": "mẫu, hàng mẫu; (v): lấy mẫu, đưa mẫu; thử;"
+  },
+  {
+    "word": "sense",
+    "meaning": "giác quan, cảm giác, ý thức, tri thức; sự thông minh, khả năng phánđoán;"
+  },
+  {
+    "word": "volunteer",
+    "meaning": "(v): tình nguyện, xung phong; (n): (người) tình nguyện, xungphong;"
+  }
+]

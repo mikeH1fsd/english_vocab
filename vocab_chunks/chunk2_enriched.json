@@ -1,0 +1,1008 @@
+{
+  "verbally": [
+    {
+      "pos": "Trạng từ",
+      "context": "Dùng khi miêu tả việc giao tiếp bằng miệng, bằng lời nói thay vì viết.",
+      "example": "They agreed verbally to the terms of the contract."
+    }
+  ],
+  "disk": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ một vật thể hình tròn và dẹt, cái đĩa.",
+      "example": "The frisbee is a plastic flying disk."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Trong công nghệ thông tin, chỉ đĩa lưu trữ dữ liệu (ví dụ: ổ đĩa cứng, đĩa mềm).",
+      "example": "He saved the files onto the hard disk."
+    }
+  ],
+  "facilitate": [
+    {
+      "pos": "Động từ",
+      "context": "Dùng khi nói về việc làm cho một quá trình hay hành động trở nên dễ dàng, thuận tiện hơn.",
+      "example": "The new software will facilitate the tracking of inventory."
+    }
+  ],
+  "network": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ mạng lưới các thiết bị, hệ thống hoặc đường xá được kết nối với nhau.",
+      "example": "The computer network went down for an hour."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ mạng lưới quan hệ xã hội, đối tác làm ăn.",
+      "example": "She has a strong network of contacts in the industry."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động xây dựng mối quan hệ xã hội để hỗ trợ công việc.",
+      "example": "Conferences are a great place to network."
+    }
+  ],
+  "popularity": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ tình trạng được nhiều người biết đến, ưa chuộng hoặc ủng hộ.",
+      "example": "The app has gained immense popularity among teenagers."
+    }
+  ],
+  "process": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ một quá trình, tiến trình hoặc các bước để đạt được kết quả.",
+      "example": "Learning a new language is a slow process."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động xử lý thông tin, dữ liệu hoặc chế biến nguyên liệu.",
+      "example": "It takes time for the system to process the payment."
+    }
+  ],
+  "replace": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động thay thế người hoặc vật bằng một người/vật khác.",
+      "example": "We need to replace the old printer with a new one."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc đặt lại một vật vào vị trí cũ.",
+      "example": "Please replace the book on the shelf when you are done."
+    }
+  ],
+  "revolution": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ một cuộc cách mạng, sự thay đổi toàn diện trong chính trị hoặc xã hội.",
+      "example": "The industrial revolution changed the world completely."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ chuyển động quay vòng quanh một trục hoặc một tâm.",
+      "example": "The earth makes one revolution around the sun each year."
+    }
+  ],
+  "sharp": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ độ sắc bén của đồ vật (dao, kéo).",
+      "example": "Be careful, that knife is very sharp."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự thông minh, nhạy bén trong suy nghĩ.",
+      "example": "He has a sharp mind and solves problems quickly."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự thay đổi đột ngột, rõ rệt (ví dụ: tăng/giảm mạnh).",
+      "example": "There was a sharp increase in sales this month."
+    }
+  ],
+  "skill": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ kỹ năng, sự khéo léo hoặc khả năng làm tốt một việc gì đó nhờ luyện tập.",
+      "example": "Communication is an essential skill in any job."
+    }
+  ],
+  "software": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ phần mềm máy tính, các chương trình chạy trên thiết bị điện tử.",
+      "example": "You need to install the latest software update."
+    }
+  ],
+  "store": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ cửa hàng, nơi buôn bán hàng hóa.",
+      "example": "I am going to the grocery store to buy some milk."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động lưu trữ, cất giữ đồ đạc, thông tin.",
+      "example": "Squirrels store nuts for the winter."
+    }
+  ],
+  "technical": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ những gì liên quan đến kỹ thuật, công nghệ hoặc máy móc.",
+      "example": "The project requires specific technical knowledge."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ khía cạnh chuyên môn, từ vựng chuyên ngành trong một lĩnh vực cụ thể.",
+      "example": "The report was full of technical jargon."
+    }
+  ],
+  "assemble": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc tập hợp con người hoặc thu thập vật dụng lại một nơi.",
+      "example": "The manager asked all the staff to assemble in the meeting room."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc lắp ráp các bộ phận lại thành một vật hoàn chỉnh.",
+      "example": "It took me three hours to assemble the new furniture."
+    }
+  ],
+  "beforehand": [
+    {
+      "pos": "Trạng từ",
+      "context": "Dùng để chỉ một việc gì đó được thực hiện trước, sớm hơn một thời điểm nhất định.",
+      "example": "If you want to come, please let me know beforehand."
+    }
+  ],
+  "complicated": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự phức tạp, rắc rối, khó hiểu của một vấn đề hay cấu trúc.",
+      "example": "The instructions to build this model are too complicated."
+    }
+  ],
+  "courier": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ người hoặc công ty chuyên giao nhận, chuyển phát bưu kiện, thư từ.",
+      "example": "I sent the documents by courier to ensure they arrive tomorrow."
+    }
+  ],
+  "express": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc bày tỏ, biểu lộ cảm xúc hoặc suy nghĩ.",
+      "example": "Words cannot express how grateful I am."
+    },
+    {
+      "pos": "Tính từ / Phó từ",
+      "context": "Chỉ dịch vụ nhanh, tốc hành (thư từ, giao thông).",
+      "example": "Please send this package via express mail."
+    }
+  ],
+  "fold": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động gấp, nếp gấp lại (giấy, quần áo).",
+      "example": "She folded the letter and put it in the envelope."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc doanh nghiệp phải đóng cửa vì phá sản.",
+      "example": "Many small businesses folded during the economic crisis."
+    }
+  ],
+  "layout": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ sự bố trí, cách sắp xếp (bản in, trang web, nội thất, khu vực).",
+      "example": "They decided to change the layout of the office."
+    }
+  ],
+  "mention": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động đề cập, nhắc đến một người hoặc một việc gì đó một cách ngắn gọn.",
+      "example": "Did he mention anything about the upcoming meeting?"
+    }
+  ],
+  "petition": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ một bản kiến nghị, lá đơn thỉnh cầu gửi cho cơ quan có thẩm quyền.",
+      "example": "Over a thousand people signed the petition to save the park."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động thỉnh cầu, kiến nghị.",
+      "example": "They petitioned the government for better working conditions."
+    }
+  ],
+  "proof": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ bằng chứng, chứng cứ xác minh sự thật.",
+      "example": "Do you have any proof of your innocence?"
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ bản nháp in thử (trong xuất bản) để kiểm tra lỗi.",
+      "example": "The author has to check the proofs before the book is printed."
+    }
+  ],
+  "registered": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ một cái gì đó đã được vào sổ, đăng ký chính thức.",
+      "example": "You must send the form via registered mail."
+    }
+  ],
+  "revise": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc xem xét lại và chỉnh sửa văn bản, luật lệ.",
+      "example": "We need to revise the report before submitting it."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc ôn tập lại bài học (thường dùng trong tiếng Anh-Anh).",
+      "example": "He is revising for his final exams."
+    }
+  ],
+  "abundant": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự phong phú, dồi dào, thừa thãi (thường về tài nguyên, số lượng).",
+      "example": "The country has abundant natural resources."
+    }
+  ],
+  "accomplishment": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ thành tựu, thành quả hoặc việc đã hoàn thành xuất sắc.",
+      "example": "Graduating from university is a major accomplishment."
+    }
+  ],
+  "bring together": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Chỉ hành động tập hợp, gom mọi người hoặc sự vật lại một chỗ.",
+      "example": "The festival brings together artists from all over the world."
+    }
+  ],
+  "candidate": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ ứng cử viên tham gia tranh cử hoặc ứng viên dự tuyển việc làm, kỳ thi.",
+      "example": "She is the most qualified candidate for the manager position."
+    }
+  ],
+  "come up with": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Chỉ việc nảy ra ý tưởng, giải pháp hoặc sáng kiến mới.",
+      "example": "He always comes up with great ideas for our projects."
+    }
+  ],
+  "commensurate": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự tương xứng, phù hợp về quy mô, mức độ (thường đi với with).",
+      "example": "Salary will be commensurate with experience."
+    }
+  ],
+  "match": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ trận đấu (thể thao).",
+      "example": "Are you going to watch the football match tonight?"
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ sự tương xứng, người/vật hợp nhau (ví dụ trong tình cảm, màu sắc).",
+      "example": "They are a perfect match for each other."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động ghép nối, làm cho tương xứng hoặc phù hợp.",
+      "example": "This shirt does not match those pants."
+    }
+  ],
+  "profile": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ tiểu sử sơ lược, bản tóm tắt thông tin về một người/tổ chức.",
+      "example": "You should update your online profile."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ góc nhìn nghiêng (của khuôn mặt).",
+      "example": "The coin shows the profile of the queen."
+    }
+  ],
+  "qualification": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ bằng cấp, chứng chỉ học thuật hoặc nghề nghiệp.",
+      "example": "Does she have the right qualifications for this role?"
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ năng lực, tư cách đủ điều kiện để làm một việc.",
+      "example": "His only qualification for the job is his enthusiasm."
+    }
+  ],
+  "recruit": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động tuyển dụng nhân sự mới.",
+      "example": "The company plans to recruit 50 new employees this year."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ thành viên mới, lính mới.",
+      "example": "The new recruits are currently undergoing training."
+    }
+  ],
+  "submit": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động đệ trình, nộp tài liệu, báo cáo.",
+      "example": "Please submit your application by Friday."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc chịu khuất phục, quy phục.",
+      "example": "The rebels were forced to submit."
+    }
+  ],
+  "time-consuming": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ một công việc tốn rất nhiều thời gian để hoàn thành.",
+      "example": "Writing a novel is a very time-consuming process."
+    }
+  ],
+  "ability": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ khả năng, năng lực thể chất hoặc trí tuệ để làm việc gì.",
+      "example": "He has the ability to learn languages quickly."
+    }
+  ],
+  "apply": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc nộp đơn (xin việc, học bổng).",
+      "example": "I decided to apply for the scholarship."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc áp dụng (kiến thức, quy định) vào thực tế.",
+      "example": "You need to apply what you learned in class to the real world."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc bôi, thoa (kem, thuốc).",
+      "example": "Apply sunscreen before going out in the sun."
+    }
+  ],
+  "background": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ xuất thân, quá trình học tập, kinh nghiệm làm việc của ai đó.",
+      "example": "We need a candidate with a background in finance."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ bối cảnh, phông nền (của bức ảnh, sự việc).",
+      "example": "The mountains made a beautiful background for the photo."
+    }
+  ],
+  "be ready for": [
+    {
+      "pos": "Cụm từ",
+      "context": "Sẵn sàng, chuẩn bị tâm lý/vật chất cho việc gì đó.",
+      "example": "Are you ready for the upcoming exam?"
+    }
+  ],
+  "call in": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Mời ai đó đến (thường là để làm việc, sửa chữa).",
+      "example": "We had to call in a specialist to fix the machine."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Gọi điện đến một nơi (đài phát thanh, nơi làm việc).",
+      "example": "He called in sick today."
+    }
+  ],
+  "confidence": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ sự tự tin vào bản thân hoặc tin tưởng người khác.",
+      "example": "She answered the interview questions with great confidence."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ sự tâm sự, chuyện kín giữ bí mật.",
+      "example": "He told me the secret in strict confidence."
+    }
+  ],
+  "constantly": [
+    {
+      "pos": "Trạng từ",
+      "context": "Chỉ việc gì đó diễn ra liên tục, không ngừng nghỉ.",
+      "example": "The language is constantly changing."
+    }
+  ],
+  "expert": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ chuyên gia, người am hiểu sâu về một lĩnh vực.",
+      "example": "She is an expert in medieval history."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự thành thạo, có chuyên môn cao.",
+      "example": "He gave us some expert advice on investing."
+    }
+  ],
+  "follow up": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Chỉ hành động tiếp nối, theo dõi sau một sự kiện (ví dụ: cuộc họp, email) để kiểm tra tiến độ.",
+      "example": "I will follow up with an email to summarize our meeting."
+    }
+  ],
+  "hesitate": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ sự chần chừ, do dự, lưỡng lự trước khi hành động.",
+      "example": "Please do not hesitate to contact me if you have any questions."
+    }
+  ],
+  "present": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ món quà tặng.",
+      "example": "I bought a present for her birthday."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự hiện diện, có mặt (tại một nơi) hoặc ở thời điểm hiện tại.",
+      "example": "All members were present at the meeting."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động trình bày, thuyết trình hoặc trao tặng.",
+      "example": "He will present his research findings tomorrow."
+    }
+  ],
+  "presentation": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ bài thuyết trình, sự trình bày một vấn đề.",
+      "example": "Her presentation on climate change was very impressive."
+    }
+  ],
+  "weakness": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ điểm yếu, nhược điểm trong tính cách hoặc kỹ năng.",
+      "example": "His biggest weakness is his lack of patience."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ sự yếu đuối về mặt thể chất.",
+      "example": "She felt a sudden weakness in her legs."
+    }
+  ],
+  "conduct": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc tổ chức, thực hiện, tiến hành (một cuộc khảo sát, nghiên cứu).",
+      "example": "They will conduct a survey to gather customer feedback."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ cách cư xử, hạnh kiểm của một người.",
+      "example": "The student was praised for his good conduct."
+    }
+  ],
+  "generate": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc tạo ra, sản sinh ra (năng lượng, ý tưởng, lợi nhuận).",
+      "example": "Wind turbines are used to generate electricity."
+    }
+  ],
+  "hire": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc thuê mướn nhân sự vào làm việc hoặc thuê vật dụng.",
+      "example": "They need to hire more staff for the holiday season."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ nhân viên mới được thuê.",
+      "example": "The new hire is adapting well to the company culture."
+    }
+  ],
+  "keep up with": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Chỉ việc theo kịp (thời đại, tiến độ, hoặc một người nào đó).",
+      "example": "It is hard to keep up with the latest fashion trends."
+    }
+  ],
+  "look up to": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Chỉ sự kính trọng, ngưỡng mộ một ai đó.",
+      "example": "Many young athletes look up to him as a role model."
+    }
+  ],
+  "mentor": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ người hướng dẫn, cố vấn có nhiều kinh nghiệm.",
+      "example": "He has been my mentor since I joined the company."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động hướng dẫn, dìu dắt ai đó.",
+      "example": "She mentored several young scientists."
+    }
+  ],
+  "on track": [
+    {
+      "pos": "Cụm từ",
+      "context": "Chỉ việc đang tiến hành đúng hướng, đúng tiến độ như dự kiến.",
+      "example": "The project is on track to be completed by next month."
+    }
+  ],
+  "reject": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động từ chối, bác bỏ một lời đề nghị, ý tưởng hoặc ứng viên.",
+      "example": "The committee decided to reject the proposal."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ đồ bị loại, phế phẩm.",
+      "example": "These imperfect products are sold as rejects."
+    }
+  ],
+  "set up": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Chỉ việc thành lập, thiết lập (doanh nghiệp, hệ thống).",
+      "example": "She plans to set up her own business next year."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Chỉ việc chuẩn bị, sắp xếp máy móc, đồ đạc.",
+      "example": "Can you help me set up the computer?"
+    }
+  ],
+  "success": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ sự thành công, kết quả tốt đẹp.",
+      "example": "Hard work is the key to success."
+    }
+  ],
+  "training": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ quá trình đào tạo, huấn luyện kỹ năng hoặc thể chất.",
+      "example": "All new employees must undergo safety training."
+    }
+  ],
+  "update": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc cập nhật thông tin, phần mềm lên phiên bản mới nhất.",
+      "example": "You should update your resume before applying for the job."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ bản cập nhật, tin tức mới nhất.",
+      "example": "I will give you an update on the situation tomorrow."
+    }
+  ],
+  "aware": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ việc có nhận thức, biết hoặc hiểu rõ về điều gì đó.",
+      "example": "Are you aware of the risks involved in this project?"
+    }
+  ],
+  "basis": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ nền tảng, cơ sở, căn cứ của một sự vật hay lập luận.",
+      "example": "We made our decision on the basis of your report."
+    }
+  ],
+  "be aware of": [
+    {
+      "pos": "Cụm từ",
+      "context": "Nhận thức, ý thức được điều gì.",
+      "example": "You must be aware of the rules before you start."
+    }
+  ],
+  "benefit": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ lợi ích, trợ cấp, phúc lợi (như phúc lợi xã hội, bảo hiểm).",
+      "example": "One of the benefits of this job is health insurance."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc mang lại lợi ích cho ai hoặc được hưởng lợi từ đâu.",
+      "example": "The new park will benefit the whole community."
+    }
+  ],
+  "compensate": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc đền bù, bồi thường (thường là tiền) cho thiệt hại hoặc công sức.",
+      "example": "The company will compensate you for your travel expenses."
+    }
+  ],
+  "delicate": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự mong manh, dễ vỡ.",
+      "example": "These glasses are very delicate, please handle them with care."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự tế nhị, nhạy cảm cần khéo léo xử lý (vấn đề, tình huống).",
+      "example": "We need to discuss a rather delicate matter."
+    }
+  ],
+  "eligible": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ việc đủ tư cách, đủ điều kiện để tham gia hoặc nhận thứ gì đó.",
+      "example": "Only citizens over 18 are eligible to vote."
+    }
+  ],
+  "flexibly": [
+    {
+      "pos": "Trạng từ",
+      "context": "Chỉ sự linh hoạt, dễ điều chỉnh theo tình huống.",
+      "example": "Employees are allowed to work flexibly."
+    }
+  ],
+  "negotiate": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động đàm phán, thương lượng để đạt thỏa thuận.",
+      "example": "They are trying to negotiate a ceasefire."
+    }
+  ],
+  "raise": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc nâng lên, giơ lên (tay, giá cả).",
+      "example": "Please raise your hand if you have a question."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc nuôi dưỡng (con cái, động vật).",
+      "example": "She raised three children on her own."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ sự tăng lương (chủ yếu trong tiếng Anh-Mỹ).",
+      "example": "He asked his boss for a raise."
+    }
+  ],
+  "retire": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc nghỉ hưu, ngừng làm việc khi đến tuổi.",
+      "example": "My father plans to retire next year."
+    }
+  ],
+  "vested": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ quyền lợi được đảm bảo hợp pháp, được trao cho.",
+      "example": "She has a vested interest in the success of the company."
+    }
+  ],
+  "wage": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ tiền công trả theo giờ, ngày hoặc tuần.",
+      "example": "The minimum wage has been increased recently."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc tiến hành, phát động (chiến tranh, chiến dịch).",
+      "example": "They decided to wage war against the neighboring country."
+    }
+  ],
+  "achieve": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc đạt được, hoàn thành một mục tiêu nhờ nỗ lực.",
+      "example": "If you work hard, you will achieve your goals."
+    }
+  ],
+  "contribute": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc đóng góp (tiền bạc, ý tưởng, công sức).",
+      "example": "Many people contributed money to the charity."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc góp phần gây ra một điều gì đó (thường mang ý tiêu cực).",
+      "example": "Smoking heavily contributed to his illness."
+    }
+  ],
+  "dedication": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ sự cống hiến, tận tụy hết lòng cho một công việc hay mục đích.",
+      "example": "Her dedication to the project was truly inspiring."
+    }
+  ],
+  "look forward to": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Chỉ sự mong chờ, háo hức về một điều sẽ xảy ra trong tương lai.",
+      "example": "I look forward to hearing from you soon."
+    }
+  ],
+  "look to": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Chỉ việc tin cậy, trông cậy vào ai đó để được giúp đỡ hoặc hướng dẫn.",
+      "example": "We look to our leader for guidance."
+    }
+  ],
+  "loyal": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự trung thành, luôn ủng hộ ai/cái gì.",
+      "example": "She has been a loyal employee for over 10 years."
+    }
+  ],
+  "merit": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ giá trị tốt, ưu điểm hoặc công trạng đáng khen.",
+      "example": "We should judge candidates strictly on merit."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc xứng đáng nhận được điều gì (sự chú ý, phần thưởng).",
+      "example": "This interesting proposal merits further discussion."
+    }
+  ],
+  "obvious": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự việc rõ ràng, hiển nhiên, dễ nhận thấy.",
+      "example": "It is obvious that he is not feeling well."
+    }
+  ],
+  "promote": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc thăng chức, đề bạt ai đó lên vị trí cao hơn.",
+      "example": "She was promoted to senior manager last week."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc quảng bá, xúc tiến (sản phẩm, ý tưởng).",
+      "example": "The campaign aims to promote healthy eating habits."
+    }
+  ],
+  "recognition": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ sự công nhận, thừa nhận (thành tích, đóng góp).",
+      "example": "He received a medal in recognition of his bravery."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ việc nhận ra ai/cái gì (nhờ trí nhớ).",
+      "example": "The town has changed beyond recognition."
+    }
+  ],
+  "value": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ giá trị (vật chất, tinh thần) của một sự vật, sự việc.",
+      "example": "The real value of this painting is unknown."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc trân trọng, coi trọng ai/cái gì.",
+      "example": "I truly value your friendship."
+    }
+  ],
+  "bargain": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ món hời, hàng mua được với giá rẻ.",
+      "example": "This dress was a real bargain."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động mặc cả, trả giá khi mua bán.",
+      "example": "He tried to bargain with the vendor for a lower price."
+    }
+  ],
+  "bear": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ sự chịu đựng (nỗi đau, áp lực).",
+      "example": "I cannot bear the pain any longer."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc gánh vác (trách nhiệm, chi phí) hoặc mang (dấu ấn, tên).",
+      "example": "The company will bear all the travel costs."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ con gấu.",
+      "example": "We saw a bear in the forest."
+    }
+  ],
+  "behaviour": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ cách cư xử, thái độ, hành vi của con người hoặc động vật.",
+      "example": "His behaviour at the party was unacceptable."
+    }
+  ],
+  "checkout": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ quầy thanh toán (tại siêu thị).",
+      "example": "There is a long line at the checkout."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ thủ tục trả phòng và thanh toán (tại khách sạn).",
+      "example": "The hotel checkout time is 12 PM."
+    }
+  ],
+  "comfort": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ sự thoải mái về thể chất hoặc tinh thần.",
+      "example": "These shoes are designed for comfort."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động an ủi, dỗ dành ai đó.",
+      "example": "She tried to comfort her crying child."
+    }
+  ],
+  "expand": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc mở rộng, nới rộng quy mô, diện tích (công ty, kiến thức).",
+      "example": "The company is planning to expand its operations in Asia."
+    }
+  ],
+  "explore": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ hành động khám phá, thám hiểm vùng đất mới.",
+      "example": "We went to explore the old castle ruins."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc khảo sát, tìm hiểu kỹ lưỡng một vấn đề, ý tưởng.",
+      "example": "Let us explore all the available options before making a decision."
+    }
+  ],
+  "item": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ một món đồ, mặt hàng, hoặc một mục trong danh sách.",
+      "example": "Please check every item on the menu."
+    }
+  ],
+  "mandatory": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự bắt buộc, theo quy định hoặc luật lệ.",
+      "example": "Wearing a seatbelt is mandatory."
+    }
+  ],
+  "merchandise": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ hàng hóa được mua bán trong cửa hàng.",
+      "example": "The store offers a wide range of merchandise."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc xúc tiến bán hàng, trưng bày sản phẩm để bán.",
+      "example": "They know how to effectively merchandise their products."
+    }
+  ],
+  "strict": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ sự nghiêm khắc, khắt khe (luật lệ, tính cách).",
+      "example": "The school has strict rules about uniforms."
+    }
+  ],
+  "trend": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ xu hướng, khuynh hướng đang thịnh hành (thời trang, kinh tế).",
+      "example": "Working from home has become a popular trend."
+    }
+  ],
+  "diversify": [
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc đa dạng hóa (sản phẩm, đầu tư) để giảm thiểu rủi ro hoặc tăng sự phong phú.",
+      "example": "Farmers are being encouraged to diversify their crops."
+    }
+  ],
+  "enterprise": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ một công ty, xí nghiệp hoặc doanh nghiệp.",
+      "example": "It is a small, family-owned enterprise."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ tính dám nghĩ dám làm, tinh thần khởi nghiệp.",
+      "example": "He showed great enterprise in starting his own business."
+    }
+  ],
+  "essentially": [
+    {
+      "pos": "Trạng từ",
+      "context": "Chỉ bản chất cốt lõi, về cơ bản là.",
+      "example": "The two plans are essentially the same."
+    }
+  ],
+  "everyday": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ những gì thông thường, diễn ra hằng ngày, không có gì đặc biệt.",
+      "example": "Stress is a part of everyday life."
+    }
+  ],
+  "function": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ chức năng, nhiệm vụ của một bộ phận, máy móc hoặc tổ chức.",
+      "example": "The main function of the heart is to pump blood."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ một buổi lễ, sự kiện giao tế trang trọng.",
+      "example": "I have to attend a corporate function tonight."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Chỉ việc hoạt động, chạy (máy móc) hoặc đóng vai trò.",
+      "example": "The sofa can also function as a bed."
+    }
+  ]
+}

@@ -447,54 +447,7 @@
 
     <script>
         // ===== TRANSLATE SELECTED TEXT =====
-        (function() {
-            var popup = document.createElement('div');
-            popup.className = 'translate-popup';
-            popup.innerHTML = '🌐 Dịch';
-            popup.id = 'translate-popup';
-            document.body.appendChild(popup);
-
-            var selectedText = '';
-
-            document.addEventListener('mouseup', handleSelection);
-            document.addEventListener('touchend', function() {
-                setTimeout(handleSelection, 300);
-            });
-
-            function handleSelection(e) {
-                var sel = window.getSelection();
-                var text = sel.toString().trim();
-                
-                if (text.length > 2 && text.length < 1000) {
-                    selectedText = text;
-                    
-                    var range = sel.getRangeAt(0);
-                    var rect = range.getBoundingClientRect();
-                    
-                    popup.style.left = (rect.left + rect.width / 2 - 40 + window.scrollX) + 'px';
-                    popup.style.top = (rect.top - 45 + window.scrollY) + 'px';
-                    popup.style.display = 'block';
-                } else {
-                    popup.style.display = 'none';
-                }
-            }
-
-            popup.addEventListener('mousedown', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                if (selectedText) {
-                    var url = 'https://translate.google.com/?sl=en&tl=vi&text=' + encodeURIComponent(selectedText);
-                    window.open(url, '_blank');
-                }
-                popup.style.display = 'none';
-            });
-
-            document.addEventListener('mousedown', function(e) {
-                if (e.target !== popup) {
-                    popup.style.display = 'none';
-                }
-            });
-        })();
+        
 
     </script>
 
@@ -579,6 +532,689 @@
         });
 </script>
 
-</body>
+
+        <script>
+        var preTranslatedBookData = [
+            { en: "Arthur was an ambitious guy in his youth.", vi: "Arthur từng là một chàng trai đầy tham vọng thời niên thiếu." },
+            { en: "His occupation was a scholar of biology, but his true desire was to build a startup.", vi: "Nghề nghiệp của anh là một học giả sinh học, nhưng khát khao thực sự của anh là xây dựng một công ty khởi nghiệp." },
+            { en: "His mission was to create an app that would map a remote land.", vi: "Sứ mệnh của anh là tạo ra một ứng dụng có thể lập bản đồ một vùng đất xa xôi." },
+            { en: "He was eager to proceed, and he did possess a definite plan to ensure success.", vi: "Anh ấy rất háo hức tiến hành, và anh thực sự có một kế hoạch rõ ràng để đảm bảo thành công." },
+            { en: "However, the business landscape was rough.", vi: "Tuy nhiên, bối cảnh kinh doanh lại rất khắc nghiệt." },
+            { en: "It felt like a constant battle against an incredible monster, or an enemy tribe from an ancient legend.", vi: "Nó có cảm giác giống như một trận chiến không hồi kết chống lại một con quái vật đáng sợ, hoặc một bộ tộc kẻ thù từ một truyền thuyết cổ xưa." },
+            { en: "He did intend to secure a victory, nevertheless.", vi: "Dù vậy, anh thực sự có ý định giành chiến thắng." },
+            { en: "His household did consist of just him and his lovely bride, who offered him pure support.", vi: "Gia đình của anh chỉ có anh và người vợ xinh đẹp, người đã mang đến cho anh sự ủng hộ thuần túy." },
+            { en: "She sold her jewelry to pay the initial fee for the business permit.", vi: "Cô đã bán đồ trang sức của mình để trả khoản phí ban đầu cho giấy phép kinh doanh." },
+            { en: "\"We must seek out investors,\" she would softly remark.", vi: "\"Chúng ta phải tìm kiếm các nhà đầu tư,\" cô nhẹ nhàng nhận xét." },
+            { en: "Arthur felt anxious; a previous venture had been an awful disaster, bringing an explosion of debt that left his bank account pale and a heavy load on his chest.", vi: "Arthur cảm thấy lo lắng; một dự án kinh doanh trước đây đã là một thảm họa tồi tệ, mang đến một đống nợ bùng nổ khiến tài khoản ngân hàng của anh cạn kiệt và một gánh nặng đè lên ngực." },
+            { en: "It had been a significant threat to his confidence, like a volcano erupting and causing a thick cloud of terror.", vi: "Nó từng là một mối đe dọa đáng kể đối với sự tự tin của anh, giống như một ngọn núi lửa phun trào và gây ra một đám mây kinh hoàng dày đặc." },
+            { en: "The consequence was severe, threatening to sink his dreams, and his hopes sank.", vi: "Hậu quả rất nghiêm trọng, đe dọa nhấn chìm ước mơ của anh, và những hy vọng của anh đã chìm xuống." },
+            { en: "He refused to be a victim again.", vi: "Anh từ chối trở thành nạn nhân lần nữa." },
+            { en: "To build his company on a factual basis, Arthur needed a senior colleague and a capable chief of operations.", vi: "Để xây dựng công ty của mình trên một nền tảng thực tế, Arthur cần một đồng nghiệp cấp cao và một giám đốc điều hành có năng lực." },
+            { en: "He hired his relative, who was confident and broad in his knowledge.", vi: "Anh đã thuê người họ hàng của mình, người rất tự tin và có kiến thức sâu rộng." },
+            { en: "They would debate strategy.", vi: "Họ thường tranh luận về chiến lược." },
+            { en: "The startup required considerable effort.", vi: "Công ty khởi nghiệp đòi hỏi sự nỗ lực đáng kể." },
+            { en: "Their office was a narrow space, hardly a palace or a castle.", vi: "Văn phòng của họ là một không gian chật hẹp, chẳng thể nào là một cung điện hay lâu đài." },
+            { en: "It felt like a cage at times, making Arthur want to scream.", vi: "Đôi khi nó giống như một cái lồng, khiến Arthur muốn hét lên." },
+            { en: "They had to surround themselves with positive energy.", vi: "Họ phải bao bọc lấy bản thân bằng năng lượng tích cực." },
+            { en: "The northern border of the room had a window where steam would fog up in the winter, and the southern side had a small sculpture and a statue of a brave warrior near the entrance.", vi: "Bức tường phía bắc của căn phòng có một cửa sổ nơi hơi nước sẽ làm mờ đi vào mùa đông, và phía nam có một tác phẩm điêu khắc nhỏ và bức tượng của một chiến binh dũng cảm ở gần lối vào." },
+            { en: "Arthur wanted to command his team with military precision.", vi: "Arthur muốn chỉ huy đội của mình với sự chính xác của quân đội." },
+            { en: "He would concentrate and lift his heavy boot, walking rapidly at a steady pace.", vi: "Anh thường tập trung và nhấc chiếc ủng nặng nề của mình lên, bước đi nhanh chóng với một tốc độ đều đặn." },
+            { en: "He would take a deep breath in his lung, a calm motion, trying to suppress his anger when things went wrong.", vi: "Anh thường hít một hơi thật sâu vào phổi, một chuyển động bình tĩnh, cố gắng kìm nén cơn giận khi mọi việc diễn ra không như ý." },
+            { en: "He knew competitors might try to cheat or steal their sensitive code.", vi: "Anh biết các đối thủ cạnh tranh có thể cố gắng gian lận hoặc đánh cắp mã nguồn nhạy cảm của họ." },
+            { en: "\"We must convey trust,\" Arthur would counsel his team.", vi: "\"Chúng ta phải truyền đạt sự tin tưởng,\" Arthur thường khuyên bảo đội của mình." },
+            { en: "\"Unless we obey our own strict rules, we will disappoint everyone.\" They were on a marathon, not a sprint.", vi: "\"Trừ khi chúng ta tuân thủ các quy tắc nghiêm ngặt của chính mình, chúng ta sẽ làm mọi người thất vọng.\" Họ đang trong một cuộc đua marathon, chứ không phải một cuộc chạy nước rút." },
+            { en: "The upper management had to submit to a grueling schedule.", vi: "Ban quản lý cấp cao phải phục tùng một lịch trình mệt mỏi." },
+            { en: "Arthur felt the pressure.", vi: "Arthur cảm nhận được áp lực." },
+            { en: "It was like he was lost overseas or abroad, searching for ancient ruins or a hidden temple.", vi: "Cứ như thể anh đang bị lạc ở nước ngoài hay hải ngoại, tìm kiếm những tàn tích cổ đại hoặc một ngôi đền ẩn giấu." },
+            { en: "He imagined holding a bow and an arrow as a weapon.", vi: "Anh tưởng tượng mình đang cầm một cây cung và một mũi tên làm vũ khí." },
+            { en: "He would not let anyone disturb his intent focus, twist his words, or spill his coffee.", vi: "Anh sẽ không để bất cứ ai làm phiền sự tập trung cao độ của mình, bóp méo lời nói của mình, hoặc làm đổ ly cà phê của mình." },
+            { en: "Sometimes, the stress would depress him.", vi: "Đôi khi, sự căng thẳng sẽ làm anh chán nản." },
+            { en: "The mood would darken.", vi: "Tâm trạng sẽ trở nên u ám." },
+            { en: "He would stare at a bush or a weed shaking in the shade outside.", vi: "Anh thường chằm chằm nhìn vào một bụi cây hoặc một ngọn cỏ dại rung rinh trong bóng râm bên ngoài." },
+            { en: "The silent room lacked laughter.", vi: "Căn phòng tĩnh lặng thiếu vắng tiếng cười." },
+            { en: "\"We must not let our efforts be in vain,\" he told them.", vi: "\"Chúng ta không được để những nỗ lực của mình trở nên vô ích,\" anh nói với họ." },
+            { en: "\"A wise ancestor would tell us to wrap up our fears and fight without protest.\"  He had an idea to supplement their income by offering an exchange of services.", vi: "\"Một tổ tiên khôn ngoan sẽ bảo chúng ta hãy gói ghém nỗi sợ hãi lại và chiến đấu mà không phàn nàn.\" Anh nảy ra một ý tưởng để bổ sung thu nhập của họ bằng cách cung cấp một cuộc trao đổi dịch vụ." },
+            { en: "He tried to persuade investors to grant them a favor and take a dive into their financial log.", vi: "Anh đã cố gắng thuyết phục các nhà đầu tư ban cho họ một ân huệ và xem xét kỹ lưỡng nhật ký tài chính của họ." },
+            { en: "He wanted to impress them, so he put on a polite smile, making sure to frame his pitch at the right angle.", vi: "Anh muốn gây ấn tượng với họ, nên anh nở một nụ cười lịch sự, đảm bảo định hình bài thuyết trình của mình ở một góc độ phù hợp." },
+            { en: "He knew he had to be superior to the competition.", vi: "Anh biết mình phải vượt trội hơn so với đối thủ." },
+            { en: "During a pitch, Arthur showed a brief presentation to satisfy their demands.", vi: "Trong một buổi thuyết trình, Arthur đã trình chiếu một bài trình bày ngắn gọn để thỏa mãn những yêu cầu của họ." },
+            { en: "The financial estimate looked good.", vi: "Ước tính tài chính trông có vẻ khả quan." },
+            { en: "He answered their questions, showing how their app could track a meteor or map a new route.", vi: "Anh trả lời các câu hỏi của họ, cho thấy làm thế nào ứng dụng của họ có thể theo dõi một sao băng hoặc lập bản đồ một tuyến đường mới." },
+            { en: "He showed he could bring light and shine on complex data.", vi: "Anh cho thấy anh có thể mang lại ánh sáng và làm sáng tỏ những dữ liệu phức tạp." },
+            { en: "He began to fascinate the investors.", vi: "Anh bắt đầu thu hút sự chú ý của các nhà đầu tư." },
+            { en: "One investor decided to give them a chance.", vi: "Một nhà đầu tư đã quyết định cho họ một cơ hội." },
+            { en: "They stood to congratulate Arthur and offer high praise.", vi: "Họ đứng lên chúc mừng Arthur và đưa ra những lời khen ngợi nhiệt liệt." },
+            { en: "It felt like heaven.", vi: "Cảm giác thật giống như trên thiên đường." },
+            { en: "He had won the chase for funding.", vi: "Anh đã giành chiến thắng trong cuộc chạy đua tìm kiếm tài trợ." },
+            { en: "He maintained his honor.", vi: "Anh đã bảo vệ được danh dự của mình." },
+            { en: "Now, they had the capital to build a new wing of their office.", vi: "Giờ đây, họ đã có vốn để xây dựng một khu vực mới cho văn phòng của mình." },
+            { en: "They could finally depart from their cramped space.", vi: "Cuối cùng họ cũng có thể rời khỏi không gian chật chội của mình." },
+            { en: "They had built a colony of loyal users.", vi: "Họ đã xây dựng được một cộng đồng những người dùng trung thành." },
+            { en: "\"I conclude that this is a success,\" he said.", vi: "\"Tôi kết luận rằng đây là một thành công,\" anh nói." },
+            { en: "The work would last forever, but it was no longer a disadvantage.", vi: "Công việc sẽ kéo dài mãi mãi, nhưng nó không còn là một bất lợi nữa." },
+            { en: "It was a definite win.", vi: "Đó là một chiến thắng rõ ràng." },
+            { en: "The family dinner was meant to be a delight, our destination a cozy house in the valley.", vi: "Bữa tối của gia đình đáng lẽ ra phải là một niềm vui, với đích đến của chúng tôi là một ngôi nhà nhỏ ấm cúng trong thung lũng." },
+            { en: "\"I ought to remind you to check the weather forecast next time,\" Dad muttered.", vi: "\"Lần sau bố phải nhắc con kiểm tra dự báo thời tiết mới được,\" Bố lầm bầm." },
+            { en: "\"It's not my fault,\" Mom replied with a gentle smile.", vi: "\"Đó không phải lỗi của em,\" Mẹ đáp lại với một nụ cười hiền hậu." },
+            { en: "\"I'm just a secretary, not a genius in astronomy or geography.", vi: "\"Em chỉ là một thư ký, không phải là thiên tài về thiên văn học hay địa lý." },
+            { en: "We have plenty of time to chat.\"  We had to navigate a wet path along the edge of a cliff to get there.", vi: "Chúng ta có nhiều thời gian để trò chuyện mà.\" Chúng tôi đã phải dò dẫm trên một con đường ẩm ướt dọc theo mép vách đá để đến được đó." },
+            { en: "A thick fog cast a shadow over the peak, creating an extraordinary and slightly severe vision.", vi: "Sương mù dày đặc phủ bóng lên đỉnh núi, tạo ra một khung cảnh phi thường và có phần khắc nghiệt." },
+            { en: "I began to suspect the bad weather might dictate a change of plans, or at least interfere with our attempt to arrive on time.", vi: "Tôi bắt đầu nghi ngờ rằng thời tiết xấu có thể buộc chúng tôi phải thay đổi kế hoạch, hoặc ít nhất là cản trở nỗ lực đến nơi đúng giờ của chúng tôi." },
+            { en: "Despite the intense rain and the mud on the road, our crew managed to succeed in reaching the old place, a former royal resort that Uncle Arthur had managed to convert into a family home.", vi: "Bất chấp mưa lớn và bùn lầy trên đường, cả nhóm chúng tôi đã thành công đến được nơi cũ, một khu nghỉ mát trước đây của hoàng gia mà chú Arthur đã xoay sở cải tạo thành một ngôi nhà gia đình." },
+            { en: "We couldn't ignore the obvious: the foundation was old, the soil around it was soft, and the house had required a double layer of metal to defend against structural destruction.", vi: "Chúng tôi không thể phớt lờ điều hiển nhiên: nền móng đã cũ, đất xung quanh thì mềm và ngôi nhà đã cần đến một lớp kim loại kép để chống lại sự phá hủy kết cấu." },
+            { en: "Yet, it was unique, and Arthur felt immense pride in it.", vi: "Dù vậy, nó rất độc đáo và chú Arthur cảm thấy vô cùng tự hào về nó." },
+            { en: "Inside, Uncle Arthur, the principal authority of our generation, stood by the door.", vi: "Bên trong, chú Arthur, người có uy quyền lớn nhất trong thế hệ chúng tôi, đang đứng bên cửa." },
+            { en: "He was a giant of a man in a crisp uniform, a former army officer who used to govern troops.", vi: "Chú ấy là một người đàn ông to lớn trong bộ đồng phục phẳng phiu, một cựu sĩ quan quân đội từng chỉ huy các binh lính." },
+            { en: "Now, he was a generous boss who would donate a billion dollars to charity if he had the fortune, though his actual income was more modest.", vi: "Giờ đây, chú ấy là một ông chủ hào phóng, người sẽ quyên góp cả tỷ đô la cho tổ chức từ thiện nếu có tài sản, mặc dù thu nhập thực tế của chú ấy khiêm tốn hơn thế." },
+            { en: "We were a mad but loving bunch, and it was apparent he was thrilled to see us.", vi: "Chúng tôi là một đám người điên rồ nhưng đầy tình yêu thương, và rõ ràng là chú ấy rất vui sướng khi gặp chúng tôi." },
+            { en: "\"Welcome!\" he would always declare with a gentle voice that seemed to absorb the anxiety of the violent storm outside.", vi: "\"Chào mừng!\" chú luôn dõng dạc nói với một giọng điệu nhẹ nhàng, dường như đã xua tan đi sự lo lắng về cơn bão dữ dội bên ngoài." },
+            { en: "We didn't resist his warm embrace.", vi: "Chúng tôi không chối từ cái ôm ấm áp của chú." },
+            { en: "The kitchen was an enormous mess, in a state of utter disorder.", vi: "Căn bếp là một mớ hỗn độn khổng lồ, trong tình trạng hoàn toàn vô trật tự." },
+            { en: "Aunt Martha was there, trying to bake a pie.", vi: "Dì Martha đang ở đó, cố gắng nướng một chiếc bánh." },
+            { en: "She was no genius in chemistry, but her talent for cooking was undeniable.", vi: "Dì ấy không phải là thiên tài về hóa học, nhưng tài năng nấu nướng của dì là không thể phủ nhận." },
+            { en: "She had every ingredient laid out in a long row on the shelf.", vi: "Dì ấy đã bày mọi nguyên liệu thành một hàng dài trên kệ." },
+            { en: "To elevate the flavor, she would consult an old recipe book, trying to calculate the exact quantity needed.", vi: "Để tăng thêm hương vị, dì sẽ tham khảo một cuốn sách dạy nấu ăn cũ, cố gắng tính toán chính xác lượng cần thiết." },
+            { en: "\"I insist you all sit down and relax,\" she said, refusing any aid.", vi: "\"Dì khăng khăng yêu cầu tất cả các cháu ngồi xuống và thư giãn,\" dì nói, từ chối mọi sự giúp đỡ." },
+            { en: "\"I can handle this.\"  \"You ought to let us help,\" my sister chimed in.", vi: "\"Dì có thể xoay xở được chuyện này.\" \"Dì nên để chúng cháu giúp một tay,\" chị gái tôi xen vào." },
+            { en: "She was a secretary for a city council, used to helping every citizen she met.", vi: "Chị ấy là thư ký cho hội đồng thành phố, đã quen với việc giúp đỡ mọi công dân mà chị ấy gặp." },
+            { en: "But Martha remained passive, choosing to struggle alone rather than cooperate.", vi: "Nhưng dì Martha vẫn giữ thái độ thụ động, chọn cách tự mình đánh vật với công việc thay vì hợp tác." },
+            { en: "She playfully threatened to sue anyone who dared step into her workspace, so we stepped back to avoid any division or blame.", vi: "Dì ấy đùa giỡn đe dọa sẽ kiện bất cứ ai dám bước vào không gian làm việc của mình, vì vậy chúng tôi lùi lại để tránh bất kỳ sự chia rẽ hay khiển trách nào." },
+            { en: "We gathered in the living room, lit by a single candle.", vi: "Chúng tôi quây quần trong phòng khách, được thắp sáng bởi một ngọn nến duy nhất." },
+            { en: "My cousin Leo, who lived in a college dormitory while writing his thesis on physics and astronomy, began to chat about a dinosaur exhibit he had seen.", vi: "Anh họ Leo của tôi, người đang sống trong ký túc xá đại học trong khi viết luận văn về vật lý và thiên văn học, bắt đầu kể về một cuộc triển lãm khủng long mà anh ấy đã xem." },
+            { en: "He had used money from his student fund to buy a super new gadget to monitor his health during the trip.", vi: "Anh ấy đã dùng tiền từ quỹ sinh viên của mình để mua một thiết bị siêu mới nhằm theo dõi sức khỏe trong chuyến đi." },
+            { en: "He made an admission that he bought it out of pure spite, just because his roommate had one.", vi: "Anh ấy thú nhận rằng mình mua nó hoàn toàn chỉ vì ghen tị, bởi vì người bạn cùng phòng của anh ấy cũng có một cái." },
+            { en: "He promised not to abuse the device, though the long walks would definitely exhaust him.", vi: "Anh ấy hứa sẽ không lạm dụng thiết bị này, mặc dù những chuyến đi bộ đường dài chắc chắn sẽ làm anh ấy kiệt sức." },
+            { en: "His brother, a landscape tutor studying geography and working in a greenhouse for a local environmental committee, began to carve a tiny wooden bird, letting the wood shavings spin to the floor.", vi: "Anh trai của anh ấy, một gia sư thiết kế cảnh quan đang học địa lý và làm việc trong nhà kính cho một ủy ban môi trường địa phương, bắt đầu điêu khắc một con chim nhỏ bằng gỗ, để cho những mạt gỗ rơi xuống sàn." },
+            { en: "\"Did you hear the tale of the old sword found near the capital?\" Leo asked, eager to reveal some history.", vi: "\"Mọi người đã nghe câu chuyện về thanh kiếm cũ được tìm thấy gần thủ đô chưa?\" Leo hỏi, háo hức muốn tiết lộ một chút lịch sử." },
+            { en: "\"It belonged to a slave who led a rebellion.", vi: "\"Nó thuộc về một nô lệ đã lãnh đạo một cuộc nổi loạn." },
+            { en: "They had to commit to a severe trial and face an emergency just to get rid of their oppressors and relieve their debt.\"", vi: "Họ đã phải cam kết tham gia vào một cuộc thử thách khắc nghiệt và đối mặt với tình thế khẩn cấp chỉ để thoát khỏi những kẻ áp bức và giải thoát khỏi khoản nợ của họ.\"" },
+            { en: "Uncle Arthur listened, trying to compose his thoughts.", vi: "Chú Arthur lắng nghe, cố gắng sắp xếp lại những suy nghĩ của mình." },
+            { en: "\"History is full of such proof of courage,\" he said.", vi: "\"Lịch sử đầy rẫy những bằng chứng về lòng dũng cảm như vậy,\" chú nói." },
+            { en: "\"It should remind us not to take our freedom lightly.", vi: "\"Nó nên nhắc nhở chúng ta đừng coi nhẹ sự tự do của mình." },
+            { en: "The potential for greatness is in everyone, even the seemingly stupid or blind.\"  Dinner was finally served.", vi: "Tiềm năng đạt được sự vĩ đại có ở trong mỗi người, ngay cả ở những người có vẻ như ngu ngốc hay mù quáng.\" Bữa tối cuối cùng cũng được dọn ra." },
+            { en: "We were eager to dine, ready to devote our attention to the food.", vi: "Chúng tôi vô cùng háo hức dùng bữa, sẵn sàng dành trọn sự tập trung vào đồ ăn." },
+            { en: "There was plenty for everyone: roasted meat, a massive portion of bean salad, and a smooth gravy that was sure to decrease any remaining hunger.", vi: "Có rất nhiều đồ ăn cho mọi người: thịt quay, một phần salad đậu khổng lồ và một loại nước sốt mịn chắc chắn sẽ làm giảm đi bất kỳ cơn đói nào còn sót lại." },
+            { en: "It was so good it felt like a trap to make us eat too much.", vi: "Nó ngon đến mức có cảm giác như một cái bẫy để khiến chúng tôi ăn quá nhiều." },
+            { en: "As we ate, we couldn't help but admire the reputation Martha had built as a cook.", vi: "Trong khi ăn, chúng tôi không thể không ngưỡng mộ danh tiếng mà dì Martha đã tạo dựng được với tư cách là một đầu bếp." },
+            { en: "No one could oppose the fact that her meals were the stuff of fame.", vi: "Không ai có thể phản đối thực tế rằng các bữa ăn của dì là điều làm nên danh tiếng đó." },
+            { en: "We felt a guarantee of happiness, knowing we could afford to be together, sharing stories without fear of an argument that might frustrate the evening.", vi: "Chúng tôi cảm thấy một sự bảo đảm về hạnh phúc, khi biết rằng chúng tôi có điều kiện để ở bên nhau, chia sẻ những câu chuyện mà không sợ một cuộc tranh cãi có thể làm hỏng buổi tối." },
+            { en: "Even though it was just an initial gathering, the impression was lasting.", vi: "Mặc dù đây mới chỉ là một buổi tụ họp ban đầu, nhưng ấn tượng để lại rất sâu sắc." },
+            { en: "We didn't need to dig deep to find joy.", vi: "Chúng tôi không cần phải tìm kiếm đâu xa để thấy được niềm vui." },
+            { en: "A family dinner isn't a funeral; it's a celebration.", vi: "Bữa tối gia đình không phải là một đám tang; đó là một buổi lễ kỷ niệm." },
+            { en: "We would not quit this tradition.", vi: "Chúng tôi sẽ không từ bỏ truyền thống này." },
+            { en: "And so, we made a contract to lend each other our time, to enable more nights like this, and to never let our bond face a decrease in strength.", vi: "Và thế là, chúng tôi đã giao kèo sẽ dành thời gian cho nhau, để có thêm nhiều buổi tối như thế này, và để không bao giờ để tình cảm gắn kết của chúng tôi bị suy giảm." },
+            { en: "We were a family, ready for any hike up life's mountains, standing together, come what may.", vi: "Chúng tôi là một gia đình, sẵn sàng cho bất kỳ chuyến leo núi nào của cuộc đời, sát cánh bên nhau, dù có chuyện gì xảy ra đi chăng nữa." },
+            { en: "Our backpacking adventure started with a bold aim.", vi: "Chuyến phiêu lưu du lịch bụi của chúng tôi bắt đầu với một mục tiêu táo bạo." },
+            { en: "We wanted to accomplish a trek beyond the usual agriculture fields, into the remote mountains.", vi: "Chúng tôi muốn hoàn thành một chuyến đi bộ đường dài vượt ra ngoài những cánh đồng nông nghiệp thông thường, tiến vào những ngọn núi xa xôi." },
+            { en: "My friend, a junior journalist by profession, carried a diary to document every element of our trip.", vi: "Bạn tôi, một nhà báo trẻ có nghề, mang theo một cuốn nhật ký để ghi chép lại mọi yếu tố trong chuyến đi của chúng tôi." },
+            { en: "We didn't want to delay our departure, thus we woke up fully awake at the crack of dawn.", vi: "Chúng tôi không muốn trì hoãn việc khởi hành, do đó chúng tôi đã thức dậy hoàn toàn tỉnh táo lúc rạng sáng." },
+            { en: "Our last task was to attach the baggage label to our packs.", vi: "Nhiệm vụ cuối cùng của chúng tôi là gắn thẻ hành lý vào ba lô." },
+            { en: "I relied on my ability to pack well, making sure to insert raw grain, a small telescope, and enough tissue.", vi: "Tôi tin tưởng vào khả năng đóng gói đồ đạc của mình, đảm bảo bỏ vào một ít ngũ cốc thô, một chiếc kính viễn vọng nhỏ và đủ khăn giấy." },
+            { en: "\"I bet we'll detect some odd animals,\" my friend would exclaim with excitement.", vi: "\"Tớ cá là chúng ta sẽ phát hiện ra vài loài động vật kỳ lạ,\" bạn tôi hào hứng thốt lên." },
+            { en: "\"I'll illustrate them in my book!\" I tried to convince him to be rational and not pretend we were some astronaut exploring a new satellite with zero gravity.", vi: "\"Tớ sẽ vẽ minh họa chúng trong cuốn sổ của mình!\" Tôi cố gắng thuyết phục cậu ấy hãy lý trí và đừng giả vờ như chúng tôi là phi hành gia đang khám phá một vệ tinh mới với môi trường không trọng lực." },
+            { en: "We started our commute by taking an old carriage to the base of the trail.", vi: "Chúng tôi bắt đầu di chuyển bằng cách đi một cỗ xe ngựa cũ đến chân đường mòn." },
+            { en: "The driver, an immigrant who used to be a mechanic in a garage, stopped to greet us.", vi: "Người lái xe, một người nhập cư từng là thợ máy trong một gara, đã dừng lại để chào chúng tôi." },
+            { en: "He had a sincere tone and a kindly gesture.", vi: "Ông ấy có giọng điệu chân thành và một cử chỉ tốt bụng." },
+            { en: "His architecture of words was classic.", vi: "Cách sắp xếp ngôn từ của ông ấy rất cổ điển." },
+            { en: "He warned us not to slip on the dust and gravel.", vi: "Ông ấy cảnh báo chúng tôi đừng để trượt ngã trên bụi và sỏi." },
+            { en: "\"Do not let a sudden shock interrupt your focus,\" he advised.", vi: "\"Đừng để một cú sốc bất ngờ làm gián đoạn sự tập trung của các cậu,\" ông khuyên." },
+            { en: "To save expense, we decided to rent a spot in a farmer's yard for the first night.", vi: "Để tiết kiệm chi phí, chúng tôi quyết định thuê một chỗ trong sân của một người nông dân cho đêm đầu tiên." },
+            { en: "He was a man who decided to retire early to escape the poverty of the city.", vi: "Ông ấy là một người quyết định nghỉ hưu sớm để thoát khỏi sự nghèo đói của thành phố." },
+            { en: "Moreover, he didn't want to participate in the labor of a factory shift anymore.", vi: "Hơn nữa, ông ấy không muốn tham gia vào công việc lao động của ca làm việc ở nhà máy nữa." },
+            { en: "He had a pup of a rare breed that was in a stable tied to a chain.", vi: "Ông có một chú chó con thuộc giống chó quý hiếm đang bị xích trong chuồng." },
+            { en: "The dog was shy at first but showed joy when I began to pour water into its bucket.", vi: "Ban đầu chú chó tỏ ra nhút nhát nhưng đã thể hiện sự vui mừng khi tôi bắt đầu rót nước vào xô của nó." },
+            { en: "The farmer’s presence was calming, and he explained his origin and his motive for moving here.", vi: "Sự hiện diện của người nông dân mang lại cảm giác bình yên, và ông giải thích về nguồn gốc cũng như động cơ chuyển đến đây của mình." },
+            { en: "The reception we got was warm.", vi: "Sự tiếp đón mà chúng tôi nhận được rất nồng nhiệt." },
+            { en: "We hoped he would grant us permission to extend our stay, which he did readily.", vi: "Chúng tôi hy vọng ông ấy sẽ cho phép chúng tôi kéo dài thời gian lưu trú, và ông đã sẵn sàng đồng ý." },
+            { en: "The next morning, the fever of the adventure caught us, though my friend felt a slight flu coming on.", vi: "Sáng hôm sau, cơn sốt của chuyến phiêu lưu đã cuốn lấy chúng tôi, mặc dù bạn tôi cảm thấy có chút triệu chứng cảm cúm." },
+            { en: "We didn't want to freeze, so we wore a heavy costume of jackets.", vi: "Chúng tôi không muốn bị chết cóng, vì vậy chúng tôi mặc những bộ áo khoác dày cộp." },
+            { en: "\"I deny that I am sick,\" he said, trying to emphasize his courage.", vi: "\"Tớ phủ nhận chuyện tớ bị ốm,\" cậu ấy nói, cố gắng nhấn mạnh lòng can đảm của mình." },
+            { en: "We had to pause to let him recover, and we didn't reject the idea of a gradual climb.", vi: "Chúng tôi phải tạm dừng để cậu ấy hồi phục, và chúng tôi không bác bỏ ý tưởng leo lên một cách từ từ." },
+            { en: "Our duty was to investigate the underground miner trails.", vi: "Nhiệm vụ của chúng tôi là điều tra các con đường mòn dưới lòng đất của thợ mỏ." },
+            { en: "We passed an elementary barrier of rocks and saw a stream that seemed to float down the mountain.", vi: "Chúng tôi vượt qua một hàng rào đá cơ bản và nhìn thấy một dòng suối dường như đang trôi xuống núi." },
+            { en: "The height of the peaks was staggering.", vi: "Chiều cao của những đỉnh núi thật đáng kinh ngạc." },
+            { en: "We met a monk and a priest on a pilgrimage.", vi: "Chúng tôi gặp một nhà sư và một linh mục đang trên đường hành hương." },
+            { en: "They alike wore formal robes.", vi: "Cả hai đều mặc áo choàng trang trọng." },
+            { en: "I tried to interpret their faith, and they didn't criticize our curious questions.", vi: "Tôi cố gắng hiểu về đức tin của họ, và họ không hề chỉ trích những câu hỏi tò mò của chúng tôi." },
+            { en: "They offered us a raw mineral that looked like a jewel as an award for our respect.", vi: "Họ tặng chúng tôi một khoáng thạch thô trông giống như một viên ngọc quý như một phần thưởng cho sự tôn trọng của chúng tôi." },
+            { en: "They explained its likeness to a healing stone that could heal wounds.", vi: "Họ giải thích sự tương đồng của nó với một loại đá chữa bệnh có thể chữa lành vết thương." },
+            { en: "The encounter was distinct, and I couldn't distinguish if it was real or an artificial cartoon.", vi: "Cuộc chạm trán này thật khác biệt, và tôi không thể phân biệt được liệu đó là sự thật hay là một bộ phim hoạt hình nhân tạo." },
+            { en: "We had to invent a way to carry it safely in our packs.", vi: "Chúng tôi phải nghĩ ra một cách để mang nó an toàn trong ba lô của mình." },
+            { en: "We had to resume our hike, making sure to skip the dangerous parts.", vi: "Chúng tôi phải tiếp tục chuyến đi bộ đường dài của mình, đảm bảo bỏ qua những đoạn nguy hiểm." },
+            { en: "My friend started to stare at a nest high up.", vi: "Bạn tôi bắt đầu nhìn chằm chằm vào một cái tổ ở trên cao." },
+            { en: "He had to stretch to see it.", vi: "Cậu ấy phải rướn người lên để nhìn thấy nó." },
+            { en: "It was an instant of wonder.", vi: "Đó là một khoảnh khắc kỳ diệu." },
+            { en: "But then an alarm sounded from a nearby camp.", vi: "Nhưng sau đó một tiếng còi báo động vang lên từ một khu trại gần đó." },
+            { en: "A signal was sent out.", vi: "Một tín hiệu đã được phát ra." },
+            { en: "We learned later someone tried to rob a hiker, but an officer of high rank managed to arrest the convict.", vi: "Sau đó chúng tôi biết được rằng có người đã cố gắng cướp đồ của một người đi bộ đường dài, nhưng một sĩ quan cấp cao đã tìm cách bắt giữ được tên tội phạm." },
+            { en: "We were relieved that the authorities would not approve of such behavior and took action.", vi: "Chúng tôi cảm thấy nhẹ nhõm vì các nhà chức trách sẽ không dung túng cho hành vi như vậy và đã hành động." },
+            { en: "That night we found a cave that looked like a large chamber with a high ceiling.", vi: "Đêm đó, chúng tôi tìm thấy một hang động trông giống như một căn phòng lớn với trần nhà cao." },
+            { en: "We didn't want to annoy any bats.", vi: "Chúng tôi không muốn làm phiền bất kỳ con dơi nào." },
+            { en: "It was somewhat cold, but the silence was golden.", vi: "Trời có hơi lạnh, nhưng sự im lặng mới là thứ quý giá." },
+            { en: "We had to refrigerate our food in the cold water.", vi: "Chúng tôi phải ướp lạnh thức ăn của mình trong dòng nước lạnh." },
+            { en: "We talked about how our views differ and shared our perspective.", vi: "Chúng tôi đã nói chuyện về sự khác biệt trong quan điểm của mỗi người và chia sẻ góc nhìn của mình." },
+            { en: "We asked to confirm the approximate statistic of hikers who qualify for the prime contest of summiting.", vi: "Chúng tôi hỏi để xác nhận số liệu thống kê sơ bộ về những người đi bộ đường dài đủ điều kiện tham gia cuộc thi leo lên đỉnh núi quan trọng nhất." },
+            { en: "It was an incredible journey.", vi: "Đó là một hành trình không thể tin được." },
+            { en: "No failure, just pure adventure.", vi: "Không có thất bại, chỉ có cuộc phiêu lưu thuần túy." },
+            { en: "I beg you to adopt the backpacking life.", vi: "Tôi mong bạn hãy áp dụng lối sống du lịch bụi." },
+            { en: "I wouldn't forbid anyone from trying.", vi: "Tôi sẽ không cấm bất kỳ ai thử trải nghiệm điều đó." },
+            { en: "It's the origin of true self-recognition.", vi: "Đó là nguồn gốc của sự tự nhận thức đích thực." },
+            { en: "It was a repair for the soul.", vi: "Đó là một sự chữa lành cho tâm hồn." },
+            { en: "We were apart from the world, in a scale so grand.", vi: "Chúng tôi tách biệt khỏi thế giới, trong một quy mô quá đỗi hùng vĩ." },
+            { en: "We were no fool.", vi: "Chúng tôi không phải là những kẻ ngốc." },
+            { en: "Indeed, it was a masterpiece.", vi: "Thật vậy, đó là một kiệt tác." },
+            { en: "In the year 2142, humanity had managed to overcome a severe shortage of essential resources.", vi: "Vào năm 2142, nhân loại đã xoay xở vượt qua được tình trạng thiếu hụt trầm trọng các nguồn tài nguyên thiết yếu." },
+            { en: "I recall the days when the mere thought of a green earth was abstract fiction.", vi: "Tôi nhớ lại những ngày mà chỉ cần nghĩ đến một trái đất xanh cũng đã là điều viễn tưởng trừu tượng." },
+            { en: "My elder twin brother and I would often inspect our dusty journal, recounting tales of when the world was a dull place.", vi: "Người anh trai sinh đôi của tôi và tôi thường xem lại cuốn nhật ký bám bụi của mình, kể lại những câu chuyện về thời thế giới còn là một nơi buồn tẻ." },
+            { en: "Now, thanks to the grand artificial intelligence system known as The Cardinal, things had changed.", vi: "Giờ đây, nhờ vào hệ thống trí tuệ nhân tạo vĩ đại mang tên The Cardinal, mọi thứ đã thay đổi." },
+            { en: "Nowadays, we no longer need to borrow cash for an ordinary meal.", vi: "Ngày nay, chúng tôi không còn cần phải mượn tiền mặt cho một bữa ăn bình thường nữa." },
+            { en: "The Cardinal's formula allowed us to obtain sufficient nutrient liquid from a small tube.", vi: "Công thức của The Cardinal cho phép chúng tôi có được đủ lượng chất lỏng dinh dưỡng từ một chiếc ống nhỏ." },
+            { en: "It wasn’t a solid substance, so there was no need to chew, but it was practical.", vi: "Nó không phải là chất rắn nên không cần phải nhai, nhưng nó rất thiết thực." },
+            { en: "Our temporary housing was a neat cabin with a sturdy roof, capable of withstanding a fierce hurricane or flood.", vi: "Chỗ ở tạm thời của chúng tôi là một căn nhà gỗ nhỏ gọn gàng với mái nhà chắc chắn, có khả năng chống chọi lại những trận cuồng phong hay lũ lụt dữ dội." },
+            { en: "On one occasion, we decided to engage in a task downtown.", vi: "Có một lần, chúng tôi quyết định tham gia vào một công việc ở khu trung tâm." },
+            { en: "We had to hire a virtual vehicle to take us across the electronic bridge.", vi: "Chúng tôi phải thuê một chiếc xe ảo để đưa chúng tôi qua cây cầu điện tử." },
+            { en: "The fare was deducted automatically; no wallet or physical loan was required.", vi: "Tiền vé được tự động trừ đi; không cần dùng đến ví hay khoản vay vật chất nào." },
+            { en: "The city was a marvel of architecture.", vi: "Thành phố là một tuyệt tác của kiến trúc." },
+            { en: "We would often gaze at the permanent structures that somehow manage to resemble ancient coral reef and shell formations along the shore.", vi: "Chúng tôi thường ngắm nhìn những cấu trúc vĩnh cửu bằng cách nào đó lại có hình dáng giống như những rạn san hô và vỏ sò cổ đại dọc theo bờ biển." },
+            { en: "The primary task for the day was to visit a firm where my brother had just found a new job.", vi: "Nhiệm vụ chính trong ngày là đến thăm một công ty nơi anh trai tôi vừa tìm được công việc mới." },
+            { en: "His starting salary was impressive.", vi: "Mức lương khởi điểm của anh ấy thật ấn tượng." },
+            { en: "However, getting there was tough.", vi: "Tuy nhiên, để đến được đó lại rất khó khăn." },
+            { en: "A sudden crash in the network caused our vehicle to shut down.", vi: "Một sự cố sập mạng đột ngột khiến chiếc xe của chúng tôi ngừng hoạt động." },
+            { en: "We had to settle for walking.", vi: "Chúng tôi đành phải đi bộ." },
+            { en: "We didn't dare complain, as the penalty for a rude yell could result in being sent to a rehabilitation zone.", vi: "Chúng tôi không dám phàn nàn, vì hình phạt cho một tiếng la hét thô lỗ có thể dẫn đến việc bị gửi đến khu phục hồi nhân phẩm." },
+            { en: "Along the plain path, we saw a bare branch of a tree.", vi: "Dọc theo con đường bằng phẳng, chúng tôi nhìn thấy một cành cây trơ trụi." },
+            { en: "It was a synthetic seed experiment intended to preserve the environment.", vi: "Đó là một cuộc thử nghiệm hạt giống tổng hợp nhằm mục đích bảo tồn môi trường." },
+            { en: "We took a deep breath.", vi: "Chúng tôi hít một hơi thật sâu." },
+            { en: "Despite the synthetic cloth and cotton we wore, we felt a sort of romantic connection to the earth.", vi: "Mặc cho những bộ quần áo bằng vải và bông tổng hợp đang mặc, chúng tôi vẫn cảm nhận được một mối liên kết lãng mạn nào đó với trái đất." },
+            { en: "As we walked, we encountered a disabled man sitting on a clay pot.", vi: "Khi đang đi, chúng tôi bắt gặp một người đàn ông tàn tật đang ngồi trên một chiếc bình đất sét." },
+            { en: "He asked for an apology for being in our way.", vi: "Ông ấy xin lỗi vì đã cản đường chúng tôi." },
+            { en: "We assured him he was innocent of any offense.", vi: "Chúng tôi trấn an ông ấy rằng ông không hề làm gì sai cả." },
+            { en: "The man began pronouncing strange words, like a witch from old religious tales.", vi: "Người đàn ông bắt đầu phát âm những từ kỳ lạ, giống như một mụ phù thủy trong những câu chuyện tôn giáo cổ xưa." },
+            { en: "He claimed he could subtract the sorrow from any soul.", vi: "Ông ấy khẳng định rằng mình có thể xua đi nỗi đau buồn khỏi bất kỳ tâm hồn nào." },
+            { en: "It was enough to amuse us, but we knew we shouldn't accuse him of being a criminal or assume he belonged in jail.", vi: "Điều đó cũng đủ để làm chúng tôi thấy thú vị, nhưng chúng tôi biết mình không nên buộc tội ông ta là tội phạm hay cho rằng ông ta thuộc về nhà tù." },
+            { en: "\"I am a former minister,\" he said in a sharp whisper, trying to cast a net of mystery over us.", vi: "\"Tôi từng là một mục sư,\" ông ấy nói trong tiếng thì thầm chói tai, cố gắng giăng một bức màn bí ẩn lên chúng tôi." },
+            { en: "\"I used to invest in the philosophy of the human mind.\"  He pulled out a dozen small items—a feather, some tobacco, a piece of coral.", vi: "\"Tôi từng đầu tư vào triết học của tâm trí con người.\" Ông lấy ra khoảng chục món đồ nhỏ—một chiếc lông vũ, một ít thuốc lá, một mẩu san hô." },
+            { en: "\"I am trying to found a new belief system,\" he continued, holding up a small bowl.", vi: "\"Tôi đang cố gắng thành lập một hệ thống tín ngưỡng mới,\" ông tiếp tục, giơ lên một chiếc bát nhỏ." },
+            { en: "\"This is a treasure I managed to capture.\"  It was a small, fertile plant.", vi: "\"Đây là báu vật mà tôi đã tìm được.\" Đó là một cái cây nhỏ màu mỡ." },
+            { en: "A real one.", vi: "Một cái cây có thật." },
+            { en: "\"I didn't steal it,\" he added quickly, to expose his good intentions.", vi: "\"Tôi không trộm nó,\" ông nói thêm thật nhanh, để bày tỏ ý định tốt của mình." },
+            { en: "\"I don't deserve the grave.\"  We didn't embarrass him.", vi: "\"Tôi không đáng phải vào mồ.\" Chúng tôi không làm ông bối rối." },
+            { en: "We simply admired his bold spirit.", vi: "Chúng tôi chỉ đơn giản là ngưỡng mộ tinh thần táo bạo của ông." },
+            { en: "He didn't seem guilty of anything but holding onto the past.", vi: "Ông ấy dường như không có tội gì ngoài việc bám víu vào quá khứ." },
+            { en: "We finally arrived at the firm.", vi: "Cuối cùng chúng tôi cũng đến được công ty." },
+            { en: "The deck was made of solid steel, and there was a tight fence around it.", vi: "Sàn nhà được làm bằng thép đặc, và có một hàng rào kiên cố bao quanh." },
+            { en: "We had to adjust our facial scanners to gain entry.", vi: "Chúng tôi phải điều chỉnh máy quét khuôn mặt để được vào trong." },
+            { en: "Inside, the furniture was minimalist, covered by a curtain that simulated a natural breeze.", vi: "Bên trong, đồ nội thất theo phong cách tối giản, được che phủ bởi một tấm rèm mô phỏng làn gió tự nhiên." },
+            { en: "My brother's client was a man named Duke.", vi: "Khách hàng của anh trai tôi là một người đàn ông tên là Duke." },
+            { en: "He had a strict manner but was fair.", vi: "Ông ta có thái độ nghiêm khắc nhưng rất công bằng." },
+            { en: "He explained that their annual goal was to mount a new expedition to the virtual stars.", vi: "Ông giải thích rằng mục tiêu hàng năm của họ là tổ chức một cuộc thám hiểm mới đến những vì sao ảo." },
+            { en: "They were trying to manufacture a new type of fuel, and plant our flag on a new planet.", vi: "Họ đang cố gắng sản xuất một loại nhiên liệu mới, và cắm lá cờ của chúng tôi trên một hành tinh mới." },
+            { en: "I have to admit, his vision did inspire me.", vi: "Tôi phải thừa nhận rằng tầm nhìn của ông ấy thực sự đã truyền cảm hứng cho tôi." },
+            { en: "Any loss in production would mean a severe setback.", vi: "Bất kỳ tổn thất nào trong sản xuất đều có nghĩa là một bước lùi nghiêm trọng." },
+            { en: "\"We must maintain a firm grip on our stock,\" Duke said.", vi: "\"Chúng ta phải duy trì sự kiểm soát chặt chẽ đối với nguồn dự trữ của mình,\" Duke nói." },
+            { en: "\"There is no room for regret.\"  My brother was tasked with overseeing the surgery bay, where workers underwent cybernetic enhancements.", vi: "\"Không có chỗ cho sự hối tiếc.\" Anh trai tôi được giao nhiệm vụ giám sát khoang phẫu thuật, nơi các công nhân trải qua quá trình nâng cấp hệ thống điều khiển học." },
+            { en: "They would bathe in a special liquid bath to heal any wound.", vi: "Họ sẽ tắm trong một bồn chất lỏng đặc biệt để chữa lành bất kỳ vết thương nào." },
+            { en: "I decided to accompany him to his quarter.", vi: "Tôi quyết định đi cùng anh đến phòng của anh." },
+            { en: "We had to bend around several corridors.", vi: "Chúng tôi phải rẽ qua vài hành lang." },
+            { en: "It felt like walking through an ancient tomb.", vi: "Cảm giác giống như đang đi bộ qua một lăng mộ cổ xưa." },
+            { en: "But inside his workspace, it was fantastic.", vi: "Nhưng bên trong không gian làm việc của anh ấy lại rất tuyệt vời." },
+            { en: "There was a large wheel that generated power.", vi: "Có một bánh xe lớn tạo ra năng lượng." },
+            { en: "A small bin held discarded synthetic tissue.", vi: "Một chiếc thùng nhỏ chứa mô tổng hợp bị bỏ đi." },
+            { en: "\"I urge you to be careful,\" I told him.", vi: "\"Em khuyên anh nên cẩn thận,\" tôi nói với anh ấy." },
+            { en: "\"I don't want you to experience any negative symptom.\"  He nodded.", vi: "\"Em không muốn anh gặp phải bất kỳ triệu chứng tiêu cực nào.\" Anh ấy gật đầu." },
+            { en: "\"I know.", vi: "\"Anh biết." },
+            { en: "The work here is ideal, but it requires constant vigilance.", vi: "Công việc ở đây rất lý tưởng, nhưng nó đòi hỏi sự cảnh giác thường xuyên." },
+            { en: "I must be worthy of my scholarship.\"  As I left, I couldn't help but appeal to the universe that we would inherit a better world.", vi: "Anh phải xứng đáng với học bổng của mình.\" Khi tôi rời đi, tôi không thể không cầu xin vũ trụ rằng chúng tôi sẽ được thừa hưởng một thế giới tốt đẹp hơn." },
+            { en: "We were no longer tied to the land like farmers at a rural inn.", vi: "Chúng tôi không còn bị trói buộc với đất đai giống như những người nông dân ở một quán trọ nông thôn nữa." },
+            { en: "We were explorers in a new era, learning to surf the waves of innovation.", vi: "Chúng tôi là những nhà thám hiểm trong một kỷ nguyên mới, học cách lướt trên những làn sóng của sự đổi mới." },
+            { en: "I just hoped our efforts would yield a bountiful harvest.", vi: "Tôi chỉ hy vọng những nỗ lực của chúng tôi sẽ mang lại một vụ mùa bội thu." },
+            { en: "We had to weigh our options carefully, ensuring we never became slaves to our own creations.", vi: "Chúng tôi phải cân nhắc kỹ lưỡng các lựa chọn của mình, để đảm bảo rằng chúng tôi không bao giờ trở thành nô lệ cho chính những tác phẩm do mình tạo ra." },
+            { en: "And with that thought, I returned home.", vi: "Và với suy nghĩ đó, tôi trở về nhà." }
+        ];
+        
+        </script>
+    
+        <script>
+        const preTranslatedBookData = [
+            { en: "Arthur was an ambitious guy in his youth.", vi: "Arthur từng là một chàng trai đầy tham vọng thời niên thiếu." },
+            { en: "His occupation was a scholar of biology, but his true desire was to build a startup.", vi: "Nghề nghiệp của anh là một học giả sinh học, nhưng khát khao thực sự của anh là xây dựng một công ty khởi nghiệp." },
+            { en: "His mission was to create an app that would map a remote land.", vi: "Sứ mệnh của anh là tạo ra một ứng dụng có thể lập bản đồ một vùng đất xa xôi." },
+            { en: "He was eager to proceed, and he did possess a definite plan to ensure success.", vi: "Anh ấy rất háo hức tiến hành, và anh thực sự có một kế hoạch rõ ràng để đảm bảo thành công." },
+            { en: "However, the business landscape was rough.", vi: "Tuy nhiên, bối cảnh kinh doanh lại rất khắc nghiệt." },
+            { en: "It felt like a constant battle against an incredible monster, or an enemy tribe from an ancient legend.", vi: "Nó có cảm giác giống như một trận chiến không hồi kết chống lại một con quái vật đáng sợ, hoặc một bộ tộc kẻ thù từ một truyền thuyết cổ xưa." },
+            { en: "He did intend to secure a victory, nevertheless.", vi: "Dù vậy, anh thực sự có ý định giành chiến thắng." },
+            { en: "His household did consist of just him and his lovely bride, who offered him pure support.", vi: "Gia đình của anh chỉ có anh và người vợ xinh đẹp, người đã mang đến cho anh sự ủng hộ thuần túy." },
+            { en: "She sold her jewelry to pay the initial fee for the business permit.", vi: "Cô đã bán đồ trang sức của mình để trả khoản phí ban đầu cho giấy phép kinh doanh." },
+            { en: "\"We must seek out investors,\" she would softly remark.", vi: "\"Chúng ta phải tìm kiếm các nhà đầu tư,\" cô nhẹ nhàng nhận xét." },
+            { en: "Arthur felt anxious; a previous venture had been an awful disaster, bringing an explosion of debt that left his bank account pale and a heavy load on his chest.", vi: "Arthur cảm thấy lo lắng; một dự án kinh doanh trước đây đã là một thảm họa tồi tệ, mang đến một đống nợ bùng nổ khiến tài khoản ngân hàng của anh cạn kiệt và một gánh nặng đè lên ngực." },
+            { en: "It had been a significant threat to his confidence, like a volcano erupting and causing a thick cloud of terror.", vi: "Nó từng là một mối đe dọa đáng kể đối với sự tự tin của anh, giống như một ngọn núi lửa phun trào và gây ra một đám mây kinh hoàng dày đặc." },
+            { en: "The consequence was severe, threatening to sink his dreams, and his hopes sank.", vi: "Hậu quả rất nghiêm trọng, đe dọa nhấn chìm ước mơ của anh, và những hy vọng của anh đã chìm xuống." },
+            { en: "He refused to be a victim again.", vi: "Anh từ chối trở thành nạn nhân lần nữa." },
+            { en: "To build his company on a factual basis, Arthur needed a senior colleague and a capable chief of operations.", vi: "Để xây dựng công ty của mình trên một nền tảng thực tế, Arthur cần một đồng nghiệp cấp cao và một giám đốc điều hành có năng lực." },
+            { en: "He hired his relative, who was confident and broad in his knowledge.", vi: "Anh đã thuê người họ hàng của mình, người rất tự tin và có kiến thức sâu rộng." },
+            { en: "They would debate strategy.", vi: "Họ thường tranh luận về chiến lược." },
+            { en: "The startup required considerable effort.", vi: "Công ty khởi nghiệp đòi hỏi sự nỗ lực đáng kể." },
+            { en: "Their office was a narrow space, hardly a palace or a castle.", vi: "Văn phòng của họ là một không gian chật hẹp, chẳng thể nào là một cung điện hay lâu đài." },
+            { en: "It felt like a cage at times, making Arthur want to scream.", vi: "Đôi khi nó giống như một cái lồng, khiến Arthur muốn hét lên." },
+            { en: "They had to surround themselves with positive energy.", vi: "Họ phải bao bọc lấy bản thân bằng năng lượng tích cực." },
+            { en: "The northern border of the room had a window where steam would fog up in the winter, and the southern side had a small sculpture and a statue of a brave warrior near the entrance.", vi: "Bức tường phía bắc của căn phòng có một cửa sổ nơi hơi nước sẽ làm mờ đi vào mùa đông, và phía nam có một tác phẩm điêu khắc nhỏ và bức tượng của một chiến binh dũng cảm ở gần lối vào." },
+            { en: "Arthur wanted to command his team with military precision.", vi: "Arthur muốn chỉ huy đội của mình với sự chính xác của quân đội." },
+            { en: "He would concentrate and lift his heavy boot, walking rapidly at a steady pace.", vi: "Anh thường tập trung và nhấc chiếc ủng nặng nề của mình lên, bước đi nhanh chóng với một tốc độ đều đặn." },
+            { en: "He would take a deep breath in his lung, a calm motion, trying to suppress his anger when things went wrong.", vi: "Anh thường hít một hơi thật sâu vào phổi, một chuyển động bình tĩnh, cố gắng kìm nén cơn giận khi mọi việc diễn ra không như ý." },
+            { en: "He knew competitors might try to cheat or steal their sensitive code.", vi: "Anh biết các đối thủ cạnh tranh có thể cố gắng gian lận hoặc đánh cắp mã nguồn nhạy cảm của họ." },
+            { en: "\"We must convey trust,\" Arthur would counsel his team.", vi: "\"Chúng ta phải truyền đạt sự tin tưởng,\" Arthur thường khuyên bảo đội của mình." },
+            { en: "\"Unless we obey our own strict rules, we will disappoint everyone.\"", vi: "\"Trừ khi chúng ta tuân theo những quy tắc nghiêm ngặt của chính mình, nếu không chúng ta sẽ làm mọi người thất vọng.\"" },
+            { en: "They were on a marathon, not a sprint.", vi: "Họ đang tham gia một cuộc chạy marathon, chứ không phải chạy nước rút." },
+            { en: "The upper management had to submit to a grueling schedule.", vi: "Ban quản lý cấp cao phải phục tùng một lịch trình mệt mỏi." },
+            { en: "Arthur felt the pressure.", vi: "Arthur cảm nhận được áp lực." },
+            { en: "It was like he was lost overseas or abroad, searching for ancient ruins or a hidden temple.", vi: "Cứ như thể anh đang bị lạc ở nước ngoài hay hải ngoại, tìm kiếm những tàn tích cổ đại hoặc một ngôi đền ẩn giấu." },
+            { en: "He imagined holding a bow and an arrow as a weapon.", vi: "Anh tưởng tượng mình đang cầm một cây cung và một mũi tên làm vũ khí." },
+            { en: "He would not let anyone disturb his intent focus, twist his words, or spill his coffee.", vi: "Anh sẽ không để bất cứ ai làm phiền sự tập trung cao độ của mình, bóp méo lời nói của mình, hoặc làm đổ ly cà phê của mình." },
+            { en: "Sometimes, the stress would depress him.", vi: "Đôi khi, sự căng thẳng sẽ làm anh chán nản." },
+            { en: "The mood would darken.", vi: "Tâm trạng sẽ trở nên u ám." },
+            { en: "He would stare at a bush or a weed shaking in the shade outside.", vi: "Anh thường chằm chằm nhìn vào một bụi cây hoặc một ngọn cỏ dại rung rinh trong bóng râm bên ngoài." },
+            { en: "The silent room lacked laughter.", vi: "Căn phòng tĩnh lặng thiếu vắng tiếng cười." },
+            { en: "\"We must not let our efforts be in vain,\" he told them.", vi: "\"Chúng ta không được để những nỗ lực của mình trở nên vô ích,\" anh nói với họ." },
+            { en: "\"A wise ancestor would tell us to wrap up our fears and fight without protest.\"", vi: "\"Một tổ tiên khôn ngoan sẽ bảo chúng ta hãy gói ghém nỗi sợ hãi lại và chiến đấu mà không phàn nàn.\"" },
+            { en: "He had an idea to supplement their income by offering an exchange of services.", vi: "Anh ấy có ý tưởng bổ sung thu nhập cho họ bằng cách đề nghị trao đổi dịch vụ." },
+            { en: "He tried to persuade investors to grant them a favor and take a dive into their financial log.", vi: "Anh đã cố gắng thuyết phục các nhà đầu tư ban cho họ một ân huệ và xem xét kỹ lưỡng nhật ký tài chính của họ." },
+            { en: "He wanted to impress them, so he put on a polite smile, making sure to frame his pitch at the right angle.", vi: "Anh muốn gây ấn tượng với họ, nên anh nở một nụ cười lịch sự, đảm bảo định hình bài thuyết trình của mình ở một góc độ phù hợp." },
+            { en: "He knew he had to be superior to the competition.", vi: "Anh biết mình phải vượt trội hơn so với đối thủ." },
+            { en: "During a pitch, Arthur showed a brief presentation to satisfy their demands.", vi: "Trong một buổi thuyết trình, Arthur đã trình chiếu một bài trình bày ngắn gọn để thỏa mãn những yêu cầu của họ." },
+            { en: "The financial estimate looked good.", vi: "Ước tính tài chính trông có vẻ khả quan." },
+            { en: "He answered their questions, showing how their app could track a meteor or map a new route.", vi: "Anh trả lời các câu hỏi của họ, cho thấy làm thế nào ứng dụng của họ có thể theo dõi một sao băng hoặc lập bản đồ một tuyến đường mới." },
+            { en: "He showed he could bring light and shine on complex data.", vi: "Anh cho thấy anh có thể mang lại ánh sáng và làm sáng tỏ những dữ liệu phức tạp." },
+            { en: "He began to fascinate the investors.", vi: "Anh bắt đầu thu hút sự chú ý của các nhà đầu tư." },
+            { en: "One investor decided to give them a chance.", vi: "Một nhà đầu tư đã quyết định cho họ một cơ hội." },
+            { en: "They stood to congratulate Arthur and offer high praise.", vi: "Họ đứng lên chúc mừng Arthur và đưa ra những lời khen ngợi nhiệt liệt." },
+            { en: "It felt like heaven.", vi: "Cảm giác thật giống như trên thiên đường." },
+            { en: "He had won the chase for funding.", vi: "Anh đã giành chiến thắng trong cuộc chạy đua tìm kiếm tài trợ." },
+            { en: "He maintained his honor.", vi: "Anh đã bảo vệ được danh dự của mình." },
+            { en: "Now, they had the capital to build a new wing of their office.", vi: "Giờ đây, họ đã có vốn để xây dựng một khu vực mới cho văn phòng của mình." },
+            { en: "They could finally depart from their cramped space.", vi: "Cuối cùng họ cũng có thể rời khỏi không gian chật chội của mình." },
+            { en: "They had built a colony of loyal users.", vi: "Họ đã xây dựng được một cộng đồng những người dùng trung thành." },
+            { en: "\"I conclude that this is a success,\" he said.", vi: "\"Tôi kết luận rằng đây là một thành công,\" anh nói." },
+            { en: "The work would last forever, but it was no longer a disadvantage.", vi: "Công việc sẽ kéo dài mãi mãi, nhưng nó không còn là một bất lợi nữa." },
+            { en: "It was a definite win.", vi: "Đó là một chiến thắng rõ ràng." },
+            { en: "The family dinner was meant to be a delight, our destination a cozy house in the valley.", vi: "Bữa tối của gia đình đáng lẽ ra phải là một niềm vui, với đích đến của chúng tôi là một ngôi nhà nhỏ ấm cúng trong thung lũng." },
+            { en: "\"I ought to remind you to check the weather forecast next time,\" Dad muttered.", vi: "\"Lần sau bố phải nhắc con kiểm tra dự báo thời tiết mới được,\" Bố lầm bầm." },
+            { en: "\"It's not my fault,\" Mom replied with a gentle smile.", vi: "\"Đó không phải lỗi của em,\" Mẹ đáp lại với một nụ cười hiền hậu." },
+            { en: "\"I'm just a secretary, not a genius in astronomy or geography.", vi: "\"Em chỉ là một thư ký, không phải là thiên tài về thiên văn học hay địa lý." },
+            { en: "We have plenty of time to chat.\"", vi: "Chúng ta có nhiều thời gian để trò chuyện.\"" },
+            { en: "We had to navigate a wet path along the edge of a cliff to get there.", vi: "Chúng tôi đã phải đi qua một con đường ẩm ướt dọc theo mép vách đá để đến đó." },
+            { en: "A thick fog cast a shadow over the peak, creating an extraordinary and slightly severe vision.", vi: "Sương mù dày đặc phủ bóng lên đỉnh núi, tạo ra một khung cảnh phi thường và có phần khắc nghiệt." },
+            { en: "I began to suspect the bad weather might dictate a change of plans, or at least interfere with our attempt to arrive on time.", vi: "Tôi bắt đầu nghi ngờ rằng thời tiết xấu có thể buộc chúng tôi phải thay đổi kế hoạch, hoặc ít nhất là cản trở nỗ lực đến nơi đúng giờ của chúng tôi." },
+            { en: "Despite the intense rain and the mud on the road, our crew managed to succeed in reaching the old place, a former royal resort that Uncle Arthur had managed to convert into a family home.", vi: "Bất chấp mưa lớn và bùn lầy trên đường, cả nhóm chúng tôi đã thành công đến được nơi cũ, một khu nghỉ mát trước đây của hoàng gia mà chú Arthur đã xoay sở cải tạo thành một ngôi nhà gia đình." },
+            { en: "We couldn't ignore the obvious: the foundation was old, the soil around it was soft, and the house had required a double layer of metal to defend against structural destruction.", vi: "Chúng tôi không thể phớt lờ điều hiển nhiên: nền móng đã cũ, đất xung quanh thì mềm và ngôi nhà đã cần đến một lớp kim loại kép để chống lại sự phá hủy kết cấu." },
+            { en: "Yet, it was unique, and Arthur felt immense pride in it.", vi: "Dù vậy, nó rất độc đáo và chú Arthur cảm thấy vô cùng tự hào về nó." },
+            { en: "Inside, Uncle Arthur, the principal authority of our generation, stood by the door.", vi: "Bên trong, chú Arthur, người có uy quyền lớn nhất trong thế hệ chúng tôi, đang đứng bên cửa." },
+            { en: "He was a giant of a man in a crisp uniform, a former army officer who used to govern troops.", vi: "Chú ấy là một người đàn ông to lớn trong bộ đồng phục phẳng phiu, một cựu sĩ quan quân đội từng chỉ huy các binh lính." },
+            { en: "Now, he was a generous boss who would donate a billion dollars to charity if he had the fortune, though his actual income was more modest.", vi: "Giờ đây, chú ấy là một ông chủ hào phóng, người sẽ quyên góp cả tỷ đô la cho tổ chức từ thiện nếu có tài sản, mặc dù thu nhập thực tế của chú ấy khiêm tốn hơn thế." },
+            { en: "We were a mad but loving bunch, and it was apparent he was thrilled to see us.", vi: "Chúng tôi là một đám người điên rồ nhưng đầy tình yêu thương, và rõ ràng là chú ấy rất vui sướng khi gặp chúng tôi." },
+            { en: "\"Welcome!\" he would always declare with a gentle voice that seemed to absorb the anxiety of the violent storm outside.", vi: "\"Chào mừng!\" chú luôn dõng dạc nói với một giọng điệu nhẹ nhàng, dường như đã xua tan đi sự lo lắng về cơn bão dữ dội bên ngoài." },
+            { en: "We didn't resist his warm embrace.", vi: "Chúng tôi không chối từ cái ôm ấm áp của chú." },
+            { en: "The kitchen was an enormous mess, in a state of utter disorder.", vi: "Căn bếp là một mớ hỗn độn khổng lồ, trong tình trạng hoàn toàn vô trật tự." },
+            { en: "Aunt Martha was there, trying to bake a pie.", vi: "Dì Martha đang ở đó, cố gắng nướng một chiếc bánh." },
+            { en: "She was no genius in chemistry, but her talent for cooking was undeniable.", vi: "Dì ấy không phải là thiên tài về hóa học, nhưng tài năng nấu nướng của dì là không thể phủ nhận." },
+            { en: "She had every ingredient laid out in a long row on the shelf.", vi: "Dì ấy đã bày mọi nguyên liệu thành một hàng dài trên kệ." },
+            { en: "To elevate the flavor, she would consult an old recipe book, trying to calculate the exact quantity needed.", vi: "Để tăng thêm hương vị, dì sẽ tham khảo một cuốn sách dạy nấu ăn cũ, cố gắng tính toán chính xác lượng cần thiết." },
+            { en: "\"I insist you all sit down and relax,\" she said, refusing any aid.", vi: "\"Dì khăng khăng yêu cầu tất cả các cháu ngồi xuống và thư giãn,\" dì nói, từ chối mọi sự giúp đỡ." },
+            { en: "\"I can handle this.\"", vi: "\"Tôi có thể xử lý việc này.\"" },
+            { en: "\"You ought to let us help,\" my sister chimed in.", vi: "\"Em nên để bọn chị giúp,\" chị tôi xen vào." },
+            { en: "She was a secretary for a city council, used to helping every citizen she met.", vi: "Chị ấy là thư ký cho hội đồng thành phố, đã quen với việc giúp đỡ mọi công dân mà chị ấy gặp." },
+            { en: "But Martha remained passive, choosing to struggle alone rather than cooperate.", vi: "Nhưng dì Martha vẫn giữ thái độ thụ động, chọn cách tự mình đánh vật với công việc thay vì hợp tác." },
+            { en: "She playfully threatened to sue anyone who dared step into her workspace, so we stepped back to avoid any division or blame.", vi: "Dì ấy đùa giỡn đe dọa sẽ kiện bất cứ ai dám bước vào không gian làm việc của mình, vì vậy chúng tôi lùi lại để tránh bất kỳ sự chia rẽ hay khiển trách nào." },
+            { en: "We gathered in the living room, lit by a single candle.", vi: "Chúng tôi quây quần trong phòng khách, được thắp sáng bởi một ngọn nến duy nhất." },
+            { en: "My cousin Leo, who lived in a college dormitory while writing his thesis on physics and astronomy, began to chat about a dinosaur exhibit he had seen.", vi: "Anh họ Leo của tôi, người đang sống trong ký túc xá đại học trong khi viết luận văn về vật lý và thiên văn học, bắt đầu kể về một cuộc triển lãm khủng long mà anh ấy đã xem." },
+            { en: "He had used money from his student fund to buy a super new gadget to monitor his health during the trip.", vi: "Anh ấy đã dùng tiền từ quỹ sinh viên của mình để mua một thiết bị siêu mới nhằm theo dõi sức khỏe trong chuyến đi." },
+            { en: "He made an admission that he bought it out of pure spite, just because his roommate had one.", vi: "Anh ấy thú nhận rằng mình mua nó hoàn toàn chỉ vì ghen tị, bởi vì người bạn cùng phòng của anh ấy cũng có một cái." },
+            { en: "He promised not to abuse the device, though the long walks would definitely exhaust him.", vi: "Anh ấy hứa sẽ không lạm dụng thiết bị này, mặc dù những chuyến đi bộ đường dài chắc chắn sẽ làm anh ấy kiệt sức." },
+            { en: "His brother, a landscape tutor studying geography and working in a greenhouse for a local environmental committee, began to carve a tiny wooden bird, letting the wood shavings spin to the floor.", vi: "Anh trai của anh ấy, một gia sư thiết kế cảnh quan đang học địa lý và làm việc trong nhà kính cho một ủy ban môi trường địa phương, bắt đầu điêu khắc một con chim nhỏ bằng gỗ, để cho những mạt gỗ rơi xuống sàn." },
+            { en: "\"Did you hear the tale of the old sword found near the capital?\"", vi: "\"Cậu có nghe câu chuyện về thanh kiếm cũ được tìm thấy gần thủ đô không?\"" },
+            { en: "Leo asked, eager to reveal some history.", vi: "Leo hỏi, háo hức muốn tiết lộ chút lịch sử." },
+            { en: "\"It belonged to a slave who led a rebellion.", vi: "\"Nó thuộc về một nô lệ đã lãnh đạo một cuộc nổi loạn." },
+            { en: "They had to commit to a severe trial and face an emergency just to get rid of their oppressors and relieve their debt.\"", vi: "Họ đã phải cam kết tham gia vào một cuộc thử thách khắc nghiệt và đối mặt với tình thế khẩn cấp chỉ để thoát khỏi những kẻ áp bức và giải thoát khỏi khoản nợ của họ.\"" },
+            { en: "Uncle Arthur listened, trying to compose his thoughts.", vi: "Chú Arthur lắng nghe, cố gắng sắp xếp lại những suy nghĩ của mình." },
+            { en: "\"History is full of such proof of courage,\" he said.", vi: "\"Lịch sử đầy rẫy những bằng chứng về lòng dũng cảm như vậy,\" chú nói." },
+            { en: "\"It should remind us not to take our freedom lightly.", vi: "\"Nó nên nhắc nhở chúng ta đừng coi nhẹ sự tự do của mình." },
+            { en: "The potential for greatness is in everyone, even the seemingly stupid or blind.\"", vi: "Tiềm năng làm nên điều vĩ đại có ở trong mỗi người, kể cả những người có vẻ ngốc nghếch hay mù lòa.\"" },
+            { en: "Dinner was finally served.", vi: "Bữa tối cuối cùng cũng được dọn ra." },
+            { en: "We were eager to dine, ready to devote our attention to the food.", vi: "Chúng tôi vô cùng háo hức dùng bữa, sẵn sàng dành trọn sự tập trung vào đồ ăn." },
+            { en: "There was plenty for everyone: roasted meat, a massive portion of bean salad, and a smooth gravy that was sure to decrease any remaining hunger.", vi: "Có rất nhiều đồ ăn cho mọi người: thịt quay, một phần salad đậu khổng lồ và một loại nước sốt mịn chắc chắn sẽ làm giảm đi bất kỳ cơn đói nào còn sót lại." },
+            { en: "It was so good it felt like a trap to make us eat too much.", vi: "Nó ngon đến mức có cảm giác như một cái bẫy để khiến chúng tôi ăn quá nhiều." },
+            { en: "As we ate, we couldn't help but admire the reputation Martha had built as a cook.", vi: "Trong khi ăn, chúng tôi không thể không ngưỡng mộ danh tiếng mà dì Martha đã tạo dựng được với tư cách là một đầu bếp." },
+            { en: "No one could oppose the fact that her meals were the stuff of fame.", vi: "Không ai có thể phản đối thực tế rằng các bữa ăn của dì là điều làm nên danh tiếng đó." },
+            { en: "We felt a guarantee of happiness, knowing we could afford to be together, sharing stories without fear of an argument that might frustrate the evening.", vi: "Chúng tôi cảm thấy một sự bảo đảm về hạnh phúc, khi biết rằng chúng tôi có điều kiện để ở bên nhau, chia sẻ những câu chuyện mà không sợ một cuộc tranh cãi có thể làm hỏng buổi tối." },
+            { en: "Even though it was just an initial gathering, the impression was lasting.", vi: "Mặc dù đây mới chỉ là một buổi tụ họp ban đầu, nhưng ấn tượng để lại rất sâu sắc." },
+            { en: "We didn't need to dig deep to find joy.", vi: "Chúng tôi không cần phải tìm kiếm đâu xa để thấy được niềm vui." },
+            { en: "A family dinner isn't a funeral; it's a celebration.", vi: "Bữa tối gia đình không phải là một đám tang; đó là một buổi lễ kỷ niệm." },
+            { en: "We would not quit this tradition.", vi: "Chúng tôi sẽ không từ bỏ truyền thống này." },
+            { en: "And so, we made a contract to lend each other our time, to enable more nights like this, and to never let our bond face a decrease in strength.", vi: "Và thế là, chúng tôi đã giao kèo sẽ dành thời gian cho nhau, để có thêm nhiều buổi tối như thế này, và để không bao giờ để tình cảm gắn kết của chúng tôi bị suy giảm." },
+            { en: "We were a family, ready for any hike up life's mountains, standing together, come what may.", vi: "Chúng tôi là một gia đình, sẵn sàng cho bất kỳ chuyến leo núi nào của cuộc đời, sát cánh bên nhau, dù có chuyện gì xảy ra đi chăng nữa." },
+            { en: "Our backpacking adventure started with a bold aim.", vi: "Chuyến phiêu lưu du lịch bụi của chúng tôi bắt đầu với một mục tiêu táo bạo." },
+            { en: "We wanted to accomplish a trek beyond the usual agriculture fields, into the remote mountains.", vi: "Chúng tôi muốn hoàn thành một chuyến đi bộ đường dài vượt ra ngoài những cánh đồng nông nghiệp thông thường, tiến vào những ngọn núi xa xôi." },
+            { en: "My friend, a junior journalist by profession, carried a diary to document every element of our trip.", vi: "Bạn tôi, một nhà báo trẻ có nghề, mang theo một cuốn nhật ký để ghi chép lại mọi yếu tố trong chuyến đi của chúng tôi." },
+            { en: "We didn't want to delay our departure, thus we woke up fully awake at the crack of dawn.", vi: "Chúng tôi không muốn trì hoãn việc khởi hành, do đó chúng tôi đã thức dậy hoàn toàn tỉnh táo lúc rạng sáng." },
+            { en: "Our last task was to attach the baggage label to our packs.", vi: "Nhiệm vụ cuối cùng của chúng tôi là gắn thẻ hành lý vào ba lô." },
+            { en: "I relied on my ability to pack well, making sure to insert raw grain, a small telescope, and enough tissue.", vi: "Tôi tin tưởng vào khả năng đóng gói đồ đạc của mình, đảm bảo bỏ vào một ít ngũ cốc thô, một chiếc kính viễn vọng nhỏ và đủ khăn giấy." },
+            { en: "\"I bet we'll detect some odd animals,\" my friend would exclaim with excitement.", vi: "\"Tớ cá là chúng ta sẽ phát hiện ra vài loài động vật kỳ lạ,\" bạn tôi hào hứng thốt lên." },
+            { en: "\"I'll illustrate them in my book!\"", vi: "\"Tôi sẽ minh họa chúng trong cuốn sách của mình!\"" },
+            { en: "I tried to convince him to be rational and not pretend we were some astronaut exploring a new satellite with zero gravity.", vi: "Tôi cố gắng thuyết phục anh ấy hãy lý trí và đừng giả vờ như chúng tôi là phi hành gia đang khám phá một vệ tinh mới với môi trường không trọng lực." },
+            { en: "We started our commute by taking an old carriage to the base of the trail.", vi: "Chúng tôi bắt đầu di chuyển bằng cách đi một cỗ xe ngựa cũ đến chân đường mòn." },
+            { en: "The driver, an immigrant who used to be a mechanic in a garage, stopped to greet us.", vi: "Người lái xe, một người nhập cư từng là thợ máy trong một gara, đã dừng lại để chào chúng tôi." },
+            { en: "He had a sincere tone and a kindly gesture.", vi: "Ông ấy có giọng điệu chân thành và một cử chỉ tốt bụng." },
+            { en: "His architecture of words was classic.", vi: "Cách sắp xếp ngôn từ của ông ấy rất cổ điển." },
+            { en: "He warned us not to slip on the dust and gravel.", vi: "Ông ấy cảnh báo chúng tôi đừng để trượt ngã trên bụi và sỏi." },
+            { en: "\"Do not let a sudden shock interrupt your focus,\" he advised.", vi: "\"Đừng để một cú sốc bất ngờ làm gián đoạn sự tập trung của các cậu,\" ông khuyên." },
+            { en: "To save expense, we decided to rent a spot in a farmer's yard for the first night.", vi: "Để tiết kiệm chi phí, chúng tôi quyết định thuê một chỗ trong sân của một người nông dân cho đêm đầu tiên." },
+            { en: "He was a man who decided to retire early to escape the poverty of the city.", vi: "Ông ấy là một người quyết định nghỉ hưu sớm để thoát khỏi sự nghèo đói của thành phố." },
+            { en: "Moreover, he didn't want to participate in the labor of a factory shift anymore.", vi: "Hơn nữa, ông ấy không muốn tham gia vào công việc lao động của ca làm việc ở nhà máy nữa." },
+            { en: "He had a pup of a rare breed that was in a stable tied to a chain.", vi: "Ông có một chú chó con thuộc giống chó quý hiếm đang bị xích trong chuồng." },
+            { en: "The dog was shy at first but showed joy when I began to pour water into its bucket.", vi: "Ban đầu chú chó tỏ ra nhút nhát nhưng đã thể hiện sự vui mừng khi tôi bắt đầu rót nước vào xô của nó." },
+            { en: "The farmer’s presence was calming, and he explained his origin and his motive for moving here.", vi: "Sự hiện diện của người nông dân mang lại cảm giác bình yên, và ông giải thích về nguồn gốc cũng như động cơ chuyển đến đây của mình." },
+            { en: "The reception we got was warm.", vi: "Sự tiếp đón mà chúng tôi nhận được rất nồng nhiệt." },
+            { en: "We hoped he would grant us permission to extend our stay, which he did readily.", vi: "Chúng tôi hy vọng ông ấy sẽ cho phép chúng tôi kéo dài thời gian lưu trú, và ông đã sẵn sàng đồng ý." },
+            { en: "The next morning, the fever of the adventure caught us, though my friend felt a slight flu coming on.", vi: "Sáng hôm sau, cơn sốt của chuyến phiêu lưu đã cuốn lấy chúng tôi, mặc dù bạn tôi cảm thấy có chút triệu chứng cảm cúm." },
+            { en: "We didn't want to freeze, so we wore a heavy costume of jackets.", vi: "Chúng tôi không muốn bị chết cóng, vì vậy chúng tôi mặc những bộ áo khoác dày cộp." },
+            { en: "\"I deny that I am sick,\" he said, trying to emphasize his courage.", vi: "\"Tớ phủ nhận chuyện tớ bị ốm,\" cậu ấy nói, cố gắng nhấn mạnh lòng can đảm của mình." },
+            { en: "We had to pause to let him recover, and we didn't reject the idea of a gradual climb.", vi: "Chúng tôi phải tạm dừng để cậu ấy hồi phục, và chúng tôi không bác bỏ ý tưởng leo lên một cách từ từ." },
+            { en: "Our duty was to investigate the underground miner trails.", vi: "Nhiệm vụ của chúng tôi là điều tra các con đường mòn dưới lòng đất của thợ mỏ." },
+            { en: "We passed an elementary barrier of rocks and saw a stream that seemed to float down the mountain.", vi: "Chúng tôi vượt qua một hàng rào đá cơ bản và nhìn thấy một dòng suối dường như đang trôi xuống núi." },
+            { en: "The height of the peaks was staggering.", vi: "Chiều cao của những đỉnh núi thật đáng kinh ngạc." },
+            { en: "We met a monk and a priest on a pilgrimage.", vi: "Chúng tôi gặp một nhà sư và một linh mục đang trên đường hành hương." },
+            { en: "They alike wore formal robes.", vi: "Cả hai đều mặc áo choàng trang trọng." },
+            { en: "I tried to interpret their faith, and they didn't criticize our curious questions.", vi: "Tôi cố gắng hiểu về đức tin của họ, và họ không hề chỉ trích những câu hỏi tò mò của chúng tôi." },
+            { en: "They offered us a raw mineral that looked like a jewel as an award for our respect.", vi: "Họ tặng chúng tôi một khoáng thạch thô trông giống như một viên ngọc quý như một phần thưởng cho sự tôn trọng của chúng tôi." },
+            { en: "They explained its likeness to a healing stone that could heal wounds.", vi: "Họ giải thích sự tương đồng của nó với một loại đá chữa bệnh có thể chữa lành vết thương." },
+            { en: "The encounter was distinct, and I couldn't distinguish if it was real or an artificial cartoon.", vi: "Cuộc chạm trán này thật khác biệt, và tôi không thể phân biệt được liệu đó là sự thật hay là một bộ phim hoạt hình nhân tạo." },
+            { en: "We had to invent a way to carry it safely in our packs.", vi: "Chúng tôi phải nghĩ ra một cách để mang nó an toàn trong ba lô của mình." },
+            { en: "We had to resume our hike, making sure to skip the dangerous parts.", vi: "Chúng tôi phải tiếp tục chuyến đi bộ đường dài của mình, đảm bảo bỏ qua những đoạn nguy hiểm." },
+            { en: "My friend started to stare at a nest high up.", vi: "Bạn tôi bắt đầu nhìn chằm chằm vào một cái tổ ở trên cao." },
+            { en: "He had to stretch to see it.", vi: "Cậu ấy phải rướn người lên để nhìn thấy nó." },
+            { en: "It was an instant of wonder.", vi: "Đó là một khoảnh khắc kỳ diệu." },
+            { en: "But then an alarm sounded from a nearby camp.", vi: "Nhưng sau đó một tiếng còi báo động vang lên từ một khu trại gần đó." },
+            { en: "A signal was sent out.", vi: "Một tín hiệu đã được phát ra." },
+            { en: "We learned later someone tried to rob a hiker, but an officer of high rank managed to arrest the convict.", vi: "Sau đó chúng tôi biết được rằng có người đã cố gắng cướp đồ của một người đi bộ đường dài, nhưng một sĩ quan cấp cao đã tìm cách bắt giữ được tên tội phạm." },
+            { en: "We were relieved that the authorities would not approve of such behavior and took action.", vi: "Chúng tôi cảm thấy nhẹ nhõm vì các nhà chức trách sẽ không dung túng cho hành vi như vậy và đã hành động." },
+            { en: "That night we found a cave that looked like a large chamber with a high ceiling.", vi: "Đêm đó, chúng tôi tìm thấy một hang động trông giống như một căn phòng lớn với trần nhà cao." },
+            { en: "We didn't want to annoy any bats.", vi: "Chúng tôi không muốn làm phiền bất kỳ con dơi nào." },
+            { en: "It was somewhat cold, but the silence was golden.", vi: "Trời có hơi lạnh, nhưng sự im lặng mới là thứ quý giá." },
+            { en: "We had to refrigerate our food in the cold water.", vi: "Chúng tôi phải ướp lạnh thức ăn của mình trong dòng nước lạnh." },
+            { en: "We talked about how our views differ and shared our perspective.", vi: "Chúng tôi đã nói chuyện về sự khác biệt trong quan điểm của mỗi người và chia sẻ góc nhìn của mình." },
+            { en: "We asked to confirm the approximate statistic of hikers who qualify for the prime contest of summiting.", vi: "Chúng tôi hỏi để xác nhận số liệu thống kê sơ bộ về những người đi bộ đường dài đủ điều kiện tham gia cuộc thi leo lên đỉnh núi quan trọng nhất." },
+            { en: "It was an incredible journey.", vi: "Đó là một hành trình không thể tin được." },
+            { en: "No failure, just pure adventure.", vi: "Không có thất bại, chỉ có cuộc phiêu lưu thuần túy." },
+            { en: "I beg you to adopt the backpacking life.", vi: "Tôi mong bạn hãy áp dụng lối sống du lịch bụi." },
+            { en: "I wouldn't forbid anyone from trying.", vi: "Tôi sẽ không cấm bất kỳ ai thử trải nghiệm điều đó." },
+            { en: "It's the origin of true self-recognition.", vi: "Đó là nguồn gốc của sự tự nhận thức đích thực." },
+            { en: "It was a repair for the soul.", vi: "Đó là một sự chữa lành cho tâm hồn." },
+            { en: "We were apart from the world, in a scale so grand.", vi: "Chúng tôi tách biệt khỏi thế giới, trong một quy mô quá đỗi hùng vĩ." },
+            { en: "We were no fool.", vi: "Chúng tôi không phải là những kẻ ngốc." },
+            { en: "Indeed, it was a masterpiece.", vi: "Thật vậy, đó là một kiệt tác." },
+            { en: "In the year 2142, humanity had managed to overcome a severe shortage of essential resources.", vi: "Vào năm 2142, nhân loại đã xoay xở vượt qua được tình trạng thiếu hụt trầm trọng các nguồn tài nguyên thiết yếu." },
+            { en: "I recall the days when the mere thought of a green earth was abstract fiction.", vi: "Tôi nhớ lại những ngày mà chỉ cần nghĩ đến một trái đất xanh cũng đã là điều viễn tưởng trừu tượng." },
+            { en: "My elder twin brother and I would often inspect our dusty journal, recounting tales of when the world was a dull place.", vi: "Người anh trai sinh đôi của tôi và tôi thường xem lại cuốn nhật ký bám bụi của mình, kể lại những câu chuyện về thời thế giới còn là một nơi buồn tẻ." },
+            { en: "Now, thanks to the grand artificial intelligence system known as The Cardinal, things had changed.", vi: "Giờ đây, nhờ vào hệ thống trí tuệ nhân tạo vĩ đại mang tên The Cardinal, mọi thứ đã thay đổi." },
+            { en: "Nowadays, we no longer need to borrow cash for an ordinary meal.", vi: "Ngày nay, chúng tôi không còn cần phải mượn tiền mặt cho một bữa ăn bình thường nữa." },
+            { en: "The Cardinal's formula allowed us to obtain sufficient nutrient liquid from a small tube.", vi: "Công thức của The Cardinal cho phép chúng tôi có được đủ lượng chất lỏng dinh dưỡng từ một chiếc ống nhỏ." },
+            { en: "It wasn’t a solid substance, so there was no need to chew, but it was practical.", vi: "Nó không phải là chất rắn nên không cần phải nhai, nhưng nó rất thiết thực." },
+            { en: "Our temporary housing was a neat cabin with a sturdy roof, capable of withstanding a fierce hurricane or flood.", vi: "Chỗ ở tạm thời của chúng tôi là một căn nhà gỗ nhỏ gọn gàng với mái nhà chắc chắn, có khả năng chống chọi lại những trận cuồng phong hay lũ lụt dữ dội." },
+            { en: "On one occasion, we decided to engage in a task downtown.", vi: "Có một lần, chúng tôi quyết định tham gia vào một công việc ở khu trung tâm." },
+            { en: "We had to hire a virtual vehicle to take us across the electronic bridge.", vi: "Chúng tôi phải thuê một chiếc xe ảo để đưa chúng tôi qua cây cầu điện tử." },
+            { en: "The fare was deducted automatically; no wallet or physical loan was required.", vi: "Tiền vé được tự động trừ đi; không cần dùng đến ví hay khoản vay vật chất nào." },
+            { en: "The city was a marvel of architecture.", vi: "Thành phố là một tuyệt tác của kiến trúc." },
+            { en: "We would often gaze at the permanent structures that somehow manage to resemble ancient coral reef and shell formations along the shore.", vi: "Chúng tôi thường ngắm nhìn những cấu trúc vĩnh cửu bằng cách nào đó lại có hình dáng giống như những rạn san hô và vỏ sò cổ đại dọc theo bờ biển." },
+            { en: "The primary task for the day was to visit a firm where my brother had just found a new job.", vi: "Nhiệm vụ chính trong ngày là đến thăm một công ty nơi anh trai tôi vừa tìm được công việc mới." },
+            { en: "His starting salary was impressive.", vi: "Mức lương khởi điểm của anh ấy thật ấn tượng." },
+            { en: "However, getting there was tough.", vi: "Tuy nhiên, để đến được đó lại rất khó khăn." },
+            { en: "A sudden crash in the network caused our vehicle to shut down.", vi: "Một sự cố sập mạng đột ngột khiến chiếc xe của chúng tôi ngừng hoạt động." },
+            { en: "We had to settle for walking.", vi: "Chúng tôi đành phải đi bộ." },
+            { en: "We didn't dare complain, as the penalty for a rude yell could result in being sent to a rehabilitation zone.", vi: "Chúng tôi không dám phàn nàn, vì hình phạt cho một tiếng la hét thô lỗ có thể dẫn đến việc bị gửi đến khu phục hồi nhân phẩm." },
+            { en: "Along the plain path, we saw a bare branch of a tree.", vi: "Dọc theo con đường bằng phẳng, chúng tôi nhìn thấy một cành cây trơ trụi." },
+            { en: "It was a synthetic seed experiment intended to preserve the environment.", vi: "Đó là một cuộc thử nghiệm hạt giống tổng hợp nhằm mục đích bảo tồn môi trường." },
+            { en: "We took a deep breath.", vi: "Chúng tôi hít một hơi thật sâu." },
+            { en: "Despite the synthetic cloth and cotton we wore, we felt a sort of romantic connection to the earth.", vi: "Mặc cho những bộ quần áo bằng vải và bông tổng hợp đang mặc, chúng tôi vẫn cảm nhận được một mối liên kết lãng mạn nào đó với trái đất." },
+            { en: "As we walked, we encountered a disabled man sitting on a clay pot.", vi: "Khi đang đi, chúng tôi bắt gặp một người đàn ông tàn tật đang ngồi trên một chiếc bình đất sét." },
+            { en: "He asked for an apology for being in our way.", vi: "Ông ấy xin lỗi vì đã cản đường chúng tôi." },
+            { en: "We assured him he was innocent of any offense.", vi: "Chúng tôi trấn an ông ấy rằng ông không hề làm gì sai cả." },
+            { en: "The man began pronouncing strange words, like a witch from old religious tales.", vi: "Người đàn ông bắt đầu phát âm những từ kỳ lạ, giống như một mụ phù thủy trong những câu chuyện tôn giáo cổ xưa." },
+            { en: "He claimed he could subtract the sorrow from any soul.", vi: "Ông ấy khẳng định rằng mình có thể xua đi nỗi đau buồn khỏi bất kỳ tâm hồn nào." },
+            { en: "It was enough to amuse us, but we knew we shouldn't accuse him of being a criminal or assume he belonged in jail.", vi: "Điều đó cũng đủ để làm chúng tôi thấy thú vị, nhưng chúng tôi biết mình không nên buộc tội ông ta là tội phạm hay cho rằng ông ta thuộc về nhà tù." },
+            { en: "\"I am a former minister,\" he said in a sharp whisper, trying to cast a net of mystery over us.", vi: "\"Tôi từng là một mục sư,\" ông ấy nói trong tiếng thì thầm chói tai, cố gắng giăng một bức màn bí ẩn lên chúng tôi." },
+            { en: "\"I used to invest in the philosophy of the human mind.\"", vi: "\"Tôi từng đầu tư vào triết học về tâm trí con người.\"" },
+            { en: "He pulled out a dozen small items—a feather, some tobacco, a piece of coral.", vi: "Anh ta lấy ra hàng tá món đồ nhỏ - một chiếc lông chim, một ít thuốc lá, một mẩu san hô." },
+            { en: "\"I am trying to found a new belief system,\" he continued, holding up a small bowl.", vi: "\"Tôi đang cố gắng thành lập một hệ thống tín ngưỡng mới,\" ông tiếp tục, giơ lên một chiếc bát nhỏ." },
+            { en: "\"This is a treasure I managed to capture.\"", vi: "\"Đây là kho báu mà tôi đã giành được.\"" },
+            { en: "It was a small, fertile plant.", vi: "Đó là một cái cây nhỏ, tươi tốt." },
+            { en: "A real one.", vi: "Một cái cây có thật." },
+            { en: "\"I didn't steal it,\" he added quickly, to expose his good intentions.", vi: "\"Tôi không trộm nó,\" ông nói thêm thật nhanh, để bày tỏ ý định tốt của mình." },
+            { en: "\"I don't deserve the grave.\"", vi: "\"Tôi không đáng phải xuống mồ.\"" },
+            { en: "We didn't embarrass him.", vi: "Chúng tôi không làm anh ấy xấu hổ." },
+            { en: "We simply admired his bold spirit.", vi: "Chúng tôi chỉ đơn giản là ngưỡng mộ tinh thần táo bạo của ông." },
+            { en: "He didn't seem guilty of anything but holding onto the past.", vi: "Ông ấy dường như không có tội gì ngoài việc bám víu vào quá khứ." },
+            { en: "We finally arrived at the firm.", vi: "Cuối cùng chúng tôi cũng đến được công ty." },
+            { en: "The deck was made of solid steel, and there was a tight fence around it.", vi: "Sàn nhà được làm bằng thép đặc, và có một hàng rào kiên cố bao quanh." },
+            { en: "We had to adjust our facial scanners to gain entry.", vi: "Chúng tôi phải điều chỉnh máy quét khuôn mặt để được vào trong." },
+            { en: "Inside, the furniture was minimalist, covered by a curtain that simulated a natural breeze.", vi: "Bên trong, đồ nội thất theo phong cách tối giản, được che phủ bởi một tấm rèm mô phỏng làn gió tự nhiên." },
+            { en: "My brother's client was a man named Duke.", vi: "Khách hàng của anh trai tôi là một người đàn ông tên là Duke." },
+            { en: "He had a strict manner but was fair.", vi: "Ông ta có thái độ nghiêm khắc nhưng rất công bằng." },
+            { en: "He explained that their annual goal was to mount a new expedition to the virtual stars.", vi: "Ông giải thích rằng mục tiêu hàng năm của họ là tổ chức một cuộc thám hiểm mới đến những vì sao ảo." },
+            { en: "They were trying to manufacture a new type of fuel, and plant our flag on a new planet.", vi: "Họ đang cố gắng sản xuất một loại nhiên liệu mới, và cắm lá cờ của chúng tôi trên một hành tinh mới." },
+            { en: "I have to admit, his vision did inspire me.", vi: "Tôi phải thừa nhận rằng tầm nhìn của ông ấy thực sự đã truyền cảm hứng cho tôi." },
+            { en: "Any loss in production would mean a severe setback.", vi: "Bất kỳ tổn thất nào trong sản xuất đều có nghĩa là một bước lùi nghiêm trọng." },
+            { en: "\"We must maintain a firm grip on our stock,\" Duke said.", vi: "\"Chúng ta phải duy trì sự kiểm soát chặt chẽ đối với nguồn dự trữ của mình,\" Duke nói." },
+            { en: "\"There is no room for regret.\"", vi: "\"Không có chỗ cho sự hối tiếc.\"" },
+            { en: "My brother was tasked with overseeing the surgery bay, where workers underwent cybernetic enhancements.", vi: "Anh trai tôi được giao nhiệm vụ giám sát khu phẫu thuật, nơi các công nhân trải qua các quá trình nâng cấp bằng điều khiển học." },
+            { en: "They would bathe in a special liquid bath to heal any wound.", vi: "Họ sẽ tắm trong một bồn chất lỏng đặc biệt để chữa lành bất kỳ vết thương nào." },
+            { en: "I decided to accompany him to his quarter.", vi: "Tôi quyết định đi cùng anh đến phòng của anh." },
+            { en: "We had to bend around several corridors.", vi: "Chúng tôi phải rẽ qua vài hành lang." },
+            { en: "It felt like walking through an ancient tomb.", vi: "Cảm giác giống như đang đi bộ qua một lăng mộ cổ xưa." },
+            { en: "But inside his workspace, it was fantastic.", vi: "Nhưng bên trong không gian làm việc của anh ấy lại rất tuyệt vời." },
+            { en: "There was a large wheel that generated power.", vi: "Có một bánh xe lớn tạo ra năng lượng." },
+            { en: "A small bin held discarded synthetic tissue.", vi: "Một chiếc thùng nhỏ chứa mô tổng hợp bị bỏ đi." },
+            { en: "\"I urge you to be careful,\" I told him.", vi: "\"Em khuyên anh nên cẩn thận,\" tôi nói với anh ấy." },
+            { en: "\"I don't want you to experience any negative symptom.\"", vi: "\"Tôi không muốn anh phải trải qua bất kỳ triệu chứng tiêu cực nào.\"" },
+            { en: "He nodded.", vi: "Anh ấy gật đầu." },
+            { en: "\"I know.", vi: "\"Anh biết." },
+            { en: "The work here is ideal, but it requires constant vigilance.", vi: "Công việc ở đây rất lý tưởng, nhưng nó đòi hỏi sự cảnh giác thường xuyên." },
+            { en: "I must be worthy of my scholarship.\"", vi: "Tôi phải xứng đáng với học bổng của mình.\"" },
+            { en: "As I left, I couldn't help but appeal to the universe that we would inherit a better world.", vi: "Khi rời đi, tôi không khỏi cầu nguyện vũ trụ rằng chúng ta sẽ được thừa hưởng một thế giới tốt đẹp hơn." },
+            { en: "We were no longer tied to the land like farmers at a rural inn.", vi: "Chúng tôi không còn bị trói buộc với đất đai giống như những người nông dân ở một quán trọ nông thôn nữa." },
+            { en: "We were explorers in a new era, learning to surf the waves of innovation.", vi: "Chúng tôi là những nhà thám hiểm trong một kỷ nguyên mới, học cách lướt trên những làn sóng của sự đổi mới." },
+            { en: "I just hoped our efforts would yield a bountiful harvest.", vi: "Tôi chỉ hy vọng những nỗ lực của chúng tôi sẽ mang lại một vụ mùa bội thu." },
+            { en: "We had to weigh our options carefully, ensuring we never became slaves to our own creations.", vi: "Chúng tôi phải cân nhắc kỹ lưỡng các lựa chọn của mình, để đảm bảo rằng chúng tôi không bao giờ trở thành nô lệ cho chính những tác phẩm do mình tạo ra." },
+            { en: "And with that thought, I returned home.", vi: "Và với suy nghĩ đó, tôi trở về nhà." }
+        ];
+        (function() {
+            var popup = document.createElement('div');
+            popup.className = 'translate-popup';
+            popup.id = 'translate-popup';
+            
+            popup.style.cssText = 'position: absolute; background: #2d3436; color: white; padding: 15px 30px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 2000; display: none; flex-direction: column; gap: 10px; max-width: 350px; text-align: left; white-space: normal; word-wrap: break-word; word-break: normal;';
+            
+            var btnGoogle = document.createElement('button');
+            btnGoogle.innerHTML = '🌐 Google Dịch';
+            btnGoogle.style.cssText = 'background: #34495e; color: white; border: 1px solid #7f8c8d; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; width: 100%; margin-top: 5px; font-family: inherit; font-size: inherit;';
+            btnGoogle.onmouseover = () => btnGoogle.style.background = '#2c3e50';
+            btnGoogle.onmouseout = () => btnGoogle.style.background = '#34495e';
+            
+            var btnContext = document.createElement('button');
+            btnContext.innerHTML = '📖 Dịch Sát Nghĩa';
+            btnContext.style.cssText = 'background: #3498db; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s; width: 100%; font-family: inherit; font-size: inherit;';
+            btnContext.onmouseover = () => btnContext.style.background = '#2980b9';
+            btnContext.onmouseout = () => btnContext.style.background = '#3498db';
+
+            var transResult = document.createElement('div');
+            transResult.style.cssText = 'display: none; flex-direction: column; width: 100%; white-space: normal; word-wrap: break-word;';
+
+            var closeBtn = document.createElement('span');
+            closeBtn.innerHTML = '✖';
+            closeBtn.style.cssText = 'position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 14px; color: #bdc3c7; display: none; transition: 0.3s;';
+            closeBtn.onmouseover = () => closeBtn.style.color = 'white';
+            closeBtn.onmouseout = () => closeBtn.style.color = '#bdc3c7';
+            closeBtn.onclick = function(e) {
+                e.stopPropagation();
+                popup.style.display = 'none';
+            };
+
+            popup.appendChild(closeBtn);
+            popup.appendChild(btnGoogle);
+            popup.appendChild(btnContext);
+            popup.appendChild(transResult);
+            document.body.appendChild(popup);
+
+            var selectedText = '';
+            var currentFontSize = '16px';
+
+            document.addEventListener('mouseup', handleSelection);
+            document.addEventListener('touchend', function() { setTimeout(handleSelection, 300); });
+
+            function normalizeStr(str) {
+                return str.replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
+            }
+
+            function handleSelection(e) {
+                if (popup.contains(e.target)) return;
+                var sel = window.getSelection();
+                var text = sel.toString().trim();
+                
+                if (text.length > 2 && text.length < 1000) {
+                    selectedText = text;
+                    var range = sel.getRangeAt(0);
+                    var rects = range.getClientRects();
+                    if(rects.length === 0) return;
+                    var lastRect = rects[rects.length - 1];
+                    
+                    var parentNode = range.commonAncestorContainer;
+                    if (parentNode.nodeType === 3) parentNode = parentNode.parentNode;
+                    currentFontSize = window.getComputedStyle(parentNode).fontSize;
+                    
+                    // Set popup font size equal to selected text font size
+                    popup.style.fontSize = currentFontSize;
+                    transResult.style.fontSize = '1em'; // relative to popup
+                    
+                    transResult.style.display = 'none';
+                    transResult.innerHTML = '';
+                    btnGoogle.style.display = 'block';
+                    btnContext.style.display = 'block';
+                    closeBtn.style.display = 'none';
+
+                    popup.style.padding = '15px';
+                    popup.style.display = 'flex';
+                    
+                    var popupRect = popup.getBoundingClientRect();
+                    
+                    // Align left with the last word's left edge
+                    var leftPos = rects[0].left + window.scrollX;
+                    if (leftPos + popupRect.width > window.innerWidth + window.scrollX - 10) {
+                        leftPos = window.innerWidth + window.scrollX - popupRect.width - 10;
+                    }
+                    if (leftPos < window.scrollX + 10) leftPos = window.scrollX + 10;
+                    
+                    // Position below the last word
+                    var topPos = lastRect.bottom + window.scrollY + 10;
+
+                    popup.style.left = leftPos + 'px';
+                    popup.style.top = topPos + 'px';
+                } else {
+                    popup.style.display = 'none';
+                }
+            }
+
+            btnGoogle.addEventListener('mousedown', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                if (selectedText) {
+                    var url = 'https://translate.google.com/?sl=en&tl=vi&text=' + encodeURIComponent(selectedText);
+                    window.open(url, '_blank');
+                }
+                popup.style.display = 'none';
+            });
+
+            btnContext.addEventListener('mousedown', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                if (!selectedText) return;
+                
+                let normSel = normalizeStr(selectedText);
+                let bestMatch = null;
+                let minLength = Infinity;
+                
+                for (let i = 0; i < preTranslatedBookData.length; i++) {
+                    let combinedEnRaw = '';
+                    let tempVi = [];
+                    let tempEn = [];
+                    for (let j = i; j < preTranslatedBookData.length; j++) {
+                        combinedEnRaw += preTranslatedBookData[j].en + ' ';
+                        tempVi.push(preTranslatedBookData[j].vi);
+                        tempEn.push(preTranslatedBookData[j].en);
+                        
+                        let combinedNorm = normalizeStr(combinedEnRaw);
+                        
+                        if (combinedNorm === normSel) {
+                            bestMatch = { vi: tempVi.join(' '), en: tempEn.join(' ') };
+                            minLength = 0;
+                            break;
+                        }
+                                                
+                        if (combinedNorm.length > normSel.length + 500) {
+                            break;
+                        }
+                    }
+                    if (minLength === 0) break;
+                }
+                
+                let matchedVi = bestMatch ? bestMatch.vi : '';
+                let matchedEn = bestMatch ? bestMatch.en : '';
+                
+                if (matchedVi) {
+                    btnGoogle.style.display = 'none';
+                    btnContext.style.display = 'none';
+                    closeBtn.style.display = 'block';
+                    
+                    popup.style.padding = '15px 30px';
+                    transResult.style.display = 'flex';
+                    
+                    transResult.innerHTML = `
+                        <div style="margin-bottom: 5px;">
+                            <span style="display: block; font-size: 1.3em; font-weight: bold; color: #fdcb6e; text-transform: capitalize; text-align: left; padding-right: 15px; white-space: normal;">Dịch Văn Cảnh</span>
+                        </div>
+                        <div style="font-weight: bold; margin-bottom: 10px; white-space: normal; line-height: 1.5; font-size: 1em;">Nghĩa: ${matchedVi}</div>
+                        <div style="margin-top: 10px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 8px;">
+                            <span style="margin-bottom:5px; display:inline-block; font-size: 0.9em; color: #aaa;">Bản gốc:</span>
+                            <div style="font-style: italic; color: #ddd; font-size: 0.95em; white-space: normal; line-height: 1.5;">"${matchedEn}"</div>
+                        </div>
+                    `;
+                    
+                    var sel = window.getSelection();
+                    if(sel.rangeCount > 0) {
+                        var range = sel.getRangeAt(0);
+                        var rects = range.getClientRects();
+                        var lastRect = rects[rects.length - 1];
+                        
+                        var newLeftPos = rects[0].left + window.scrollX;
+                        if (newLeftPos + popup.offsetWidth > window.innerWidth + window.scrollX - 10) {
+                            newLeftPos = window.innerWidth + window.scrollX - popup.offsetWidth - 10;
+                        }
+                        if (newLeftPos < window.scrollX + 10) newLeftPos = window.scrollX + 10;
+                        
+                        popup.style.left = newLeftPos + 'px';
+                        popup.style.top = (lastRect.bottom + window.scrollY + 10) + 'px';
+                    }
+                    
+                } else {
+                    alert('Vui lòng bôi đen ĐÚNG VÀ TRỌN VẸN MỘT HOẶC NHIỀU CÂU (không được lở dở giữa chừng) để sử dụng tính năng Dịch Sát Nghĩa!');
+                    popup.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('mousedown', function(e) {
+                if (!popup.contains(e.target)) {
+                    popup.style.display = 'none';
+                }
+            });
+        })();
+        </script>
+    </body>
+    
+    
 
 </html>

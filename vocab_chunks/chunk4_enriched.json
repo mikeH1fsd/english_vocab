@@ -1,0 +1,848 @@
+{
+  "yield": [
+    {
+      "pos": "Động từ",
+      "context": "Dùng khi miêu tả hành động nhường đường, đầu hàng hoặc chịu thua trước một áp lực.",
+      "example": "He refused to yield to their demands."
+    },
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Dùng trong tài chính hoặc nông nghiệp, chỉ sản lượng, lợi nhuận hoặc việc mang lại lợi ích.",
+      "example": "The investment is expected to yield a high return."
+    }
+  ],
+  "adjacent": [
+    {
+      "pos": "Tính từ",
+      "context": "Chỉ vị trí ngay sát cạnh, liền kề, thường dùng cho không gian hoặc địa lý.",
+      "example": "They work in adjacent buildings."
+    }
+  ],
+  "collaboration": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự hợp tác làm việc cùng nhau để tạo ra sản phẩm hoặc đạt mục tiêu chung.",
+      "example": "The project was a successful collaboration between the two teams."
+    }
+  ],
+  "concentrate": [
+    {
+      "pos": "Động từ",
+      "context": "Dùng khi nói về việc tập trung sự chú ý, nỗ lực vào một việc gì đó.",
+      "example": "I need quiet to concentrate on my studies."
+    },
+    {
+      "pos": "Động từ / Danh từ",
+      "context": "Làm đặc lại (chất lỏng) hoặc chất đã được cô đặc (ví dụ như nước hoa quả).",
+      "example": "Add two cups of water to the orange juice concentrate."
+    }
+  ],
+  "conducive": [
+    {
+      "pos": "Tính từ",
+      "context": "Đi kèm với 'to', chỉ một điều kiện thuận lợi giúp điều gì đó dễ dàng xảy ra.",
+      "example": "A quiet environment is conducive to learning."
+    }
+  ],
+  "disruption": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự gián đoạn, cản trở, hoặc phá vỡ một quy trình, hoạt động bình thường.",
+      "example": "The strike caused severe disruption to train services."
+    }
+  ],
+  "hamper": [
+    {
+      "pos": "Động từ",
+      "context": "Làm cản trở, gây khó khăn cho sự chuyển động, tiến triển hoặc hành động.",
+      "example": "Heavy rain hampered the rescue efforts."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Cái giỏ (thường có nắp) dùng để đựng đồ giặt hoặc thức ăn dã ngoại.",
+      "example": "Put your dirty clothes in the laundry hamper."
+    }
+  ],
+  "inconsiderately": [
+    {
+      "pos": "Trạng từ",
+      "context": "Hành động thiếu suy nghĩ, không quan tâm đến cảm giác hoặc quyền lợi của người khác.",
+      "example": "He inconsiderately parked his car blocking the driveway."
+    }
+  ],
+  "lobby": [
+    {
+      "pos": "Danh từ",
+      "context": "Sảnh chờ, hành lang ở các tòa nhà lớn như khách sạn, văn phòng.",
+      "example": "Let's meet in the hotel lobby at 8 AM."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Vận động hành lang, thuyết phục các chính trị gia hoặc người có thẩm quyền.",
+      "example": "Environmental groups are lobbying for stricter pollution laws."
+    }
+  ],
+  "move up": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Tiến lên vị trí cao hơn, thăng tiến trong công việc hoặc dời lịch lên sớm hơn.",
+      "example": "She hopes to move up in the company soon."
+    }
+  ],
+  "open to": [
+    {
+      "pos": "Cụm từ (Tính từ + Giới từ)",
+      "context": "Sẵn sàng tiếp thu ý kiến, đề nghị, hoặc có thể bị ảnh hưởng bởi điều gì đó.",
+      "example": "We are always open to new ideas and suggestions."
+    }
+  ],
+  "opt": [
+    {
+      "pos": "Động từ",
+      "context": "Đưa ra sự lựa chọn giữa nhiều khả năng, thường đi kèm với 'for' hoặc 'to'.",
+      "example": "Many workers opt for early retirement."
+    }
+  ],
+  "scrutiny": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự kiểm tra, xem xét kỹ lưỡng và cẩn thận để tìm ra lỗi hoặc hiểu rõ.",
+      "example": "The company's financial records came under strict scrutiny."
+    }
+  ],
+  "adhere to": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Tuân thủ chặt chẽ một quy định, nguyên tắc hoặc dính chặt vào bề mặt.",
+      "example": "All employees must adhere to the safety guidelines."
+    }
+  ],
+  "agenda": [
+    {
+      "pos": "Danh từ",
+      "context": "Danh sách các vấn đề cần thảo luận tại một cuộc họp; chương trình nghị sự.",
+      "example": "The next item on the agenda is the budget."
+    }
+  ],
+  "bring up": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Nuôi nấng, dạy dỗ một đứa trẻ cho đến khi trưởng thành.",
+      "example": "She was brought up by her grandparents."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Khơi mào, đưa ra một chủ đề hoặc vấn đề để thảo luận.",
+      "example": "Why did you have to bring up the topic of money?"
+    }
+  ],
+  "conclude": [
+    {
+      "pos": "Động từ",
+      "context": "Đưa ra kết luận sau khi xem xét thông tin; hoặc kết thúc một sự kiện, bài phát biểu.",
+      "example": "The report concluded that the project was not feasible."
+    }
+  ],
+  "go ahead": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Bắt đầu hoặc tiếp tục làm một việc gì đó, đặc biệt sau khi được phép.",
+      "example": "We have permission to go ahead with the construction."
+    },
+    {
+      "pos": "Danh từ (the go-ahead)",
+      "context": "Sự cho phép chính thức để bắt đầu một dự án, hành động.",
+      "example": "They are waiting for the go-ahead from the manager."
+    }
+  ],
+  "goal": [
+    {
+      "pos": "Danh từ",
+      "context": "Mục tiêu, mục đích phấn đấu trong cuộc sống hoặc công việc.",
+      "example": "Her ultimate goal is to become a doctor."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Bàn thắng hoặc khung thành trong các môn thể thao như bóng đá.",
+      "example": "He scored the winning goal in the final minute."
+    }
+  ],
+  "lengthy": [
+    {
+      "pos": "Tính từ",
+      "context": "Rất dài, thường gây cảm giác dài dòng, tốn thời gian.",
+      "example": "We had a lengthy discussion about the problem."
+    }
+  ],
+  "matter": [
+    {
+      "pos": "Danh từ",
+      "context": "Vấn đề, sự việc đang được quan tâm, thảo luận hoặc giải quyết.",
+      "example": "This is a private matter and I won't discuss it."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Có ý nghĩa quan trọng, đáng kể.",
+      "example": "It doesn't matter what you wear to the party."
+    }
+  ],
+  "periodically": [
+    {
+      "pos": "Trạng từ",
+      "context": "Xảy ra theo chu kỳ, định kỳ hoặc lặp đi lặp lại đứt quãng.",
+      "example": "The equipment is tested periodically to ensure safety."
+    }
+  ],
+  "priority": [
+    {
+      "pos": "Danh từ",
+      "context": "Quyền ưu tiên, sự việc được xem là quan trọng nhất và cần giải quyết trước.",
+      "example": "Customer satisfaction is our top priority."
+    }
+  ],
+  "progress": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự tiến bộ, phát triển hoặc tiến trình thực hiện một công việc.",
+      "example": "We have made significant progress in our research."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tiến triển, tiếp tục phát triển hoặc đi tới.",
+      "example": "The construction is progressing according to schedule."
+    }
+  ],
+  "waste": [
+    {
+      "pos": "Động từ",
+      "context": "Sử dụng lãng phí thời gian, tiền bạc hoặc tài nguyên.",
+      "example": "Don't waste your time worrying about things you can't change."
+    },
+    {
+      "pos": "Danh từ / Tính từ",
+      "context": "Rác thải, đồ bỏ đi; sự lãng phí.",
+      "example": "The factory must reduce its industrial waste."
+    }
+  ],
+  "brand": [
+    {
+      "pos": "Danh từ",
+      "context": "Thương hiệu, nhãn hiệu hàng hóa của một công ty.",
+      "example": "Which brand of toothpaste do you use?"
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đóng dấu sắt nung lên động vật; gắn mác, gán ghép tiếng xấu cho ai.",
+      "example": "The media branded him as a liar."
+    }
+  ],
+  "conform": [
+    {
+      "pos": "Động từ",
+      "context": "Tuân thủ, làm cho phù hợp với luật lệ, tiêu chuẩn hoặc phong tục.",
+      "example": "The building design must conform to safety regulations."
+    }
+  ],
+  "defect": [
+    {
+      "pos": "Danh từ",
+      "context": "Khuyết điểm, sai sót, lỗi trong sản phẩm hoặc hệ thống.",
+      "example": "The car was recalled due to a defect in the braking system."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đào tẩu, bỏ đất nước/đảng phái của mình để sang phe đối lập.",
+      "example": "Several soldiers defected to the enemy side."
+    }
+  ],
+  "enhance": [
+    {
+      "pos": "Động từ",
+      "context": "Nâng cao, làm tăng cường chất lượng, giá trị hoặc sức hấp dẫn.",
+      "example": "Adding herbs will enhance the flavor of the dish."
+    }
+  ],
+  "garment": [
+    {
+      "pos": "Danh từ",
+      "context": "Từ trang trọng để chỉ quần áo, đồ may mặc.",
+      "example": "This garment should be washed in cold water."
+    }
+  ],
+  "inspect": [
+    {
+      "pos": "Động từ",
+      "context": "Kiểm tra kỹ lưỡng, thanh tra để tìm lỗi hoặc đảm bảo tiêu chuẩn.",
+      "example": "The official will inspect the restaurant for hygiene."
+    }
+  ],
+  "perceptive": [
+    {
+      "pos": "Tính từ",
+      "context": "Sâu sắc, mẫn cảm, có khả năng nhận biết nhanh chóng và thấu đáo.",
+      "example": "It was very perceptive of you to notice she was upset."
+    }
+  ],
+  "repel": [
+    {
+      "pos": "Động từ",
+      "context": "Đẩy lùi (kẻ thù, côn trùng), không thấm (nước); gây cảm giác khó chịu, kinh tởm.",
+      "example": "This spray will repel mosquitoes."
+    }
+  ],
+  "take back": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Rút lại lời đã nói, thu hồi, hoặc trả lại hàng hóa đã mua.",
+      "example": "I take back what I said; you were right."
+    }
+  ],
+  "throw out": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Vứt bỏ đồ cũ, đuổi ai đó ra ngoài, hoặc bác bỏ một đề xuất.",
+      "example": "It's time to throw out these old magazines."
+    }
+  ],
+  "uniformly": [
+    {
+      "pos": "Trạng từ",
+      "context": "Một cách đồng đều, thống nhất, không thay đổi trên toàn bộ hệ thống.",
+      "example": "The rules must be uniformly applied to all students."
+    }
+  ],
+  "wrinkle": [
+    {
+      "pos": "Danh từ",
+      "context": "Nếp nhăn trên da (do tuổi tác) hoặc trên quần áo.",
+      "example": "She bought an iron to remove the wrinkles from her shirt."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Làm nhăn nhúm, cau mày.",
+      "example": "He wrinkled his nose at the bad smell."
+    }
+  ],
+  "anxious": [
+    {
+      "pos": "Tính từ",
+      "context": "Cảm giác lo âu, bồn chồn về một điều gì đó.",
+      "example": "I am anxious about the upcoming exam."
+    },
+    {
+      "pos": "Tính từ",
+      "context": "Nóng lòng, khao khát muốn làm hoặc có được điều gì (thường đi với to V).",
+      "example": "He is anxious to finish the project on time."
+    }
+  ],
+  "anxiety": [
+    {
+      "pos": "Danh từ",
+      "context": "Mối lo âu, tình trạng căng thẳng thần kinh.",
+      "example": "Waiting for the results caused her a lot of anxiety."
+    }
+  ],
+  "ascertain": [
+    {
+      "pos": "Động từ",
+      "context": "Tìm hiểu chắc chắn, xác minh sự thật bằng cách điều tra.",
+      "example": "The police are trying to ascertain the cause of the fire."
+    }
+  ],
+  "assume": [
+    {
+      "pos": "Động từ",
+      "context": "Cho rằng, phỏng đoán điều gì là đúng mà không có chứng cứ.",
+      "example": "I assumed you knew about the meeting."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Đảm đương trách nhiệm, nhận lấy vai trò hoặc tỏ ra (giả bộ).",
+      "example": "The new manager will assume his duties next week."
+    }
+  ],
+  "decade": [
+    {
+      "pos": "Danh từ",
+      "context": "Thập kỷ, khoảng thời gian 10 năm.",
+      "example": "The economy has grown steadily over the past decade."
+    }
+  ],
+  "examine": [
+    {
+      "pos": "Động từ",
+      "context": "Khám xét, xem xét kỹ, kiểm tra y tế hoặc sát hạch (thi cử).",
+      "example": "The doctor examined her carefully."
+    }
+  ],
+  "experiment": [
+    {
+      "pos": "Danh từ",
+      "context": "Cuộc thí nghiệm khoa học hoặc quá trình thử nghiệm cách mới.",
+      "example": "They conducted an experiment to test the hypothesis."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Tiến hành thí nghiệm, thử nghiệm cái mới.",
+      "example": "We are experimenting with different materials."
+    }
+  ],
+  "logical": [
+    {
+      "pos": "Tính từ",
+      "context": "Hợp lý, theo đúng logic, có thể hiểu và dự đoán được.",
+      "example": "It is a logical conclusion based on the facts."
+    }
+  ],
+  "research": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Sự nghiên cứu, tìm tòi khoa học; thực hiện công tác nghiên cứu.",
+      "example": "She is doing research into cancer treatments."
+    }
+  ],
+  "responsibility": [
+    {
+      "pos": "Danh từ",
+      "context": "Trách nhiệm, bổn phận phải chăm sóc, quản lý ai/cái gì.",
+      "example": "It is your responsibility to make sure the doors are locked."
+    }
+  ],
+  "solve": [
+    {
+      "pos": "Động từ",
+      "context": "Tìm ra giải pháp cho một vấn đề, lời giải cho một bài toán hoặc bí ẩn.",
+      "example": "The detective managed to solve the mystery."
+    }
+  ],
+  "supervisor": [
+    {
+      "pos": "Danh từ",
+      "context": "Người giám sát, quản lý cấp cơ sở hướng dẫn nhân viên.",
+      "example": "You need to report any issues to your supervisor."
+    }
+  ],
+  "systematically": [
+    {
+      "pos": "Trạng từ",
+      "context": "Một cách có hệ thống, theo kế hoạch và phương pháp bài bản.",
+      "example": "The files have been systematically organized."
+    }
+  ],
+  "apprehensive": [
+    {
+      "pos": "Tính từ",
+      "context": "Cảm giác e ngại, sợ hãi về điều gì tồi tệ có thể xảy ra trong tương lai.",
+      "example": "She felt apprehensive about living alone in a new city."
+    }
+  ],
+  "circumstance": [
+    {
+      "pos": "Danh từ",
+      "context": "Hoàn cảnh, tình huống, các yếu tố tác động đến sự việc.",
+      "example": "I can't imagine a circumstance in which I would do that."
+    }
+  ],
+  "condition": [
+    {
+      "pos": "Danh từ",
+      "context": "Tình trạng thể chất, trạng thái của đồ vật hoặc điều kiện hợp đồng.",
+      "example": "The car is in excellent condition."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Bệnh lý mạn tính (medical condition).",
+      "example": "He suffers from a heart condition."
+    }
+  ],
+  "due to": [
+    {
+      "pos": "Cụm giới từ",
+      "context": "Bởi vì, do nguyên nhân nào đó.",
+      "example": "The flight was delayed due to bad weather."
+    }
+  ],
+  "fluctuate": [
+    {
+      "pos": "Động từ",
+      "context": "Dao động, lên xuống thất thường (giá cả, nhiệt độ, tâm trạng).",
+      "example": "Vegetable prices fluctuate according to the season."
+    }
+  ],
+  "fluctuation": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự dao động, sự biến đổi lên xuống không ổn định.",
+      "example": "There are frequent fluctuations in the exchange rate."
+    }
+  ],
+  "get out of": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Thoát khỏi (xe nhỏ), trốn tránh trách nhiệm, hoặc bỏ một thói quen.",
+      "example": "I need to get out of the habit of biting my nails."
+    }
+  ],
+  "indicator": [
+    {
+      "pos": "Danh từ",
+      "context": "Chỉ số, dấu hiệu cho thấy tình trạng; đèn xi-nhan của xe.",
+      "example": "Economic indicators suggest that growth is slowing down."
+    }
+  ],
+  "lease": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Hợp đồng thuê tài sản dài hạn (nhà, xe); hành động cho thuê hoặc đi thuê.",
+      "example": "They signed a two-year lease for the apartment."
+    }
+  ],
+  "lock into": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Ràng buộc, trói buộc ai đó vào một cam kết, hợp đồng không thể rút lui.",
+      "example": "Customers shouldn't feel locked into a contract they don't want."
+    }
+  ],
+  "occupy": [
+    {
+      "pos": "Động từ",
+      "context": "Chiếm cứ (không gian, thời gian), chiếm đóng (quân sự), sử dụng.",
+      "example": "The bed seems to occupy most of the room."
+    }
+  ],
+  "option": [
+    {
+      "pos": "Danh từ",
+      "context": "Lựa chọn, quyền hoặc cơ hội được chọn giữa nhiều khả năng.",
+      "example": "We have several options for our holiday."
+    }
+  ],
+  "subject to": [
+    {
+      "pos": "Tính từ / Cụm động từ",
+      "context": "Dễ bị ảnh hưởng, lệ thuộc vào điều gì, hoặc tuân thủ quy định.",
+      "example": "The schedule is subject to change without notice."
+    }
+  ],
+  "appeal": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Sức hấp dẫn, sự lôi cuốn đối với ai đó.",
+      "example": "The idea of camping doesn't appeal to me."
+    },
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Kháng cáo (pháp lý) hoặc kêu gọi giúp đỡ khẩn thiết.",
+      "example": "The police made a public appeal for information."
+    }
+  ],
+  "arrive": [
+    {
+      "pos": "Động từ",
+      "context": "Đến một nơi nào đó, đạt được một thỏa thuận (arrive at).",
+      "example": "They are expected to arrive at the station soon."
+    }
+  ],
+  "compromise": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Sự thỏa hiệp, nhượng bộ để đạt được sự đồng thuận.",
+      "example": "We need to compromise to reach an agreement."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Làm tổn hại, gây nguy hiểm (đến uy tín, bảo mật).",
+      "example": "We will not compromise on safety standards."
+    }
+  ],
+  "daringly": [
+    {
+      "pos": "Trạng từ",
+      "context": "Một cách táo bạo, liều lĩnh, dũng cảm đối mặt với rủi ro.",
+      "example": "She daringly challenged the traditional methods."
+    }
+  ],
+  "familiar": [
+    {
+      "pos": "Tính từ",
+      "context": "Quen thuộc, thân quen, có hiểu biết về điều gì (familiar with).",
+      "example": "I am not familiar with this software."
+    }
+  ],
+  "guide": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Sách hướng dẫn, người hướng dẫn viên; dẫn đường, chỉ bảo.",
+      "example": "Our tour guide was very knowledgeable."
+    }
+  ],
+  "majority": [
+    {
+      "pos": "Danh từ",
+      "context": "Phần lớn, đa số trong một nhóm người hoặc vật.",
+      "example": "The majority of the students passed the exam."
+    }
+  ],
+  "mix": [
+    {
+      "pos": "Động từ / Danh từ",
+      "context": "Trộn lẫn, hòa hợp; hỗn hợp các thành phần khác nhau.",
+      "example": "Oil and water do not mix."
+    }
+  ],
+  "rely": [
+    {
+      "pos": "Động từ",
+      "context": "Dựa vào, tin cậy, phụ thuộc vào ai hoặc điều gì (đi kèm 'on').",
+      "example": "You can always rely on him in an emergency."
+    }
+  ],
+  "secure": [
+    {
+      "pos": "Tính từ",
+      "context": "An toàn, chắc chắn, không lo âu về tương lai.",
+      "example": "Please ensure the doors are secure before leaving."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Giành được, đạt được thứ gì quan trọng sau khi nỗ lực; buộc chặt lại.",
+      "example": "He managed to secure a loan from the bank."
+    }
+  ],
+  "subjective": [
+    {
+      "pos": "Tính từ",
+      "context": "Mang tính chủ quan, phụ thuộc vào quan điểm và cảm nhận cá nhân.",
+      "example": "Beauty is highly subjective."
+    }
+  ],
+  "suggestion": [
+    {
+      "pos": "Danh từ",
+      "context": "Ý kiến, lời đề nghị, sự gợi ý.",
+      "example": "Can I make a suggestion?"
+    }
+  ],
+  "appetite": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự thèm ăn, cảm giác ngon miệng; hoặc sự khao khát cái gì đó.",
+      "example": "Walking makes me have a good appetite."
+    }
+  ],
+  "complete": [
+    {
+      "pos": "Tính từ / Động từ",
+      "context": "Đầy đủ, trọn vẹn; hoàn thành, làm xong một việc gì.",
+      "example": "He has completed the construction project."
+    }
+  ],
+  "completion": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự hoàn thành, quá trình làm xong một dự án, công việc.",
+      "example": "The building is nearing completion."
+    }
+  ],
+  "excite": [
+    {
+      "pos": "Động từ",
+      "context": "Gây hào hứng, kích thích sự quan tâm, kích động cảm xúc.",
+      "example": "The news of the trip excited the children."
+    }
+  ],
+  "flavor": [
+    {
+      "pos": "Danh từ",
+      "context": "Hương vị, mùi vị đặc trưng của đồ ăn, thức uống; sắc thái đặc biệt.",
+      "example": "The soup lacks a bit of flavor."
+    }
+  ],
+  "forget": [
+    {
+      "pos": "Động từ",
+      "context": "Quên một việc gì đó, không nhớ thông tin hoặc quên mang đồ.",
+      "example": "I totally forgot about our meeting."
+    }
+  ],
+  "ingredient": [
+    {
+      "pos": "Danh từ",
+      "context": "Thành phần, nguyên liệu tạo nên món ăn hoặc yếu tố tạo thành sự thành công.",
+      "example": "Trust is an essential ingredient in any relationship."
+    }
+  ],
+  "judge": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Thẩm phán, giám khảo; đánh giá, phán xét một tình huống, con người.",
+      "example": "Don't judge a book by its cover."
+    }
+  ],
+  "mix up": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Nhầm lẫn giữa người này và người kia; trộn lẫn vào nhau một cách lộn xộn.",
+      "example": "I always mix up their names."
+    },
+    {
+      "pos": "Danh từ (mix-up)",
+      "context": "Sự lộn xộn, sự nhầm lẫn (ví dụ trong giấy tờ, lịch trình).",
+      "example": "There was a mix-up with the hotel reservations."
+    }
+  ],
+  "patron": [
+    {
+      "pos": "Danh từ",
+      "context": "Khách hàng thân thiết của một cửa hàng, nhà hàng; người bảo trợ tài chính (cho nghệ thuật).",
+      "example": "The restaurant offers a discount to regular patrons."
+    }
+  ],
+  "predict": [
+    {
+      "pos": "Động từ",
+      "context": "Dự đoán, báo trước tương lai dựa trên dữ liệu hoặc phán đoán.",
+      "example": "It is difficult to predict the weather accurately."
+    }
+  ],
+  "random": [
+    {
+      "pos": "Tính từ",
+      "context": "Ngẫu nhiên, không theo quy luật, mục đích hay kế hoạch rõ ràng.",
+      "example": "The computer generates a random number."
+    }
+  ],
+  "remind": [
+    {
+      "pos": "Động từ",
+      "context": "Nhắc nhở ai làm gì; làm ai nhớ lại chuyện cũ hay người nào đó.",
+      "example": "Please remind me to call my mother."
+    }
+  ],
+  "basic": [
+    {
+      "pos": "Tính từ",
+      "context": "Cơ bản, cốt lõi, nền tảng của một vấn đề.",
+      "example": "Food and housing are basic human needs."
+    }
+  ],
+  "burden": [
+    {
+      "pos": "Danh từ",
+      "context": "Gánh nặng vật lý; hoặc gánh nặng tinh thần, trách nhiệm khó khăn.",
+      "example": "The tax changes will place a heavy burden on small businesses."
+    }
+  ],
+  "commonly": [
+    {
+      "pos": "Trạng từ",
+      "context": "Một cách thông thường, phổ biến, thường xuyên xảy ra.",
+      "example": "This is one of the most commonly used words."
+    }
+  ],
+  "delivery": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự giao hàng, quá trình vận chuyển thư từ, hàng hóa; hoặc phong cách thuyết trình.",
+      "example": "We offer free delivery on orders over $50."
+    }
+  ],
+  "elegance": [
+    {
+      "pos": "Danh từ",
+      "context": "Sự thanh lịch, tao nhã trong phong cách, cử chỉ hoặc thiết kế.",
+      "example": "Her dress was simple but had great elegance."
+    }
+  ],
+  "fall to": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Trở thành trách nhiệm của ai; hoặc bắt đầu làm gì đó hăng hái.",
+      "example": "It usually falls to the mother to do the cooking."
+    }
+  ],
+  "impress": [
+    {
+      "pos": "Động từ",
+      "context": "Gây ấn tượng sâu sắc, làm ai đó ngưỡng mộ.",
+      "example": "He tried to impress her with his knowledge."
+    }
+  ],
+  "individual": [
+    {
+      "pos": "Tính từ / Danh từ",
+      "context": "Cá nhân, riêng biệt; chỉ một người thay vì một tập thể.",
+      "example": "Each individual has a different learning style."
+    }
+  ],
+  "list": [
+    {
+      "pos": "Danh từ / Động từ",
+      "context": "Danh sách các món đồ, tên; lập danh sách, liệt kê.",
+      "example": "Make a list of things you need to buy."
+    }
+  ],
+  "multiple": [
+    {
+      "pos": "Tính từ",
+      "context": "Nhiều, đa dạng, gồm nhiều phần.",
+      "example": "He suffered multiple injuries in the crash."
+    },
+    {
+      "pos": "Danh từ",
+      "context": "Bội số (trong toán học).",
+      "example": "12 is a multiple of 4."
+    }
+  ],
+  "narrow": [
+    {
+      "pos": "Tính từ",
+      "context": "Hẹp (về không gian), chật chội; hoặc hạn hẹp (về quan điểm).",
+      "example": "The road was too narrow for the bus."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Thu hẹp lại, làm giảm đi số lượng (narrow down).",
+      "example": "We need to narrow down the list of suspects."
+    }
+  ],
+  "pick up": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Nhặt lên; đón ai đó bằng xe; trả lời điện thoại.",
+      "example": "I will pick you up at the airport."
+    },
+    {
+      "pos": "Cụm động từ",
+      "context": "Học lỏm, vô tình học được kỹ năng mới; hoặc tình hình được cải thiện (kinh doanh).",
+      "example": "She picked up some Spanish while traveling in Mexico."
+    }
+  ],
+  "settle": [
+    {
+      "pos": "Động từ",
+      "context": "Giải quyết tranh chấp, quyết định một vấn đề; thanh toán hóa đơn.",
+      "example": "They finally settled the dispute out of court."
+    },
+    {
+      "pos": "Động từ",
+      "context": "Định cư, ổn định cuộc sống tại một nơi mới.",
+      "example": "He wants to marry and settle down."
+    }
+  ],
+  "accustom to": [
+    {
+      "pos": "Cụm động từ",
+      "context": "Làm quen với một điều gì đó mới mẻ, biến nó thành thói quen (be/get accustomed to).",
+      "example": "It took him a while to get accustomed to the cold weather."
+    }
+  ],
+  "apprentice": [
+    {
+      "pos": "Danh từ",
+      "context": "Người học việc, người tập sự đang học một nghề từ người có kinh nghiệm.",
+      "example": "He worked as an apprentice to a master carpenter."
+    }
+  ]
+}
