@@ -482,58 +482,15 @@
     </script>
 
     <script>
-        const posMap = {
-            'noun': 'Danh từ',
-            'verb': 'Động từ',
-            'adjective': 'Tính từ',
-            'adverb': 'Trạng từ',
-            'pronoun': 'Đại từ',
-            'preposition': 'Giới từ',
-            'conjunction': 'Liên từ',
-            'interjection': 'Thán từ'
-        };
-
-        async function fetchExample(word) {
-            try {
-                const response = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word));
-                if (!response.ok) return null;
-                const data = await response.json();
-                
-                // Find first example
-                for (let meaning of data[0].meanings) {
-                    for (let def of meaning.definitions) {
-                        if (def.example) {
-                            return {
-                                partOfSpeech: meaning.partOfSpeech,
-                                example: def.example
-                            };
-                        }
-                    }
-                }
-                
-                // If no example but has POS
-                if (data[0].meanings.length > 0) {
-                    return {
-                        partOfSpeech: data[0].meanings[0].partOfSpeech,
-                        example: null
-                    };
-                }
-                return null;
-            } catch (e) {
-                return null;
-            }
-        }
-
-        // We replace the old logic that sets text directly
-        document.addEventListener('click', async function(e) {
+        
+        document.addEventListener('click', function(e) {
             if (e.target.classList.contains('vocab-word')) {
                 const word = e.target.getAttribute('data-word');
-                const data = allVocab[word];
+                const data = allVocab[word.toLowerCase()];
                 
                 if (data) {
                     const display = document.getElementById('meaning-display');
                     
-                    // Mark as checked
                     const checks = document.querySelectorAll('.check-item');
                     checks.forEach(c => {
                         if (c.textContent.trim().toLowerCase() === word.toLowerCase()) {
@@ -541,48 +498,44 @@
                         }
                     });
 
-                    // Initial popup render with local data
+                    let defsHtml = '';
+                    if (data.definitions && data.definitions.length > 0) {
+                        data.definitions.forEach((def, index) => {
+                            let posText = def.pos ? def.pos : 'Từ loại đang cập nhật';
+                            let contextHtml = def.context ? `<div class="m-context">💡 <strong>Cách dùng ${index+1}:</strong> ${def.context}</div>` : '';
+                            let exampleHtml = def.example ? `<div class="m-example">📖 <strong>Ví dụ:</strong> "${def.example}"</div>` : '';
+                            
+                            defsHtml += `
+                                <div style="margin-top: 10px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 8px;">
+                                    <span class="m-type" style="margin-bottom:5px; display:inline-block;">${posText}</span>
+                                    ${contextHtml}
+                                    ${exampleHtml}
+                                </div>
+                            `;
+                        });
+                    } else {
+                        defsHtml = `<div class="m-loading" style="margin-top: 10px;">(Dữ liệu đa nghĩa đang chờ cập nhật...)</div>`;
+                    }
+
                     display.innerHTML = `
                         <div class="m-header">
                             <span class="m-word-title">${word}</span>
-                            <span class="m-type" id="m-pos">...</span>
                         </div>
                         <div class="m-meaning">Nghĩa: ${data.meaning}</div>
-                        <div class="m-example" id="m-ex"><span class="m-loading">Đang tìm ví dụ...</span></div>
+                        ${defsHtml}
                     `;
                     display.style.display = 'flex';
                     
-                    // Play audio
                     const audio = document.getElementById('audio-player');
-                    audio.src = 'media/' + data.audio;
-                    audio.play().catch(e => console.log('Audio error:', e));
-
-                    // Fetch example
-                    const exData = await fetchExample(word);
-                    const posEl = document.getElementById('m-pos');
-                    const exEl = document.getElementById('m-ex');
-                    
-                    if (exData) {
-                        const vietnamesePos = posMap[exData.partOfSpeech.toLowerCase()] || exData.partOfSpeech;
-                        if (posEl) posEl.textContent = vietnamesePos;
-                        
-                        if (exEl) {
-                            if (exData.example) {
-                                exEl.innerHTML = `<strong>Ví dụ:</strong> "${exData.example}"`;
-                            } else {
-                                exEl.innerHTML = `<span class="m-loading">(Không tìm thấy ví dụ trên từ điển)</span>`;
-                            }
-                        }
-                    } else {
-                        if (posEl) posEl.style.display = 'none';
-                        if (exEl) exEl.innerHTML = `<span class="m-loading">(Không thể tải dữ liệu từ điển)</span>`;
+                    if (data.audio) {
+                        audio.src = 'media/' + data.audio;
+                        audio.play().catch(e => console.log('Audio error:', e));
                     }
 
-                    // Auto hide after 8 seconds
                     if (window.meaningTimeout) clearTimeout(window.meaningTimeout);
                     window.meaningTimeout = setTimeout(() => {
                         display.style.display = 'none';
-                    }, 8000);
+                    }, 12000);
                 }
             }
         });
@@ -594,6 +547,7 @@
                 if (display) display.style.display = 'none';
             }
         });
+</script>
 
 </body>
 
