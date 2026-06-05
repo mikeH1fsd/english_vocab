@@ -1,0 +1,601 @@
+Word,Meaning,Audio
+afraid,Sợ hãi,4000B1_afraid.mp3
+agree,Đồng ý,4000B1_agree.mp3
+angry,Tức giận,4000B1_angry.mp3
+arrive,"Đến, tới nơi",4000B1_arrive.mp3
+attack,Tấn công,4000B1_attack.mp3
+bottom,phần dưới cùng; đáy,4000B1_bottom.mp3
+clever,Thông minh,4000B1_clever.mp3
+cruel,Độc ác,4000B1_cruel.mp3
+finally,Sau cùng,4000B1_finally.mp3
+hide,"Trốn, ẩn nấp",4000B1_hide.mp3
+hunt,Săn bắn,4000B1_hunt.mp3
+lot,"Mớ, lô, nhiều",4000B1_lot.mp3
+middle,"giữa, ở giữa",4000B1_middle.mp3
+moment,"Khoảnh khắc, chốc lát",4000B1_moment.mp3
+pleased,Hài lòng,4000B1_pleased.mp3
+promise,"Hứa hẹn, lời hứa",4000B1_promise.mp3
+reply,"đáp lại, trả lời",4000B1_reply.mp3
+safe,An toàn,4000B1_safe.mp3
+trick,"Mẹo, thủ thuật",4000B1_trick.mp3
+well,"Tốt, được",4000B1_well.mp3
+adventure,"phiêu lưu, mạo hiểm",4000B1_adventure.mp3
+approach,"đến gần, tới gần",4000B1_approach.mp3
+carefully,cẩn thận,4000B1_carefully.mp3
+chemical,hoáchất,4000B1_chemical.mp3
+create,"tạo nên, tạo ra",4000B1_create.mp3
+evil,"xấu, ác",4000B1_evil.mp3
+experiment,thí nghiệm,4000B1_experiment.mp3
+kill,"giết, làm chết",4000B1_kill.mp3
+laboratory,phòng thí nghiệm,4000B1_laboratory.mp3
+laugh,tiếng cười (lớn),4000B1_laugh.mp3
+loud,"to, ầm ĩ",4000B1_loud.mp3
+nervous,căng thẳng,4000B1_nervous.mp3
+noise,tiếng ồn,4000B1_noise.mp3
+project,"dự án, công trình",4000B1_project.mp3
+scare,"Dọa,làm sợ hãi",4000B1_scare.mp3
+secret,bí mật,4000B1_secret.mp3
+shout,"quát tháo,la hét",4000B1_shout.mp3
+smell,"ngửi,đánh hơi",4000B1_smell.mp3
+terrible,"tồi tệ, ghê gớm, khủng khiếp",4000B1_terrible.mp3
+worse,"xấu hơn, tồi hơn",4000B1_worse.mp3
+alien,Người ngoài hành tinh,4000B1_alien.mp3
+among,"giữa, ở giữa",4000B1_among.mp3
+chart,"biểu đồ,đồ thị",4000B1_chart.mp3
+cloud,"mây, đám mây",4000B1_cloud.mp3
+comprehend,"hiểu,bao gồm",4000B1_comprehend.mp3
+describe,"miêu tả, mô tả",4000B1_describe.mp3
+ever,"Trước đến giờ, có bao giờ",4000B1_ever.mp3
+fail,thất bại,4000B1_fail.mp3
+friendly,thân thiện,4000B1_friendly.mp3
+grade,"mức độ, cấp độ",4000B1_grade.mp3
+instead,"Thay cho, thay vì",4000B1_instead.mp3
+library,thư viện,4000B1_library.mp3
+planet,hành tinh,4000B1_planet.mp3
+report,"bản báo cáo, biên bản",4000B1_report.mp3
+several,"vài, riêng",4000B1_several.mp3
+solve,giải quyết,4000B1_solve.mp3
+suddenly,"thình lình, đột ngột",4000B1_suddenly.mp3
+suppose,"cho rằng, nghĩ rằng",4000B1_suppose.mp3
+universe,"vũ trụ, thiên hà",4000B1_universe.mp3
+view,"thấy, nhìn",4000B1_view.mp3
+appropriate,"thích hợp, thích đáng",4000B1_appropriate.mp3
+avoid,"tránh, tránh xa",4000B1_avoid.mp3
+behave,"đối xử, cư xử",4000B1_behave.mp3
+calm,"bình tĩnh, êm đềm",4000B1_calm.mp3
+concern,"lo lắng, liên quan",4000B1_concern.mp3
+content,"nội dung (n), hài lòng (adj), mãn nguyện (adj)",4000B1_content.mp3
+expect,"trông mong, ngóng chờ",4000B1_expect.mp3
+frequently,thường xuyên,4000B1_frequently.mp3
+habit,"thói quen, tập quán",4000B1_habit.mp3
+instruct,"hướng dẫn, đào tạo",4000B1_instruct.mp3
+issue,"vấn đề, phát hành",4000B1_issue.mp3
+none,"không ai,không chút nào",4000B1_none.mp3
+patient,"kiên nhẫn, nhẫn nại, bệnh nhân",4000B1_patient.mp3
+positive,"tích cực, rõ ràng",4000B1_positive.mp3
+punish,"phạt, trừng phạt",4000B1_punish.mp3
+represent,"thay mặt, đại diện",4000B1_represent.mp3
+shake,"rung, lắcto shake hands: bắt tay",4000B1_shake.mp3
+spread,"phết, trải ra",4000B1_spread.mp3
+stroll,đi dạo,4000B1_stroll.mp3
+village,"làng, xã",4000B1_village.mp3
+aware,"nhận thấy, nhận thức",4000B1_aware.mp3
+badly,"xấu, tồi, trầm trọng, khủng khiếp",4000B1_badly.mp3
+belong,thuộc về,4000B1_belong.mp3
+continue,"tiếp tục,vẫn cứ",4000B1_continue.mp3
+error,"sự sai sót, lỗi",4000B1_error.mp3
+experience,kinh nghiệm,4000B1_experience.mp3
+field,"cánh đồng, khu khai thác",4000B1_field.mp3
+hurt,"bị thương, bị đau",4000B1_hurt.mp3
+judgment,"sự xét xử, quyết định của tòa án,ý kiến",4000B1_judgment.mp3
+likely,"rất có thể, dường như, có lẽ đúng, thích hợp",4000B1_likely.mp3
+normal,"bình thường,thông thường",4000B1_normal.mp3
+rare,"hiếm, ít có",4000B1_rare.mp3
+relax,"thư giãn,nghỉ ngơi",4000B1_relax.mp3
+request,"đề nghị, thỉnh cầu",4000B1_request.mp3
+reside,"ở tại, trú ngụ",4000B1_reside.mp3
+result,kết quả,4000B1_result.mp3
+roll,"lăn,cuốn",4000B1_roll.mp3
+since,"từ khi, từ lúc",4000B1_since.mp3
+visible,(có thể) thấy được,4000B1_visible.mp3
+wild,"hoang dã, chưa thuần",4000B1_wild.mp3
+advantage,"lợi thế, ưu điểm",4000B1_advantage.mp3
+cause,"gây ra, gây nên",4000B1_cause.mp3
+choice,sự lựa chọn,4000B1_choice.mp3
+community,cộng đồng,4000B1_community.mp3
+dead,chết,4000B1_dead.mp3
+distance,"khoảng cách,quãng đường",4000B1_distance.mp3
+escape,"trốn thoát,thoát ra",4000B1_escape.mp3
+face,"đương đầu,đối mặt",4000B1_face.mp3
+follow,"đi theo, theo đuổi",4000B1_follow.mp3
+fright,sự hoảng sợ,4000B1_fright.mp3
+ghost,con ma,4000B1_ghost.mp3
+individual,"riêng lẻ, riêng biệt",4000B1_individual.mp3
+pet,"vật nuôi, thú cưng",4000B1_pet.mp3
+reach,"đạt tới, chạm tới, đến, tới",4000B1_reach.mp3
+return,"trở lại, trở về",4000B1_return.mp3
+survive,"sống sót, tồn tại",4000B1_survive.mp3
+upset,"thất vọng, buồn",4000B1_upset.mp3
+voice,giọng nói,4000B1_voice.mp3
+weather,thời tiết,4000B1_weather.mp3
+wise,"khôn ngoan, uyên bác",4000B1_wise.mp3
+allow,cho phép,4000B1_allow.mp3
+announce,"công bố,thông báo",4000B1_announce.mp3
+beside,bên cạnh,4000B1_beside.mp3
+challenge,"thử thách, thách thức",4000B1_challenge.mp3
+claim,"xác nhận, đòi hỏi",4000B1_claim.mp3
+condition,"điều kiện, hoàn cảnh",4000B1_condition.mp3
+contribute,"đóng góp, góp phần",4000B1_contribute.mp3
+difference,"sự khác nhau, sự chênh lệch",4000B1_difference.mp3
+divide,"chia, chia ra",4000B1_divide.mp3
+expert,chuyên gia,4000B1_expert.mp3
+famous,nổi tiếng,4000B1_famous.mp3
+force,"lực, sức mạnh",4000B1_force.mp3
+harm,"hại, tổn hại",4000B1_harm.mp3
+lay,"bày, nằm",4000B1_lay.mp3
+peace,hoà bình,4000B1_peace.mp3
+prince,hoàng tử,4000B1_prince.mp3
+protect,bảo vệ,4000B1_protect.mp3
+sense,"cảm nhận,cảm thấy",4000B1_sense.mp3
+sudden,"thình lình, đột ngột",4000B1_sudden.mp3
+therefore,vì thế,4000B1_therefore.mp3
+accept,"chấp nhận, chấp thuận",4000B1_accept.mp3
+arrange,"sắp xếp, sắp đặt",4000B1_arrange.mp3
+attend,"tham dự, có mặt",4000B1_attend.mp3
+balance,cân bằng,4000B1_balance.mp3
+contrast,"sự tương phản, sự trái ngược",4000B1_contrast.mp3
+encourage,"khuyến khích, động viên",4000B1_encourage.mp3
+familiar,"thân thuộc, quen thuộc",4000B1_familiar.mp3
+grab,"chộp, tóm, hái",4000B1_grab.mp3
+hang,"treo, mắc",4000B1_hang.mp3
+huge,"đồ sộ, khổng lồ",4000B1_huge.mp3
+necessary,"cần thiết, thiết yếu",4000B1_necessary.mp3
+pattern,"mẫu, kiểu",4000B1_pattern.mp3
+propose,"đề xuất, đưa ra",4000B1_propose.mp3
+purpose,"mục đích, ý định",4000B1_purpose.mp3
+release,"giải thoát, phóng thích",4000B1_release.mp3
+require,"đòi hỏi, yêu cầu",4000B1_require.mp3
+single,s__ __g__ __,4000B1_single.mp3
+success,"sự thành công, sự thắng lợi",4000B1_success.mp3
+tear,"xé, làm rách, nước mắt",4000B1_tear.mp3
+theory,"lý thuyết, học thuyết",4000B1_theory.mp3
+against,"chống lại, dựa vào",4000B1_against.mp3
+beach,bãi biển,4000B1_beach.mp3
+damage,"phá hủy, làm hư hại",4000B1_damage.mp3
+discover,"khám phá, tìm ra",4000B1_discover.mp3
+emotion,cảmxúc,4000B1_emotion.mp3
+fix,"đóng, gắn,sửa chữa",4000B1_fix.mp3
+frank,"thẳng thắn,bộc trực",4000B1_frank.mp3
+identify,"nhận biết,nhận ra",4000B1_identify.mp3
+island,hòn đảo,4000B1_island.mp3
+ocean,đại dương,4000B1_ocean.mp3
+perhaps,có lẽ,4000B1_perhaps.mp3
+pleasant,"vui vẻ, dễ thương",4000B1_pleasant.mp3
+prevent,ngăn chặn,4000B1_prevent.mp3
+rock,hòn đá,4000B1_rock.mp3
+save,"cứu, giúp",4000B1_save.mp3
+step,bước chân,4000B1_step.mp3
+still,"vẫn cứ, vẫn còn",4000B1_still.mp3
+taste,"vị, nếm",4000B1_taste.mp3
+throw,"ném, vứt, quăng",4000B1_throw.mp3
+wave,"sóng, làn sóng",4000B1_wave.mp3
+benefit,lợi ích,4000B1_benefit.mp3
+certain,"chắc chắn, tin cậy",4000B1_certain.mp3
+chance,"cơ hội, số phận",4000B1_chance.mp3
+effect,"hiệu quả, tác dụng",4000B1_effect.mp3
+essential,"thiết yếu,chủ yếu",4000B1_essential.mp3
+far,"xa, xa xôi",4000B1_far.mp3
+focus,tập trung,4000B1_focus.mp3
+function,hàm số; chức năng,4000B1_function.mp3
+grass,"cỏ, bâi cỏ",4000B1_grass.mp3
+guard,"bảo vệ, canh gác",4000B1_guard.mp3
+image,hình ảnh,4000B1_image.mp3
+immediate,"lập tức, tức thì",4000B1_immediate.mp3
+primary,"gốc, căn bản",4000B1_primary.mp3
+proud,tự hào; hãnh diện,4000B1_proud.mp3
+remain,"vẫn, còn lại",4000B1_remain.mp3
+rest,(n): sự nghỉ ngơi; (v): nghỉ ngơi,4000B1_rest.mp3
+separate,"riêng rẽ, riêng biệt",4000B1_separate.mp3
+site,"nơi, chỗ, vị trí",4000B1_site.mp3
+tail,"đuôi, đoạn cuối",4000B1_tail.mp3
+trouble,"sự trục trặc, sự rắc rối",4000B1_trouble.mp3
+anymore,nữa,4000B1_anymore.mp3
+asleep,"ngủ, đang ngủ",4000B1_asleep.mp3
+berry,quả dâu tây,4000B1_berry.mp3
+collect,"thu thập, sưu tầm",4000B1_collect.mp3
+compete,"ganh đua, cạnh tranh",4000B1_compete.mp3
+conversation,"cuộc chuyện trò, đàm luận, đàm thoại",4000B1_conversation.mp3
+creature,"sinh vật, loài vật",4000B1_creature.mp3
+decision,sự quyết định,4000B1_decision.mp3
+either,một (trong hai),4000B1_either.mp3
+forest,rừng,4000B1_forest.mp3
+ground,"mặt đất, đất",4000B1_ground.mp3
+introduce,giới thiệu,4000B1_introduce.mp3
+marry,"cưới (vợ), lấy (chồng)",4000B1_marry.mp3
+prepare,"chuẩn bị,sửa soạn",4000B1_prepare.mp3
+sail,"điều khiển, lái (thuyền buồm)",4000B1_sail.mp3
+serious,nghiêm trọng,4000B1_serious.mp3
+spend,"tiêu (tiền), dùng (thì giờ)",4000B1_spend.mp3
+strange,xa lạ,4000B1_strange.mp3
+truth,"sự thật, lẽ phải",4000B1_truth.mp3
+wake,"thức giấc, đánh thức",4000B1_wake.mp3
+alone,"một mình, trơ trọi",4000B1_alone.mp3
+apartment,căn hộ,4000B1_apartment.mp3
+article,"bài báo, điều khoản",4000B1_article.mp3
+artist,"nghệ sĩ, họa sĩ",4000B1_artist.mp3
+attitude,"thái độ, quan điểm",4000B1_attitude.mp3
+compare,so sánh,4000B1_compare.mp3
+judge,"xét xử,phán đoán, đánh giá",4000B1_judge.mp3
+magazine,tạp chí,4000B1_magazine.mp3
+material,"vật chất, vật liệu",4000B1_material.mp3
+meal,bữa ăn,4000B1_meal.mp3
+method,"phương pháp, cách thức",4000B1_method.mp3
+neighbor,người hàng xóm,4000B1_neighbor.mp3
+professional,chuyên nghiệp,4000B1_professional.mp3
+profit,"tiền lãi, lợi ích",4000B1_profit.mp3
+quality,"chất lượng, phẩm chất",4000B1_quality.mp3
+shape,"hình dạng, hình thù",4000B1_shape.mp3
+space,không gian,4000B1_space.mp3
+stair,"bậc thang, cầu thang",4000B1_stair.mp3
+symbol,"ký hiệu, vật tượng trưng",4000B1_symbol.mp3
+thin,"gầy, mảnh khảnh",4000B1_thin.mp3
+blood,"máu,nhựa cậy",4000B1_blood.mp3
+burn,"đốt cháy, nung",4000B1_burn.mp3
+cell,"phòng nhỏ, xà lim, ngăn nhỏ",4000B1_cell.mp3
+contain,"chứa đựng, gồm có",4000B1_contain.mp3
+correct,"đúng, chính xác",4000B1_correct.mp3
+crop,"vụ mùa, cây lương thực",4000B1_crop.mp3
+demand,"yêu cầu, nhu cầu",4000B1_demand.mp3
+equal,"ngang, bằng",4000B1_equal.mp3
+feed,"cho ăn, nuôi nấng",4000B1_feed.mp3
+hole,"hố, lỗ thủng",4000B1_hole.mp3
+increase,"tăng lên, tăng thêm",4000B1_increase.mp3
+lord,chúa tể,4000B1_lord.mp3
+owe,"nợ, hàm ơn",4000B1_owe.mp3
+position,"vị trí, chỗ",4000B1_position.mp3
+raise,"nâng lên, đỡ dậy",4000B1_raise.mp3
+responsible,chịu trách nhiệm,4000B1_responsible.mp3
+sight,cảnh đẹp,4000B1_sight.mp3
+spot,"nơi, chốn",4000B1_spot.mp3
+structure,"kết cấu, cấu trúc",4000B1_structure.mp3
+whole,toàn bộ,4000B1_whole.mp3
+coach,huấn luyện viên,4000B1_coach.mp3
+control,điều khiển,4000B1_control.mp3
+description,"sự diễn tả, sự mô tả",4000B1_description.mp3
+direct,"thẳng, trực tiếp",4000B1_direct.mp3
+exam,sự thi cử; kỳ thi,4000B1_exam.mp3
+example,"thí dụ, ví dụ",4000B1_example.mp3
+limit,"giới hạn, hạn chế",4000B1_limit.mp3
+local,địa phương,4000B1_local.mp3
+magical,"ma thuật, kỳ diệu",4000B1_magical.mp3
+mail,"thư từ, bưu phẩm",4000B1_mail.mp3
+novel,tiểu thuyết,4000B1_novel.mp3
+outline,phác thảo,4000B1_outline.mp3
+poet,"nhà thơ, thi sĩ",4000B1_poet.mp3
+print,"in, viết",4000B1_print.mp3
+scene,phân cảnh,4000B1_scene.mp3
+sheet,"lá, tấm, phiến, tờ",4000B1_sheet.mp3
+silly,"ngớ ngẩn, khờ dại",4000B1_silly.mp3
+store,"cửa hàng, tiệm tạp hóa",4000B1_store.mp3
+suffer,"chịu đựng, lướt sóng",4000B1_suffer.mp3
+technology,công nghệ,4000B1_technology.mp3
+across,"qua, ngang qua",4000B1_across.mp3
+breathe,"hít, thở",4000B1_breathe.mp3
+characteristic,"đặc tính, đặc điểm",4000B1_characteristic.mp3
+consume,tiêu thụ,4000B1_consume.mp3
+excite,phấn khích,4000B1_excite.mp3
+extreme,"vô cùng, khắc nghiệt",4000B1_extreme.mp3
+fear,sự sợ hãi,4000B1_fear.mp3
+fortunate,may mắn,4000B1_fortunate.mp3
+happen,"tình cờ, xảy ra",4000B1_happen.mp3
+length,"chiều dài, độ dài",4000B1_length.mp3
+mistake,"lỗi, sai lầm",4000B1_mistake.mp3
+observe,"quan sát, nhận xét",4000B1_observe.mp3
+opportunity,"cơ hội, thời cơ",4000B1_opportunity.mp3
+prize,"giải thưởng, phần thưởng",4000B1_prize.mp3
+race,cuộc đua,4000B1_race.mp3
+realize,"nhận ra, nhận thức",4000B1_realize.mp3
+respond,"đáp lại, hưởng ứng",4000B1_respond.mp3
+risk,"mạo hiểm,rủi ro",4000B1_risk.mp3
+wonder,"muốn biết, tự hỏi",4000B1_wonder.mp3
+yet,chưa,4000B1_yet.mp3
+academy,học viện,4000B1_academy.mp3
+ancient,cổ xưa,4000B1_ancient.mp3
+board,bảng,4000B1_board.mp3
+century,thế kỷ,4000B1_century.mp3
+clue,"manh mối, đầu mối",4000B1_clue.mp3
+concert,"buổi hoà nhạc (n),phối hợp/sắp đặt (v)",4000B1_concert.mp3
+county,"hạt, tỉnh (đơn vị hành chính)",4000B1_county.mp3
+dictionary,từ điển,4000B1_dictionary.mp3
+exist,"tồn tại, sống",4000B1_exist.mp3
+flat,"phẳng, căn hộ",4000B1_flat.mp3
+gentleman,quý ông,4000B1_gentleman.mp3
+hidden,"ẩn, trốn, nấp, che giấu",4000B1_hidden.mp3
+maybe,có lẽ,4000B1_maybe.mp3
+officer,sĩ quan,4000B1_officer.mp3
+original,"nguyên bản, nguyên gốc",4000B1_original.mp3
+pound,"đánh đập, đóng (đinh),Pao (khoảng 450 gam)",4000B1_pound.mp3
+process,quá trình,4000B1_process.mp3
+publish,"xuất bản, công bố, ban hành",4000B1_publish.mp3
+theater,"nhà hát, rạp hát",4000B1_theater.mp3
+wealth,"sự giàu có, sự giàu sang",4000B1_wealth.mp3
+appreciate,"đánh giá,nâng giá, tăng giá",4000B1_appreciate.mp3
+available,"sẵn sàng để dùng, sẵn có",4000B1_available.mp3
+beat,đánh bại,4000B1_beat.mp3
+bright,sáng chói,4000B1_bright.mp3
+celebrate,"làm lễ kỷ niệm,tán dương, ca tụng",4000B1_celebrate.mp3
+determine,"xác định, định rõ, quyết định",4000B1_determine.mp3
+disappear,biến mất,4000B1_disappear.mp3
+else,khác,4000B1_else.mp3
+fair,"công bằng, hợp lý",4000B1_fair.mp3
+flow,"chảy, dòng chảy,lưu lượng",4000B1_flow.mp3
+forward,phía trước,4000B1_forward.mp3
+hill,ngọn đồi,4000B1_hill.mp3
+level,"mức, mức độ (n); phẳng, bằng (adj); làm phẳng, san bằng (v)",4000B1_level.mp3
+lone,"cô độc, bơ vơ, hiu quạnh",4000B1_lone.mp3
+puddle,vũng nước,4000B1_puddle.mp3
+response,"trả lời, đáp lại",4000B1_response.mp3
+season,mùa trong năm,4000B1_season.mp3
+solution,"giải pháp, cách giải quyết",4000B1_solution.mp3
+waste,lãng phí,4000B1_waste.mp3
+whether,"không biết có không, giữa (cái này cái kia)...",4000B1_whether.mp3
+argue,tranh cãi,4000B1_argue.mp3
+communicate,"liên lạc, giao tiếp",4000B1_communicate.mp3
+crowd,đám đông,4000B1_crowd.mp3
+depend,"phụ thuộc, tuỳ thuộc",4000B1_depend.mp3
+dish,đĩa (đựng thức ăn),4000B1_dish.mp3
+empty,"rỗng, trống không",4000B1_empty.mp3
+exact,"chính xác, đúng đắn",4000B1_exact.mp3
+fresh,"tươi (hoa, rau, cá, thịt...), trong lành (không khí)",4000B1_fresh.mp3
+gather,"thu thập, tập hợp",4000B1_gather.mp3
+indicate,"cho biết, ra dấu,tỏ ra,biểu lộ",4000B1_indicate.mp3
+item,"món (ghi trong đơn hàng...), khoản, tiết mục",4000B1_item.mp3
+offer,"đưa ra đề nghị,đưa ra, chìa ra, biếu tặng",4000B1_offer.mp3
+price,giá ((nghĩa đen)  (nghĩa bóng)),4000B1_price.mp3
+product,"sản phẩm, vật phẩm",4000B1_product.mp3
+property,"tài sản, của cải",4000B1_property.mp3
+purchase,"mua, tậu",4000B1_purchase.mp3
+recommend,"giới thiệu,khuyên bảo, khuyên dùng",4000B1_recommend.mp3
+select,"lựa chọn, chọn lọc, tuyển lựa",4000B1_select.mp3
+tool,"dụng cụ, đồ nghề",4000B1_tool.mp3
+treat,"đối xử, đối đãi, cư xử, ăn ở",4000B1_treat.mp3
+alive,"còn sống, đang sống,còn tồn tại",4000B1_alive.mp3
+bone,xương,4000B1_bone.mp3
+bother,làm phiền,4000B1_bother.mp3
+captain,"thuyền trưởng, cơ trưởng",4000B1_captain.mp3
+conclusion,"sự kết luận, sự kết thúc, phần cuối",4000B1_conclusion.mp3
+doubt,"sự nghi ngờ, sự ngờ vực",4000B1_doubt.mp3
+explore,"khám phá, thăm dò, thám hiểm",4000B1_explore.mp3
+foreign,(thuộc) nước ngoài,4000B1_foreign.mp3
+glad,"vui mừng,sung sướng",4000B1_glad.mp3
+however,tuy nhiên,4000B1_however.mp3
+injustice,sự bất công,4000B1_injustice.mp3
+international,(thuộc) quốc tế,4000B1_international.mp3
+lawyer,luật sư,4000B1_lawyer.mp3
+mention,"đề cập, nói đến, kể ra",4000B1_mention.mp3
+policy,chính sách,4000B1_policy.mp3
+social,có tính chất xã hội,4000B1_social.mp3
+speech,"bài nói chuyện, bài diễn văn",4000B1_speech.mp3
+staff,"nhân viên, nhóm nhân viên",4000B1_staff.mp3
+toward,"về phía, hướng về",4000B1_toward.mp3
+wood,gỗ,4000B1_wood.mp3
+achieve,"đạt được, giành được",4000B1_achieve.mp3
+advise,"khuyên, khuyên bảo",4000B1_advise.mp3
+already,rồi; đã... rồi,4000B1_already.mp3
+basic,"cơ bản, cơ sở",4000B1_basic.mp3
+bit,"mẩu, miếng",4000B1_bit.mp3
+consider,"cân nhắc, xem xét, suy xét",4000B1_consider.mp3
+destroy,"phá huỷ, tàn phá",4000B1_destroy.mp3
+entertain,"giải trí, tiêu khiển",4000B1_entertain.mp3
+extra,"thừa,thượng hạng, đặc biệt",4000B1_extra.mp3
+goal,"bàn thắng, mục đích, mục tiêu",4000B1_goal.mp3
+lie,"nói dối, lừa dối",4000B1_lie.mp3
+meat,thịt,4000B1_meat.mp3
+opinion,"quan điểm, ý kiến, sự đánh giá",4000B1_opinion.mp3
+real,"thực tế, có thực,thật (không phải giả)",4000B1_real.mp3
+reflect,"phản chiếu, phản xạ, phản ánh",4000B1_reflect.mp3
+regard,"coi như, xem như",4000B1_regard.mp3
+serve,"phục vụ, phụng sự",4000B1_serve.mp3
+vegetable,rau cỏ (noun  adj),4000B1_vegetable.mp3
+war,chiến tranh,4000B1_war.mp3
+worth,"đáng giá,giá trị",4000B1_worth.mp3
+appear,"biểu lộ,hình như, có vẻ",4000B1_appear.mp3
+base,"nền tảng, chân đế",4000B1_base.mp3
+brain,não,4000B1_brain.mp3
+career,sự nghiệp,4000B1_career.mp3
+clerk,"giao dịch viên, thư ký, nhân viên",4000B1_clerk.mp3
+effort,nỗ lực,4000B1_effort.mp3
+enter,đi vào,4000B1_enter.mp3
+excellent,xuất sắc,4000B1_excellent.mp3
+hero,"anh hùng, người hùng",4000B1_hero.mp3
+hurry,vội vàng,4000B1_hurry.mp3
+inform,"thông báo, báo tin, cho biết",4000B1_inform.mp3
+later,"muộn hơn, sau này",4000B1_later.mp3
+leave,"rời đi, bỏ đi",4000B1_leave.mp3
+locate,xác định vị trí,4000B1_locate.mp3
+nurse,"y tá, nữ y tá",4000B1_nurse.mp3
+operation,"sự phẩu thuật, ca mổ",4000B1_operation.mp3
+pain,"sự đau,làm đau đớn,đau nhức",4000B1_pain.mp3
+refuse,"từ chối, khước từ, cự tuyệt",4000B1_refuse.mp3
+though,"cho dù, mặc dù, dẫu cho",4000B1_though.mp3
+various,khác nhau; nhiều thứ khác nhau,4000B1_various.mp3
+actual,"thực tế, có thật,hiện thời; hiện nay",4000B1_actual.mp3
+amaze,"làm kinh ngạc, làm sửng sốt",4000B1_amaze.mp3
+charge,"tiền phải trả, giá tiền",4000B1_charge.mp3
+comfort,"an ủi, dỗ dành, làm khuây khoả",4000B1_comfort.mp3
+contact,"tiếp xúc, liên lạc",4000B1_contact.mp3
+customer,khách hàng,4000B1_customer.mp3
+deliver,"giao (hàng),phân phát (thư)",4000B1_deliver.mp3
+earn,kiếm tiền,4000B1_earn.mp3
+gate,"cổng, cửa ra vào",4000B1_gate.mp3
+include,"bao gồm, gồm có",4000B1_include.mp3
+manage,"quản lý, trông nom,xoay xở",4000B1_manage.mp3
+mystery,"điều huyền bí,điều bí ẩn",4000B1_mystery.mp3
+occur,"xảy ra, xảy đến",4000B1_occur.mp3
+opposite,"đối diện, đối nhau, ngược nhau",4000B1_opposite.mp3
+plate,đĩa (để đựng thức ăn),4000B1_plate.mp3
+receive,"nhận, lĩnh, thu",4000B1_receive.mp3
+reward,sự thưởng,4000B1_reward.mp3
+set,"thiết lập, để, đặt, bố trí",4000B1_set.mp3
+steal,"ăn cắp, ăn trộm",4000B1_steal.mp3
+thief,"kẻ trộm, kẻ cắp",4000B1_thief.mp3
+advance,"tiến lên, tiến tới, tiến bộ",4000B1_advance.mp3
+athlete,vận động viên,4000B1_athlete.mp3
+average,trung bình,4000B1_average.mp3
+behavior,cách cư xử,4000B1_behavior.mp3
+behind,đằng sau,4000B1_behind.mp3
+course,khoá học,4000B1_course.mp3
+lower,thấp hơn,4000B1_lower.mp3
+match,"hợp, xứng, trận đấu",4000B1_match.mp3
+member,"thành viên, hội viên",4000B1_member.mp3
+mental,"(thuộc) trí tuệ, tinh thần, tâm thần, thần kinh",4000B1_mental.mp3
+passenger,hành khách (đi tàu xe...),4000B1_passenger.mp3
+personality,"tính cách, nhân cách",4000B1_personality.mp3
+poem,"thơ, bài thơ",4000B1_poem.mp3
+pole,"cực, cái sào, cột",4000B1_pole.mp3
+remove,"bỏ ra, tháo ra, lấy ra, dời đi",4000B1_remove.mp3
+safety,"sự an toàn, sự chắc chắn",4000B1_safety.mp3
+shoot,bắn,4000B1_shoot.mp3
+sound,"kêu, vang tiếng, nghe như, nghe có vẻ, âm thanh",4000B1_sound.mp3
+swim,bơi,4000B1_swim.mp3
+web,"mạng (nhện),tơ (lông chim)",4000B1_web.mp3
+block,"khối, tảng, súc (đá, gỗ...)",4000B1_block.mp3
+cheer,"cổ vũ,tung hô",4000B1_cheer.mp3
+complex,"phức tạp, rắc rối",4000B1_complex.mp3
+critic,nhà phê bình,4000B1_critic.mp3
+event,"sự kiện, sự việc",4000B1_event.mp3
+exercise,"tập luyện, rèn luyện (thể dục thể thao)",4000B1_exercise.mp3
+fit,"vừa, thích hợp, phù hợp",4000B1_fit.mp3
+friendship,tình bạn,4000B1_friendship.mp3
+guide,"hướng dẫn viên,người chỉ dẫn",4000B1_guide.mp3
+lack,"thiếu, không có",4000B1_lack.mp3
+passage,"lối đi, sự đi qua,đoạn (bài văn, sách...)",4000B1_passage.mp3
+perform,"biểu diễn, trình bày, thực hiện",4000B1_perform.mp3
+pressure,áp lực,4000B1_pressure.mp3
+probable,"chắc hẳn,có lễ đúng",4000B1_probable.mp3
+public,"công cộng,công khai, công chúng",4000B1_public.mp3
+strike,"đánh, tấn công,",4000B1_strike.mp3
+support,"hỗ trợ, ủng hộ",4000B1_support.mp3
+task,"nhiệm vụ, công việc,bài tập,phận sự",4000B1_task.mp3
+term,"thời hạn, kỳ hạn, lời lẽ",4000B1_term.mp3
+unite,"đoàn kết,liên kết",4000B1_unite.mp3
+associate,"kết hợp,kết giao, liên hợp lại",4000B1_associate.mp3
+environment,môi trường,4000B1_environment.mp3
+factory,"nhà máy, xí nghiệp",4000B1_factory.mp3
+feature,"điểm đặc trưng,nét đặc biệt",4000B1_feature.mp3
+instance,"thí dụ, ví dụ",4000B1_instance.mp3
+involve,"dính líu, dính dáng(dạng bị động)để hết tâm trí vào (cái gì)",4000B1_involve.mp3
+medicine,thuốc,4000B1_medicine.mp3
+mix,"hỗn hợp, trộn lẫn",4000B1_mix.mp3
+organize,tổ chức,4000B1_organize.mp3
+period,"thời kỳ, giai đoạn",4000B1_period.mp3
+populate,"ở, cư trú",4000B1_populate.mp3
+produce,"sản xuất, ra quả",4000B1_produce.mp3
+range,"dải, phạm vi, khoảng",4000B1_range.mp3
+recognize,nhận ra,4000B1_recognize.mp3
+regular,"thường lệ, đều đặn",4000B1_regular.mp3
+sign,"dấu hiệu, ký hiệu;ký tên, ra hiệu",4000B1_sign.mp3
+tip,"đầu mút, tiền thưởng phục vụ",4000B1_tip.mp3
+tradition,truyền thống,4000B1_tradition.mp3
+trash,rác,4000B1_trash.mp3
+wide,"rộng, rộng lớn",4000B1_wide.mp3
+advice,lời khuyên,4000B1_advice.mp3
+along,dọc theo,4000B1_along.mp3
+attention,sự chú ý,4000B1_attention.mp3
+attract,"hấp dẫn, thu hút",4000B1_attract.mp3
+climb,"trèo, leo",4000B1_climb.mp3
+drop,"rơi, sụt giảm",4000B1_drop.mp3
+final,"cuối cùng, chung kết",4000B1_final.mp3
+further,"xa hơn, bên kia",4000B1_further.mp3
+imply,ý nói; ngụ ý,4000B1_imply.mp3
+maintain,duy trì,4000B1_maintain.mp3
+neither,...... nor không ... mà cũng không,4000B1_neither.mp3
+otherwise,"nếu không thì, mặt khác, cách khác",4000B1_otherwise.mp3
+physical,"(thuộc) vật lý,(thuộc) vật chất",4000B1_physical.mp3
+prove,chứng minh,4000B1_prove.mp3
+react,"phản ứng, đối phó",4000B1_react.mp3
+ride,cưỡi,4000B1_ride.mp3
+situated,"ở (một nơi, một tình thế, một hoàn cảnh)",4000B1_situated.mp3
+society,xã hội,4000B1_society.mp3
+standard,tiêu chuẩn,4000B1_standard.mp3
+suggest,"gợi ý, đề nghị",4000B1_suggest.mp3
+actually,"thực sự, quả thật",4000B1_actually.mp3
+bite,"cắn, ngoạm",4000B1_bite.mp3
+coast,bờ biển,4000B1_coast.mp3
+deal,giải quyết; đối phó; sự giao dịch,4000B1_deal.mp3
+desert,sa mạc,4000B1_desert.mp3
+earthquake,trận động đất,4000B1_earthquake.mp3
+effective,có hiệu quả,4000B1_effective.mp3
+examine,kiểm tra,4000B1_examine.mp3
+false,"sai, nhầm",4000B1_false.mp3
+gift,"quà tặng; tặng, biếu, cho",4000B1_gift.mp3
+hunger,"sự đói, tình trạng đói",4000B1_hunger.mp3
+imagine,"tưởng tượng, hình dung",4000B1_imagine.mp3
+journey,"cuộc hành trình, chuyến đi",4000B1_journey.mp3
+puzzle,"trò chơi đố; câu đố, vấn đề khó",4000B1_puzzle.mp3
+quite,"khá,hoàn toàn, hầu hết",4000B1_quite.mp3
+rather,thích... hơn,4000B1_rather.mp3
+specific,"rành mạch, rõ ràng",4000B1_specific.mp3
+tour,cuộc đi du lịch,4000B1_tour.mp3
+trip,chuyến đi,4000B1_trip.mp3
+value,giá trị,4000B1_value.mp3
+band,"ban nhạc, dải, băng, đai, nẹp",4000B1_band.mp3
+barely,"vừa đủ,rỗng không, nghèo nàn",4000B1_barely.mp3
+boring,"chán ngắt, buồn tẻ,sự khoan, sự đào",4000B1_boring.mp3
+cancel,"huỷ bỏ, bãi bỏ",4000B1_cancel.mp3
+driveway,đường lái xe vào nhà,4000B1_driveway.mp3
+garbage,rác,4000B1_garbage.mp3
+instrument,"dụng cụ, nhạc cụ",4000B1_instrument.mp3
+list,"danh sách; liệt kê, lập danh sách",4000B1_list.mp3
+magic,"phép thuật, ma thuật",4000B1_magic.mp3
+message,thông điệp; đưa tin,4000B1_message.mp3
+notice,"chú ý, để ý,báo trước",4000B1_notice.mp3
+own,sở hữu,4000B1_own.mp3
+predict,"đoán trước, dự đoán",4000B1_predict.mp3
+professor,giáo sư,4000B1_professor.mp3
+rush,"vội vã, đi gấp",4000B1_rush.mp3
+schedule,"thời gian biểu, thời khóa biểu(bản kế hoạch có thời gian)",4000B1_schedule.mp3
+share,"chia sẻ, cổ phần",4000B1_share.mp3
+stage,"sân khấu, giai đoạn",4000B1_stage.mp3
+storm,"dông tố, cơn bão",4000B1_storm.mp3
+within,"trong vòng,trong phạm vi, bên trong, phía trong",4000B1_within.mp3
+advertise,quảng cáo,4000B1_advertise.mp3
+assign,"phân việc, phân công",4000B1_assign.mp3
+audience,"thính giả, khán giả, bạn đọc",4000B1_audience.mp3
+breakfast,bữa ăn sáng,4000B1_breakfast.mp3
+competition,"sự cạnh tranh, cuộc thi",4000B1_competition.mp3
+cool,"mát mẻ,trầm tĩnh",4000B1_cool.mp3
+gain,tăng tốc (tốc độ...); lên (cân...),4000B1_gain.mp3
+importance,"sự quan trọng, tầm quan trọng",4000B1_importance.mp3
+knowledge,"kiến thức, tri thức",4000B1_knowledge.mp3
+major,"chính, chủ yếu, trọng đại",4000B1_major.mp3
+mean,"verb: nghĩa là, có nghĩa làadj: hèn hạ, bần tiện,kém cỏi,nóng tính ???",4000B1_mean.mp3
+prefer,"thích hơn, ưa hơn, đề bạt,đưa ra",4000B1_prefer.mp3
+president,"tổng thống, chủ tịch",4000B1_president.mp3
+progress,"nounverb :tiến triển, tiến bộ, tiến hành",4000B1_progress.mp3
+respect,"nounverb :tôn trọng, kính trọng,lưu tâm, chú ý",4000B1_respect.mp3
+rich,"giàu, giàu có",4000B1_rich.mp3
+skill,kỹ năng,4000B1_skill.mp3
+somehow,"vì lý do này khác, không biết làm sao",4000B1_somehow.mp3
+strength,"sức mạnh, sức lực, sức khoẻ",4000B1_strength.mp3
+vote,"bỏ phiếu, bầu cử",4000B1_vote.mp3
+above,"ở trên,trên đầu",4000B1_above.mp3
+ahead,"adv :thẳng phía trướcadj :hơn, vượt",4000B1_ahead.mp3
+amount,"tổng giá trị (hợp đồng),tổng số (tiền)",4000B1_amount.mp3
+belief,"niềm tin, lòng tin, đức tin",4000B1_belief.mp3
+center,trung tâm,4000B1_center.mp3
+common,"thông thường, chung,phổ thông",4000B1_common.mp3
+cost,"chi phí,giá thành, phí tổn",4000B1_cost.mp3
+demonstrate,"chứng minh, giải thích, biểu lộ, biểu tình",4000B1_demonstrate.mp3
+different,"khác biệt, khác nhau",4000B1_different.mp3
+evidence,"chứng cớ, bằng chứng",4000B1_evidence.mp3
+honesty,"tính trung thực,tính lương thiện",4000B1_honesty.mp3
+idiom,thành ngữ,4000B1_idiom.mp3
+independent,"độc lập,không phụ thuộc",4000B1_independent.mp3
+inside,"bên trong,phía trong, phần trong",4000B1_inside.mp3
+master,"bậc thầy, thợ cả",4000B1_master.mp3
+memory,"trí nhớ, ký ức,sự tưởng nhớ",4000B1_memory.mp3
+proper,"thích đáng, thích hợp, đúng mực",4000B1_proper.mp3
+scan,"quét, nhìn chăm chú,đọc lướt",4000B1_scan.mp3
+section,"mặt cắt,lát cắt, đoạn (trong sách)",4000B1_section.mp3
+surface,bề mặt,4000B1_surface.mp3

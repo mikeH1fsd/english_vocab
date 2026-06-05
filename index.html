@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Vocabulary Hub</title>
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #10B981;
+            --bg: #F3F4F6;
+            --card-bg: #ffffff;
+            --text-main: #1F2937;
+            --text-muted: #6B7280;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h2 {
+            font-size: 1.8em;
+            margin: 0 0 15px 0;
+            color: var(--primary);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0 0 25px 0;
+        }
+
+        .btn {
+            align-self: flex-start;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .card:hover .btn {
+            background-color: #4338CA;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Vocabulary Learning Hub</h1>
+        <p>Hệ thống học 4000 từ vựng tiếng Anh thiết yếu qua ngữ cảnh</p>
+    </div>
+
+    <div class="grid">
+        <a href="story1.html" class="card">
+            <div>
+                <h2>Book 1</h2>
+                <p>Khám phá 600 từ vựng đầu tiên qua câu chuyện về cuộc hành trình của người ngoài hành tinh đến trái đất.</p>
+            </div>
+            <div class="btn">Học ngay &rarr;</div>
+        </a>
+
+        <a href="story2.html" class="card">
+            <div>
+                <h2>Book 2</h2>
+                <p>Nâng cao vốn từ với 600 từ vựng cấp độ 2 qua những câu chuyện về thế giới công nghệ và xã hội.</p>
+            </div>
+            <div class="btn">Học ngay &rarr;</div>
+        </a>
+
+        <a href="story3.html" class="card">
+            <div>
+                <h2>Book 3</h2>
+                <p>Rèn luyện và ghi nhớ 600 từ vựng cấp độ 3 với những câu chuyện ngữ cảnh đầy bất ngờ.</p>
+            </div>
+            <div class="btn">Học ngay &rarr;</div>
+        </a>
+
+        <a href="story4.html" class="card">
+            <div>
+                <h2>Book 4</h2>
+                <p>Bước vào cấp độ 4, mở rộng vốn từ vựng học thuật và giao tiếp hàng ngày.</p>
+            </div>
+            <div class="btn">Học ngay &rarr;</div>
+        </a>
+
+        <a href="story5.html" class="card">
+            <div>
+                <h2>Book 5</h2>
+                <p>Chinh phục cấp độ 5 với những từ vựng phức tạp hơn, ứng dụng trong văn viết và thảo luận chuyên sâu.</p>
+            </div>
+            <div class="btn">Học ngay &rarr;</div>
+        </a>
+
+        <a href="story6.html" class="card">
+            <div>
+                <h2>Book 6</h2>
+                <p>Hoàn thiện chặng đường 4000 từ thiết yếu. Đỉnh cao của từ vựng tiếng Anh.</p>
+            </div>
+            <div class="btn">Học ngay &rarr;</div>
+        </a>
+
+        <a href="story_TOEIC.html" class="card">
+            <div>
+                <h2>TOEIC 600</h2>
+                <p>Khởi động 600 từ vựng cần thiết để chinh phục bài thi TOEIC. Từ vựng kinh tế, thương mại và môi trường làm việc.</p>
+            </div>
+            <div class="btn">Học ngay &rarr;</div>
+        </a>
+    </div>
+
+</body>
+</html>

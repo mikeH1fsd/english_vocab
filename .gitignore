@@ -1,0 +1,10 @@
+# Anki Package Files
+*.apkg
+
+# Temporary files or Python caches
+temp_extract/
+__pycache__/
+*.pyc
+
+# Local script files
+*.py
