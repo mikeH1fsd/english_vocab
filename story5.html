@@ -18,7 +18,9 @@
         h2 { color: #34495e; border-bottom: 2px solid #bdc3c7; padding-bottom: 10px; margin-top: 20px; }
         .vocab-word { background-color: #ffeaa7; padding: 2px 5px; border-radius: 4px; cursor: pointer; font-weight: bold; color: #d35400; transition: background-color 0.3s; }
         .vocab-word:hover { background-color: #fdcb6e; }
-        #meaning-display { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #2d3436; color: white; padding: 15px 30px; border-radius: 8px; font-size: 1.2em; box-shadow: 0 4px 20px rgba(0,0,0,0.3); display: none; z-index: 1000; text-align: center; max-width: 80%; }
+        #meaning-display { position: absolute; background: #2d3436; color: white; padding: 15px; border-radius: 8px; font-size: 1.1em; box-shadow: 0 4px 20px rgba(0,0,0,0.3); display: none; z-index: 1000; text-align: left; max-width: 350px; flex-direction: column; }
+        #meaning-display .m-word-title { display: block; font-size: 1.3em; font-weight: bold; color: #fdcb6e; margin-bottom: 5px; text-transform: capitalize; text-align: left; }
+        #meaning-display .m-meaning { font-weight: bold; margin-bottom: 10px; }
         .meaning-word { color: #fdcb6e; font-weight: bold; text-transform: capitalize; }
         .stats, .checklist-container { background: #ecf0f1; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
         .checklist-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-top: 20px; max-height: 400px; overflow-y: auto; }
@@ -289,6 +291,10 @@
 <a href="index.html" class="back-btn">&larr; Về trang chủ (Hub)</a>
     <div class="header">
         <h1>Learn English Vocabulary - 5</h1>
+        <div class="font-controls" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 15px;">
+            <button onclick="changeFontSize(0.1)" title="Phóng to cỡ chữ" style="background-color: #9b59b6;">A+</button>
+            <button onclick="changeFontSize(-0.1)" title="Thu nhỏ cỡ chữ" style="background-color: #9b59b6;">A-</button>
+        </div>
         <div class="btn-group">
             <button id="btn-story1" class="active" onclick="showStory(1)">Chủ đề 1</button>
             <button id="btn-story2" onclick="showStory(2)">Chủ đề 2</button>
@@ -400,6 +406,17 @@
                 md.style.display = 'none';
             }
         });
+
+        let currentFontSize = 1.15;
+        window.changeFontSize = function(direction) {
+            currentFontSize += direction;
+            if (currentFontSize < 0.8) currentFontSize = 0.8;
+            if (currentFontSize > 3.0) currentFontSize = 3.0;
+            const containers = document.querySelectorAll('.story-container');
+            containers.forEach(c => {
+                c.style.fontSize = currentFontSize + 'em';
+            });
+        };
 
         window.showStory = function(num) {
             document.querySelectorAll('.story-container').forEach(e => e.classList.remove('active'));
@@ -525,6 +542,19 @@
                         ${defsHtml}
                     `;
                     display.style.display = 'flex';
+                    
+                    const rect = e.target.getBoundingClientRect();
+                    let topPos = rect.bottom + window.scrollY + 8;
+                    let leftPos = rect.left + window.scrollX;
+                    
+                    if (leftPos + display.offsetWidth > window.innerWidth + window.scrollX - 20) {
+                        leftPos = window.innerWidth + window.scrollX - display.offsetWidth - 20;
+                    }
+                    if (leftPos < window.scrollX + 10) leftPos = window.scrollX + 10;
+                    
+                    display.style.top = topPos + 'px';
+                    display.style.left = leftPos + 'px';
+                    display.style.transform = 'none';
                     
                     const audio = document.getElementById('audio-player');
                     if (data.audio) {
