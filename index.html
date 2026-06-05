@@ -116,10 +116,172 @@
         }
 
     </style>
-</head>
-<body>
 
-    <div class="header">
+    <style>
+        /* ===== PREMIUM DARK MODE ===== */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #e6e9ef, #ffffff);
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.1), -2px -2px 8px rgba(255,255,255,0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .theme-toggle:hover {
+            transform: rotate(20deg) scale(1.1);
+            box-shadow: 6px 6px 15px rgba(0,0,0,0.15), -3px -3px 10px rgba(255,255,255,0.9);
+        }
+        .theme-toggle:active { transform: scale(0.92); }
+
+        /* ----- Transition for all elements ----- */
+        body, body *, body *::before, body *::after {
+            transition: background-color 0.4s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.4s ease;
+        }
+
+        /* ----- DARK MODE body ----- */
+        body.dark-mode {
+            background-color: #0f0f1a;
+            color: #d4d4e0;
+        }
+
+        /* Toggle button in dark */
+        body.dark-mode .theme-toggle {
+            background: linear-gradient(145deg, #1e1e30, #2a2a44);
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.5), -2px -2px 8px rgba(60,60,90,0.2);
+        }
+
+        /* ----- Story pages ----- */
+        body.dark-mode .story-container {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            color: #d4d4e0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        body.dark-mode h1 {
+            background: linear-gradient(135deg, #667eea, #764ba2) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+        }
+
+        body.dark-mode h2 {
+            color: #a78bfa;
+            border-bottom: 2px solid rgba(167, 139, 250, 0.2);
+        }
+
+        body.dark-mode h3 { color: #c4b5fd; }
+
+        body.dark-mode .stats,
+        body.dark-mode .checklist-container {
+            background: rgba(30, 30, 50, 0.8);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+        }
+
+        body.dark-mode .check-item {
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #888;
+            border-radius: 6px;
+        }
+
+        body.dark-mode .check-used {
+            background: rgba(16, 185, 129, 0.15);
+            color: #6ee7b7;
+            border-color: rgba(16, 185, 129, 0.25);
+            box-shadow: none;
+        }
+
+        body.dark-mode .vocab-word {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            border-bottom: 1.5px solid rgba(129, 140, 248, 0.35);
+            box-shadow: none;
+            text-shadow: none;
+        }
+        body.dark-mode .vocab-word:hover {
+            background: rgba(99, 102, 241, 0.25);
+            color: #c7d2fe;
+            border-bottom-color: rgba(165, 180, 252, 0.5);
+            box-shadow: none;
+            transform: none;
+        }
+
+        body.dark-mode a.back-btn {
+            color: #818cf8;
+        }
+        body.dark-mode a.back-btn:hover { color: #a5b4fc; }
+
+        body.dark-mode button {
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: #fff;
+            border: none;
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+        }
+        body.dark-mode button:hover {
+            background: linear-gradient(135deg, #6366f1, #818cf8);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            transform: translateY(-1px);
+        }
+        body.dark-mode button.active {
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
+            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.25);
+        }
+
+        body.dark-mode #meaning-display {
+            background: linear-gradient(145deg, #1e1e30, #2a2a44);
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        }
+
+        body.dark-mode p { color: #b0b0c0; line-height: 2; }
+        body.dark-mode .story-container { font-size: 1.1em; letter-spacing: 0.01em; }
+
+        /* ----- Index / Hub page ----- */
+        body.dark-mode .card {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        body.dark-mode .card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.15);
+            transform: translateY(-8px);
+        }
+        body.dark-mode .card::before {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        body.dark-mode .card h2 { color: #818cf8; }
+        body.dark-mode .card p { color: #9ca3af; }
+        body.dark-mode .btn {
+            background: linear-gradient(135deg, #4f46e5, #6366f1) !important;
+        }
+        body.dark-mode .card:hover .btn {
+            background: linear-gradient(135deg, #6366f1, #818cf8) !important;
+        }
+
+        body.dark-mode .header p { color: #9ca3af; }
+
+    </style>
+</head>
+
+
+
+<body>
+    <button id="theme-toggle" class="theme-toggle" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">🌙</button>
+<div class="header">
         <h1>Vocabulary Learning Hub</h1>
         <p>Hệ thống học 4000 từ vựng tiếng Anh thiết yếu qua ngữ cảnh</p>
     </div>
@@ -182,5 +344,24 @@
         </a>
     </div>
 
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+            document.getElementById('theme-toggle').innerText = isDark ? '☀️' : '🌙';
+        }
+
+        // Auto-load saved theme
+        (function() {
+            if(localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                var btn = document.getElementById('theme-toggle');
+                if(btn) btn.innerText = '☀️';
+            }
+        })();
+
+    </script>
 </body>
+
 </html>
